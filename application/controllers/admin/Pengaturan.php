@@ -8,7 +8,7 @@ class Pengaturan extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data_pegawai = $this->crud->qr("SELECT * FROM data_pegawai INNER JOIN users ON data_pegawai.nip = users.username WHERE users.akses_level = 'pegawai'");
+        $data_pegawai = $this->crud->qr("SELECT * FROM data_pegawai INNER JOIN users ON data_pegawai.nip = users.username WHERE users.akses_level = 'pegawai' ORDER BY data_pegawai.nama_lengkap ASC");
         $data = array(  'title'     => 'Pengaturan / Kelola Pegawai',
                         'data_pegawai' => ($data_pegawai != null ? $data_pegawai : 0),
                         'isi'       => 'admin/pengaturan/pegawai');
@@ -20,7 +20,7 @@ class Pengaturan extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data_skpd = $this->crud->gw('users', array('akses_level' => 'skpd')  );
+        $data_skpd = $this->crud->gwo('users', array('akses_level' => 'skpd'),  'fullname ASC' );
         $list_skpd = $this->crud->ga('data_satker');
         $data = array(  'title'     => 'Pengaturan / Kelola Bidang',
                         'data_skpd' => ($data_skpd != null ? $data_skpd : []),

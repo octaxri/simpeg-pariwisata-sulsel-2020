@@ -21,7 +21,7 @@
                             <li class="panel"><a href="<?=admin_url('masterdata/umum')?>" class="<?=($method == 'umum' ? 'active' : '')?>">Data Umum</a></li>
                             <li class="panel"><a href="<?=admin_url('masterdata/instansi')?>" class="<?=($method == 'instansi' ? 'active' : '')?>">Data Instansi</a></li>
                             <li class="panel"><a href="<?=admin_url('masterdata/dokumen')?>" class="<?=($method == 'dokumen' ? 'active' : '')?>">Data Dokumen</a></li>
-                            <li class="panel"><a href="<?=admin_url('masterdata/eselon')?>" class="<?=($method == 'eselon' ? 'active' : '')?>">Tingkat Eselon</a></li>
+                            <li class="panel"><a href="<?=admin_url('masterdata/eselon')?>" class="<?=($method == 'eselon' ? 'active' : '')?>">Eselon</a></li>
                             <li class="panel"><a href="<?=admin_url('masterdata/jabatan')?>" class="<?=($method == 'jabatan' ? 'active' : '')?>">Referensi Jabatan</a></li>
                             <li class="panel"><a href="<?=admin_url('masterdata/kepegawaian')?>" class="<?=(($modul == 'masterdata' AND $method == 'kepegawaian') ? 'active' : '')?>">Referensi Kepegawaian</a></li>
                             <li class="panel"><a href="<?=admin_url('masterdata/alamat')?>" class="<?=($method == 'alamat' ? 'active' : '')?>">Referensi Lokasi</a></li>
@@ -33,7 +33,7 @@
                 <li class="panel"><a href="<?=admin_url('dokumen')?>" class="<?=($modul == 'dokumen' ? 'active' : '')?>"><i class="fa fa-folder-open" aria-hidden="true"></i> <span>Dokumen Pegawai</span>
 <!--                        <span class="label label-success">baru!</span></a>-->
                 </li> 
-                <li class="panel"><a href="<?=admin_url('honorer')?>" class="<?=($modul == 'honorer' ? 'active' : '')?>"><i class="lnr lnr-chart-bars"></i> <span>Data Honorer</span>
+                <li class="panel"><a href="<?=admin_url('honorer')?>" class="<?=($modul == 'honorer' ? 'active' : '')?>"><i class="lnr lnr-chart-bars"></i> <span>Pegawai Magang</span>
 <!--                        <span class="label label-success">baru!</span></a>-->
                 </li>               
  <!--                <li class="panel"><a href="<?=admin_url('DataHonorer')?>" class="<?=($modul == 'DataHonorer' ? 'active' : '')?>"><i class="lnr lnr-chart-bars"></i> <span>Data Pegawai Honorer</span></a>
@@ -124,10 +124,10 @@
                     <a class="<?=($modul == 'dataduk' ? 'active' : '')?> <?=($modul == 'DataDuk' ? 'active' : '')?>" href="<?=admin_url('dataduk')?>"><i class="fa fa-bar-chart" aria-hidden="true"></i> <span>Duk</span>
 <!--                        <span class="label label-success">baru!</span></a>-->
                 </li>
-                <li class="panel">
+                <!--<li class="panel">
                     <a class="<?=($modul == 'DataOrganisasi' ? 'active' : '')?>" href="<?=admin_url('DataOrganisasi')?>"><i class="fa fa-th" aria-hidden="true"></i> <span>Tabel Organisasi</span>
-<!--                        <span class="label label-success">baru!</span></a>-->
-                </li>
+                        <span class="label label-success">baru!</span></a>
+                </li>-->
   
 <!--                 <li class="panel">
                     <a class="<?=($modul == 'DataMutasi' ? 'active' : '')?>" href="<?=admin_url('DataMutasi')?>"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Data Mutasi</span> <span class="label label-success">baru!</span></a>
@@ -151,7 +151,7 @@
                     <div id="pengaturan" class="<?=($modul == 'pengaturan' ? 'collapse in' : 'collapse')?>" aria-expanded="<?=($modul == 'pengaturan' ? 'true' : 'false')?>" >
                         <ul class="nav">
                             <li class="panel"><a href="<?=admin_url('pengaturan/pegawai')?>"class="<?=($method == 'pegawai' ? 'active' : '')?>">Kelola Pegawai</a></li>
-                            <li class="panel"><a href="<?=admin_url('pengaturan/skpd')?>"class="<?=($method == 'skpd' ? 'active' : '')?>">Kelola Bidang/Bagian</a></li>
+                            <!--<li class="panel"><a href="<?=admin_url('pengaturan/skpd')?>"class="<?=($method == 'skpd' ? 'active' : '')?>">Kelola Bidang/Bagian</a></li>-->
                             <li class="panel"><a href="<?=admin_url('pengaturan/admin')?>"class="<?=($method == 'admin' ? 'active' : '')?>">Kelola ADMIN</a></li>
                         </ul>
                     </div>

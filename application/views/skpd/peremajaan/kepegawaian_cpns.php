@@ -3,15 +3,15 @@
     <!-- PANEL DEFAULT -->
     <div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data CPNS</h3>
+        <h3 class="panel-title font-white">Verifikasi Data CPNS</h3>
       </div>
       <div class="panel-body">
        <table style="min-width:100% !important;" id="tbl_riwayat_kepegawaian_cpns" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
           <thead>
             <tr class="data-item" data-id="">
               <th  rowspan="2" >No.</th>
-              <th  rowspan="2" >NIP Pegawai</th>
-              <th  rowspan="2" >Nama Pegawai</th>
+              <th  rowspan="2" >NIP </th>
+              <th  rowspan="2" >Nama </th>
               <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
               <th colspan="2" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
@@ -65,8 +65,8 @@
           <thead>
             <tr class="data-item" data-id="">
               <th  rowspan="2" >No.</th>
-              <th  rowspan="2" >NIP Pegawai</th>
-              <th  rowspan="2" >Nama Pegawai</th>
+              <th  rowspan="2" >NIP </th>
+              <th  rowspan="2" >Nama </th>
               <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
               <th colspan="2" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
@@ -154,7 +154,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">No. SK</label>
+            <label for="bahan"  class="col-sm-3 control-label">Nomor SK</label>
             <div class="col-sm-9">
               <input type="text" id="no_sk_kepegawaian" class="form-control" >
             </div>
@@ -288,7 +288,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">No. SK</label>
+            <label for="bahan"  class="col-sm-3 control-label">Nomor SK</label>
             <div class="col-sm-9">
               <input type="text" id="edit_no_sk_kepegawaian" class="form-control" >
             </div>

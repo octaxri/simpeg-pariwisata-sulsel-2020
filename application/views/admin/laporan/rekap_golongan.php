@@ -12,7 +12,7 @@
                           <tr>
                             <th rowspan="2">No.</th>
                             <th rowspan="2">Subbidang/Seksi</th>
-                            <th colspan="4">Golongan</th>
+                            <th colspan="4" class="text-center">Golongan</th>
                           </tr>
                           <tr>
                             <th>I</th>

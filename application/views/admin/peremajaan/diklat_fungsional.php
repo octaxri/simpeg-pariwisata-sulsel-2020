@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <!-- PANEL DEFAULT -->
-    <div class="panel">
+    <!--<div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Diklat Fungsional</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Diklat Fungsional</h3>
       </div>
       <div class="panel-body">
        <table id="tbl_riwayat_diklat_fungsional" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -53,7 +53,7 @@
           <?php endif ?>
         </tbody>
       </table>
-    </div>
+    </div>-->
   </div>
   <div class="panel">
     <div class="panel-heading">
@@ -61,26 +61,29 @@
 
     </div>
     <div class="panel-body">
-        <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_diklat_fungsional"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+        <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_diklat_fungsional"><i class="glyphicon glyphicon-plus"></i> Tambah Data Diklat Fungsional</a>
         <hr>
      <table id="tbl_riwayat_diklat_fungsional" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
       <thead>
         <tr >
-          <th>No.</th>
-          <th>NIP</th>
-          <th>Nama Pegawai</th>
-          <th>Nama Diklat</th>
-          <th>Jumlah Jam</th>
-          <th>Penyelenggara</th>
-          <th>Tempat</th>
-          <th>Angkatan</th>
-          <th>Tahun</th>
-          <th>No. STTP</th>
-          <th>Tgl. STTP</th>
-          <th>Admin</th>
-          <th></th>
-          <th style="display: none;">Jenis Diklat</th>
+          <th rowspan="2">No.</th>
+          <th rowspan="2">NIP</th>
+          <th rowspan="2">Nama </th>
+          <th rowspan="2">Diklat</th>
+          <th rowspan="2">Jumlah Jam</th>
+          <th rowspan="2">Penyelenggara</th>
+          <th rowspan="2">Tempat</th>
+          <th rowspan="2">Angkatan</th>
+          <th rowspan="2">Tahun</th>
+          <th colspan="2" class="text-center">STTP</th>
+          <th rowspan="2">Admin</th>
+          <th rowspan="2"></th>
+<!--          <th style="display: none;" rowspan="2">Jenis Diklat</th>-->
         </tr>
+      <tr>
+          <th>Nomor</th>
+          <th>Tanggal</th>
+      </tr>
       </thead>
       <tbody>
         <?php if ($riwayat_fungsional_verified != NULL): ?>
@@ -104,7 +107,7 @@
                   <a onclick="editData('diklat',<?=$riwayat_fungsional_verified->id_riwayat?>);" data-toggle="modal" data-target="#edit_diklat_fungsional" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                   <a onclick="hapusRiwayat('diklat',<?=$riwayat_fungsional_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                 </td>
-                <td style="display: none;"><?=$riwayat_fungsional_verified->jenis_diklat?></td>
+                <!--<td style="display: none;"><?=$riwayat_fungsional_verified->jenis_diklat?></td>-->
               </tr>
               <?php $i++; ?>
             <?php endif ?>
@@ -164,7 +167,7 @@
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Angkatan</label>
                         <div class="col-sm-9">
-                            <input type="text" id="angkatan_fungsional" class="form-control" >
+                            <input type="text" id="angkatan_fungsional" class="form-control" placeholder="Isi dengan Angka" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -174,13 +177,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" type="date" class="col-sm-3 control-label">No. STTP</label>
+                        <label for="bahan" type="date" class="col-sm-3 control-label">Nomor STTP</label>
                         <div class="col-sm-9">
                             <input type="number" id="no_sttp_fungsional" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" type="date" class="col-sm-3 control-label">Tgl. STTP</label>
+                        <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal STTP</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="tanggal_sttp_fungsional" class="form-control">
@@ -243,7 +246,7 @@
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Angkatan</label>
                         <div class="col-sm-9">
-                            <input type="number" id="edit_angkatan_fungsional" class="form-control" >
+                            <input type="number" id="edit_angkatan_fungsional" class="form-control" placeholder="Isi dengan Angka">
                         </div>
                     </div>
                     <div class="form-group">
@@ -256,13 +259,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" type="date" class="col-sm-3 control-label">No. STTP</label>
+                        <label for="bahan" type="date" class="col-sm-3 control-label">Nomor STTP</label>
                         <div class="col-sm-9">
                             <input type="number" id="edit_no_sttp_fungsional" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" type="date" class="col-sm-3 control-label">Tgl. STTP</label>
+                        <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal STTP</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="edit_tanggal_sttp_fungsional" class="form-control">
@@ -420,6 +423,15 @@
   '<span>'+ data.text+'</span>';
   return markup;
 }
+
+  $('#add_select2').on('change', function(){
+      $('#add_select2').prop("disabled", true);
+
+  });
+
+  $('#tambah_diklat_fungsional').on('hidden.bs.modal', function () {
+      location.reload();
+  });
 
 $("#add_select2").select2({
   ajax: {

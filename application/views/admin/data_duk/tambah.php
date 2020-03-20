@@ -201,7 +201,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-md-4 control-label">Rhesus </label>
+                <label class="col-md-4 control-label">Resus Darah</label>
                 <div class="col-md-8">
                   <label class="fancy-radio">
                     <input name="rhesus" value="Positif"  class="form-control" type="radio" checked="" required>
@@ -524,7 +524,7 @@
               <div class="alert alert-info"><i class="fa fa-info-user"></i> KETERANGAN LAINNYA</div>
               <div class="form-horizontal">
                 <div class="form-group">
-                  <label class="col-md-4 control-label">No. KTP &nbsp; <strong style="color: red;">(*)</strong></label>
+                  <label class="col-md-4 control-label">NIK &nbsp; <strong style="color: red;">(*)</strong></label>
                   <div class="col-md-8">
                     <input name="no_ktp" type="text" class="form-control"  required>
                     <?=form_error('no_ktp')?>

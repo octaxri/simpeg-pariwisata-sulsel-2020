@@ -13,7 +13,7 @@
                         <thead>
                           <tr>
                             <th width="50px;"> ID</th>
-                            <th> Nama Honorer</th>
+                            <th> Nama Pegawai Magang</th>
                             <th> NIK</th>
                             <th>  </th>
                           </tr>
@@ -46,7 +46,7 @@
       dom: 'Bfrtip',
       buttons: [
           {
-              text: '<i class="glyphicon glyphicon-plus"></i> Tambah Data Honorer',
+              text: '<i class="glyphicon glyphicon-plus"></i> Tambah Data Pegawai Magang',
               className : 'btn btn-primary btn-sm',
               action: function ( e, dt, node, config ) {
                  window.location.href = "<?=skpd_url('honorer/tambah')?>"

@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
         <!-- PANEL DEFAULT -->
-        <div class="panel">
+        <!--<div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data Cuti</h3>
+                <h3 class="panel-title font-white">Verifikasi Data Cuti</h3>
             </div>
             <div class="panel-body">
             <table id="tbl_riwayat_cuti_notverivied" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable">
@@ -48,28 +48,28 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>-->
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Riwayat Cuti</h3>
 
             </div>
             <div class="panel-body">
-                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_cuti"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_cuti"><i class="glyphicon glyphicon-plus"></i> Tambah Data Cuti</a>
                 <hr>
-                <table id="tbl_riwayat_cuti" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable">
+                <table id="tbl_riwayat_cuti" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                     <thead>
                         <tr >
                             <th> No.</th>
                             <th> NIP</th>
-                            <th> Nama Pegawai</th>
+                            <th> Nama </th>
                             <th> Jenis Cuti </th>
-                            <th> No. SK Cuti</th>
-                            <th> Tgl. SKEP</th>
+                            <th> Nomor SK Cuti</th>
+                            <th> Tanggal SKEP</th>
                             <th> Tanggal Awal</th>
                             <th> Tanggal Akhir</th>
                             <th> Tanggal Aktif</th>
-                            <th> No. BKN</th>
+                            <th> Nomor BKN</th>
                             <th> Tanggal BKN</th>
                             <th> Admin</th>
                             <th> </th>
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. SK Cuti</label>
+                        <label  class="col-sm-3 control-label">Nomor SK Cuti</label>
                         <div class="col-sm-9">
                             <input id="no_sk_cuti" type="text" class="form-control" >
                         </div>
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. BKN</label>
+                        <label  class="col-sm-3 control-label">Nomor BKN</label>
                         <div class="col-sm-9">
                             <input id="no_bkn_cuti" type="number" class="form-control" >
                         </div>
@@ -241,7 +241,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. SK Cuti</label>
+                        <label  class="col-sm-3 control-label">Nomor SK Cuti</label>
                         <div class="col-sm-9">
                             <input id="edit_no_sk_cuti" type="text" class="form-control" >
                         </div>
@@ -283,7 +283,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. BKN</label>
+                        <label  class="col-sm-3 control-label">Nomor BKN</label>
                         <div class="col-sm-9">
                             <input id="edit_no_bkn_cuti" type="number" class="form-control" >
                         </div>
@@ -443,6 +443,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
 }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_cuti').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
 $("#add_select2").select2({
     ajax: {

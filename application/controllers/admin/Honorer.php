@@ -6,11 +6,11 @@ class Honorer extends Admin_controller {
     public function index(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data_honorer = $this->crud->ga('data_honorer');
+        $data_honorer = $this->crud->gao('data_honorer', 'nama ASC');
         $data_satker = $this->crud->ga('data_satker');
 
         $data = array(  
-            'title'     => 'Data Honorer',
+            'title'     => 'Data Pegawai Magang',
             'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
             'data_satker' => $data_satker,
             'data_honorer' => $data_honorer,
@@ -24,7 +24,7 @@ class Honorer extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data = array(  'title'     => 'Tambah Data Honorer',
+        $data = array(  'title'     => 'Tambah Data Pegawai Magang',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'isi'       => 'admin/data_honorer/tambah');
         $this->load->view('admin/_layout/wrapper', $data);
@@ -44,7 +44,7 @@ class Honorer extends Admin_controller {
             $i = $this->crud->i('data_honorer', $a);
             if($this->db->affected_rows() == 1){
                 $this->session->set_flashdata('sukses', 'berhasil menambahkan data');
-                echo json_encode(array('stat' => 'sukses', 'res' => 'berhasil memasukkan data', 'url' => skpd_url('honorer'))); 
+                echo json_encode(array('stat' => 'sukses', 'res' => 'berhasil memasukkan data', 'url' => admin_url('honorer')));
             }else{
                 echo json_encode(array('stat' => 'gagal', 'res' => 'terjadi kesalahan', 'url' => admin_url('honorer/tambah'))); 
             }
@@ -64,7 +64,7 @@ class Honorer extends Admin_controller {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
         $id = $this->input->get('id');
         $a = $this->db->where('id', $id)->get('data_honorer')->result();
-        $data = array(  'title'     => 'Edit Data Honorer',
+        $data = array(  'title'     => 'Edit Pegawai Magang',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'data' => $a,
         'isi'       => 'admin/data_honorer/edit');

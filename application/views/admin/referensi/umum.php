@@ -10,7 +10,7 @@
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-sorting table-hover tablenormal  no-footer">
               <thead>
                 <tr>
                   <th width="50px;">No.</th>
@@ -44,7 +44,7 @@
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-sorting table-hover tablenormal  no-footer">
               <thead>
                 <tr>
                   <th width="50px;">No.</th>
@@ -278,6 +278,8 @@ function editData_send(method){
           $('.error_agama').html(response.error);
           swal('Gagal', 'Data agama gagal diedit.', 'error');
         }
+      });$(document).ajaxStop(function(){
+          window.location.reload();
       });
       break;
 

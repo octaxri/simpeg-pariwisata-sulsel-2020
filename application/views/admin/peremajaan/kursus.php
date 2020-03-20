@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <!-- PANEL DEFAULT -->
-    <div class="panel">
+    <!--<div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Kursus</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Kursus</h3>
       </div>
       <div class="panel-body">
         <table id="tbl_riwayat_kursus" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -49,28 +49,28 @@
             </tbody>
         </table>
       </div>
-    </div>
+    </div>-->
     <div class="panel">
       <div class="panel-heading">
         <h3 class="panel-title">Riwayat Kursus</h3>
 
       </div>
       <div class="panel-body">
-          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_kursus"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_kursus"><i class="glyphicon glyphicon-plus"></i> Tambah Data Kursus</a>
           <hr>
                 <table id="tbl_riwayat_kursus" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
             <thead>
                 <tr >
                     <th> No.</th>
                     <th> NIP</th>
-                    <th> Nama Pegawai</th>
+                    <th> Nama</th>
                     <th> Tipe Kursus </th>
-                    <th> Instansi</th>
                     <th> Jenis Kursus</th>
                     <th> Nama Kursus</th>
-                    <th> Tahun</th>
                     <th> Lama Kursus (Hari) </th>
-                    <th> Nomor Sertifikasi </th>
+                    <th> Tahun</th>
+                    <th> Nomor Sertifikat </th>
+                    <th> Instansi</th>
                     <th> Institusi Penyelenggara</th>
                     <th> Admin</th>
                     <th> </th>
@@ -84,12 +84,12 @@
                             <td><?=$riwayat_kursus_verified->nip?></td>
                             <td><?=$riwayat_kursus_verified->nama_lengkap?></td>
                             <td><?=$riwayat_kursus_verified->tipe_kursus?></td>
-                            <td><?=$riwayat_kursus_verified->instansi_kursus?></td>
                             <td><?=$riwayat_kursus_verified->jenis_kursus?></td>
                             <td><?=$riwayat_kursus_verified->nama_kursus?></td>
-                            <td><?=$riwayat_kursus_verified->tahun_kursus?></td>
                             <td><?=$riwayat_kursus_verified->lama_kursus?></td>
+                            <td><?=$riwayat_kursus_verified->tahun_kursus?></td>
                             <td><?=$riwayat_kursus_verified->no_sertifikat_kursus?></td>
+                            <td><?=$riwayat_kursus_verified->instansi_kursus?></td>
                             <td><?=$riwayat_kursus_verified->institusi_kursus?></td>
                             <td><?=$riwayat_kursus_verified->admin?></td>
                             <td>
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Tahun Kursus</label>
+                        <label  class="col-sm-3 control-label">Tahun </label>
                         <div class="col-sm-9">
                             <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
                                 <input id="tahun_kursus" type="text" class="form-control" >
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. Sertifikat</label>
+                        <label  class="col-sm-3 control-label">Nomor Sertifikat</label>
                         <div class="col-sm-9">
                             <input id="no_sertifikat_kursus" type="text" class="form-control" >
                         </div>
@@ -183,7 +183,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  type="date" class="col-sm-3 control-label">Penyelenggara</label>
+                        <label  type="date" class="col-sm-3 control-label">Institusi Penyelenggara</label>
                         <div class="col-sm-9">
                             <input id="institusi_kursus" type="text" class="form-control" >
                         </div>
@@ -248,7 +248,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Tahun Kursus</label>
+                        <label  class="col-sm-3 control-label">Tahun </label>
                         <div class="col-sm-9">
                             <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
                                 <input id="edit_tahun_kursus" type="text" class="form-control" >
@@ -257,7 +257,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. Sertifikat</label>
+                        <label  class="col-sm-3 control-label">Nomor Sertifikat</label>
                         <div class="col-sm-9">
                             <input id="edit_no_sertifikat_kursus" type="text" class="form-control" >
                         </div>
@@ -274,7 +274,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  type="date" class="col-sm-3 control-label">Penyelenggara</label>
+                        <label  type="date" class="col-sm-3 control-label">Institusi Penyelenggara</label>
                         <div class="col-sm-9">
                             <input id="edit_institusi_kursus" type="text" class="form-control" >
                         </div>
@@ -359,12 +359,12 @@
       switch (model) {
         case 'kursus':
         $('#edit_tipe_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
-        $('#edit_instansi_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(4)").text()).trigger('change');
-        $('#edit_jenis_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(5)").text());
-        $('#edit_nama_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(6)").text());
+        $('#edit_jenis_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(4)").text());
+        $('#edit_nama_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(5)").text());
+        $('#edit_lama_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(6)").text());
         $('#edit_tahun_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(7)").text());
-        $('#edit_lama_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(8)").text());
-        $('#edit_no_sertifikat_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(9)").text());
+        $('#edit_no_sertifikat_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(8)").text());
+        $('#edit_instansi_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(9)").text()).trigger('change');
         $('#edit_institusi_kursus').val($(".data-itemriwayatkursus[data-id='" + id + "']>td:eq(10)").text());
         idGlob = id;
         break;
@@ -425,6 +425,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
   }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_kursus').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
   $("#add_select2").select2({
     ajax: {

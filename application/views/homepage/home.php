@@ -24,8 +24,8 @@
 	<!-- <link rel="stylesheet" href="<?= assets_url() ?>vendor/datatables/css-bootstrap/dataTables.bootstrap.min.css"> -->
 	<link rel="stylesheet" href="<?= assets_url() ?>vendor/datatables-tabletools/css/dataTables.tableTools.css">
 
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/pemprov.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/pemprov.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="public/assets/img/pemprov.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="public/assets/img/pemprov.png">
 	<style>
 		table th,
 		table td {
@@ -114,7 +114,7 @@
 						<div class="service-box">
 							<div class="service-desc">
 								<h5>Sistem Informasi Manajemen Kepegawaian </h5>
-								<p>Aadalah Sistem Informasi yang dirancang untuk menangani berbagai hal dalam pengurusan kepegawaian mulai dari pengisian, pengolahan dan pemusatan data secara terkomputerisasi sehingga dapat menangani berbagai laporan yang berhubungan dengan kepegawaian. SIMPEG ini dapat diakses menggunakan internet sehingga dapat lebih mudah diakses dan memudahkan dalam proses administrasi kepegawaian.</p>
+								<p>Adalah Sistem Informasi yang dirancang untuk menangani berbagai hal dalam pengurusan kepegawaian mulai dari pengisian, pengolahan dan pemusatan data secara terkomputerisasi sehingga dapat menangani berbagai laporan yang berhubungan dengan kepegawaian. SIMPEG ini dapat diakses menggunakan internet sehingga dapat lebih mudah diakses dan memudahkan dalam proses administrasi kepegawaian.</p>
 							</div>
 						</div>
 					</div>

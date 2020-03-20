@@ -3,7 +3,7 @@
               <!-- PANEL DEFAULT -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Daftar Subbidang/Seksi</h3>
+                  <h3 class="panel-title">Daftar Bidang/Bagian</h3>
                 </div>
                 <div class="panel-body">
                   <div class="row">
@@ -12,8 +12,8 @@
                         <thead>
                           <tr>
                             <th rowspan="2">No.</th>
-                            <th rowspan="2">Subbidang/Seksi</th>
-                            <th colspan="3">Jumlah Pegawai</th>
+                            <th rowspan="2">Bidang/Bagian</th>
+                            <th colspan="3" class="text-center">Jumlah Pegawai</th>
                           </tr>
                           <tr>
                             <th>PNS</th>

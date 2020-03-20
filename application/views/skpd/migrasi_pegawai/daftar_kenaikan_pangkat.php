@@ -14,8 +14,8 @@
                                                         <th rowspan="2">Nama Lengkap</th>
                                                         <th rowspan="2">NIP</th>
                                                         <th rowspan="2">Jenis Kelamin</th>
-                                                        <th colspan="2">Pangkat Saat Ini</th>
-                                                        <th colspan="2">Kenaikan Pangkat</th>
+                                                        <th colspan="2" class="text-center">Pangkat Saat Ini</th>
+                                                        <th colspan="2" class="text-center">Kenaikan Pangkat</th>
                                                         <th rowspan="2"> </th>
                                                     </tr>
                                                     <tr>

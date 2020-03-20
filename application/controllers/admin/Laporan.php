@@ -65,7 +65,7 @@ class Laporan extends Admin_controller {
 
         $data_skpd =  $this->crud->qr('SELECT satuan_kerja, count(*) as total FROM data_pegawai ORDER BY satuan_kerja');
 
-        $data = array(  'title'     => 'Laporan / Daftar Subbidang/Seksi',
+        $data = array(  'title'     => 'Laporan / Daftar Bidang/Bagian',
         'data_skpd' => $data_skpd,
         'isi'       => 'admin/laporan/unit_kerja');
         $this->load->view('admin/_layout/wrapper', $data);

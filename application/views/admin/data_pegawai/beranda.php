@@ -14,7 +14,9 @@
         </div>
       </div>
       <div class="panel-body">
-        <p>Silahkan isi opsi yang diinginkan untuk menampilkan data secara spesifik. Jangan lupa untuk mengisi opsi bidang/bagian jika ingin melakukan export data ke Excel.</p>
+          <div class="alert alert-warning alert-dismissible" role="alert">
+            <p>Silahkan isi opsi yang diinginkan untuk menampilkan data secara spesifik. Jangan lupa untuk mengisi opsi <strong>"Bidang/Bagian"</strong> terlebih dahulu jika ingin melakukan <strong>Ekspor Data ke File Excel</strong>.</p>
+          </div>
         <hr>
         <div class="row">
           <div class="col-md-12">
@@ -191,7 +193,8 @@ function hapusData(id) {
         dom: 'Bfrtip',
         buttons: [
             {
-                text: 'Export ke Excel',
+                text : '<i class="fa fa-download"></i>Ekspor Data ke File Excel' ,
+                className: 'btn btn-primary btn-sm',
                 action: function ( e, dt, node, config ) {
                     window.open("<?=admin_url('pegawai/exportexcel?satker=')?>" + satker, '_blank');
                 }

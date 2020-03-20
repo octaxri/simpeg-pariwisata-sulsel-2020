@@ -18,7 +18,7 @@
                             <th> Diperbaharui Oleh</th>
                             <th> Ditujukan Untuk</th>
                             <th> Pesan Informasi</th>
-                            <th> Berkas Yang Perlu Diunduh</th>
+                            <th> File Yang Perlu Diunduh</th>
                             <th> </th>
                           </tr>
                         </thead>
@@ -72,18 +72,15 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Berkas (Jika Diperlukan)</label>
+                        <label for="bahan" class="col-sm-3 control-label">File (PDF)</label>
                          <div class="col-sm-8">
                           <input type="file" name="files" id="files" class="form-control">
                         </div>
                       </div>
                       <div class="form-group ">
-                        <div class="col-md-3 col-md-offset-8">
-                            <div class="col-sm-8">
-                              <a  class="btn btn-primary btn-sm" id="add" onclick="add()" ><i class="glyphicon glyphicon-floppy-save"></i>  Simpan</a>
-                            </div>
-
-                        </div>
+                        <center>
+                            <a  class="btn btn-primary btn-sm" id="add" onclick="add()" ><i class="glyphicon glyphicon-floppy-save"></i>  Simpan</a>
+                        </center>
                       </div>
                   </form>
                 </div>
@@ -119,18 +116,15 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Berkas (Kosongkan Jika Tidak Ingin Diubah)</label>
+                        <label for="bahan" class="col-sm-3 control-label">Ganti File (PDF)</label>
                          <div class="col-sm-8">
                           <input type="file" name="files" id="edit_files" class="form-control">
                         </div>
                       </div>
                      <div class="form-group ">
-                        <div class="col-md-3 col-md-offset-8">
-                            <div class="col-sm-8">
+                            <center>
                               <a  class="btn btn-primary btn-sm " id="edit"  ><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan </a>
-                            </div>
-
-                        </div>
+                            </center>
                       </div>
                   </form>
                 </div>

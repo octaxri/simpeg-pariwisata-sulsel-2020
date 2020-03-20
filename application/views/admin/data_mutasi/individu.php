@@ -3,30 +3,27 @@
   <!-- PANEL DEFAULT -->
   <div class="panel">
     <div class="panel-body">
-      <div class="row">
-        <div class="col-md-12">
-          <table id="<?=$table?>" style="min-width: 100%;"  class="white-spaces table table-bordered">
+          <table id="<?=$table?>" style="min-width: 100%;"  class="table table-bordered table-sorting table-hover no-footer">
             <thead>
               <tr>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> No. SK</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> Tanggal SK</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> NIP</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> Nama lengkap</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> Pangkat/Golongan/Ruang</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> Status
-								<th style="vertical-align : middle;text-align:center;" colspan="2">Tempat Tugas</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"></th>
+                <th colspan="2" class="text-center" width="10%"> Surat Keputusan</th>
+                <th rowspan="2" class="text-center" > NIP</th>
+                <th rowspan="2" class="text-center"> Nama </th>
+                <th rowspan="2" class="text-center"> Pangkat/Golongan/Ruang</th>
+                <th rowspan="2" class="text-center"> Status
+                  <th colspan="2" class="text-center">Tempat Tugas</th>
+                <th rowspan="2"></th>
               </tr>
-							<tr>
-                <th style="vertical-align : middle;text-align:center;">Lama</th>
-                <th style="vertical-align : middle;text-align:center;">Baru</th>
+              <tr>
+                  <th class="text-center">Nomor</th>
+                  <th class="text-center">Tanggal</th>
+                <th class="text-center">Lama</th>
+                <th class="text-center">Baru</th>
               </tr>
             </thead>
             <tbody class="text-center">
             </tbody>
           </table>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -94,7 +91,7 @@
 				      </div>
 
 				      <div class="form-group">
-				        <label for="exampleInputEmail1">Pangkat Golongan</label>
+				        <label for="exampleInputEmail1">Pangkat/Golongan/Ruang</label>
 				        <input type="text" readonly class="form-control" placeholder="Pangkat Golongan" name="pangkat_gol">
 				      </div>
 				    </div>
@@ -107,12 +104,12 @@
 			        </div>
 			        <div class="form-group">
 			           <!-- data_satker --> 
-			          <label for="exampleInputEmail1">Pada Bidang</label>
+			          <label for="exampleInputEmail1">Bidang/Bagian</label>
 			          <input type="text" readonly class="form-control" name="satker_lama">
 			        </div>
 			        <div class="form-group">
 			           <!-- unit_kerja --> 
-			          <label for="exampleInputEmail1">di Subbidang/Seksi</label>
+			          <label for="exampleInputEmail1">Subbidang/Seksi</label>
 			          <input type="text" readonly class="form-control" name="unker_lama">
 			        </div> 
 			      </div>
@@ -144,7 +141,7 @@
 			        </div>
 			        <div class="col-md-6 form-group">
 			           <!-- data_satker --> 
-			          <label for="exampleInputEmail1">Pada Bidang/Bagian</label>
+			          <label for="exampleInputEmail1">Bidang/Bagian</label>
 			          <select class="form-control select-2" name="satker_baru" required>
 			            <option value="">-- Bidang/Bagian --</option>
 			            <?php foreach ($satker as $b): ?>
@@ -154,7 +151,7 @@
 			        </div>
 			        <div class="col-md-6 form-group">
 			           <!-- unit_kerja --> 
-			          <label for="exampleInputEmail1">di Subbidang/Seksi</label>
+			          <label for="exampleInputEmail1">Subbidang/Seksi</label>
 			          <select class="form-control select-2" name="unker_baru" required>
 			            <option value="">-- Subbidang/Seksi --</option>
 			            <?php foreach ($unker as $c): ?>
@@ -244,7 +241,7 @@
 				      </div>
 
 				      <div class="form-group">
-				        <label for="exampleInputEmail1">Pangkat Golongan</label>
+				        <label for="exampleInputEmail1">Pangkat/Golongan/Ruang</label>
 				        <input type="text" readonly class="form-control" placeholder="Pangkat Golongan" name="pangkat_gol">
 				      </div>
 				    </div>
@@ -257,12 +254,12 @@
 			        </div>
 			        <div class="form-group">
 			           <!-- data_satker --> 
-			          <label for="exampleInputEmail1">Pada Bidang</label>
+			          <label for="exampleInputEmail1">Bidang/Bagian</label>
 			          <input type="text" readonly class="form-control" name="satker_lama">
 			        </div>
 			        <div class="form-group">
 			           <!-- unit_kerja --> 
-			          <label for="exampleInputEmail1">di Subbidang/Seksi</label>
+			          <label for="exampleInputEmail1">Subbidang/Seksi</label>
 			          <input type="text" readonly class="form-control" name="unker_lama">
 			        </div> 
 			      </div>
@@ -295,7 +292,7 @@
 
 	        <div class="form-group">
 	           <!-- data_satker --> 
-	          <label for="exampleInputEmail1">Pada Bidang</label>
+	          <label for="exampleInputEmail1">Bidang/Bagian</label>
 	          <select class="form-control select-2" name="satker_baru" required>
 	            <option value="">-- Bidang/Bagian --</option>
 	            <?php foreach ($satker as $e): ?>
@@ -306,7 +303,7 @@
 
 	        <div class="form-group">
 	           <!-- unit_kerja --> 
-	          <label for="exampleInputEmail1">di Subbidang/Seksi</label>
+	          <label for="exampleInputEmail1">Subbidang/Seksi</label>
 	          <select class="form-control select-2" name="unker_baru" required>
 	            <option value="">-- Subbidang/Seksi --</option>
 	            <?php foreach ($unker as $f): ?>
@@ -339,7 +336,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel">Details SK Individu</h4>
+        <h4 class="modal-title" id="gridSystemModalLabel">Detail SK Individu</h4>
       </div>
 
       <div class="modal-body">
@@ -393,9 +390,9 @@
               <tr>
                 <th width="5%" style="vertical-align : middle;text-align:center;" rowspan="2"> ID</th>
                 <th width="15%" style="vertical-align : middle;text-align:center;" rowspan="2"> NIP</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> PANGKAT/GOLONGAN/RUANG</th>
+                <th style="vertical-align : middle;text-align:center;" rowspan="2"> Pangkat/Golongan/Ruang</th>
                 <th style="vertical-align : middle;text-align:center;" colspan="2"> Tempat Tugas</th>
-                <th width="10%" style="vertical-align : middle;text-align:center;" rowspan="2">Ket</th>
+                <th width="10%" style="vertical-align : middle;text-align:center;" rowspan="2">Keterangan</th>
               </tr>
               <tr>
                 <th style="vertical-align : middle;text-align:center;">Lama</th>
@@ -434,13 +431,13 @@
 	             {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                     return "Jabatan " + full.jabatan_lama + " pada bidang " + full.satker_lama + " di Subbidang/Seksi " + full.unker_lama;
+                     return "Jabatan " + full.jabatan_lama + " pada bidang/bagian " + full.satker_lama + " di Subbidang/Seksi " + full.unker_lama;
                  }
               },
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                     return "Jabatan " + full.jabatan_baru + " pada bidang " + full.satker_baru + " di Subbidang/Seksi " + full.unker_baru;
+                     return "Jabatan " + full.jabatan_baru + " pada bidang/bagian " + full.satker_baru + " di Subbidang/Seksi " + full.unker_baru;
                  }
               },
 	            {
@@ -453,7 +450,7 @@
 	        dom: 'Bfrtip',
 	        buttons: [
 	            {
-	                text: '<i class="fa fa-plus" aria-hidden="true"></i> Tambah SK',
+	                text: '<i class="fa fa-plus" aria-hidden="true"></i> Tambah SK Individu',
 	                className : 'btn btn-sm btn-primary',
 	                action : function() {
 	                    $('#tambahSK').modal('show')
@@ -605,8 +602,8 @@
 	    			td = '<td>'+json.id+'</td>' + 
 	    					'<td>'+json.nip+'</td>' +
 	    					'<td>'+json.pangkat_gol+'</td>' +
-	    					'<td>Jabatan '+json.jabatan_lama+' pada bidang '+json.satker_lama+' di Subbidang/Seksi '+json.unker_lama+'</td>' +
-	    					'<td>Jabatan '+json.jabatan_baru+' pada bidang '+json.satker_baru+' di Subbidang/Seksi '+json.unker_baru+'</td>' +
+	    					'<td>Jabatan '+json.jabatan_lama+' pada bidang/bagian '+json.satker_lama+' di Subbidang/Seksi '+json.unker_lama+'</td>' +
+	    					'<td>Jabatan '+json.jabatan_baru+' pada bidang/bagian '+json.satker_baru+' di Subbidang/Seksi '+json.unker_baru+'</td>' +
 	    					'<td></td>'
 	    			$('#modal_details tbody tr').empty().html(td)
 	    		}

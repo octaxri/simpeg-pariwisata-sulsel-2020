@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <!-- PANEL DEFAULT -->
-    <div class="panel">
+    <!--<div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data CPNS</h3>
+        <h3 class="panel-title font-white">Verifikasi Data CPNS</h3>
       </div>
       <div class="panel-body">
        <table style="min-width:100% !important;" id="tbl_riwayat_kepegawaian_cpns" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
@@ -57,23 +57,23 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </div>-->
     <div class="panel">
       <div class="panel-heading">
         <h3 class="panel-title">Riwayat Kepegawaian CPNS</h3>
 
       </div>
       <div class="panel-body">
-          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_kepegawaian"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_kepegawaian"><i class="glyphicon glyphicon-plus"></i> Tambah Data Kepegawaian CPNS</a>
         <hr>
           <table style="min-width:100% !important;" id="tbl_riwayat_kepegawaian_cpns" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
           <thead>
             <tr class="data-item" data-id="">
               <th  rowspan="2" >No.</th>
-              <th  rowspan="2" >NIP Pegawai</th>
-              <th  rowspan="2" >Nama Pegawai</th>
-              <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
-              <th colspan="2" class="text-center">Surat Keputusan</th>
+              <th  rowspan="2" >NIP </th>
+              <th  rowspan="2" >Nama </th>
+<!--              <th  rowspan="2" >Pejabat Pengambil Sumpah</th>-->
+              <th colspan="3" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
               <th rowspan="2" >Tanggal TMT</th>
               <th colspan="3" class="text-center">Lokasi Kerja</th>
@@ -82,11 +82,12 @@
               <th rowspan="2"></th>
             </tr>
             <tr class="data-item" data-id="">
+              <th>Pejabat Yang Menetapkan</th>
               <th>Nomor</th>
               <th>Tanggal</th>
               <th>Instansi Induk</th>
-              <th>Unor Induk</th>
-              <th>Unor</th>
+              <th>Bidang/Bagian</th>
+              <th>Subbidang/Seksi</th>
               <th>Nomor</th>
               <th>Tanggal</th>
             </tr>
@@ -159,7 +160,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">No. SK</label>
+            <label for="bahan"  class="col-sm-3 control-label">Nomor SK</label>
             <div class="col-sm-9">
               <input type="text" id="no_sk_kepegawaian" class="form-control" >
             </div>
@@ -186,7 +187,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">TMT</label>
+            <label for="bahan"  class="col-sm-3 control-label">Tanggal TMT</label>
             <div class="col-sm-9">
               <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                 <input type="text" id="tmt_kepegawaian" class="form-control" required>
@@ -196,7 +197,7 @@
           </div>
           <div class="col-md-12">
             <hr>
-            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Lokasi Kerja</div>
+            <div class="alert alert-info" style="text-transform: uppercase;">Lokasi Kerja</div>
           </div>
           <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Instansi Induk</label>
@@ -229,16 +230,17 @@
           </div>
           <div id="cpns_bkn">
             <div class="col-md-12">
-              <div class="alert alert-info"><i class="fa fa-info-circle"></i> Persetujuan BKN</div>
+                <hr>
+              <div class="alert alert-info" style="text-transform: uppercase;"> Persetujuan BKN</div>
             </div>
             <div class="form-group">
-              <label for="bahan" class="col-sm-3 control-label">Nomor</label>
+              <label for="bahan" class="col-sm-3 control-label">Nomor SK</label>
               <div class="col-sm-9">
                 <input type="text" id="nomor_bkn_kepegawaian" class="form-control" >
               </div>
             </div>
             <div class="form-group">
-              <label for="bahan"  class="col-sm-3 control-label">Tanggal</label>
+              <label for="bahan"  class="col-sm-3 control-label">Tanggal SK</label>
               <div class="col-sm-9">
                 <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                   <input type="text" id="tanggal_bkn_kepegawaian" class="form-control">
@@ -293,7 +295,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">No. SK</label>
+            <label for="bahan"  class="col-sm-3 control-label">Nomor SK</label>
             <div class="col-sm-9">
               <input type="text" id="edit_no_sk_kepegawaian" class="form-control" >
             </div>
@@ -320,7 +322,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">TMT</label>
+            <label for="bahan"  class="col-sm-3 control-label">Tanggal TMT</label>
             <div class="col-sm-9">
               <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                 <input type="text" id="edit_tmt_kepegawaian" class="form-control" required>
@@ -330,7 +332,7 @@
           </div>
           <div class="col-md-12">
             <hr>
-            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Lokasi Kerja</div>
+            <div class="alert alert-info" style="text-transform: uppercase;"> Lokasi Kerja</div>
           </div>
           <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Instansi Induk</label>
@@ -362,16 +364,17 @@
           </div>
           <div id="edit_cpns_bkn">
             <div class="col-md-12">
-              <div class="alert alert-info"><i class="fa fa-info-circle"></i> Persetujuan BKN</div>
+                <hr>
+              <div class="alert alert-info" style="text-transform: uppercase;">Persetujuan BKN</div>
             </div>
             <div class="form-group">
-              <label for="bahan" class="col-sm-3 control-label">Nomor</label>
+              <label for="bahan" class="col-sm-3 control-label">Nomor SK</label>
               <div class="col-sm-9">
                 <input type="text" id="edit_nomor_bkn_kepegawaian" class="form-control" >
               </div>
             </div>
             <div class="form-group">
-              <label for="bahan"  class="col-sm-3 control-label">Tanggal</label>
+              <label for="bahan"  class="col-sm-3 control-label">Tanggal SK</label>
               <div class="col-sm-9">
                 <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                   <input type="text" id="edit_tanggal_bkn_kepegawaian" class="form-control">
@@ -563,6 +566,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
   }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_kepegawaian').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
   $("#add_select2").select2({
     ajax: {

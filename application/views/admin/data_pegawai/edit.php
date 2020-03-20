@@ -122,7 +122,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-md-3 control-label">Rhesus</label>
+                <label class="col-md-3 control-label">Resus Darah</label>
                 <div class="col-md-9">
                   <label class="fancy-radio">
                     <input name="rhesus" value="Positif" class="form-control" type="radio" <?= $data_pegawai->rhesus == 'Positif' ? 'checked="true"' : '' ?> required>
@@ -432,7 +432,7 @@
             <div class="alert alert-info"><i class="fa fa-info-user"></i> KETERANGAN LAINNYA</div>
             <div class="form-horizontal">
               <div class="form-group">
-                <label class="col-md-4 control-label">No. KTP</label>
+                <label class="col-md-4 control-label">NIK</label>
                 <div class="col-md-8">
                   <input name="no_ktp" type="text" class="form-control" value="<?= set_value('no_ktp', $data_keteranganlainnya['no_ktp']) ?>">
                   <?= form_error('no_ktp') ?>

@@ -12,7 +12,7 @@
                           <tr>
                             <th rowspan="2">No.</th>
                             <th rowspan="2">Jenis Jabatan</th>
-                            <th colspan="2">Jumlah Pegawai</th>
+                            <th colspan="2" class="text-center">Jumlah Pegawai</th>
                           </tr>
                           <tr>
                             <th>Perempuan</th>

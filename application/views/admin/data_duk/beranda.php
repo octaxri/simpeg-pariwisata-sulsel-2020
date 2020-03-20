@@ -10,8 +10,8 @@
       </div>
       <form action="<?=admin_url("DataDuk/")?>" method="GET">
       <div class="panel-body">
-        <p>Silahkan isi bidang/bagian terlebih dahulu</p>
-        <hr>
+<!--        <p>Silahkan isi bidang/bagian terlebih dahulu</p>-->
+<!--        <hr>-->
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
@@ -50,16 +50,16 @@
             <tr>
               <th style="text-align: center;" width="5%">DUK</th>
               <th style="text-align: center;">NIP</th>
-              <th style="text-align: center;">NAMA</th>
-              <th style="text-align: center;">PANGKAT/GOLONGAN/RUANG</th>
-              <th style="text-align: center;">ESELON</th>
-              <th style="text-align: center;">JENIS JABATAN</th>
-              <th style="text-align: center;">JABATAN</th>
+              <th style="text-align: center;">Nama</th>
+              <th style="text-align: center;">Pangkat/Golongan/Ruang</th>
+              <th style="text-align: center;">Eselon</th>
+              <th style="text-align: center;">Jenis Jabatan</th>
+              <th style="text-align: center;">Nama Jabatan</th>
               <th style="text-align: center;">TMT CPNS</th>
-              <th style="text-align: center;">PENDIDIKAN</th>
-              <th style="text-align: center;">TANGGAL LAHIR</th>
-              <th style="text-align: center;">TEMPAT LAHIR</th>
-              <th style="text-align: center;">ALAMAT</th>
+              <th style="text-align: center;">Pendidikan</th>
+              <th style="text-align: center;">Tanggal Lahir</th>
+              <th style="text-align: center;">Tempat Lahir</th>
+              <th style="text-align: center;">Alamat</th>
             </tr>
           </thead>
           <tbody>

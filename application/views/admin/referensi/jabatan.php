@@ -50,7 +50,7 @@
                             <tr>
                               <th width="50px;">No.</th>
                               <th>Jenis Jabatan</th>
-                              <th>Total Nama Jabatan</th>
+                              <th>Jumlah Jabatan</th>
                               <th></th>
                             </tr>
                           </thead>
@@ -155,10 +155,9 @@
               <input type="hidden" id="id_jenisjabatan" class="form-control" >
             </div>
           </div>
-          <div class="form-group ">
-          <div class="col-md-3 col-md-offset-5">
+          <center>
             <a  class="btn btn-primary btn-sm" onclick="editData_send('jenisjabatan');" ><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan </a>
-          </div>
+          </center>
           </div>
         </form>
       </div>
@@ -187,7 +186,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">Tingkat Eselon</label>
+            <label for="bahan" class="col-sm-3 control-label">Eselon</label>
             <div class="col-sm-9">
               <select id="tambah_eselon" class="form-control select-2" required>
                 <option value=""></option>
@@ -198,7 +197,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">Jabatan</label>
+            <label for="bahan" class="col-sm-3 control-label">Nama Jabatan</label>
             <div class="col-sm-9">
               <input type="text" id="tambah_jabatan" class="form-control" >
               <p class="error_jabatan"></p>

@@ -3,7 +3,7 @@
         <!-- PANEL DEFAULT -->
         <div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data PNS Unor</h3>
+                <h3 class="panel-title font-white">Verifikasi Data PNS Unor</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_unor" style="min-width: 100%;" class="table table-bordered  table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -14,7 +14,7 @@
                             <th> Nama Pegawai</th>
                             <th> Instansi </th>
                             <th> Nama Unor</th>
-                            <th> No. SK</th>
+                            <th> Nomor SK</th>
                             <th> Tanggal SK</th>
                         </tr>
                     </thead>
@@ -50,8 +50,8 @@
                             <th> NIP</th>
                             <th> Nama Pegawai</th>
                             <th> Instansi </th>
-                            <th> Nama UNOR</th>
-                            <th> No. SK</th>
+                            <th> Nama Unor</th>
+                            <th> Nomor SK</th>
                             <th> Tanggal SK </th>
                             <th> Admin </th>
                             <th> </th>
@@ -90,7 +90,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" align="center">Tambah Data PNS UNOR</h4>
+                <h4 class="modal-title" align="center">Tambah Data PNS Unor</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Subbidang/Seksi</label>
+                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>
                         <div class="col-sm-9">
                             <select id="unor_unor" class="form-control select-2">
                                 <option value=""></option>
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. SK</label>
+                        <label  class="col-sm-3 control-label">Nomor SK</label>
                         <div class="col-sm-9">
                             <input id="no_sk_unor" type="text" class="form-control" >
                         </div>
@@ -151,7 +151,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" align="center">Edit Data PNS UNOR</h4>
+                <h4 class="modal-title" align="center">Edit Data PNS Unor</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Subbidang/Seksi</label>
+                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>
                         <div class="col-sm-9">
                             <select id="edit_unor_unor" class="form-control select2-2">
                                 <option value=""></option>
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. SK</label>
+                        <label  class="col-sm-3 control-label">Nomor SK</label>
                         <div class="col-sm-9">
                             <input id="edit_no_sk_unor" type="text" class="form-control" >
                         </div>

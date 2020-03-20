@@ -43,19 +43,23 @@
       <div class="modal-body">
          
             <form id="satunya" class="form-inline" data-type="insert" data-table="<?=$table?>" autocomplete="off" enctype="multipart/form-data">
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>PERHATIAN!</strong> Inputan dengan tanda <strong style="color: red;">(*)</strong>  , Wajib untuk diisi (<a role="button" data-dismiss="alert" aria-label="Close" >Tutup</a>)
+                </div>
             <table class="table" id="tambah_data_dokumen">
                 <thead>
                     <tr>
-                        <td>Jenis Dokumen</td>
-                        <td>Nama Dokumen</td>
-                        <td>File (PDF)</td>
-                        <td></td>
+                        <th>Jenis Dokumen</th>
+                        <th>Nama Dokumen <strong style="color: red"> (*)</strong></th></th>
+                        <th>File (PDF) <strong style="color: red"> (*)</strong></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            <select name="dokumen_id[]" class="form-control select-2 jenis_dokumen">
+                            <select name="dokumen_id[]" class="form-control select-2 jenis_dokumen" style="height: 20px;">
                                 <?php foreach ($data_dokumen as $data_dokumen): ?>
                                   <option value="<?=$data_dokumen->id?>"><?=$data_dokumen->jenis_dokumen?></option>
                                 <?php endforeach ?>
@@ -139,7 +143,8 @@ $(document).ready(function(){
                 },
             },
            "columns": [ // yang perlu di setup
-                {"data": "id"},
+                {"data": "id", render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;}},
                 {"data": "nama_dokumen"},
                 { "data": null, "defaultContent": "<button class='btn btn-xs btn-success lihat_<?=$table?>'><i class='fa fa-eye'></i>Lihat</button> <button class='btn btn-xs btn-primary edit_<?=$table?>'><i class='fa fa-pencil'></i>Edit</button> <button class='btn btn-xs btn-danger delete_<?=$table?>' data-type='delete' data-table='<?=$table?>'><i class='fa fa-trash'></i>Hapus</button>"}
             ],
@@ -231,14 +236,14 @@ $(document).ready(function(){
                     }
                     html += 
                     '<div class="form-group col-sm-12 '+type+'">' +
-                        '<label class="col-sm-3 control-label">'+x+'</label>' +
+                        '<label class="col-sm-3 control-label">Nama Dokumen</label>' +
                         '<div class="col-sm-9">' +
                           '<input type="'+type+'" name="'+x+'" class="form-control" value="'+edit[x]+'">' +
                         '</div>' +
                       '</div>' }
 
                     html = html + '<div class="form-group col-sm-12 '+type+'">' +
-                        '<label class="col-sm-3 control-label">Ganti file</label>' +
+                        '<label class="col-sm-3 control-label">Ganti File (PDF)</label>' +
                         '<div class="col-sm-9">' +
                           '<input type="file" name="userfile" />' +
                         '</div>' +

@@ -3,7 +3,7 @@
     <!-- PANEL DEFAULT -->
     <div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Jabatan</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Jabatan</h3>
     </div>
     <div class="panel-body">
         <table id="tbl_riwayat_jabatan" cellspacing="0" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable dataTable no-footer">
@@ -27,7 +27,7 @@
                     <th width="200">Unor</th>
                     <th>Jabatan</th>
                     <th>Pelantikan</th>
-                    <th width="65px;">Pejabat Yang Menandatangani</th>
+                    <th width="65px;">Pejabat Yang Menetapkan</th>
                     <th width="65px;">Nomor</th>
                     <th>Tanggal</th>
                 </tr>
@@ -90,7 +90,7 @@
                 <th width="200">Unor</th>
                 <th>Jabatan</th>
                 <th>Pelantikan</th>
-                <th width="65px;">Pejabat Yang Menandatangani</th>
+                <th width="65px;">Pejabat Yang Menetapkan</th>
                 <th width="65px;">Nomor</th>
                 <th>Tanggal</th>
             </tr>

@@ -6,11 +6,11 @@
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-md-12">
-                      <table style="min-width: 100%;" class="table table-striped datatable-normal table-hover table-bordered">
+                      <table style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                         <thead>
                           <tr>
                             <th width="50px;"> No.</th>
-                            <th> Nama Lengkap</th>
+                            <th> Nama </th>
                             <th> NIP</th>
                             <th> E-mail</th>
                             <th>  </th>

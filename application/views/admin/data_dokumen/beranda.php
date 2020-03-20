@@ -9,8 +9,9 @@
         </div>
       </div>
       <div class="panel-body">
-        <p>Silahkan pilih bidang/bagian untuk pencarian data</p>
-        <hr>
+<!--          <div class="alert alert-warning alert-dismissible" role="alert">-->
+<!--            <p>Silahkan pilih bidang/bagian untuk pencarian data</p>-->
+<!--          </div>-->
         <div class="row">
           <div class="col-md-12">
             <div class="form-group col-sm-12">
@@ -147,7 +148,7 @@ $(document).ready(function(){
           }
           html += 
           '<div class="form-group col-sm-12 '+type+'">' +
-              '<label class="col-sm-3 control-label">'+x+'</label>' +
+              '<label class="col-sm-3 control-label">Nama Dokumen</label>' +
               '<div class="col-sm-9">' +
                 '<input type="'+type+'" name="'+x+'" class="form-control" value="'+edit[x]+'">' +
               '</div>' +

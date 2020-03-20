@@ -79,26 +79,26 @@
                                     <td><i><?=$data_pegawai->jenis_pangkat?></i></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Subbidang/Seksi</td>
+                                    <td>Bidang/Bagian</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td><i> <?=$data_pegawai->satuan_kerja?></i></td>
                                 </tr>
-                                <tr class="data-item" data-id="">
-                                    <td>Bagian</td>
-                                    <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> - </i></td>
-                                </tr>
-                                <tr class="data-item" data-id="">
-                                    <td>Sub Bagian</td>
-                                    <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> - </i></td>
-                                </tr>
+<!--                                <tr class="data-item" data-id="">-->
+<!--                                    <td>Bagian</td>-->
+<!--                                    <td width="10px" style="color: #848484;">:</td>-->
+<!--                                    <td><i> - </i></td>-->
+<!--                                </tr>-->
+<!--                                <tr class="data-item" data-id="">-->
+<!--                                    <td>Sub Bagian</td>-->
+<!--                                    <td width="10px" style="color: #848484;">:</td>-->
+<!--                                    <td><i> - </i></td>-->
+<!--                                </tr>-->
                             </table>
                         </div>
                         <div class="col-md-6">
                             <table class="standard-table" style="text-align: left;" width="100%" cellspacing="0" cellpadding="0">
                                 <tr class="data-item" data-id="">
-                                    <td>Esselon</td>
+                                    <td>Eselon</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td><i> <?=$data_pegawai->eselon?> </i></td>
                                 </tr>
@@ -209,7 +209,7 @@
                                     <td>  <?=$data_keteranganbadan->berat_badan?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>No. KTP</td>
+                                    <td>NIK</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td>  <?=$data_keteranganlainnya->no_ktp?></td>
                                 </tr><tr class="data-item" data-id="">
@@ -608,7 +608,7 @@
                                         <th>kedudukan</th>
                                         <th>Jabatan</th>
                                         <th>Pelantikan</th>
-                                        <th width="65px;">Pejabat Yang Menandatangani</th>
+                                        <th width="65px;">Pejabat Yang Menetapkan</th>
                                         <th width="65px;">Nomor</th>
                                         <th>Tanggal</th>
                                     </tr>
@@ -871,7 +871,7 @@
                                     <tr >
                                         <th> No.</th>
                                         <th> Jenis Penghargaan</th>
-                                        <th> No. SK</th>
+                                        <th> Nomor SK</th>
                                         <th> Tanggal SK</th>
                                         <th> Tahun</th>
                                         <th> </th>
@@ -938,7 +938,7 @@
                                         <th> No.</th>
                                         <th> Instansi </th>
                                         <th> Nama UNOR</th>
-                                        <th> No. SK</th>
+                                        <th> Nomor SK</th>
                                         <th> Tanggal SK</th>
                                         <!-- <th> Prosedur Awal</th> -->
                                         <th> </th>
@@ -975,7 +975,7 @@
                                         <th> No.</th>
                                         <th> Jenis Pemberhentian </th>
                                         <th> Kedudukan Hukum</th>
-                                        <th> No. SK</th>
+                                        <th> Nomor SK</th>
                                         <th> Tanggal SK</th>
                                         <!-- <th> Prosedur Asal</th> -->
                                         <th> </th>
@@ -1010,7 +1010,7 @@
                                 <thead>
                                     <tr >
                                         <th> No.</th>
-                                        <th> No. SK </th>
+                                        <th> Nomor SK </th>
                                         <th> Tanggal SK</th>
                                         <th> Kredit Utama</th>
                                         <th> Kredit Penunjang</th>
@@ -1214,7 +1214,7 @@
                                     <tr >
                                         <th> No.</th>
                                         <th> Jenis Cuti </th>
-                                        <th> No. SK Cuti</th>
+                                        <th> Nomor SK Cuti</th>
                                         <th> Tgl. SKEP</th>
                                         <th> Tanggal Awal</th>
                                         <th> Tanggal Akhir</th>

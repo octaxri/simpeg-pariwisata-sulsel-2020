@@ -8,7 +8,7 @@
           <table id="<?=$table?>" style="min-width: 100%;"  class="table table-bordered">
             <thead>
               <tr>
-                <th width="5%" style="vertical-align : middle;text-align:center;"> ID</th>
+                <th width="5%" style="vertical-align : middle;text-align:center;"> No.</th>
                 <th width="20%" style="vertical-align : middle;text-align:center;"> Nomor SK</th>
                 <th width="20%" style="vertical-align : middle;text-align:center;"> Tanggal SK</th>
                 <th width="25%" style="vertical-align : middle;text-align:center;"></th>
@@ -112,7 +112,8 @@
 	            "type": "POST"
 	        },
 	        "columns": [
-	            { "data": "id" },
+	            { "data": "id",render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;} },
 	            { "data": "no_sk" },
 	            { "data": "tgl_sk" },
 	            {

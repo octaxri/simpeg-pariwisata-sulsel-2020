@@ -9,11 +9,11 @@
         </div>
       </div>
       <div class="panel-body">
-        <p>Silahkan isi bidang/bagian untuk menampilkan struktur organisasi di setiap bidang/bagian</p>
-        <hr>
+<!--        <p>Silahkan isi bidang/bagian untuk menampilkan struktur organisasi di setiap bidang/bagian</p>-->
+<!--        <hr>-->
         <div class="row">
           <div class="col-md-12">
-            <div class="form-group col-sm-4">
+            <div class="form-group col-sm-4" style="min-width: 100%;">
               <label class=" control-label">Bidang/Bagian</label>
               <select id="satuan_kerja" class="form-control select-2">
                 <?php foreach ($data_satker as $data_satker): ?>

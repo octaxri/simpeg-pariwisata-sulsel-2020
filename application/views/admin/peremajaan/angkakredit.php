@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
         <!-- PANEL DEFAULT -->
-        <div class="panel">
+        <!--<div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data Angka Kredit</h3>
+                <h3 class="panel-title font-white">Verifikasi Data Angka Kredit</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_angkakredit" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -44,29 +44,39 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>-->
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Riwayat Angka Kredit </h3>
 
             </div>
             <div class="panel-body">
-                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_angkakredit"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_angkakredit"><i class="glyphicon glyphicon-plus"></i> Tambah Data Angka Kredit</a>
                 <hr>
                 <table id="tbl_riwayat_angkakredit" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                     <thead>
                         <tr >
-                            <th> No.</th>
-                            <th> NIP</th>
-                            <th> Nama Pegawai</th>
-                            <th> No. SK </th>
-                            <th> Tanggal SK</th>
-                            <th> Kredit Utama</th>
-                            <th> Kredit Penunjang</th>
-                            <th> Total Kredit </th>
-                            <th> Jabatan</th>
-                            <th> Admin</th>
-                            <th> </th>
+                            <th rowspan="2"> No.</th>
+                            <th rowspan="2"> NIP</th>
+                            <th rowspan="2"> Nama</th>
+                            <th colspan="2"  class="text-center"> Surat Keputusan</th>
+                            <th rowspan="2" style="display: none"> Angka Kredit Pertama</th>
+                            <th colspan="2"  class="text-center" style="display: none"> Mulai Penilaian</th>
+                            <th colspan="2"  class="text-center" style="display: none"> Selesai Penilaian</th>
+                            <th rowspan="2"> Kredit Utama</th>
+                            <th rowspan="2"> Kredit Penunjang</th>
+                            <th rowspan="2"> Total Kredit </th>
+                            <th rowspan="2"> Jabatan</th>
+                            <th rowspan="2"> Admin</th>
+                            <th rowspan="2"> </th>
+                        </tr>
+                        <tr>
+                            <th> Nomor </th>
+                            <th> Tanggal </th>
+                            <th style="display: none"> Bulan </th>
+                            <th style="display: none"> Tahun </th>
+                            <th style="display: none"> Bulan </th>
+                            <th style="display: none"> Tahun </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,6 +88,11 @@
                                     <td><?=$riwayat_angkakredit_verified->nama_lengkap?></td>
                                     <td><?=$riwayat_angkakredit_verified->no_sk?></td>
                                     <td><?=$riwayat_angkakredit_verified->tanggal_sk?></td>
+                                    <td style="display: none"><?=$riwayat_angkakredit_verified->pertama_angkakredit?></td>
+                                    <td style="display: none"><?=$riwayat_angkakredit_verified->bulan_mulai?></td>
+                                    <td style="display: none"><?=$riwayat_angkakredit_verified->tahun_mulai?></td>
+                                    <td style="display: none"><?=$riwayat_angkakredit_verified->bulan_selesai?></td>
+                                    <td style="display: none"><?=$riwayat_angkakredit_verified->tahun_selesai?></td>
                                     <td><?=$riwayat_angkakredit_verified->kredit_utama?></td>
                                     <td><?=$riwayat_angkakredit_verified->kredit_penunjang?></td>
                                     <td><?=$riwayat_angkakredit_verified->kredit_total?></td>
@@ -118,7 +133,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. SK PAK</label>
+                        <label  class="col-sm-3 control-label">Nomor SK PAK</label>
                         <div class="col-sm-9">
                             <input id="no_sk_angkakredit" type="text" class="form-control" >
                         </div>
@@ -239,16 +254,16 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                      <!-- <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label> -->
+<!--                       <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>-->
                       <div class="col-sm-9">
-                        <!-- <select id="add_select2" class="form-control select2"  style="width: 100%"></select> -->
+<!--                         <select id="edit_select2" class="form-control select2"  style="width: 100%"></select>-->
                         <input type="hidden" id="edit_nama_lengkap" class="form-control" >
                         <input type="hidden" id="edit_nip" class="form-control" >
                         <input type="hidden" id="edit_admin" value="<?=$this->session->fullname?>" class="form-control" >
                       </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. SK PAK</label>
+                        <label  class="col-sm-3 control-label">Nomor SK PAK</label>
                         <div class="col-sm-9">
                             <input id="edit_no_sk_angkakredit" type="text" class="form-control" >
                         </div>
@@ -262,7 +277,10 @@
                             </div>
                         </div>
                         <div class="col-sm-5">
-                            <input type="checkbox" id="edit_pertama_angkakredit" class=""> &nbsp;Angka Kredit Pertama
+                            <label class="fancy-checkbox custom-bgcolor-blue">
+                            <input type="checkbox" id="edit_pertama_angkakredit">
+                                <span class="text-muted">Angka Kredit Pertama</a></span>
+                            </label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -287,7 +305,7 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun Mulai Penilaian</label>
                         <div class="col-sm-9">
-                            <input id="edit_tahun_mulai_angkakredit" type="text" class="form-control" >
+                            <input id="edit_tahun_mulai_angkakredit" type="text" class="form-control onlyYears" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -312,31 +330,31 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun Selesai Penilaian</label>
                         <div class="col-sm-9">
-                            <input id="edit_tahun_selesai_angkakredit" type="text" class="form-control" >
+                            <input id="edit_tahun_selesai_angkakredit" type="text" class="form-control onlyYears" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Kredit Utama Baru</label>
                         <div class="col-sm-9">
-                            <input id="edit_ku_baru_angkakredit" type="text" class="form-control" >
+                            <input id="edit_ku_baru_angkakredit" type="number"  value="0" placeholder="0" step="0.01" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Kredit Penunjang Baru</label>
                         <div class="col-sm-9">
-                            <input id="edit_kp_baru_angkakredit" type="text" class="form-control" >
+                            <input id="edit_kp_baru_angkakredit" type="number" value="0" placeholder="0" step="0.01" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Total Kredit Baru</label>
                         <div class="col-sm-9">
-                            <input id="edit_total_baru_angkakredit" type="text" class="form-control" >
+                            <input id="edit_total_baru_angkakredit" type="number" class="form-control" value="0" step="0.01" readonly="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Jabatan</label>
+<!--                        <label  class="col-sm-3 control-label">Jabatan</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_jabatan_angkakredit" type="text" class="form-control" >
+                            <input id="edit_nama_jabatan_angkakredit" type="hidden" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="form-group ">
@@ -351,8 +369,9 @@
 </div>
 
 <!-- Cari Data Riwayat Jabatan -->
-<div id="cari_data_angkakredit" class="modal fade " role="dialog">
-    <div class="modal-dialog "><!-- Modal content-->
+<!-- Modal content-->
+<!--<div id="cari_data_angkakredit" class="modal fade " role="dialog">
+    <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -387,9 +406,7 @@
             </div>
         </div>
     </div>
-</div>
-
-
+</div>-->
 
 <script>
     var idGlob;
@@ -437,10 +454,21 @@
                 type: 'POST',
                 url: '<?=admin_url('PeremajaanData/editData/')?>'+idGlob+'/'+model,
                 data: {
-                    jenis_angkakredit: $('#edit_jenis_angkakredit').val(),
-                    kedudukan_hukum: $('#edit_kedudukan_angkakredit').val(),
-                    no_sk: $('#edit_no_sk_angkakredit').val(),
-                    tanggal_sk: $('#edit_tanggal_sk_angkakredit').val(),
+                    nip: $('#edit_nip').val(),
+                    nama_lengkap: $('#edit_nama_lengkap').val(),
+                    no_sk_angkakredit: $('#edit_no_sk_angkakredit').val(),
+                    tanggal_sk_angkakredit: $('#edit_tanggal_sk_angkakredit').val(),
+                    pertama_angkakredit: $("#edit_pertama_angkakredit").is(':checked'),
+                    bulan_mulai_angkakredit: $('#edit_bulan_mulai_angkakredit').val(),
+                    bulan_selesai_angkakredit: $('#edit_bulan_selesai_angkakredit').val(),
+                    tahun_mulai_angkakredit: $('#edit_tahun_mulai_angkakredit').val(),
+                    tahun_selesai_angkakredit: $('#edit_tahun_selesai_angkakredit').val(),
+                    ku_baru_angkakredit: $('#edit_ku_baru_angkakredit').val(),
+                    kp_baru_angkakredit: $('#edit_kp_baru_angkakredit').val(),
+                    total_baru_angkakredit: $('#edit_total_baru_angkakredit').val(),
+                    // jenis_angkakredit: $('#edit_jenis_angkakredit').val(),
+                    // kedudukan_hukum: $('#edit_kedudukan_angkakredit').val(),
+                    // no_sk: $('#edit_no_sk_angkakredit').val(),
                     admin: $('#edit_admin').val()
                 }
             }).done(function(response) {
@@ -459,10 +487,21 @@
     function editData(model,id){
         switch (model) {
             case 'angkakredit':
-            $('#edit_jenis_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
-            $('#edit_kedudukan_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(4)").text()).trigger('change');
-            $('#edit_no_sk_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(5)").text());
-            $('#edit_tanggal_sk_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(6)").text());
+            $('#edit_nip').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(1)").text()).trigger('change');
+            $('#edit_no_sk_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
+            $('#edit_tanggal_sk_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(4)").text()).trigger('change');
+                if ($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(5)").text() == "1") {
+                    $('#edit_pertama_angkakredit').prop("checked", true);
+                } else {
+                    $('#edit_pertama_angkakredit').prop("checked", false);
+                }
+            $('#edit_bulan_mulai_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(6)").text()).trigger('change');
+            $('#edit_tahun_mulai_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(7)").text()).trigger('change');
+            $('#edit_bulan_selesai_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(8)").text()).trigger('change');
+            $('#edit_tahun_selesai_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(9)").text()).trigger('change');
+            $('#edit_ku_baru_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(10)").text());
+            $('#edit_kp_baru_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(11)").text());
+            $('#edit_total_baru_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(12)").text());
             idGlob = id;
             break;
             default:
@@ -531,6 +570,15 @@ $('#kp_baru_angkakredit').keyup(function(){
     $('#total_baru_angkakredit').val((parseFloat($('#ku_baru_angkakredit').val()) + parseFloat($('#kp_baru_angkakredit').val())).toFixed(2));
 });
 
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_angkakredit').on('hidden.bs.modal', function () {
+        location.reload();
+    });
+
 $("#add_select2").select2({
     ajax: {
         url: "<?=admin_url('PeremajaanData/getDataPegawaiAjax/')?>",
@@ -591,6 +639,13 @@ $("#id_jabatan_angkakredit").on("select2:select", function (e) {
         $('#nama_jabatan_angkakredit').val($('#id_jabatan_angkakredit').text());
 });
 
+    $('#edit_ku_baru_angkakredit').keyup(function(){
+        $('#edit_total_baru_angkakredit').val(parseFloat($('#edit_ku_baru_angkakredit').val()) + parseFloat($('#edit_kp_baru_angkakredit').val()));
+    });
+    $('#edit_kp_baru_angkakredit').keyup(function(){
+        $('#edit_total_baru_angkakredit').val((parseFloat($('#edit_ku_baru_angkakredit').val()) + parseFloat($('#edit_kp_baru_angkakredit').val())).toFixed(2));
+    });
+
 $("#edit_select2").select2({
     ajax: {
         url: "<?=admin_url('PeremajaanData/getDataPegawaiAjax/')?>",
@@ -621,15 +676,15 @@ templateSelection: formatResultSelection,
 minimumInputLength: 1
 });
 $("#edit_select2").on("select2:select", function (e) {
-    $("#edit_namalengkap").val($("#edit_select2").text());
+    $("#edit_nama_lengkap").val($("#edit_select2").text());
     $("#edit_nip").val($("#edit_select2").val());
-    $('#edit_jabatan_angkakredit').select2({
+    $('#edit_nama_jabatan_angkakredit').select2({
         placeholder: "-Pilih-",
         ajax: {
             url: "<?=admin_url('PeremajaanData/getRiwayatJabatan')?>",
             type: "POST",
             data: {
-                nip: $('#nip').val()
+                nip: $('#edit_nip').val()
             },
             processResults: function (data) {
                 return {

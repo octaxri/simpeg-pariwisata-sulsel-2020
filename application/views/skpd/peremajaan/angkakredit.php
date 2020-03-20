@@ -3,7 +3,7 @@
         <!-- PANEL DEFAULT -->
         <div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data Angka Kredit</h3>
+                <h3 class="panel-title font-white">Verifikasi Data Angka Kredit</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_angkakredit" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -12,7 +12,7 @@
                             <th> No.</th>
                             <th> NIP</th>
                             <th> Nama Pegawai</th>
-                            <th> No. SK </th>
+                            <th> Nomor SK </th>
                             <th> Tanggal SK</th>
                             <th> Kredit Utama</th>
                             <th> Kredit Penunjang</th>
@@ -53,7 +53,7 @@
                                 <th> No.</th>
                                 <th> NIP</th>
                                 <th> Nama Pegawai</th>
-                                <th> No. SK </th>
+                                <th> Nomor SK </th>
                                 <th> Tanggal SK</th>
                                 <th> Kredit Utama</th>
                                 <th> Kredit Penunjang</th>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. SK PAK</label>
+                        <label  class="col-sm-3 control-label">Nomor SK PAK</label>
                         <div class="col-sm-9">
                             <input id="no_sk_angkakredit" type="text" class="form-control" >
                         </div>
@@ -244,7 +244,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label  class="col-sm-3 control-label">No. SK PAK</label>
+                    <label  class="col-sm-3 control-label">Nomor SK PAK</label>
                     <div class="col-sm-9">
                         <input id="edit_no_sk_angkakredit" type="text" class="form-control" >
                     </div>

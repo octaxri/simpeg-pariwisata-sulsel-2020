@@ -62,7 +62,7 @@
                 <h4 class="heading">Informasi Kepegawaian
                     <div class="pull-right">
                         <!-- <a href="<?=pegawai_url('DataPegawai/edit/').$data_pegawai->nip?>" class="btn btn-success btn-xs"><span><i class="fa fa-edit"></i></span>Ubah Data</a> -->
-                        <!--<a href="<?=pegawai_url('Laporan/cetak/').$data_pegawai->nip?>" target="_blank" class="btn btn-primary btn-xs"><i class="fa fa-print"></i>Cetak</a>-->
+                        <a href="<?=pegawai_url('Laporan/cetak/').$data_pegawai->nip?>" target="_blank" class="btn btn-primary btn-xs"><i class="fa fa-print"></i>Cetak</a>
                     </div>
                 </h4>
                 <!-- <div class="text-center"></div> -->
@@ -87,26 +87,26 @@
                                     <td><i><?=date('d F Y',strtotime($data_pegawai->tmt_jenis_pangkat))?></i></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Subbidang/Seksi</td>
+                                    <td>Bidang/Bagian</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td><i> <?=$data_pegawai->satuan_kerja?></i></td>
                                 </tr>
-                                <tr class="data-item" data-id="">
-                                    <td>Bagian</td>
-                                    <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> - </i></td>
-                                </tr>
-                                <tr class="data-item" data-id="">
-                                    <td>Sub Bagian</td>
-                                    <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> - </i></td>
-                                </tr>
+<!--                                <tr class="data-item" data-id="">-->
+<!--                                    <td>Bagian</td>-->
+<!--                                    <td width="10px" style="color: #848484;">:</td>-->
+<!--                                    <td><i> - </i></td>-->
+<!--                                </tr>-->
+<!--                                <tr class="data-item" data-id="">-->
+<!--                                    <td>Sub Bagian</td>-->
+<!--                                    <td width="10px" style="color: #848484;">:</td>-->
+<!--                                    <td><i> - </i></td>-->
+<!--                                </tr>-->
                             </table>
                         </div>
                         <div class="col-md-6">
                             <table class="standard-table" style="text-align: left;" width="100%" cellspacing="0" cellpadding="0">
                                 <tr class="data-item" data-id="">
-                                    <td>Esselon</td>
+                                    <td>Eselon</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td><i> <?=$data_pegawai->eselon?> </i></td>
                                 </tr>
@@ -226,7 +226,7 @@
                                     <td>  <?=$data_keteranganbadan->berat_badan?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>No. KTP</td>
+                                    <td>NIK</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td>  <?=$data_keteranganlainnya->no_ktp?></td>
                                 </tr><tr class="data-item" data-id="">
@@ -234,7 +234,7 @@
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_karpeg?></td>
                                 </tr><tr class="data-item" data-id="">
-                                    <td>No.ASKES</td>
+                                    <td>No. ASKES</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_askes?></td>
                                 </tr><tr class="data-item" data-id="">
@@ -625,7 +625,7 @@
                                         <th>kedudukan</th>
                                         <th>Jabatan</th>
                                         <th>Pelantikan</th>
-                                        <th width="65px;">Pejabat Yang Menandatangani</th>
+                                        <th width="65px;">Pejabat Yang Menetapkan</th>
                                         <th width="65px;">Nomor</th>
                                         <th>Tanggal</th>
                                     </tr>

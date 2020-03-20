@@ -3,7 +3,7 @@
         <!-- PANEL DEFAULT -->
         <div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data Penghargaan</h3>
+                <h3 class="panel-title font-white">Verifikasi Data Penghargaan</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_penghargaan" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -13,7 +13,7 @@
                             <th> NIP</th>
                             <th> Nama Pegawai</th>
                             <th> Jenis Penghargaan</th>
-                            <th> No. SK</th>
+                            <th> Nomor SK</th>
                             <th> Tanggal SK</th>
                             <th> Tahun</th>
                         </tr>
@@ -51,7 +51,7 @@
                             <th> NIP</th>
                             <th> Nama Pegawai</th>
                             <th> Jenis Penghargaan</th>
-                            <th> No. SK</th>
+                            <th> Nomor SK</th>
                             <th> Tanggal SK</th>
                             <th> Tahun</th>
                             <th> Admin</th>

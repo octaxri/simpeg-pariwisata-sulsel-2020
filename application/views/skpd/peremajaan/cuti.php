@@ -3,7 +3,7 @@
     <!-- PANEL DEFAULT -->
     <div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Cuti</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Cuti</h3>
       </div>
       <div class="panel-body">
         <table id="tbl_riwayat_cuti" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -13,7 +13,7 @@
               <th> NIP</th>
               <th> Nama Pegawai</th>
               <th> Jenis Cuti </th>
-              <th> No. SK Cuti</th>
+              <th> Nomor SK Cuti</th>
               <th> Tgl. SKEP</th>
               <th> Tanggal Awal</th>
               <th> Tanggal Akhir</th>
@@ -59,7 +59,7 @@
             <th> NIP</th>
             <th> Nama Pegawai</th>
             <th> Jenis Cuti </th>
-            <th> No. SK Cuti</th>
+            <th> Nomor SK Cuti</th>
             <th> Tgl. SKEP</th>
             <th> Tanggal Awal</th>
             <th> Tanggal Akhir</th>
@@ -137,7 +137,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label  class="col-sm-3 control-label">No. SK Cuti</label>
+            <label  class="col-sm-3 control-label">Nomor SK Cuti</label>
             <div class="col-sm-9">
               <input id="no_sk_cuti" type="text" class="form-control" >
             </div>
@@ -239,7 +239,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label  class="col-sm-3 control-label">No. SK Cuti</label>
+            <label  class="col-sm-3 control-label">Nomor SK Cuti</label>
             <div class="col-sm-9">
               <input id="edit_no_sk_cuti" type="text" class="form-control" >
             </div>

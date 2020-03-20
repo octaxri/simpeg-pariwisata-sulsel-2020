@@ -3,7 +3,7 @@
         <!-- PANEL DEFAULT -->
         <div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data angka kredit</h3>
+                <h3 class="panel-title font-white">Verifikasi Data angka kredit</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_angkakredit" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -12,7 +12,7 @@
                             <th> No.</th>
                             <th> NIP</th>
                             <th> Nama Pegawai</th>
-                            <th> No. SK </th>
+                            <th> Nomor SK </th>
                             <th> Tanggal SK</th>
                             <th> Kredit Utama</th>
                             <th> Kredit Penunjang</th>

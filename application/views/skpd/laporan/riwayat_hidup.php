@@ -183,7 +183,7 @@
                         <td>`+item.tanggal_sk_cpns+`</td>
                       </tr>
                       <tr>
-                        <td>No. SK CPNS</td>
+                        <td>Nomor SK CPNS</td>
                         <td>:</td>
                         <td>`+item.no_sk_cpns+`</td>
                       </tr>
@@ -198,7 +198,7 @@
                         <td>`+item.tanggal_sk_pns+`</td>
                       </tr
                       <tr>
-                        <td>No. SK PNS</td>
+                        <td>Nomor SK PNS</td>
                         <td>:</td>
                         <td>`+item.no_sk_pns+`<td>
                       </tr>

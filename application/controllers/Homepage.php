@@ -33,7 +33,7 @@ class Homepage extends CI_Controller {
             'data_pegawai_cpns'    => $data_pegawai_cpns,
             'data_pegawai_pensiun' => $data_pegawai_pensiun,
             'data_informasi'       => $data_informasi,
-            'isi'                  => 'homepage/home'
+            'isi'                  => 'homepage/homeNew'
         );
         $this->load->view('homepage/_layout/wrapper', $data);
     }

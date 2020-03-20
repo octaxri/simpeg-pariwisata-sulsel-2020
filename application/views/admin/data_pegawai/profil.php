@@ -1,4 +1,5 @@
 <!-- OVERVIEW -->
+<?php setlocale(LC_TIME, 'id_ID'); ?>
 <div class="container-fluid">
     <div class="panel panel-profile">
         <div class="clearfix">
@@ -14,17 +15,17 @@
                     </div>
                     <div class="profile-stat">
                         <div class="row ">
-                            <div class="col-md-12 stat-item " style="font-size: 1.2em; padding-top: 5px; padding-bottom: 10px;">
-                                <span>Pangkat/Golongan/Ruang</span>
+                            <div class="col-md-12  " style="font-size: 1.2em; padding-top: 5px; padding-bottom: 10px;">
+                                <span>Pangkat/Golongan/Ruang</span><br>
                                 <p class="label label-default "><?=$data_pegawai->jenis_pangkat?></p>
                                 <!-- <span  class="label label-default " ></span> -->
                             </div>
-                            <div class="col-md-12 stat-item " style="font-size: 1.2em; padding-top: 5px; padding-bottom: 10px;">
-                                <span>Jabatan</span>
+                            <div class="col-md-12  " style="font-size: 1.2em; padding-top: 5px; padding-bottom: 10px;">
+                                <span>Jabatan</span><br>
                                 <p class="label label-default "><?=$data_pegawai->nama_jabatan?></p>
                             </div>
-                            <div class="col-md-12 stat-item " style="font-size: 1.2em; padding-top: 5px; padding-bottom: 10px;">
-                                <span>Status Pegawai </span>
+                            <div class="col-md-12  " style="font-size: 1.2em; padding-top: 5px; padding-bottom: 10px;">
+                                <span>Status Pegawai </span><br>
                                <p class="label label-success"><?=$data_pegawai->kedudukan_kepegawaian?></p>
                             </div>
                         </div>
@@ -34,21 +35,21 @@
                 <!-- PROFILE DETAIL -->
                 <div class="profile-detail">
                     <div class="profile-info">
-                        <h4 class="heading">Info Dasar</h4>
+                        <h4 class="heading">Informasi Dasar</h4><hr>
                         <ul class="list-unstyled list-justify">
-                            <li>NIP
-                                <span> <strong><?=$data_pegawai->nip?></strong></span>
+                            <li><b>NIP</b>
+                                <span><?=$data_pegawai->nip?></span>
                             </li>
-                            <li>NIP Lama
-                                <span> <strong><?=$data_pegawai->niplama?></strong></span>
+                            <li><b>NIP Lama</b>
+                                <span><?=$data_pegawai->niplama?></span>
                             </li>
-                            <li>E-mail
+                            <li><b>E-mail</b>
                                 <span><?=$data_pegawai->email?></span>
                             </li>
-                            <li>No. Telepon
+                            <li><b>No. Telepon</b>
                                 <span><?=$data_alamat->telepon != null ? $data_alamat->telepon : '-'?> </span>
                             </li>
-                            <li>No. HP
+                            <li><b>No. HP</b>
                                 <span><?=$data_alamat->hp != null ? $data_alamat->hp : '-'?> </span>
                             </li>
                         </ul>
@@ -73,58 +74,58 @@
                         <div class="col-md-6">
                             <table class="standard-table" style="text-align: left;" width="100%" cellspacing="0" cellpadding="0">
                                  <tr class="data-item" data-id="">
-                                    <td>Instansi Induk</td>
+                                     <td><b>Instansi Induk</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> Dinas Kebudayaan dan Kepariwisataan Provinsi Sulawesi Selatan</i></td>
+                                    <td > Dinas Kebudayaan dan Kepariwisataan Provinsi Sulawesi Selatan</td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Bidang/Bagian</td>
+                                    <td><b>Bidang/Bagian</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> <?=ucfirst(strtolower($data_pegawai->satuan_kerja))?></i></td>
+                                    <td> <?=ucfirst(strtolower($data_pegawai->satuan_kerja))?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Subbidang/Seksi</td>
+                                    <td><b>Subbidang/Seksi</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> <?=ucfirst(strtolower($data_pegawai->unit_kerja))?> </i></td>
+                                    <td> <?=ucfirst(strtolower($data_pegawai->unit_kerja))?> </td>
                                 </tr>
                             </table>
                         </div>
                         <div class="col-md-6">
                             <table class="standard-table" style="text-align: left;" width="100%" cellspacing="0" cellpadding="0">
                                 <tr class="data-item" data-id="">
-                                    <td>Status Kepegawaian</td>
+                                    <td><b>Status Kepegawaian</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i><?=$data_pegawai->status_kepegawaian?></i></td>
+                                    <td><?=$data_pegawai->status_kepegawaian?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td width="150">Pangkat/Golongan/Ruang</td>
+                                    <td width="150"><b>Pangkat/Golongan/Ruang</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i><?=$data_pegawai->jenis_pangkat?></i></td>
+                                    <td><?=$data_pegawai->jenis_pangkat?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>TMT Pangkat/Golongan/Ruang</td>
+                                    <td><b>TMT Pangkat/Golongan/Ruang</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i><?=date('d F Y',strtotime($data_pegawai->tmt_jenis_pangkat))?></i></td>
+                                    <td><?=strftime('%e %B %Y',strtotime($data_pegawai->tmt_jenis_pangkat))?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Esselon</td>
+                                    <td><b>Eselon</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> <?=$data_pegawai->eselon?> </i></td>
+                                    <td> <?=$data_pegawai->eselon?> </td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Jenis Jabatan</td>
+                                    <td><b>Jenis Jabatan</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i><?=$data_pegawai->jenis_jabatan?></i></td>
+                                    <td><?=$data_pegawai->jenis_jabatan?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Nama Jabatan </td>
+                                    <td><b>Nama Jabatan</b> </td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i><?=$data_pegawai->nama_jabatan?></i></td>
+                                    <td><?=$data_pegawai->nama_jabatan?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>TMT Jabatan</td>
+                                    <td><b>TMT Jabatan</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i><?=date('d F Y',strtotime($data_pegawai->tmt_jabatan))?></i></td>
+                                    <td><?=strftime('%e %B %Y',strtotime($data_pegawai->tmt_jabatan))?></td>
                                 </tr>
                             </table>
                         </div>
@@ -135,7 +136,7 @@
                 <div class="custom-tabs-line tabs-line-bottom left-aligned">
                     <ul class="nav" role="tablist">
                         <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Data Pribadi</a></li>
-                        <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Data keluarga</a></li>
+<!--                        <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Data Keluarga</a></li>-->
                     </ul>
                 </div>
                 <div class="tab-content">
@@ -143,26 +144,26 @@
                         <div class="col-md-6">
                             <table class="standard-table" width="100%" cellspacing="0" cellpadding="0">
                                 <tr class="data-item" data-id="">
-                                    <td>Tempat Lahir</td>
+                                    <td><b>Tempat Lahir</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> <?=$data_pegawai->tempat_lahir?> </i></td>
+                                    <td> <?=$data_pegawai->tempat_lahir?> </td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Tanggal Lahir</td>
+                                    <td><b>Tanggal Lahir</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i><?php 
+                                    <td><?php
 
                                     $date = $data_pegawai->tanggal_lahir;
                                     $date = str_replace('/', '-', $date);
 
-                                    echo date('d F Y',strtotime($date));
+                                    echo strftime('%e %B %Y',strtotime($date));
 
-                                    ?></i></td>
+                                    ?></td>
                                 </tr>
                                <tr class="data-item" data-id="">
-                                    <td>Usia</td>
+                                   <td><b>Usia</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> <?php
+                                    <td> <?php
                                     $date = $data_pegawai->tanggal_lahir;
                                     // var_dump($date);
                                     $date = str_replace('/', '-', trim($date, '"'));
@@ -174,42 +175,42 @@
                                     echo $akhir->diff($awal)->format("%y Tahun")?> </i></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Agama</td>
+                                    <td><b>Agama</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> <?=$data_pegawai->agama?> </i></td>
+                                    <td> <?=$data_pegawai->agama?> </td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Jenis Kelamin</td>
+                                    <td><b>Jenis Kelamin</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><i> <?=$data_pegawai->jenis_kelamin?> </i></td>
+                                    <td> <?=$data_pegawai->jenis_kelamin?> </td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td width="150">Gol. Darah</td>
+                                    <td width="150"><b>Gol. Darah</b></td>
                                     <td width="1">:</td>
                                     <td><?=$data_pegawai->golongan_darah?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td width="150">Alamat</td>
+                                    <td width="150"><b>Alamat</b></td>
                                     <td width="1">:</td>
                                     <td><?=$data_alamat->alamat?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Kabupaten/Kota</td>
+                                    <td><b>Kabupaten/Kota</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_alamat->kab?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Kecamatan</td>
+                                    <td><b>Kecamatan</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_alamat->kec?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Kelurahan</td>
+                                    <td><b>Kelurahan</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_alamat->kel?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Kode Pos</td>
+                                    <td><b>Kode Pos</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_alamat->kode_pos?></td>
                                 </tr>
@@ -222,42 +223,42 @@
                             <table class="standard-table" width="100%" cellspacing="0" cellpadding="0">
 
                                 <tr class="data-item" data-id="">
-                                    <td>Tinggi Badan (cm)</td>
+                                    <td><b>Tinggi Badan (cm)</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganbadan->tinggi_badan?></td>
                                 </tr><tr class="data-item" data-id="">
-                                    <td>Berat Badan (kg)</td>
+                                    <td><b>Berat Badan (kg)</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td>  <?=$data_keteranganbadan->berat_badan?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>No. KTP</td>
+                                    <td><b>NIK</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td>  <?=$data_keteranganlainnya->no_ktp?></td>
                                 </tr><tr class="data-item" data-id="">
-                                    <td>No. KARPEG </td>
+                                    <td><b>No. KARPEG </b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_karpeg?></td>
                                 </tr><tr class="data-item" data-id="">
-                                    <td>No. ASKES</td>
+                                    <td><b>No. ASKES</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_askes?></td>
                                 </tr><tr class="data-item" data-id="">
-                                    <td>No. TASPEN</td>
+                                    <td><b>No. TASPEN</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_taspen?></td>
                                 </tr><tr class="data-item" data-id="">
-                                    <td>No. KARSI/KARSU</td>
+                                    <td><b>No. KARSI/KARSU</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_karis?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>No. NPWP</td>
+                                    <td><b>No. NPWP</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_npwp?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>No. KORPRI</td>
+                                    <td><b>No. KORPRI</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_korpri?></td>
                                 </tr>
@@ -309,70 +310,14 @@
                                                             <td><?=$data_pasangan->pekerjaan?></td>
                                                             <td><?=($data_pasangan->meninggal == '0') ? 'Hidup' : 'Meninggal'?></td>
                                                             <td align="center">
-                                                                <!-- <a data-toggle="modal" data-target="#edit_istri" class="btn btn-primary btn-xs" onclick="editData('data_pasangan','<?=$data_pasangan->id_pasangan?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                                <a onclick="hapusData('pasangan','<?=$data_pasangan->id_pasangan?>')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a> -->
+                                                                 <a data-toggle="modal" data-target="#edit_istri" class="btn btn-primary btn-xs" onclick="editData('data_pasangan','<?=$data_pasangan->id_pasangan?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                                <a onclick="hapusData('pasangan','<?=$data_pasangan->id_pasangan?>')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                                             </td>
                                                         </tr>
                                                         <?php $i++; endforeach ?>
                                                     <?php endif ?>
                                                 </tbody>
                                             </table>
-                                        </div>
-                                    </div>
-                                    <!-- Edit Istri  -->
-                                    <div id="edit_istri" class="modal fade " role="dialog">
-                                        <div class="modal-dialog "><!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title" align="center">Edit Data Istri/Suami</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form class="form-horizontal">
-                                                        <div class="form-group">
-                                                            <label for="bahan" class="col-sm-3 control-label">Nama</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" value="<?=$data_pasangan->nama?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="bahan" class="col-sm-3 control-label">Tempat Tanggal Lahir</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" value="<?=$data_pasangan->ttl?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="bahan" class="col-sm-3 control-label">Nomor Akta Nikah</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" value="<?=$data_pasangan->akta_nikah?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="bahan" class="col-sm-3 control-label">Tanggal Akta Nikah</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" value="<?=$data_pasangan->tanggal_nikah?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="bahan" class="col-sm-3 control-label">Pekerjaan</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" value="<?=$data_pasangan->pekerjaan?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="bahan" class="col-sm-3 control-label">Keterangan</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" value="<?=($data_pasangan->meninggal == '0') ? 'Hidup' : 'Meninggal'?>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <div class="col-md-3 col-md-offset-5">
-                                                                <a  class="btn btn-primary btn-sm" href="profil_lengkap.html"><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan</a>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -418,8 +363,8 @@
                                                                 <td><?=$data_anak->pekerjaan?></td>
                                                                 <td><?=($data_anak->meninggal == '0') ? 'Hidup' : 'Meninggal'?></td>
                                                                 <td align="center">
-                                                                    <!--<a data-toggle="modal" data-target="#edit_anak" class="btn btn-primary btn-xs" onclick="editData('data_anak','<?=$data_anak->id_anak?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                                    <a href="#" onclick="hapusData('anak','<?=$data_anak->id_anak?>')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
+                                                                    <a data-toggle="modal" data-target="#edit_anak" class="btn btn-primary btn-xs" onclick="editData('data_anak','<?=$data_anak->id_anak?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                                    <a href="#" onclick="hapusData('anak','<?=$data_anak->id_anak?>')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                                                 </td>
                                                             </tr>
                                                             <?php $i++; ?>
@@ -473,8 +418,8 @@
                                                                 <td><?=$data_orangtua->pekerjaan?></td>
                                                                 <td><?=($data_orangtua->meninggal == '0') ? 'Hidup' : 'Meninggal'?></td>
                                                                 <td align="center">
-                                                                    <!--<a data-toggle="modal"  onclick="editData('data_ortu','<?=$data_orangtua->id_orangtua?>');" data-target="#edit_ortu" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                                    <a href="#" onclick="hapusData('orangtua','<?=$data_orangtua->id_orangtua?>')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
+                                                                    <a data-toggle="modal"  onclick="editData('data_ortu','<?=$data_orangtua->id_orangtua?>');" data-target="#edit_ortu" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                                    <a href="#" onclick="hapusData('orangtua','<?=$data_orangtua->id_orangtua?>')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                                                 </td>
                                                             </tr>
                                                             <?php $i++; ?>
@@ -499,10 +444,8 @@
     <div class="col-md-12">
         <!-- PANEL NO DIVIDER HEADING -->
         <div class="panel">
-            <div class="panel-heading no-divider">
-                <h3 class="panel-title" >RIWAYAT PEGAWAI</h3>
-            </div>
             <div class="panel-body">
+                <h4 class="panel-title heading" >Riwayat Pegawai</h4><hr>
                 <div class="custom-tabs-line tabs-line-bottom left-aligned">
                     <div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
                     <div class="scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
@@ -530,24 +473,25 @@
                     <div class="tab-pane fade in active" id="kepegawaian">
                         <!-- BORDERED TABLE -->
                         <div class="col-md-12 no-padding">
-                            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Riwayat CPNS</div>
+                            <div class="alert alert-info"> RIWAYAT CPNS</div>
                         </div>
-                        <table style="width:100% !important;" id="tbl_riwayat_kepegawaian_cpns" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer" role="grid">
+                        <table id="tbl_riwayat_kepegawaian_cpns" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer" role="grid">
                             <thead>
-                                <tr class="data-item" data-id="">
-                                    <th colspan="2" class="text-center">Surat Keputusan</th>
+                                <tr >
+                                    <th rowspan="2">No.</th>
+                                    <th colspan="3" class="text-center">Surat Keputusan</th>
                                     <th rowspan="2" >Pangkat/Golongan/Ruang</th>
                                     <th rowspan="2" >Tanggal TMT</th>
-                                    <th rowspan="2" >Pengambil Sumpah</th>
                                     <th colspan="3" class="text-center">Lokasi Kerja</th>
                                     <th colspan="2" class="text-center">Persetujuan BKN (CPNS)</th>
-                                    <th rowspan="2"></th>
+<!--                                    <th rowspan="2"></th>-->
                                 </tr>
                                 <tr class="data-item" data-id="">
+                                    <th>Pejabat Yang Menetapkan</th>
                                     <th>Nomor</th>
                                     <th>Tanggal</th>
-                                    <th>Instansi</th>
-                                    <th>Sub Instansi</th>
+                                    <th>Instansi Induk</th>
+                                    <th>Bidang/Bagian</th>
                                     <th>Subbidang/Seksi</th>
                                     <th>Nomor</th>
                                     <th>Tanggal</th>
@@ -556,21 +500,22 @@
                             <tbody >
                                 <?php if ($riwayat_cpns != NULL): ?>
                                     <?php $i = 1; foreach ($riwayat_cpns as $riwayat_cpns): ?>
-                                        <tr class="data-item" data-id="">
+                                        <tr >
+                                            <td><?=$i;?></td>
+                                            <td data-instansi='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->pejabat?></td>
                                             <td data-no='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->no_sk?></td>
                                             <td data-tanggalsk='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->tanggal_sk?></td>
                                             <td data-pangkat='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->pangkat?></td>
                                             <td data-tanggaltmt='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->tanggal_tmt?></td>
-                                            <td data-instansi='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->pejabat?></td>
                                             <td data-instansi='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->instansi?></td>
                                             <td data-subinstansi='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->sub_instansi?></td>
                                             <td data-unker='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->unit_kerja?></td>
                                             <td data-nobkn='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->no_bkn?></td>
                                             <td data-tanggalbkn='<?=$riwayat_cpns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_cpns->tanggal_bkn?></td>
-                                            <td align="center" >
-                                                <!--<a style="" onclick="edit('cpns', '<?=$riwayat_cpns->id_riwayat?>')" data-toggle="modal" data-target="#edit_kepegawaian" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>
-                                                <a style="" onclick="hapusRiwayat('pegawai_cpns','<?=$riwayat_cpns->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>-->
-                                            </td>
+                                            <!--<td align="center" >
+                                                <a style="" onclick="edit('cpns', '<?=$riwayat_cpns->id_riwayat?>')" data-toggle="modal" data-target="#edit_kepegawaian" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>
+                                                <a style="" onclick="hapusRiwayat('pegawai_cpns','<?=$riwayat_cpns->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                            </td>-->
                                         </tr>
                                     <?php $i++; endforeach ?>
                                 <?php endif ?>
@@ -578,26 +523,27 @@
                         </table>
                         <hr />
                         <div class="col-md-12 no-padding">
-                            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Riwayat PNS</div>
+                            <div class="alert alert-info">RIWAYAT PNS</div>
                         </div>
                         <table id="tbl_riwayat_kepegawaian_pns"  class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer" role="grid">
                             <thead>
-                                <tr class="data-item" data-id="">
-                                    <th rowspan="2">Pejabat </th>
-                                    <th colspan="2" class="text-center">Surat Keputusan</th>
+                                <tr >
+                                    <th rowspan="2">No.</th>
+                                    <th colspan="3" class="text-center">Surat Keputusan</th>
                                     <th rowspan="2" >Pangkat/Golongan/Ruang</th>
                                     <th rowspan="2" >Tanggal TMT</th>
                                     <th colspan="3" class="text-center">Lokasi Kerja</th>
                                     <th rowspan="2" width="98px;">Sumpah/Janji</th>
                                     <th rowspan="2">Pengambil Sumpah</th>
                                     <th colspan="2" class="text-center">Berita Acara</th>
-                                    <th rowspan="2"></th>
+<!--                                    <th rowspan="2"></th>-->
                                 </tr>
                                 <tr class="data-item" data-id="">
+                                    <th>Pejabat Yang Menetapkan</th>
                                     <th>Nomor</th>
                                     <th>Tanggal</th>
-                                    <th>Instansi</th>
-                                    <th>Sub Instansi</th>
+                                    <th>Instansi Induk</th>
+                                    <th>Bidang/Bagian</th>
                                     <th>Subbidang/Seksi</th>
                                     <th>Nomor</th>
                                     <th>Tanggal</th>
@@ -606,7 +552,8 @@
                             <tbody style="font-size: 0.8em;">
                                 <?php if ($riwayat_pns != NULL): ?>
                                     <?php $i = 1; foreach ($riwayat_pns as $riwayat_pns): ?>
-                                        <tr class="data-item" data-id="">
+                                        <tr >
+                                            <td><?=$i;?></td>
                                             <td data-pejabat='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->pejabat?></td>
                                             <td data-nosk='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->no_sk?></td>
                                             <td data-tanggalsk='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->tanggal_sk?></td>
@@ -619,10 +566,10 @@
                                             <td data-pengambilsumpah='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->pengambil_sumpah?></td>
                                             <td data-noberita='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->no_berita?></td>
                                             <td data-tanggalberita='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->tanggal_berita?></td>
-                                            <td  align="center">
-                                                <!--<a style="display: inline" onclick="edit('pns', '<?=$riwayat_pns->id_riwayat?>')" data-toggle="modal" data-target="#edit_kepegawaian" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>
-                                                <a  style="display: inline" onclick="hapusRiwayat('pegawai_pns','<?=$riwayat_pns->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>-->
-                                            </td>
+                                            <!--<td  align="center">
+                                                <a style="display: inline" onclick="edit('pns', '<?=$riwayat_pns->id_riwayat?>')" data-toggle="modal" data-target="#edit_kepegawaian" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>
+                                                <a  style="display: inline" onclick="hapusRiwayat('pegawai_pns','<?=$riwayat_pns->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
+                                            </td>-->
                                         </tr>
                                     <?php $i++; endforeach ?>
                                 <?php endif ?>
@@ -634,7 +581,7 @@
                         <div class="table-responsive">
                             <table id="tbl_riwayat_pendidikan" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
-                                    <tr class="data-item" data-id="">
+                                    <tr >
                                         <th>No.</th>
                                         <th>Tingkat </th>
                                         <th>Program Studi</th>
@@ -642,7 +589,7 @@
                                         <th>Nama Sekolah</th>
                                         <th>No. Ijazah</th>
                                         <th>Tahun Lulus</th>
-                                        <th></th>
+<!--                                        <th></th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -657,10 +604,10 @@
                                             <td><?=$riwayat_pendidikan->nama_sekolah?></td>
                                             <td><?=$riwayat_pendidikan->no_ijazah?></td>
                                             <td><?=$riwayat_pendidikan->tahun_lulus?></td>
-                                             <td>
-                                                <!--<a data-toggle="modal" data-target="#edit_pendidikan" onclick="editData('pendidikan',<?=$riwayat_pendidikan->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                <a onclick="hapusRiwayat('pendidikan',<?=$riwayat_pendidikan->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                            </td>
+                                             <!--<td>
+                                                <a data-toggle="modal" data-target="#edit_pendidikan" onclick="editData('pendidikan',<?=$riwayat_pendidikan->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                <a onclick="hapusRiwayat('pendidikan',<?=$riwayat_pendidikan->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                            </td>-->
                                         </tr>
                                     <?php $i++; endforeach ?>
                                 <?php endif ?>
@@ -672,22 +619,20 @@
                         <div class="table-responsive">
                             <table id="tbl_riwayat_jabatan" cellspacing="0" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
-                                    <tr class="data-item" data-id="">
+                                    <tr >
                                         <th rowspan="2">No.</th>
-                                        <th colspan="3" class="text-center">Jabatan </th>
+                                        <th rowspan="2">Jenis Jabatan </th>
+                                        <th rowspan="2">Nama Jabatan </th>
+                                        <th colspan="2" class="text-center">Tanggal TMT</th>
                                         <th rowspan="2">Eselon </th>
-                                        <th colspan="2" class="text-center">TMT</th>
                                         <th colspan="3" class="text-center">Surat Keputusan</th>
-                                        <th rowspan="2"></th>
+<!--                                        <th rowspan="2"></th>-->
                                     </tr>
                                     <tr>
-                                        <th>Jenis</th>
-                                        <th>Nama</th>
-                                        <th>kedudukan</th>
                                         <th>Jabatan</th>
                                         <th>Pelantikan</th>
-                                        <th width="65px;">Pejabat Yang Menandatangani</th>
-                                        <th width="65px;">Nomor</th>
+                                        <th>Pejabat Yang Menetapkan</th>
+                                        <th>Nomor</th>
                                         <th>Tanggal</th>
                                     </tr>
                                 </thead>
@@ -699,17 +644,17 @@
                                                 <td><?=$i?></td>
                                                 <td><?=$riwayat_jabatan->jenis?></td>
                                                 <td><?=$riwayat_jabatan->nama_jabatan?></td>
-                                                <td><?=$riwayat_jabatan->kedudukan?></td>
-                                                <td><?=$riwayat_jabatan->eselon?></td>
+                                                <!--<td><?=$riwayat_jabatan->kedudukan?></td>-->
                                                 <td><?=$riwayat_jabatan->tmt_jabatan?></td>
                                                 <td><?=$riwayat_jabatan->tmt_pelantikan?></td>
+                                                <td><?=$riwayat_jabatan->eselon?></td>
                                                 <td><?=$riwayat_jabatan->pejabat?></td>
                                                 <td><?=$riwayat_jabatan->nomor?></td>
                                                 <td><?=$riwayat_jabatan->tanggal?></td>
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_jabatan" onclick="editData('jabatan',<?=$riwayat_jabatan->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                    <a onclick="hapusRiwayat('jabatan',<?=$riwayat_jabatan->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_jabatan" onclick="editData('jabatan',<?=$riwayat_jabatan->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a onclick="hapusRiwayat('jabatan',<?=$riwayat_jabatan->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                         <?php $i++; endforeach ?>
                                     <?php endif ?>
@@ -721,16 +666,16 @@
                         <div class="table-responsive">
                             <table id="tbl_riwayat_mutasi" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
-                                    <tr class="data-item" data-id="">
+                                    <tr >
                                         <th rowspan="2">No.</th>
                                         <th rowspan="2">Jabatan </th>
-                                        <th rowspan="2">Pangkat </th>
-                                        <th rowspan="2">TMT</th>
+                                        <th rowspan="2">Pangkat/Golongan/Ruang </th>
+                                        <th rowspan="2">Tanggal TMT</th>
                                         <th colspan="3" class="text-center">Surat Keputusan</th>
-                                        <th rowspan="2"></th>
+<!--                                        <th rowspan="2"></th>-->
                                     </tr>
                                     <tr>
-                                        <th>Pejabat</th>
+                                        <th>Pejabat Yang Menetapkan</th>
                                         <th>Nomor</th>
                                         <th>Tanggal</th>
                                     </tr>
@@ -747,10 +692,10 @@
                                                 <td><?=$riwayat_mutasi->pejabat?></td>
                                                 <td><?=$riwayat_mutasi->nomor?></td>
                                                 <td><?=$riwayat_mutasi->tanggal?></td>
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" onclick="editData('mutasi',<?=$riwayat_mutasi->id_riwayat?>);" data-target="#edit_mutasi" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                    <a onclick="hapusRiwayat('mutasi',<?=$riwayat_mutasi->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" onclick="editData('mutasi',<?=$riwayat_mutasi->id_riwayat?>);" data-target="#edit_mutasi" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a onclick="hapusRiwayat('mutasi',<?=$riwayat_mutasi->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                         <?php $i++; endforeach ?>
                                     <?php endif ?>
@@ -760,22 +705,25 @@
                     </div>
                     <div class="tab-pane fade" id="diklat">
                         <div class="table-responsive">
-                            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Diklat Struktural</div>
+                            <div class="alert alert-info"> DIKLAT STRUKTURAL</div>
                             <table id="tbl_riwayat_diklat_struktural" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
                                     <tr >
-                                        <th>No.</th>
-                                        <th>Nama Diklat</th>
-                                        <th>Jumlah Jam</th>
-                                        <th>Penyelenggara</th>
-                                        <th>Tempat</th>
-                                        <th>Angkatan</th>
-                                        <th>Tahun</th>
-                                        <th>No. STTP</th>
-                                        <th>Tgl. STTP</th>
-                                        <th></th>
-                                        <th style="display: none;">Jenis Diklat</th>
+                                        <th rowspan="2">No.</th>
+                                        <th rowspan="2">Diklat</th>
+                                        <th rowspan="2">Jumlah Jam</th>
+                                        <th rowspan="2">Penyelenggara</th>
+                                        <th rowspan="2">Tempat</th>
+                                        <th rowspan="2">Angkatan</th>
+                                        <th rowspan="2">Tahun</th>
+                                        <th colspan="2" class="text-center">STTP</th>
+<!--                                        <th></th>-->
+                                        <th rowspan="2" style="display: none;">Jenis Diklat</th>
                                     </tr>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Tanggal</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <?php if ($riwayat_diklat != NULL): ?>
@@ -792,10 +740,10 @@
                                                     <td><?=$riwayat_diklat->tahun?></td>
                                                     <td><?=$riwayat_diklat->no_sttp?></td>
                                                     <td><?=$riwayat_diklat->tanggal_sttp?></td>
-                                                    <td align="center">
-                                                        <!--<a onclick="editData('diklat',<?=$riwayat_diklat->id_riwayat?>);" data-toggle="modal" data-target="#edit_diklat_struktural" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                        <a onclick="hapusRiwayat('diklat',<?=$riwayat_diklat->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                    </td>
+                                                    <!--<td align="center">
+                                                        <a onclick="editData('diklat',<?=$riwayat_diklat->id_riwayat?>);" data-toggle="modal" data-target="#edit_diklat_struktural" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                        <a onclick="hapusRiwayat('diklat',<?=$riwayat_diklat->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                    </td>-->
                                                     <td style="display: none;"><?=$riwayat_diklat->jenis_diklat?></td>
                                                 </tr>
                                             <?php endif ?>
@@ -806,23 +754,26 @@
                             <br />
                             <hr>
                             <!-- BORDERED TABLE -->
-                            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Diklat Fungsional</div>
+                            <div class="alert alert-info">DIKLAT FUNGSIONAL</div>
                             <table id="tbl_riwayat_diklat_fungsional" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
                                     <tr >
-                                        <th>No.</th>
-                                        <th>Nama Diklat</th>
-                                        <th>Jumlah Jam</th>
-                                        <th>Penyelenggara</th>
-                                        <th>Tempat</th>
-                                        <th>Angkatan</th>
-                                        <th>Tahun</th>
-                                        <th>No. STTP</th>
-                                        <th>Tgl. STTP</th>
-                                        <th></th>
-                                        <th style="display: none;">Jenis Diklat</th>
+                                        <th rowspan="2">No.</th>
+                                        <th rowspan="2"> Diklat</th>
+                                        <th rowspan="2">Jumlah Jam</th>
+                                        <th rowspan="2">Penyelenggara</th>
+                                        <th rowspan="2">Tempat</th>
+                                        <th rowspan="2">Angkatan</th>
+                                        <th rowspan="2">Tahun</th>
+                                        <th colspan="2" class="text-center">STTP</th>
+<!--                                        <th></th>-->
+                                        <th rowspan="2" style="display: none;">Jenis Diklat</th>
 
                                     </tr>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Tanggal</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <?php if ($riwayat_diklat1 != NULL): ?>
@@ -839,10 +790,10 @@
                                                     <td><?=$riwayat_diklat1->tahun?></td>
                                                     <td><?=$riwayat_diklat1->no_sttp?></td>
                                                     <td><?=$riwayat_diklat1->tanggal_sttp?></td>
-                                                    <td align="center">
-                                                        <!--<a onclick="editData('diklat',<?=$riwayat_diklat1->id_riwayat?>);" data-toggle="modal" data-target="#edit_diklat_fungsional" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                        <a onclick="hapusRiwayat('diklat',<?=$riwayat_diklat1->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                    </td>
+                                                    <!--<td align="center">
+                                                        <a onclick="editData('diklat',<?=$riwayat_diklat1->id_riwayat?>);" data-toggle="modal" data-target="#edit_diklat_fungsional" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                        <a onclick="hapusRiwayat('diklat',<?=$riwayat_diklat1->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                    </td>-->
                                                     <td style="display: none;"><?=$riwayat_diklat1->jenis_diklat?></td>
                                                 </tr>
                                             <?php endif ?>
@@ -853,22 +804,25 @@
                             </br>
                             <hr>
                             <!-- BORDERED TABLE -->
-                            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Diklat Teknis</div>
+                            <div class="alert alert-info">DIKLAT TEKNIS</div>
                             <table id="tbl_riwayat_diklat_teknis" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
                                     <tr >
-                                        <th>No.</th>
-                                        <th>Nama Diklat</th>
-                                        <th>Jumlah Jam</th>
-                                        <th>Penyelenggara</th>
-                                        <th>Tempat</th>
-                                        <th>Angkatan</th>
-                                        <th>Tahun</th>
-                                        <th>No. STTP</th>
-                                        <th>Tgl. STTP</th>
-                                        <th></th>
-                                        <th style="display: none;">Jenis Diklat</th>
+                                        <th rowspan="2">No.</th>
+                                        <th rowspan="2"> Diklat</th>
+                                        <th rowspan="2">Jumlah Jam</th>
+                                        <th rowspan="2">Penyelenggara</th>
+                                        <th rowspan="2">Tempat</th>
+                                        <th rowspan="2">Angkatan</th>
+                                        <th rowspan="2">Tahun</th>
+                                        <th colspan="2" class="text-center">STTP</th>
+<!--                                        <th></th>-->
+                                        <th rowspan="2" style="display: none;">Jenis Diklat</th>
                                     </tr>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Tanggal</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <?php if ($riwayat_diklat2 != NULL): ?>
@@ -876,7 +830,7 @@
                                         <?php foreach ($riwayat_diklat2 as $riwayat_diklat2): ?>
                                             <?php if ($riwayat_diklat2->jenis_diklat == 'teknis'): ?>
                                                 <tr class="data-itemriwayatdiklat" data-id="<?=$riwayat_diklat2->id_riwayat?>">
-                                                    <td><?=$i?></td>
+                                                    <td><?=$i;?></td>
                                                     <td><?=$riwayat_diklat2->nama_diklat?></td>
                                                     <td><?=$riwayat_diklat2->jumlah_jam?></td>
                                                     <td><?=$riwayat_diklat2->penyelenggara?></td>
@@ -885,10 +839,10 @@
                                                     <td><?=$riwayat_diklat2->tahun?></td>
                                                     <td><?=$riwayat_diklat2->no_sttp?></td>
                                                     <td><?=$riwayat_diklat2->tanggal_sttp?></td>
-                                                    <td align="center">
-                                                        <!--<a data-toggle="modal" onclick="editData('diklat',<?=$riwayat_diklat2->id_riwayat?>);" data-target="#edit_diklat_teknis" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                                                        <a onclick="hapusRiwayat('diklat',<?=$riwayat_diklat2->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                    </td>
+                                                    <!--<td align="center">
+                                                        <a data-toggle="modal" onclick="editData('diklat',<?=$riwayat_diklat2->id_riwayat?>);" data-target="#edit_diklat_teknis" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                        <a onclick="hapusRiwayat('diklat',<?=$riwayat_diklat2->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                    </td>-->
                                                     <td style="display: none;"><?=$riwayat_diklat2->jenis_diklat?></td>
                                                 </tr>
                                                 <?php $i++; ?>
@@ -908,14 +862,14 @@
                                     <tr >
                                         <th> No.</th>
                                         <th> Tipe Kursus </th>
-                                        <th> Instansi</th>
                                         <th> Jenis Kursus</th>
                                         <th> Nama Kursus</th>
-                                        <th> Tahun</th>
                                         <th> Lama Kursus (Hari) </th>
-                                        <th> Nomor Sertifikasi </th>
+                                        <th> Tahun</th>
+                                        <th> Nomor Sertifikat </th>
+                                        <th> Instansi</th>
                                         <th> Institusi Penyelenggara</th>
-                                        <th> </th>
+<!--                                        <th> </th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -924,17 +878,17 @@
                                             <tr class="data-itemriwayatkursus" data-id="<?=$riwayat_kursus->id_riwayat?>">
                                                 <td><?=$i?></td>
                                                 <td><?=$riwayat_kursus->tipe_kursus?></td>
-                                                <td><?=$riwayat_kursus->instansi_kursus?></td>
                                                 <td><?=$riwayat_kursus->jenis_kursus?></td>
                                                 <td><?=$riwayat_kursus->nama_kursus?></td>
-                                                <td><?=$riwayat_kursus->tahun_kursus?></td>
                                                 <td><?=$riwayat_kursus->lama_kursus?></td>
+                                                <td><?=$riwayat_kursus->tahun_kursus?></td>
                                                 <td><?=$riwayat_kursus->no_sertifikat_kursus?></td>
+                                                <td><?=$riwayat_kursus->instansi_kursus?></td>
                                                 <td><?=$riwayat_kursus->institusi_kursus?></td>
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_kursus" onclick="editData('kursus',<?=$riwayat_kursus->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                                    <!--<a href="#" onclick="hapusRiwayat('kursus',<?=$riwayat_kursus->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_kursus" onclick="editData('kursus',<?=$riwayat_kursus->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a href="#" onclick="hapusRiwayat('kursus',<?=$riwayat_kursus->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                         <?php $i++; endforeach; ?>
                                     <?php endif; ?>
@@ -947,13 +901,16 @@
                             <table id="tbl_riwayat_penghargaan" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
                                     <tr >
-                                        <th> No.</th>
-                                        <th> Jenis Penghargaan</th>
-                                        <th> No. SK</th>
-                                        <th> Tanggal SK</th>
-                                        <th> Tahun</th>
-                                        <th> </th>
+                                        <th rowspan="2"> No.</th>
+                                        <th rowspan="2"> Jenis Penghargaan</th>
+                                        <th colspan="2" class="text-center">Surat Keputusan</th>
+                                        <th rowspan="2"> Tahun Penghargaan</th>
+<!--                                        <th> </th>-->
                                     </tr>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Tanggal</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <?php if ($riwayat_penghargaan != NULL): ?>
@@ -964,10 +921,10 @@
                                                 <td><?=$riwayat_penghargaan->no_sk?></td>
                                                 <td><?=$riwayat_penghargaan->tanggal_sk?></td>
                                                 <td><?=$riwayat_penghargaan->tahun_penghargaan?></td>
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_penghargaan" onclick="editData('penghargaan',<?=$riwayat_penghargaan->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                                    <!--<a onclick="hapusRiwayat('penghargaan',<?=$riwayat_penghargaan->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_penghargaan" onclick="editData('penghargaan',<?=$riwayat_penghargaan->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a onclick="hapusRiwayat('penghargaan',<?=$riwayat_penghargaan->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                         <?php $i++; endforeach; ?>
                                     <?php endif; ?>
@@ -985,7 +942,7 @@
                                         <th> Profesi </th>
                                         <th> Penyelenggara</th>
                                         <th> Tahun Lulus</th>
-                                        <th> </th>
+<!--                                        <th> </th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -996,10 +953,10 @@
                                                 <td><?=$riwayat_profesi->profesi?></td>
                                                 <td><?=$riwayat_profesi->penyelenggara?></td>
                                                 <td><?=$riwayat_profesi->tahun_lulus?></td>
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_profesi" onclick="editData('profesi',<?=$riwayat_profesi->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                                    <!--<a href="#" onclick="hapusRiwayat('profesi',<?=$riwayat_profesi->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_profesi" onclick="editData('profesi',<?=$riwayat_profesi->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a href="#" onclick="hapusRiwayat('profesi',<?=$riwayat_profesi->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                         <?php $i++; endforeach;?>
                                     <?php endif;?>
@@ -1013,14 +970,17 @@
                             <table id="tbl_riwayat_unor" style="min-width: 100%;" class="table table-bordered  table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
                                     <tr >
-                                        <th> No.</th>
-                                        <th> Instansi </th>
-                                        <th> Nama UNOR</th>
-                                        <th> No. SK</th>
-                                        <th> Tanggal SK</th>
+                                        <th rowspan="2"> No.</th>
+                                        <th rowspan="2"> Instansi </th>
+                                        <th rowspan="2"> Bidang/Bagian</th>
+                                        <th colspan="2" class="text-center">Surat Keputusan</th>
                                         <!-- <th> Prosedur Awal</th> -->
-                                        <th> </th>
+<!--                                        <th> </th>-->
                                     </tr>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Tanggal</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <?php if ($riwayat_unor != NULL): ?>
@@ -1032,10 +992,10 @@
                                                 <td><?=$riwayat_unor->no_sk?></td>
                                                 <td><?=$riwayat_unor->tanggal_sk?></td>
                                                 <!-- <td><?=$riwayat_unor->prosedur_awal?></td> -->
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_unor" onclick="editData('unor',<?=$riwayat_unor->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                                    <!--<a href="#" onclick="hapusRiwayat('unor',<?=$riwayat_unor->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_unor" onclick="editData('unor',<?=$riwayat_unor->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a href="#" onclick="hapusRiwayat('unor',<?=$riwayat_unor->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                             <?php $i++; endforeach;?>
                                         <?php endif;?>
@@ -1050,14 +1010,17 @@
                             <table id="tbl_riwayat_pemberhentian" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
                                     <tr >
-                                        <th> No.</th>
-                                        <th> Jenis Pemberhentian </th>
-                                        <th> Kedudukan Hukum</th>
-                                        <th> No. SK</th>
-                                        <th> Tanggal SK</th>
+                                        <th rowspan="2"> No.</th>
+                                        <th rowspan="2"> Jenis Pemberhentian </th>
+                                        <th rowspan="2"> Kedudukan Hukum</th>
+                                        <th colspan="2" class="text-center"> Surat Keputusan</th>
                                         <!-- <th> Prosedur Asal</th> -->
-                                        <th> </th>
+<!--                                        <th> </th>-->
                                     </tr>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Tanggal</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <?php if ($riwayat_pemberhentian != NULL): ?>
@@ -1069,10 +1032,10 @@
                                                 <td><?=$riwayat_pemberhentian->no_sk?></td>
                                                 <td><?=$riwayat_pemberhentian->tanggal_sk?></td>
                                                 <!-- <td><?=$riwayat_pemberhentian->prosedur_asal?></td> -->
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_pemberhentian" onclick="editData('pemberhentian',<?=$riwayat_pemberhentian->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                                    <!--<a href="#" onclick="hapusRiwayat('pemberhentian',<?=$riwayat_pemberhentian->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_pemberhentian" onclick="editData('pemberhentian',<?=$riwayat_pemberhentian->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a href="#" onclick="hapusRiwayat('pemberhentian',<?=$riwayat_pemberhentian->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                             <?php $i++; endforeach;?>
                                         <?php endif;?>
@@ -1087,16 +1050,19 @@
                             <table id="tbl_riwayat_angkakredit" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                                 <thead>
                                     <tr >
-                                        <th> No.</th>
-                                        <th> No. SK </th>
-                                        <th> Tanggal SK</th>
-                                        <th> Kredit Utama</th>
-                                        <th> Kredit Penunjang</th>
-                                        <th> Total Kredit </th>
-                                        <th> Jabatan</th>
-                                        <th> </th>
-                                        <th style="display: none"></th>
+                                        <th rowspan="2"> No.</th>
+                                        <th colspan="2" class="text-center"> Surat Keputusan</th>
+                                        <th rowspan="2"> Kredit Utama</th>
+                                        <th rowspan="2"> Kredit Penunjang</th>
+                                        <th rowspan="2"> Total Kredit </th>
+                                        <th rowspan="2"> Jabatan</th>
+<!--                                        <th> </th>-->
+                                        <th rowspan="2" style="display: none"></th>
                                     </tr>
+                                <tr>
+                                    <th>Nomor</th>
+                                    <th>Tanggal</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <?php $total_kredit_utama=0; $total_kredit_penunjang =0;  if ($riwayat_angkakredit != NULL): ?>
@@ -1115,10 +1081,10 @@
                                                      $total_kredit_penunjang += floatval($riwayat_angkakredit->kredit_penunjang);
                                                      ?> 
                                                 </td>
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_angkakredit" onclick="editData('angkakredit',<?=$riwayat_angkakredit->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                                    <!--<a  onclick="hapusRiwayat('angkakredit',<?=$riwayat_angkakredit->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_angkakredit" onclick="editData('angkakredit',<?=$riwayat_angkakredit->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a  onclick="hapusRiwayat('angkakredit',<?=$riwayat_angkakredit->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                         <?php $i++; endforeach;?>
                                     <?php endif;?>
@@ -1202,10 +1168,10 @@
                                 <td style="display: none"><?=$riwayat_dp3->unor_atasan_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_dp3->golongan_atasan_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_dp3->tmt_atasan_pejabat?></td>
-                                <td align="center">
-                                   <!--<a data-toggle="modal" data-target="#edit_dp3" onclick="editData('dp3',<?=$riwayat_dp3->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                   <!--<a href="#" onclick="hapusRiwayat('dp3',<?=$riwayat_dp3->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                               </td>
+                                <!--<td align="center">
+                                   <a data-toggle="modal" data-target="#edit_dp3" onclick="editData('dp3',<?=$riwayat_dp3->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                   <a href="#" onclick="hapusRiwayat('dp3',<?=$riwayat_dp3->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                               </td>-->
                            </tr>
                            <?php $i++; endforeach;?>
                        <?php endif;?>
@@ -1221,9 +1187,9 @@
                         <tr >
                             <th> No.</th>
                             <th> Tahun </th>
-                            <th> Nilai Rata-rata</th>
+                            <th> Nilai Prestasi Kerja</th>
                             <th> Keterangan</th>
-                            <th> Jumlah</th>
+<!--                            <th> Jumlah</th>-->
                             <th> Pejabat Penilai</th>
                             <th> Atasan Pejabat Penilai</th>
                             <th style="display: none"></th>
@@ -1243,7 +1209,7 @@
                             <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
-                            <th> </th>
+<!--                            <th> </th>-->
                         </tr>
                     </thead>
                     <tbody>
@@ -1258,10 +1224,10 @@
                                 <td style="display: none"><?=$riwayat_skp->integritas?></td>
                                 <td style="display: none"><?=$riwayat_skp->disiplin?></td>
                                 <td style="display: none"><?=$riwayat_skp->kepemimpinan?></td>
-                                <td style="display: none"><?=$riwayat_skp->nilai_prestasi_kerja?></td>
-                                <td><?=$riwayat_skp->nilai_perilaku_kerja?></td>
+                                <td style="display: none"><?=$riwayat_skp->nilai_perilaku_kerja?></td>
+                                <td ><?=$riwayat_skp->nilai_prestasi_kerja?></td>
                                 <td><?=$riwayat_skp->ket_nilai_prestasi_kerja?></td>
-                                <td><?=$riwayat_skp->hasil_nilai_perilaku_kerja?></td>
+                                <!--<td><?=$riwayat_skp->hasil_nilai_perilaku_kerja?></td>-->
                                 <td><?=$riwayat_skp->nama_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_skp->nip_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_skp->jabatan_pejabat?></td>
@@ -1274,10 +1240,10 @@
                                 <td style="display: none"><?=$riwayat_skp->unor_atasan_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_skp->golongan_atasan_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_skp->tmt_atasan_pejabat?></td>
-                                <td align="center">
-                                   <!--<a data-toggle="modal" data-target="#edit_skp" onclick="editData('skp',<?=$riwayat_skp->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                   <!--<a href="#" onclick="hapusRiwayat('skp',<?=$riwayat_skp->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                               </td>
+                                <!--<td align="center">
+                                   <a data-toggle="modal" data-target="#edit_skp" onclick="editData('skp',<?=$riwayat_skp->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                   <a href="#" onclick="hapusRiwayat('skp',<?=$riwayat_skp->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                               </td>-->
                            </tr>
                            <?php $i++; endforeach;?>
                        <?php endif;?>
@@ -1292,14 +1258,14 @@
                                     <tr >
                                         <th> No.</th>
                                         <th> Jenis Cuti </th>
-                                        <th> No. SK Cuti</th>
-                                        <th> Tgl. SKEP</th>
+                                        <th> Nomor SK Cuti</th>
+                                        <th> Tanggal SKEP</th>
                                         <th> Tanggal Awal</th>
                                         <th> Tanggal Akhir</th>
                                         <th> Tanggal Aktif</th>
-                                        <th> No. BKN</th>
+                                        <th> Nomor BKN</th>
                                         <th> Tanggal BKN</th>
-                                        <th> </th>
+<!--                                        <th> </th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1315,10 +1281,10 @@
                                                 <td><?=$riwayat_cuti->tanggal_aktif?></td>
                                                 <td><?=$riwayat_cuti->no_bkn?></td>
                                                 <td><?=$riwayat_cuti->tanggal_bkn?></td>
-                                                <td align="center">
-                                                    <!--<a data-toggle="modal" data-target="#edit_cuti" onclick="editData('cuti',<?=$riwayat_cuti->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>-->
-                                                    <!--<a onclick="hapusRiwayat('cuti',<?=$riwayat_cuti->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
-                                                </td>
+                                                <!--<td align="center">
+                                                    <a data-toggle="modal" data-target="#edit_cuti" onclick="editData('cuti',<?=$riwayat_cuti->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                                                    <a onclick="hapusRiwayat('cuti',<?=$riwayat_cuti->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                                </td>-->
                                             </tr>
                                             <?php $i++; endforeach;?>
                                         <?php endif;?>

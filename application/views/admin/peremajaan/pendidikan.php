@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-md-12">
     <!-- PANEL DEFAULT -->
-    <div class="panel">
+    <!--<div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Pendidikan</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Pendidikan</h3>
       </div>
       <div class="panel-body">
        <table style="min-width:100% !important;" id="tbl_riwayat_pendidikan" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
           <thead>
             <tr class="data-item" data-id="">
               <th>No.</th>
-              <th>NIP Pegawai</th>
-              <th>Nama Pegawai</th>
+              <th>NIP </th>
+              <th>Nama </th>
               <th>Tingkat </th>
               <th>Pendidikan</th>
               <th>Instansi</th>
@@ -44,20 +44,20 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </div>-->
     <div class="panel">
       <div class="panel-heading">
         <h3 class="panel-title">Riwayat Pendidikan</h3>
       </div>
       <div class="panel-body">
-          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_pendidikan"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_pendidikan"><i class="glyphicon glyphicon-plus"></i> Tambah Data Pendidikan</a>
           <hr>
         <table style="min-width:100% !important;" id="tbl_riwayat_pendidikan" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
           <thead>
             <tr class="data-item" data-id="">
               <th>No.</th>
-              <th>NIP Pegawai</th>
-              <th>Nama Pegawai</th>
+              <th>NIP </th>
+              <th>Nama </th>
               <th>Tingkat </th>
               <th>Program Studi</th>
               <th>Jurusan</th>
@@ -128,13 +128,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Nama Program Studi</label>
+                        <label for="bahan" class="col-sm-3 control-label"> Program Studi</label>
                         <div class="col-sm-9">
                             <input type="text" id="nama_prodi" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan"  class="col-sm-3 control-label">Nama Jurusan</label>
+                        <label for="bahan"  class="col-sm-3 control-label"> Jurusan</label>
                         <div class="col-sm-9">
                             <input type="text"  id="nama_jurusan" class="form-control" >
                         </div>
@@ -202,13 +202,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Nama Program Studi</label>
+                        <label for="bahan" class="col-sm-3 control-label"> Program Studi</label>
                         <div class="col-sm-9">
                             <input type="text" id="edit_nama_prodi" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan"  class="col-sm-3 control-label">Nama Jurusan</label>
+                        <label for="bahan"  class="col-sm-3 control-label"> Jurusan</label>
                         <div class="col-sm-9">
                             <input type="text"  id="edit_nama_jurusan" class="form-control" >
                         </div>
@@ -226,7 +226,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Tgl. Lulus</label>
+                        <label for="bahan" class="col-sm-3 control-label">Tahun Lulus</label>
                         <div class="col-sm-9">
                             <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="edit_tahun_lulus" class="form-control">
@@ -375,6 +375,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
   }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_pendidikan').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
   $("#add_select2").select2({
     ajax: {

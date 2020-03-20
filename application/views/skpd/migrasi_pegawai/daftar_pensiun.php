@@ -16,7 +16,7 @@
                                                         <th rowspan="2">Jenis Kelamin</th>
                                                         <th rowspan="2">Pangkat/Golongan/Ruang</th>
                                                         <th rowspan="2">Jabatan</th>
-                                                        <th colspan="7">SK Pensiun</th>
+                                                        <th colspan="7" class="text-center">SK Pensiun</th>
                                                         <th rowspan="2">Subbidang/Seksi</th>
                                                         <th rowspan="2"></th>
                                                     </tr>

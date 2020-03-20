@@ -113,7 +113,7 @@
                 <td>01-01-2007</td>
             </tr>
             <tr>
-                <td>No. SK CPNS</td>
+                <td>Nomor SK CPNS</td>
                 <td>:</td>
                 <td>23456777</td>
             </tr>
@@ -128,7 +128,7 @@
                 <td>01-01-2007</td>
             </tr>
             <tr>
-                <td>No. SK PNS</td>
+                <td>Nomor SK PNS</td>
                 <td>:</td>
                 <td>23456777</td>
             </tr>

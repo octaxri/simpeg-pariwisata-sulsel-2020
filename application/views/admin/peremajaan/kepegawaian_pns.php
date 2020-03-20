@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-md-12">
     <!-- PANEL DEFAULT -->
-    <div class="panel">
+    <!--<div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data PNS</h3>
+        <h3 class="panel-title font-white">Verifikasi Data PNS</h3>
       </div>
       <div class="panel-body">
        <table style="min-width:100% !important;" id="tbl_riwayat_kepegawaian_pns" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
           <thead>
             <tr class="data-item" data-id="">
               <th  rowspan="2" >No.</th>
-              <th  rowspan="2" >NIP Pegawai</th>
-              <th  rowspan="2" >Nama Pegawai</th>
+              <th  rowspan="2" >NIP </th>
+              <th  rowspan="2" >Nama </th>
               <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
               <th colspan="2" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
@@ -61,22 +61,21 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </div>-->
     <div class="panel">
       <div class="panel-heading">
-        <h3 class="panel-title">Riwayat kepagawaian PNS</h3>
+        <h3 class="panel-title">Riwayat Kepegawaian PNS</h3>
       </div>
       <div class="panel-body">
-          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_kepegawaian"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_kepegawaian"><i class="glyphicon glyphicon-plus"></i> Tambah Data Kepegawaian PNS</a>
           <hr>
         <table style="min-width:100% !important;" id="tbl_riwayat_kepegawaian_pns" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
           <thead>
             <tr class="data-item" data-id="">
               <th  rowspan="2" >No.</th>
-              <th  rowspan="2" >NIP Pegawai</th>
-              <th  rowspan="2" >Nama Pegawai</th>
-              <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
-              <th colspan="2" class="text-center">Surat Keputusan</th>
+              <th  rowspan="2" >NIP </th>
+              <th  rowspan="2" >Nama </th>
+              <th colspan="3" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
               <th rowspan="2" >Tanggal TMT</th>
               <th colspan="3" class="text-center">Lokasi Kerja</th>
@@ -87,11 +86,12 @@
               <th rowspan="2"></th>
             </tr>
             <tr class="data-item" data-id="">
+              <th>Pejabat Yang Menetapkan</th>
               <th>Nomor</th>
               <th>Tanggal</th>
               <th>Instansi Induk</th>
-              <th>Unor Induk</th>
-              <th>Unor</th>
+              <th>Bidang/Bagian</th>
+              <th>Subbidang/Seksi</th>
               <th>Nomor</th>
               <th>Tanggal</th>
             </tr>
@@ -191,7 +191,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">TMT</label>
+            <label for="bahan"  class="col-sm-3 control-label">Tanggal TMT</label>
             <div class="col-sm-9">
               <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                 <input type="text" id="tmt_kepegawaian" class="form-control" required>
@@ -201,7 +201,7 @@
           </div>
           <div class="col-md-12">
             <hr>
-            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Lokasi Kerja</div>
+            <div class="alert alert-info" style="text-transform: uppercase;"> Lokasi Kerja</div>
           </div>
           <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Instansi Induk</label>
@@ -235,29 +235,31 @@
           </div>
           <div id="pns_berita">
               <div class="col-md-12">
-                  <div class="alert alert-info"><i class="fa fa-info-circle"></i> Sumpah Jabatan</div>
+                  <hr>
+                  <div class="alert alert-info" style="text-transform: uppercase;"> Sumpah Jabatan</div>
               </div>
               <div class="form-group">
-                  <label for="bahan" class="col-sm-3 control-label">Sumpah/ Janji PNS</label>
+                  <label for="bahan" class="col-sm-3 control-label">Sumpah/Janji PNS</label>
                   <div class="col-sm-9">
                       <label class="fancy-radio">
-                          <input id="sumpah_kepegawaian" name="sumpah_kepegawaian" value="Sudah"  class="form-control" type="radio"  required>
+                          <input id="" name="sumpah_kepegawaian" value="Sudah"  class="form-control" type="radio"  required>
                           <span><i></i>Sudah</span>
                       </label>
                       <label class="fancy-radio">
-                          <input id="sumpah_kepegawaian" name="sumpah_kepegawaian" value="Belum"  class="form-control" type="radio" required>
+                          <input id="" name="sumpah_kepegawaian" value="Belum"  class="form-control" type="radio" required>
                           <span><i></i>Belum</span>
                       </label>
                   </div>
               </div>
               <div class="form-group">
-                  <label for="bahan" class="col-sm-3 control-label">Yang Mengambil Sumpah</label>
+                  <label for="bahan" class="col-sm-3 control-label">Pengambil Sumpah</label>
                   <div class="col-sm-9">
                       <input type="text" id="pejabat_sumpah_kepegawaian" class="form-control" >
                   </div>
               </div>
               <div class="col-md-12">
-                  <div class="alert alert-info"><i class="fa fa-info-circle"></i> Berita Acara</div>
+                  <hr>
+                  <div class="alert alert-info" style="text-transform: uppercase;"> Berita Acara</div>
               </div>
               <div class="form-group">
                   <label for="bahan" class="col-sm-3 control-label">Nomor</label>
@@ -346,7 +348,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">TMT</label>
+            <label for="bahan"  class="col-sm-3 control-label">Tanggal TMT</label>
             <div class="col-sm-9">
               <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                 <input type="text" id="edit_tmt_kepegawaian" class="form-control" required>
@@ -356,7 +358,7 @@
           </div>
           <div class="col-md-12">
             <hr>
-            <div class="alert alert-info"><i class="fa fa-info-circle"></i> Lokasi Kerja</div>
+            <div class="alert alert-info" style="text-transform: uppercase;"> Lokasi Kerja</div>
           </div>
           <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Instansi Induk</label>
@@ -379,7 +381,7 @@
           <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Subbidang/Seksi</label>
             <div class="col-sm-9">
-              <select name="unit_kerja" id="edit_unit_kerja_kepegawaian" class="form-control select-2" >
+              <select name="unit_kerja" id="edit_unit_kerja_kepegawaian" class="form-control select-2" required>
                <option value="">-Subbidang/Seksi-</option>
                <?php foreach ($data_unit as $data_unit2): ?>
                   <option value="<?=$data_unit2->nama_unit?>"><?=$data_unit2->nama_unit?></option>
@@ -389,29 +391,31 @@
           </div>
           <div id="edit_pns_berita" >
               <div class="col-md-12">
-                  <div class="alert alert-info"><i class="fa fa-info-circle"></i> Sumpah Jabatan</div>
+                  <hr>
+                  <div class="alert alert-info" style="text-transform: uppercase;">Sumpah Jabatan</div>
               </div>
               <div class="form-group">
-                  <label for="bahan" class="col-sm-3 control-label">Sumpah/ Janji PNS</label>
+                  <label for="bahan" class="col-sm-3 control-label">Sumpah/Janji PNS</label>
                   <div class="col-sm-9">
                       <label class="fancy-radio">
-                          <input id="edit_sumpah_kepegawaian" name="edit_sumpah_kepegawaian" value="Sudah"  class="form-control" type="radio"  required>
+                          <input id="edit_sumpah_kepegawaian1" name="edit_sumpah_kepegawaian" value="Sudah"  class="form-control" type="radio"  required>
                           <span><i></i>Sudah</span>
                       </label>
                       <label class="fancy-radio">
-                          <input id="edit_sumpah_kepegawaian" name="edit_sumpah_kepegawaian" value="Belum"  class="form-control" type="radio"  required>
+                          <input id="edit_sumpah_kepegawaian0" name="edit_sumpah_kepegawaian" value="Belum"  class="form-control" type="radio"  required>
                           <span><i></i>Belum</span>
                       </label>
                   </div>
               </div>
               <div class="form-group">
-                  <label for="bahan" class="col-sm-3 control-label">Yang Mengambil Sumpah</label>
+                  <label for="bahan" class="col-sm-3 control-label">Pengambil Sumpah</label>
                   <div class="col-sm-9">
                       <input type="text" id="edit_pejabat_sumpah_kepegawaian" class="form-control" >
                   </div>
               </div>
               <div class="col-md-12">
-                  <div class="alert alert-info"><i class="fa fa-info-circle"></i> Berita Acara</div>
+                  <hr>
+                  <div class="alert alert-info" style="text-transform: uppercase;"> Berita Acara</div>
               </div>
               <div class="form-group">
                   <label for="bahan" class="col-sm-3 control-label">Nomor</label>
@@ -462,7 +466,8 @@
             sub: $('#sub_kepegawaian').val(),
             nomor_bkn: $('#nomor_bkn_kepegawaian').val(),
             tanggal_bkn: $('#tanggal_bkn_kepegawaian').val(),
-            sumpah: $('#sumpah_kepegawaian').val(),
+            // sumpah: $('#sumpah_kepegawaian').val(),
+            sumpah: $('input[name=sumpah_kepegawaian]:checked').val(),
             pejabat_sumpah: $('#pejabat_sumpah_kepegawaian').val(),
             nomor_berita_acara: $('#nomor_berita_acara_kepegawaian').val(),
             tanggal_berita_acara: $('#tanggal_berita_acara_kepegawaian').val(),
@@ -498,7 +503,8 @@
             sub: $('#edit_sub_kepegawaian').val(),
             nomor_bkn: $('#edit_nomor_bkn_kepegawaian').val(),
             tanggal_bkn: $('#edit_tanggal_bkn_kepegawaian').val(),
-            sumpah: $('#edit_sumpah_kepegawaian').val(),
+            // sumpah: $('#edit_sumpah_kepegawaian').val(),
+            sumpah: $('input[name=edit_sumpah_kepegawaian]:checked').val(),
             pejabat_sumpah: $('#edit_pejabat_sumpah_kepegawaian').val(),
             nomor_berita_acara: $('#edit_nomor_berita_acara_kepegawaian').val(),
             tanggal_berita_acara: $('#edit_tanggal_berita_acara_kepegawaian').val(),
@@ -532,7 +538,15 @@
         $('#edit_instansi_kepegawaian').val($("td[data-instansi='"+id+"']").text());
         $('#edit_sub_kepegawaian').val($("td[data-subinstansi='"+id+"']").text()).change();
         $('#edit_unit_kerja_kepegawaian').val($("td[data-unker='"+id+"']").text()).change();
-        $("#edit_sumpah_kepegawaian[value="+$("td[data-sumpah='"+id+"']").text()+"]").attr('checked', 'true');
+        if ($("td[data-sumpah='"+id+"']").text() == "Sudah") {
+            $('#edit_sumpah_kepegawaian1').prop("checked", true);
+            $('#edit_sumpah_kepegawaian0').prop("checked", false);
+        } else {
+            $('#edit_sumpah_kepegawaian1').prop("checked", false);
+            $('#edit_sumpah_kepegawaian0').prop("checked", true);
+        }
+        // $('#edit_sumpah_kepegawaian').val($("td[data-sumpah='"+id+"']").text()).attr('checked', 'true');
+
         $('#edit_pejabat_sumpah_kepegawaian').val($("td[data-pengambilsumpah='"+id+"']").text());
         $('#edit_nomor_berita_acara_kepegawaian').val($("td[data-noberita='"+id+"']").text());
         $('#edit_tanggal_berita_acara_kepegawaian').val($("td[data-tanggalberita='"+id+"']").text());
@@ -608,6 +622,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
   }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_kepegawaian').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
   $("#add_select2").select2({
     ajax: {

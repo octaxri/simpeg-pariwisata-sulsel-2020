@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <!-- PANEL DEFAULT -->
-    <div class="panel">
+    <!--<div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Mutasi</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Mutasi</h3>
       </div>
       <div class="panel-body">
         <table id="tbl_riwayat_mutasi" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -49,30 +49,30 @@
             </tbody>
         </table>
       </div>
-    </div>
+    </div>-->
     <div class="panel">
       <div class="panel-heading">
         <h3 class="panel-title">Riwayat Mutasi</h3>
 
       </div>
       <div class="panel-body">
-          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_mutasi"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+          <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_mutasi"><i class="glyphicon glyphicon-plus"></i> Tambah Data Mutasi</a>
           <hr>
         <table id="tbl_riwayat_mutasi" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
             <thead>
                 <tr class="data-item" data-id="">
                     <th rowspan="2">No.</th>
                     <th rowspan="2">NIP</th>
-                    <th rowspan="2">Nama Lengkap</th>
+                    <th rowspan="2">Nama </th>
                     <th rowspan="2">Jabatan </th>
                     <th rowspan="2">Pangkat/Golongan/Ruang </th>
-                    <th rowspan="2">TMT</th>
+                    <th rowspan="2">Tanggal TMT</th>
                     <th colspan="3" class="text-center">Surat Keputusan</th>
                     <th rowspan="2" >Admin</th>
                     <th rowspan="2"></th>
                 </tr>
                 <tr>
-                    <th>Pejabat</th>
+                    <th>Pejabat Yang Menetapkan</th>
                     <th>Nomor</th>
                     <th>Tanggal</th>
                 </tr>
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">TMT</label>
+                        <label for="bahan" class="col-sm-3 control-label">Tanggal TMT</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="tmt_mutasi" class="form-control">
@@ -153,13 +153,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Nomor</label>
+                        <label for="bahan" class="col-sm-3 control-label">Nomor SK</label>
                         <div class="col-sm-9">
                             <input type="text" id="nomor_mutasi" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal</label>
+                        <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal SK</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="tanggal_mutasi" class="form-control">
@@ -209,7 +209,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">TMT</label>
+                        <label for="bahan" class="col-sm-3 control-label">Tanggal TMT</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="edit_tmt_mutasi" class="form-control">
@@ -224,13 +224,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Nomor</label>
+                        <label for="bahan" class="col-sm-3 control-label">Nomor SK</label>
                         <div class="col-sm-9">
                             <input type="text" id="edit_nomor_mutasi" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal</label>
+                        <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal SK</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="edit_tanggal_mutasi" class="form-control">
@@ -378,6 +378,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
   }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_mutasi').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
   $("#add_select2").select2({
     ajax: {

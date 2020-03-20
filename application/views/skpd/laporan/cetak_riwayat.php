@@ -116,7 +116,7 @@
                         <td><?=$data_pegawai->tanggal_sk_cpns != NULL ? $data_pegawai->tanggal_sk_cpns : '-'?></td>
                       </tr>
                       <tr>
-                        <td>No. SK CPNS</td>
+                        <td>Nomor SK CPNS</td>
                         <td>:</td>
                         <td><?=$data_pegawai->no_sk_cpns != NULL ? $data_pegawai->no_sk_cpns : '-'?></td>
                       </tr>
@@ -131,7 +131,7 @@
                         <td><?=$data_pegawai->tanggal_sk_pns != NULL ? $data_pegawai->tanggal_sk_pns : '-'?></td>
                       </tr
                       <tr>
-                        <td>No. SK PNS</td>
+                        <td>Nomor SK PNS</td>
                         <td>:</td>
                         <td><?=$data_pegawai->no_sk_pns != NULL ? $data_pegawai->no_sk_pns : '-'?></td>
                       </tr>
@@ -312,7 +312,7 @@
                 <td rowspan="2">NO.</td>
                 <td rowspan="2">JABATAN</td>
                 <td rowspan="2">TMT</td>
-                <td  colspan="3">SURAT KEPUTUSAN</td>
+                <td  colspan="3" class="text-center">SURAT KEPUTUSAN</td>
             </tr>
             <tr>
                 <td>Pejabat</td>
@@ -349,7 +349,7 @@
                 <td rowspan="2">GOLONGAN</td>
                 <td rowspan="2">TMT</td>
                 <td rowspan="2">JENIS</td>
-                <td colspan="3">SURAT KEPUTUSAN</td>
+                <td colspan="3" class="text-center">SURAT KEPUTUSAN</td>
             </tr>
             <tr>
                 <td>Pejabat</td>
@@ -449,7 +449,7 @@
                 <td rowspan="2">JABATAN</td>
                 <td rowspan="2">PANGKAT</td>
                 <td rowspan="2">TMT</td>
-                <td colspan="3">SURAT KEPUTUSAN</td>
+                <td colspan="3" class="text-center">SURAT KEPUTUSAN</td>
             </tr>
             <tr>
                 <th>Pejabat</th>

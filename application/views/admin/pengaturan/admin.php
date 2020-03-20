@@ -14,7 +14,7 @@
                         <thead>
                           <tr>
                             <th> No.</th>
-                            <th> Nama Lengkap</th>
+                            <th> Nama </th>
                             <th> E-mail</th>
                             <th>  </th>
                           </tr>
@@ -27,8 +27,8 @@
                             <td><?=$data_admin->email?></td>
                             <td>
                               <a data-toggle="modal" data-target="#edit_user_admin" class="btn btn-primary btn-xs" onclick="editAdmin('<?=$data_admin->id_user?>')"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                              <a  class="btn btn-success btn-xs" onclick="resetPass('<?=$data_admin->id_user?>')"><i class="fa fa-warning"></i>&nbsp;Reset Password</a>
                               <a onclick="hapusData('<?=$data_admin->id_user?>','admin')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                <a  class="btn btn-success btn-xs" onclick="resetPass('<?=$data_admin->id_user?>')"><i class="fa fa-warning"></i>&nbsp;Reset Password</a>
                             </td>
                           </tr>
                           <?php $i++; endforeach ?>
@@ -52,7 +52,7 @@
                 <div class="modal-body">
                   <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Nama Lengkap</label>
+                        <label for="bahan" class="col-sm-3 control-label">Nama </label>
                         <div class="col-sm-8">
                           <input type="text" id="fullname" class="form-control"  required >
 
@@ -81,7 +81,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Email</label>
+                        <label for="bahan" class="col-sm-3 control-label">E-mail</label>
                          <div class="col-sm-8">
                           <input type="text" id="email" class="form-control" required >
 
@@ -112,12 +112,12 @@
               <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" align="center">Edit Akun Admin</h4>
+                    <h4 class="modal-title" align="center">Edit Akun ADMIN</h4>
                 </div>
                 <div class="modal-body">
                   <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Nama Lengkap</label>
+                        <label for="bahan" class="col-sm-3 control-label">Nama </label>
                         <div class="col-sm-8">
                           <input type="text" id="edit_fullname" class="form-control"  required >
 
@@ -131,7 +131,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Email</label>
+                        <label for="bahan" class="col-sm-3 control-label">E-mail</label>
                          <div class="col-sm-8">
                           <input type="text" id="edit_email" class="form-control" required >
 

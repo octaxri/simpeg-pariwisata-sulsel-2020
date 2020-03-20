@@ -49,7 +49,7 @@
                   <tr>
                     <th width="50px;">No.</th>
                     <th>Bidang/Bagian</th>
-                    <th>Total Subbidang/Seksi</th>
+                    <th>Jumlah Subbidang/Seksi</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -334,6 +334,9 @@
             swal('Gagal', 'Data Bidang/Bagian gagal diedit.', 'error');
           }
         });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
 
         case 'unit':

@@ -16,7 +16,7 @@
                                     <th rowspan="2">Jenis Kelamin</th>
                                     <th rowspan="2">Pangkat/Golongan/Ruang</th>
                                     <th rowspan="2">Jabatan</th>
-                                    <th colspan="6">SK Mutasi</th>
+                                    <th colspan="6" class="text-center">SK Mutasi</th>
                                     <th rowspan="2"></th>
                                 </tr>
                                 <tr>

@@ -69,7 +69,7 @@
                             <td>  PNS </td>
                         </tr>
                         <tr>
-                            <td>No. SK CPNS</td>
+                            <td>Nomor SK CPNS</td>
                             <td>:</td>
                             <td>  PNS </td>
                         </tr>
@@ -88,7 +88,7 @@
                             <td>  PNS </td>
                         </tr>
                         <tr>
-                            <td>No. SK PNS</td>
+                            <td>Nomor SK PNS</td>
                             <td>:</td>
                             <td>  PNS </td>
                         </tr>
@@ -98,7 +98,7 @@
                             <td>Nindya Wira Tu (IV/b)</td>
                         </tr>
                         <tr>
-                            <td>Esselon</td>
+                            <td>Eselon</td>
                             <td>:</td>
                             <td> III/a </td>
                         </tr>
@@ -215,7 +215,7 @@
                             <div class="col-md-6">
                                 <table class="standard-table" width="100%" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td>No. KTP</td>
+                                        <td>NIK</td>
                                         <td>:</td>
                                         <td> 7319371973</td>
                                     </tr><tr>
@@ -223,7 +223,7 @@
                                         <td>:</td>
                                         <td> 003</td>
                                     </tr><tr>
-                                        <td>No.ASKES</td>
+                                        <td>No. ASKES</td>
                                         <td>:</td>
                                         <td> 003</td>
                                     </tr><tr>

@@ -120,7 +120,6 @@ function refrensidata_send(method) {
           $(document).ajaxStop(function(){
               window.location.reload();
           });
-          break;
       break;
     }
 }
@@ -157,6 +156,9 @@ function editData_send(method){
           swal('Gagal', 'Data Eselon gagal diedit.', 'error');
         }
       });
+          $(document).ajaxStop(function(){
+              window.location.reload();
+          });
       break;
    }
 }

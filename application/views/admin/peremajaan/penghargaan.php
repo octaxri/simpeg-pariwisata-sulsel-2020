@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
         <!-- PANEL DEFAULT -->
-        <div class="panel">
+        <!--<div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data Penghargaan</h3>
+                <h3 class="panel-title font-white">Verifikasi Data Penghargaan</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_penghargaan" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -15,7 +15,7 @@
                             <th> Jenis Penghargaan</th>
                             <th> No. SK</th>
                             <th> Tanggal SK</th>
-                            <th> Tahun</th>
+                            <th> Tahun Penghargaan</th>
                             <th> </th>
                         </tr>
                     </thead>
@@ -40,27 +40,30 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>-->
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Riwayat Penghargaan</h3>
 
             </div>
             <div class="panel-body">
-                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_penghargaan"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_penghargaan"><i class="glyphicon glyphicon-plus"></i> Tambah Data Penghargaan</a>
                 <hr>
                 <table id="tbl_riwayat_penghargaan" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                     <thead>
                         <tr >
-                            <th> No.</th>
-                            <th> NIP</th>
-                            <th> Nama Pegawai</th>
-                            <th> Jenis Penghargaan</th>
-                            <th> No. SK</th>
-                            <th> Tanggal SK</th>
-                            <th> Tahun</th>
-                            <th> Admin</th>
-                            <th> </th>
+                            <th rowspan="2"> No.</th>
+                            <th rowspan="2"> NIP</th>
+                            <th rowspan="2"> Nama </th>
+                            <th rowspan="2"> Jenis Penghargaan</th>
+                            <th colspan="2" class="text-center"> Surat Keputusan</th>
+                            <th rowspan="2"> Tahun Penghargaan</th>
+                            <th rowspan="2"> Admin</th>
+                            <th rowspan="2"> </th>
+                        </tr>
+                        <tr>
+                            <th> Nomor </th>
+                            <th> Tanggal </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,13 +119,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. Surat</label>
+                        <label  class="col-sm-3 control-label">Nomor SK</label>
                         <div class="col-sm-9">
                             <input id="no_surat_penghargaan" type="number" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Tanggal</label>
+                        <label  class="col-sm-3 control-label">Tanggal SK</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input id="tanggal_penghargaan" type="text" class="form-control" >
@@ -175,13 +178,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">No. Surat</label>
+                        <label  class="col-sm-3 control-label">Nomor SK</label>
                         <div class="col-sm-9">
                             <input id="edit_no_surat_penghargaan" type="text" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Tanggal</label>
+                        <label  class="col-sm-3 control-label">Tanggal SK</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input id="edit_tanggal_penghargaan" type="text" class="form-control" >
@@ -332,6 +335,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
 }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_penghargaan').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
 $("#add_select2").select2({
     ajax: {

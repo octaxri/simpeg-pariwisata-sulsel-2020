@@ -9,7 +9,7 @@ class Honorer extends MY_Controller {
         $data_honorer = $this->crud->ga('data_honorer');
         $data_satker = $this->crud->ga('data_satker');
 
-        $data = array(  'title'     => 'Data Honorer',
+        $data = array(  'title'     => 'Data Pegawai Magang',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'data_satker' => $data_satker,
         'data_honorer' => $data_honorer,
@@ -21,7 +21,7 @@ class Honorer extends MY_Controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data = array(  'title'     => 'Tambah Data Honorer',
+        $data = array(  'title'     => 'Tambah Data Pegawai Magang',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'isi'       => 'skpd/data_honorer/tambah');
         $this->load->view('skpd/_layout/wrapper', $data);
@@ -61,7 +61,7 @@ class Honorer extends MY_Controller {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
         $id = $this->input->get('id');
         $a = $this->db->where('id', $id)->get('data_honorer')->result();
-        $data = array(  'title'     => 'Edit Data Honorer',
+        $data = array(  'title'     => 'Edit Pegawai Magang',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'data' => $a,
         'isi'       => 'skpd/data_honorer/edit');

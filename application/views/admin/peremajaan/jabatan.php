@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <!-- PANEL DEFAULT -->
-    <div class="panel">
+    <!--<div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Jabatan</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Jabatan</h3>
     </div>
     <div class="panel-body">
         <table id="tbl_riwayat_jabatan" cellspacing="0" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal">
@@ -63,7 +63,7 @@
                 <?php endif ?>
             </tbody>
         </table>
-    </div>
+    </div>-->
 </div>
 <div class="panel">
   <div class="panel-heading">
@@ -71,33 +71,33 @@
 
 </div>
 <div class="panel-body">
-    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_jabatan"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_jabatan"><i class="glyphicon glyphicon-plus"></i> Tambah Data Jabatan</a>
     <hr>
     <table id="tbl_riwayat_jabatan" cellspacing="0" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal">
         <thead>
             <tr class="data-item" data-id="">
                 <th rowspan="2">No.</th>
                 <th rowspan="2">NIP</th>
-                <th rowspan="2" width="100">Nama Lengkap</th>
-                <th colspan="2" class="text-center">Jabatan </th>
+                <th rowspan="2" width="100">Nama </th>
+                <th rowspan="2">Jenis Jabatan</th>
+                <th rowspan="2">Nama Jabatan</th>
+<!--                <th colspan="2" class="text-center">Jabatan </th>-->
                 <th colspan="3" class="text-center">Lokasi Kerja</th>
-                <th colspan="2" class="text-center">TMT</th>
+                <th colspan="2" class="text-center">Tanggal TMT</th>
                 <th rowspan="2">Eselon</th>
                 <th colspan="3" class="text-center">Surat Keputusan</th>
                 <th rowspan="2">Admin</th>
                 <th rowspan="2"></th>
             </tr>
             <tr>
-                <th width="40">Jenis</th>
-                <th width="700">Nama</th>
                 <th width="200">Instansi Induk</th>
-                <th width="200">Unor Induk</th>
-                <th width="200">Unor</th>
+                <th width="200">Bidang/Bagian</th>
+                <th width="200">Subbidang/Seksi</th>
                 <th>Jabatan</th>
                 <th>Pelantikan</th>
-                <th width="65px;">Pejabat Yang Menandatangani</th>
-                <th width="65px;">Nomor</th>
-                <th>Tanggal</th>
+                <th>Pejabat Yang Menetapkan</th>
+                <th>Nomor </th>
+                <th>Tanggal </th>
             </tr>
         </thead>
         <tbody>
@@ -195,7 +195,7 @@
                 </div>
                 <div class="col-md-12">
                     <hr>
-                    <div class="alert alert-info"><i class="fa fa-info-circle"></i> Lokasi Kerja</div>
+                    <div class="alert alert-info" style="text-transform: uppercase;"> Lokasi Kerja</div>
                 </div>
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">Instansi Induk</label>
@@ -229,7 +229,7 @@
                 </div>
                 <div class="col-md-12">
                     <hr>
-                    <div class="alert alert-info"><i class="fa fa-info-circle"></i> Informasi Pelantikan</div>
+                    <div class="alert alert-info" style="text-transform: uppercase;"> Informasi Pelantikan</div>
                 </div>
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">TMT Pelantikan</label>
@@ -241,19 +241,19 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="bahan" class="col-sm-3 control-label">Pejabat</label>
+                    <label for="bahan" class="col-sm-3 control-label">Pejabat Yang Menetapkan</label>
                     <div class="col-sm-9">
                         <input type="text" id="pejabat_jabatan" class="form-control" >
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="bahan" class="col-sm-3 control-label">Nomor</label>
+                    <label for="bahan" class="col-sm-3 control-label">Nomor SK</label>
                     <div class="col-sm-9">
                         <input type="text" id="nomor_jabatan" class="form-control" >
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal</label>
+                    <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal SK</label>
                     <div class="col-sm-9">
                         <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                             <input type="text" id="tanggal_jabatan" class="form-control">
@@ -332,7 +332,7 @@
                 </div>
                 <div class="col-md-12">
                     <hr>
-                    <div class="alert alert-info"><i class="fa fa-info-circle"></i> Lokasi Kerja</div>
+                    <div class="alert alert-info" style="text-transform: uppercase;"> Lokasi Kerja</div>
                 </div>
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">Instansi Induk</label>
@@ -345,7 +345,7 @@
                     <label for="bahan" class="col-sm-3 control-label">Bidang/Bagian</label>
                     <div class="col-sm-9">
                         <!-- <input type="text" id="sub_kepegawaian" readonly class="form-control"  required> -->
-                        <select  id="edit_unor_induk_jabatan" class="form-control select-2" required readonly>
+                        <select  id="edit_unor_induk_jabatan" class="form-control select-2" required >
                             <option value=""></option>
                             <?php foreach ($data_satker as $data_satker2): ?>
                                 <option value="<?=$data_satker2->nama_satker?>"><?=$data_satker2->nama_satker?></option>
@@ -356,7 +356,7 @@
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">Subbidang/Seksi</label>
                     <div class="col-sm-9">
-                        <select id="edit_unor_jabatan" class="form-control select-2" readonly required>
+                        <select id="edit_unor_jabatan" class="form-control select-2"  required>
                             <option value=""></option>
                             <?php foreach ($data_unit as $data_unit2): ?>
                                 <option value="<?=$data_unit2->nama_unit?>"><?=$data_unit2->nama_unit?></option>
@@ -366,7 +366,7 @@
                 </div>
                 <div class="col-md-12">
                     <hr>
-                    <div class="alert alert-info"><i class="fa fa-info-circle"></i> Informasi Pelantikan</div>
+                    <div class="alert alert-info" style="text-transform: uppercase;"> Informasi Pelantikan</div>
                 </div>
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">TMT Pelantikan</label>
@@ -378,19 +378,19 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="bahan" class="col-sm-3 control-label">Pejabat</label>
+                    <label for="bahan" class="col-sm-3 control-label">Pejabat Yang Menetapkan</label>
                     <div class="col-sm-9">
                         <input type="text" id="edit_pejabat_jabatan" class="form-control" >
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="bahan" class="col-sm-3 control-label">Nomor</label>
+                    <label for="bahan" class="col-sm-3 control-label">Nomor SK</label>
                     <div class="col-sm-9">
                         <input type="text" id="edit_nomor_jabatan" class="form-control" >
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal</label>
+                    <label for="bahan" type="date" class="col-sm-3 control-label">Tanggal SK</label>
                     <div class="col-sm-9">
                         <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                             <input type="text" id="edit_tanggal_jabatan" class="form-control">
@@ -429,7 +429,6 @@
             nama_jabatan: $('#nama_jabatan').val(),
             instansi_induk: $('#instansi_jabatan').val(),
             unor_induk: $('#unor_induk_jabatan').val(),
-            sub_instansi: $('#unor_induk_jabatan').val(),
             unor: $('#unor_jabatan').val(),
             tmt_jabatan: $('#tmt_jabatan').val(),
             tmt_pelantikan: $('#tmt_pelantikan').val(),
@@ -464,7 +463,6 @@ function editData_send(model){
         nama_jabatan: $('#edit_nama_jabatan').val(),
         instansi_induk: $('#edit_instansi_jabatan').val(),
         unor_induk: $('#edit_unor_induk_jabatan').val(),
-        sub_instansi: $('#edit_unor_induk_jabatan').val(),
         unor: $('#edit_unor_jabatan').val(),
         tmt_jabatan: $('#edit_tmt_jabatan').val(),
         tmt_pelantikan: $('#edit_tmt_pelantikan').val(),
@@ -494,6 +492,8 @@ function editData(model,id){
         $('#edit_jenis_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
         $('#edit_nama_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(4)").text());
         $('#edit_instansi_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(5)").text());
+        $('#edit_unor_induk_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(6)").text()).trigger('change');
+        $('#edit_unor_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(7)").text()).trigger('change');
         $('#edit_tmt_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(8)").text());
         $('#edit_tmt_pelantikan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(9)").text());
         $('#edit_eselon_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(10)").text()).trigger('change');
@@ -581,6 +581,15 @@ function formatResultSelectionEdit (data) {
     '<span>'+ data.text+'</span>';
     return markup;
 }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_jabatan').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
 $("#add_select2").select2({
     ajax: {

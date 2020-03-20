@@ -67,7 +67,7 @@ class Referensi extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data_agama  = $this->crud->gao('data_agama', 'uat DESC');
+        $data_agama  = $this->crud->gao('data_agama', 'nama_agama ASC');
         $data_pendidikan = $this->crud->gao('data_pendidikan','id_pendidikan ASC');
 
         $data = array(  'title'     => 'Referensi / Data Umum',
@@ -81,7 +81,7 @@ class Referensi extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data_satker = $this->crud->gao('data_satker', 'uat DESC');
+        $data_satker = $this->crud->gao('data_satker', 'nama_satker ASC');
         $data_unit = $this->crud->qr('SELECT nama_satker, count(*) as total FROM data_unit GROUP BY nama_satker');
 
         $data = array(  'title'     => 'Referensi / Data Instansi ',

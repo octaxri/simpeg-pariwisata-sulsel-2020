@@ -141,7 +141,7 @@ $usia = $akhir->diff($awal)->format("%y Tahun");
                 <table class="table table-bordered">
                     <tbody>
                     <tr>
-                        <td width="30%">No. KTP</td>
+                        <td width="30%">NIK</td>
                         <td width="2%">:</td>
                         <td width="70%"><?=$data_keteranganlainnya->no_ktp?></td>
                     </tr>
@@ -175,7 +175,7 @@ $usia = $akhir->diff($awal)->format("%y Tahun");
                 <table class="table table-bordered table-responsive">
                     <tbody>
                     <tr>
-                        <td width="30%">No. SK Pengangkatan CPNS</td>
+                        <td width="30%">Nomor SK Pengangkatan CPNS</td>
                         <td width="2%">:</td>
                         <td width="68%"><?=(($data_cpns) ? $data_cpns->no_sk : "-")?></td>
                     </tr>
@@ -219,7 +219,7 @@ $usia = $akhir->diff($awal)->format("%y Tahun");
                 <table class="table table-bordered table-responsive">
                     <tbody>
                     <tr>
-                        <td width="30%">No. SK Pengangkatan CPNS</td>
+                        <td width="30%">Nomor SK Pengangkatan CPNS</td>
                         <td width="2%">:</td>
                         <td width="68%"><?=(($data_pns) ? $data_pns->no_sk : "-")?></td>
                     </tr>
@@ -278,7 +278,7 @@ $usia = $akhir->diff($awal)->format("%y Tahun");
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td width="30%">No. SK</td>
+                        <td width="30%">Nomor SK</td>
                         <td width="2%">:</td>
                         <td>-</td>
                     </tr>

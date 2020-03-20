@@ -102,7 +102,7 @@
                                     <td><i><?=$data_pegawai->jenis_pangkat?></i></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>Esselon</td>
+                                    <td>Eselon</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td><i> <?=$data_pegawai->eselon?> </i></td>
                                 </tr>
@@ -222,7 +222,7 @@
                                     <td>  <?=$data_keteranganbadan->berat_badan?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td>No. KTP</td>
+                                    <td>NIK</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td>  <?=$data_keteranganlainnya->no_ktp?></td>
                                 </tr><tr class="data-item" data-id="">
@@ -230,7 +230,7 @@
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_karpeg?></td>
                                 </tr><tr class="data-item" data-id="">
-                                    <td>No.ASKES</td>
+                                    <td>No. ASKES</td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td> <?=$data_keteranganlainnya->no_askes?></td>
                                 </tr><tr class="data-item" data-id="">
@@ -555,8 +555,8 @@
                                             <td data-noberita='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->no_berita?></td>
                                             <td data-tanggalberita='<?=$riwayat_pns->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns->tanggal_berita?></td>
                                             <td  align="center">
-                                                <a style="font-size: 0.8em; display: inline" onclick="edit('pns', '<?=$riwayat_pns->id_riwayat?>')" data-toggle="modal" data-target="#edit_kepegawaian" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                                <a  style="font-size: 0.8em display: inline;" onclick="hapusRiwayat('pegawai_pns','<?=$riwayat_pns->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                                                <a style="display: inline" onclick="edit('pns', '<?=$riwayat_pns->id_riwayat?>')" data-toggle="modal" data-target="#edit_kepegawaian" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                                                <a  style="display: inline" onclick="hapusRiwayat('pegawai_pns','<?=$riwayat_pns->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php $i++; endforeach ?>
@@ -884,7 +884,7 @@
                                     <tr >
                                         <th> No.</th>
                                         <th> Jenis Penghargaan</th>
-                                        <th> No. SK</th>
+                                        <th> Nomor SK</th>
                                         <th> Tanggal SK</th>
                                         <th> Tahun</th>
                                         <th> </th>
@@ -951,7 +951,7 @@
                                         <th> No.</th>
                                         <th> Instansi </th>
                                         <th> Nama Unor</th>
-                                        <th> No. SK</th>
+                                        <th> Nomor SK</th>
                                         <th> Tanggal SK</th>
                                         <!-- <th> Prosedur Awal</th> -->
                                         <th> </th>
@@ -988,7 +988,7 @@
                                         <th> No.</th>
                                         <th> Jenis Pemberhentian </th>
                                         <th> Kedudukan Hukum</th>
-                                        <th> No. SK</th>
+                                        <th> Nomor SK</th>
                                         <th> Tanggal SK</th>
                                         <!-- <th> Prosedur Asal</th> -->
                                         <th> </th>
@@ -1023,7 +1023,7 @@
                                 <thead>
                                     <tr >
                                         <th> No.</th>
-                                        <th> No. SK </th>
+                                        <th> Nomor SK </th>
                                         <th> Tanggal SK</th>
                                         <th> Kredit Utama</th>
                                         <th> Kredit Penunjang</th>
@@ -1227,7 +1227,7 @@
                                     <tr >
                                         <th> No.</th>
                                         <th> Jenis Cuti </th>
-                                        <th> No. SK Cuti</th>
+                                        <th> Nomor SK Cuti</th>
                                         <th> Tgl. SKEP</th>
                                         <th> Tanggal Awal</th>
                                         <th> Tanggal Akhir</th>

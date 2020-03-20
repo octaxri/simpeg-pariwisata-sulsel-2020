@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
         <!-- PANEL DEFAULT -->
-        <div class="panel">
+        <!--<div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data Profesi</h3>
+                <h3 class="panel-title font-white">Verifikasi Data Profesi</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_profesi" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -38,21 +38,21 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>-->
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Riwayat Profesi</h3>
 
             </div>
             <div class="panel-body">
-                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_profesi"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_profesi"><i class="glyphicon glyphicon-plus"></i> Tambah Data Profesi</a>
                 <hr>
                 <table id="tbl_riwayat_profesi" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                     <thead>
                         <tr >
                             <th> No.</th>
                             <th> NIP</th>
-                            <th> Nama Pegawai</th>
+                            <th> Nama </th>
                             <th> Profesi </th>
                             <th> Penyelenggara</th>
                             <th> Tahun Lulus</th>
@@ -306,6 +306,15 @@
     '<span>'+ data.text+'</span>';
     return markup;
 }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_profesi').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
 $("#add_select2").select2({
     ajax: {

@@ -185,7 +185,7 @@
                                 
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label">No. SK CPNS</label>
+                                <label class="col-md-4 control-label">Nomor SK CPNS</label>
                                 <div class="col-md-8">
                                     <input name="no_sk_cpns" type="text" class="form-control" value="<?=set_value('no_sk_cpns', $data_pegawai->no_sk_cpns)?>" >
                                     <?=form_error('no_sk_cpns')?>
@@ -433,7 +433,7 @@
                     <div class="alert alert-info"><i class="fa fa-info-user"></i> KETERANGAN LAINNYA</div>
                         <div class="form-horizontal">
                             <div class="form-group">
-                                <label class="col-md-4 control-label">No. KTP</label>
+                                <label class="col-md-4 control-label">NIK</label>
                                 <div class="col-md-8">
                                     <input name="no_ktp" type="text" class="form-control" value="<?=set_value('no_ktp', $data_keteranganlainnya->no_ktp)?>">
                                     <?=form_error('no_ktp')?>

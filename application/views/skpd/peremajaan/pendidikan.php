@@ -3,15 +3,15 @@
     <!-- PANEL DEFAULT -->
     <div class="panel">
       <div class="panel-heading panel-danger">
-        <h3 class="panel-title font-white">Verikasi Data Pendidikan</h3>
+        <h3 class="panel-title font-white">Verifikasi Data Pendidikan</h3>
       </div>
       <div class="panel-body">
        <table style="min-width:100% !important;" id="tbl_riwayat_pendidikan" class="display table table-bordered table-sorting datatable-Exnormal no-footer" role="grid">
         <thead>
           <tr class="data-item" data-id="">
             <th>No.</th>
-            <th>NIP Pegawai</th>
-            <th>Nama Pegawai</th>
+            <th>NIP </th>
+            <th>Nama </th>
             <th>Tingkat </th>
             <th>Pendidikan</th>
             <th>Instansi</th>
@@ -52,8 +52,8 @@
         <thead>
           <tr class="data-item" data-id="">
             <th>No.</th>
-            <th>NIP Pegawai</th>
-            <th>Nama Pegawai</th>
+            <th>NIP </th>
+            <th>Nama </th>
             <th>Tingkat </th>
             <th>Program Studi</th>
             <th>Jurusan</th>

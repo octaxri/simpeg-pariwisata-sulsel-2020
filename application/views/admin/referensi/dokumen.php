@@ -65,8 +65,9 @@
 		      	<div class="row data-edit">
 
 		      	</div>
-
-		      	<button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Simpan Perubahan</button>
+                <center>
+                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Simpan Perubahan</button>
+                </center>
 	        </form>
 	      </div>
 	    </div>
@@ -94,7 +95,8 @@ $(document).ready(function(){
             },
         },
        "columns": [ // yang perlu di setup
-            {"data": "id"},
+            {"data": "id", render: function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;}},
             {"data": "jenis_dokumen"},
             { "data": null, "defaultContent": "<button class='edit_<?=$table?> btn btn-primary btn-xs'><i class='fa fa-pencil'></i>Edit</button> <button class='delete_<?=$table?> btn btn-danger btn-xs' data-type='delete' data-table='<?=$table?>'><i class='fa fa-trash'></i>Hapus</button>"}
         ],
@@ -155,7 +157,7 @@ $(document).ready(function(){
         	}
         	html += 
         	'<div class="form-group col-sm-12 '+type+'">' +
-	            '<label class="col-sm-3 control-label">'+x+'</label>' +
+	            '<label class="col-sm-3 control-label">Jenis Dokumen</label>' +
 	            '<div class="col-sm-9">' +
 	              '<input type="'+type+'" name="'+x+'" class="form-control" value="'+edit[x]+'">' +
 	            '</div>' +
@@ -171,7 +173,7 @@ $(document).ready(function(){
 		var type = $(this).data('type') 
 
         $.ajax({
-        	url : '<?=admin_url("ReferensiAjax/")?><?=$table?>',
+        	url : '<?=admin_url("ReferensiAjax/data/")?><?=$table?>',
         	method : "POST",
         	data : {
         		type : type,

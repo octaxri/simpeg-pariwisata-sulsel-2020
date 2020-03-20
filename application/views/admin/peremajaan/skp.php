@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
         <!-- PANEL DEFAULT -->
-        <div class="panel">
+        <!--<div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data SKP</h3>
+                <h3 class="panel-title font-white">Verifikasi Data SKP</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_skp" style="min-width: 100%" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -76,28 +76,32 @@
                    </tbody>
                </table>     
             </div>
-        </div>
+        </div>-->
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Riwayat SKP</h3>
 
             </div>
             <div class="panel-body">
-                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_skp"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_skp"><i class="glyphicon glyphicon-plus"></i> Tambah Data SKP</a>
                 <hr>
                 <table id="tbl_riwayat_skp" style="min-width: 100%" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                     <thead>
                         <tr >
                             <th> No.</th>
                             <th> NIP</th>
-                            <th> Nama Pegawai</th>
+                            <th> Nama </th>
+                            <th style="display: none"> Jenis Jabatan</th>
                             <th> Tahun </th>
-                            <th> Nilai Rata-rata</th>
+                            <th style="display: none"> Nilai Perilaku Kerja</th>
+                            <th style="display: none"> Nilai SKP</th>
+                            <th> Nilai Prestasi Kerja</th>
                             <th> Keterangan</th>
-                            <th> Jumlah</th>
                             <th> Pejabat Penilai</th>
                             <th> Atasan Pejabat Penilai</th>
                             <th> Admin</th>
+                            <th style="display: none"></th>
+                            <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
@@ -126,15 +130,19 @@
                                 <td><?=$riwayat_skp_verified->nama_lengkap?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->jenis_jabatan?></td>
                                 <td><?=$riwayat_skp_verified->tahun?></td>
+                                <td style="display: none"><?=$riwayat_skp_verified->nilai_skp?></td>
+                                <td style="display: none"><?=$riwayat_skp_verified->orientasi?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->komitmen?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->kerjasama?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->integritas?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->disiplin?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->kepemimpinan?></td>
-                                <td><?=$riwayat_skp_verified->hasil_nilai_perilaku_kerja?></td>
-                                <td><?=$riwayat_skp_verified->ket_nilai_prestasi_kerja?></td>
+                                <td style="display: none"><?=$riwayat_skp_verified->nilai_perilaku_kerja?></td>
                                 <td><?=$riwayat_skp_verified->nilai_prestasi_kerja?></td>
+                                <td><?=$riwayat_skp_verified->ket_nilai_prestasi_kerja?></td>
                                 <td><?=$riwayat_skp_verified->nama_pejabat?></td>
+                                <td style="display: none"><?=$riwayat_skp_verified->hasil_nilai_skp?></td>
+                                <td style="display: none"><?=$riwayat_skp_verified->hasil_nilai_perilaku_kerja?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->nip_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->jabatan_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->unor_pejabat?></td>
@@ -198,22 +206,22 @@
                             <input id="tahun_skp" type="text" class="form-control onlyYears" >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase"><strong> Sasaran Kinerja Pegawai</strong></h5>
+                    <div class="alert alert-info" style="text-transform: uppercase"> Sasaran Kinerja Pegawai</div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Nilai SKP</label>
                         <div class="col-sm-3">
                             <input id="nilai_skp" type="text" class="form-control"   value="0.00" placeholder="0.00" step="0.01" onkeyup="isGrade(this,this.value);" >
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <input id="persen_nilai_skp" type="text" value="60%" readonly class="form-control" >
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <input id="hasil_nilai_skp" type="text" readonly class="form-control" >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase"><strong>Perilaku Kerja</strong></h5>
+                    <div class="alert alert-info" style="text-transform: uppercase">Perilaku Kerja</div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Orientasi Pelayan</label>
+                        <label  class="col-sm-3 control-label">Orientasi Pelayanan</label>
                         <div class="col-sm-3">
                             <input id="orientasi_skp" type="text" class="form-control" value="0.00" placeholder="0.00" step="0.01" onkeyup="isGrade(this,this.value);" >
                         </div>
@@ -271,10 +279,10 @@
                         <div class="col-sm-3">
                             <input id="nilai_perilaku_skp" type="text" class="form-control" readonly="" value="0.00" placeholder="0.00" >
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <input id="persen_nilai_perilaku_skp" value="40%" type="text" readonly class="form-control" >
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <input id="hasil_nilai_perilaku_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
@@ -287,7 +295,7 @@
                             <input id="ket_nilai_prestasi_skp" type="text" readonly class="form-control" >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase">Pejabat Penilai</h5>
+                    <div class="alert alert-info" style="text-transform: uppercase">Pejabat Penilai</div>
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>
                         <div class="col-sm-9">
@@ -303,24 +311,24 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
+                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>
                         <div class="col-sm-9">
                             <input id="unor_penilai_skp" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
+                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>
                         <div class="col-sm-9">
                             <input id="golongan_penilai_skp" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
+                        <label  class="col-sm-3 control-label">TMT Jabatan</label>
                         <div class="col-sm-9">
                             <input id="tmt_golongan_penilai_skp" type="text" class="form-control" readonly >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase">Atasan Pejabat Penilai</h5>
+                    <div class="alert alert-info" style="text-transform: uppercase">Atasan Pejabat Penilai</div>
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>
                         <div class="col-sm-9">
@@ -336,19 +344,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
+                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>
                         <div class="col-sm-9">
                             <input id="unor_atasan_skp" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
+                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>
                         <div class="col-sm-9">
                             <input id="golongan_atasan_skp" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
+                        <label  class="col-sm-3 control-label">TMT Jabatan</label>
                         <div class="col-sm-9">
                             <input id="tmt_atasan_penilai_skp" type="text" class="form-control" readonly >
                         </div>
@@ -374,9 +382,19 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
+<!--                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>-->
+                        <div class="col-sm-9">
+<!--                            <select id="add_select2" class="form-control select2"  style="width: 100%"></select>-->
+                            <input type="hidden" id="edit_nama_lengkap" class="form-control" >
+                            <input type="hidden" id="edit_nip" class="form-control" >
+                            <input type="hidden" id="edit_admin" value="<?=$this->session->fullname?>" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label  class="col-sm-3 control-label">Jenis Jabatan</label>
                         <div class="col-sm-9">
-                            <select id="edit_jenis_jabatan_skp" class="form-control">
+                            <select id="edit_jenis_jabatan_skp" class="form-control select-2">
+                                <option value=""></option>
                                 <option value="umum">Fungsional Umum</option>
                                 <option value="struktural">Struktural</option>
                                 <option value="tertentu">Fungsional Tertentu</option>
@@ -386,181 +404,167 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun</label>
                         <div class="col-sm-9">
-                            <input id="edit_tahun_skp" type="text" class="form-control" >
+                            <input id="edit_tahun_skp" type="text" class="form-control onlyYears" >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase"><strong> Sasaran Kinerja Pegawai</strong></h5>
+                    <div class="alert alert-info" style="text-transform: uppercase"> Sasaran Kinerja Pegawai</div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Nilai SKP</label>
                         <div class="col-sm-3">
-                            <input id="edit_nilai_skp" type="text" class="form-control" >
+                            <input id="edit_nilai_skp" type="text" class="form-control"   value="0.00" placeholder="0.00" step="0.01" onkeyup="isGradeEdit(this,this.value);" >
                         </div>
                         <div class="col-sm-3">
-                            <input id="edit_ket_nilai_skp" type="text" readonly class="form-control" >
+                            <input id="edit_persen_nilai_skp" type="text" value="60%" readonly class="form-control" >
                         </div>
                         <div class="col-sm-3">
-                            <input id="edit_ket_nilai_skp2" type="text" readonly class="form-control" >
+                            <input id="edit_hasil_edit_nilai_skp" type="text" readonly class="form-control" >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase"><strong>Perilaku Kerja</strong></h5>
+                    <div class="alert alert-info" style="text-transform: uppercase">Perilaku Kerja</div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Orientasi Pelayan</label>
+                        <label  class="col-sm-3 control-label">Orientasi Pelayanan</label>
                         <div class="col-sm-3">
-                            <input id="edit_orientasi_skp" type="text" class="form-control" >
+                            <input id="edit_orientasi_skp" type="text" class="form-control" value="0.00" placeholder="0.00" step="0.01" onkeyup="isGradeEdit(this,this.value);" >
                         </div>
                         <div class="col-sm-6">
-                            <input id="edit_ket_orientasi_skp" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_orientasi_skp" type="text" readonly class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Komitmen</label>
                         <div class="col-sm-3">
-                            <input id="edit_komitmen_skp" type="text" class="form-control" >
+                            <input id="edit_komitmen_skp" type="text" class="form-control" value="0.00" placeholder="0.00" step="0.01" onkeyup="isGradeEdit(this,this.value);" >
                         </div>
                         <div class="col-sm-6">
-                            <input id="edit_ket_komitmen_skp" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_komitmen_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Kerjasama</label>
                         <div class="col-sm-3">
-                            <input id="edit_kerjasama_skp" type="text" class="form-control" >
+                            <input id="edit_kerjasama_skp" type="text" class="form-control" value="0.00" placeholder="0.00" step="0.01" onkeyup="isGradeEdit(this,this.value);" >
                         </div>
                         <div class="col-sm-6">
-                            <input id="edit_ket_kerjasama_skp" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_kerjasama_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Integritas</label>
                         <div class="col-sm-3">
-                            <input id="edit_integritas_skp" type="text" class="form-control" >
+                            <input id="edit_integritas_skp" type="text" class="form-control" value="0.00" placeholder="0.00" step="0.01" onkeyup="isGradeEdit(this,this.value);" >
                         </div>
                         <div class="col-sm-6">
-                            <input id="edit_ket_integritas_skp" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_integritas_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Disiplin</label>
                         <div class="col-sm-3">
-                            <input id="edit_disiplin_skp" type="text" class="form-control" >
+                            <input id="edit_disiplin_skp" type="text" class="form-control" value="0.00" placeholder="0.00" step="0.01" onkeyup="isGradeEdit(this,this.value);" >
                         </div>
                         <div class="col-sm-6">
-                            <input id="edit_ket_disiplin_skp" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_disiplin_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Kepemimpinan</label>
                         <div class="col-sm-3">
-                            <input id="edit_kepemimpinan_skp" type="text" class="form-control" >
+                            <input id="edit_kepemimpinan_skp" type="text" class="form-control" value="0.00" placeholder="0.00" step="0.01" onkeyup="isGradeEdit(this,this.value);" >
                         </div>
                         <div class="col-sm-6">
-                            <input id="edit_ket_kepemimpinan_skp" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_kepemimpinan_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Nilai Perilaku Kerja</label>
                         <div class="col-sm-3">
-                            <input id="edit_nilai_perilaku_skp" type="text" class="form-control" >
+                            <input id="edit_nilai_perilaku_skp" type="text" class="form-control" readonly="" value="0.00" placeholder="0.00" >
                         </div>
                         <div class="col-sm-3">
-                            <input id="edit_ket_nilai_perilaku_skp" type="text" readonly class="form-control" >
+                            <input id="edit_persen_nilai_perilaku_skp" value="40%" type="text" readonly class="form-control" >
                         </div>
                         <div class="col-sm-3">
-                            <input id="edit_ket_nilai_perilaku_skp2" type="text" class="form-control" >
+                            <input id="edit_hasil_nilai_perilaku_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Nilai Prestasi Kerja</label>
                         <div class="col-sm-3">
-                            <input id="edit_nilai_prestasi_skp" type="text" class="form-control" >
+                            <input id="edit_nilai_prestasi_skp" type="text" class="form-control"  readonly value="0.00" placeholder="0.00" step="0.01" onkeyup="isGrade(this,this.value);" >
                         </div>
                         <div class="col-sm-6">
                             <input id="edit_ket_nilai_prestasi_skp" type="text" readonly class="form-control" >
                         </div>
                     </div>
-                    <h5 style="text-transform: uppercase">Pejabat Penilai</h5>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">NIP</label>
+<!--                    <div class="alert alert-info" style="text-transform: uppercase">Pejabat Penilai</div>-->
+                    <div class="">
+<!--                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_nip_penilai_skp" type="text" class="form-control" >
+<!--                            <select id="add_pejabat_select2" class="form-control select2"  style="width: 100%"></select>-->
+                            <input type="hidden" id="edit_nip_penilai_skp" class="form-control" >
+                            <input type="hidden" id="edit_nama_penilai_skp" class="form-control" >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Nama</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Jabatan</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_nama_penilai_skp" type="text" class="form-control" >
+                            <input id="edit_jabatan_penilai_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Jabatan</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_jabatan_penilai_skp" type="text" class="form-control" >
+                            <input id="edit_unor_penilai_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_unor_penilai_skp" type="text" class="form-control" >
+                            <input id="edit_golongan_penilai_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">TMT Jabatan</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_golongan_penilai_skp" type="text" class="form-control" >
+                            <input id="edit_tmt_golongan_penilai_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
+<!--                    <div class="alert alert-info" style="text-transform: uppercase">Atasan Pejabat Penilai</div>-->
+                    <div class="">
+<!--                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>-->
                         <div class="col-sm-9">
-                            <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
-                                <input id="edit_tmt_golongan_penilaianskp" type="text" class="form-control" >
-                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div><hr>
-                    <h5 style="text-transform: uppercase">Atasan Pejabat Penilai</h5>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">NIP</label>
-                        <div class="col-sm-9">
-                            <input id="edit_nip_atasan_skp" type="text" class="form-control" >
+<!--                            <select id="add_atasan_pejabat_select2" class="form-control select2"  style="width: 100%"></select>-->
+                            <input type="hidden" id="edit_nip_atasan_skp" class="form-control" >
+                            <input type="hidden" id="edit_nama_atasan_skp" class="form-control" >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Nama</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Jabatan</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_nama_atasan_skp" type="text" class="form-control" >
+                            <input id="edit_jabatan_atasan_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Jabatan</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_jabatan_atasan_skp" type="text" class="form-control" >
+                            <input id="edit_unor_atasan_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_unor_atasan_skp" type="text" class="form-control" >
+                            <input id="edit_golongan_atasan_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">TMT Jabatan</label>-->
                         <div class="col-sm-9">
-                            <input id="edit_golongan_atasan_skp" type="text" class="form-control" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
-                        <div class="col-sm-9">
-                            <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
-                                <input id="edit_tmt_atasan_penilaianskp" type="text" class="form-control" >
-                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                            </div>
+                            <input id="edit_tmt_atasan_penilai_skp" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group ">
                         <div class="col-md-3 col-md-offset-5">
-                            <a  class="btn btn-primary btn-sm" onclick="profilAjaxEdit_send('riwayat_unor');"><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan</a>
+                            <a  class="btn btn-primary btn-sm" onclick="editData_send('riwayat_skp');"><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan</a>
                         </div>
                     </div>
                 </form>
@@ -629,30 +633,21 @@
                 type: 'POST',
                 url: '<?=admin_url('PeremajaanData/editData/')?>'+idGlob+'/'+model,
                 data: {
+                    nip: $('#edit_nip').val(),
                     jenis_jabatan: $('#edit_jenis_jabatan_skp').val(),
                     tahun: $('#edit_tahun_skp').val(),
-                    kesetiaan: $('#edit_kesetiaan_skp').val(),
-                    tanggung: $('#edit_tanggung_skp').val(),
-                    kejujuran: $('#edit_kejujuran_skp').val(),
-                    prakarsa: $('#edit_prakarsa_skp').val(),
-                    prestasi: $('#edit_prestasi_skp').val(),
-                    ketaatan : $('#edit_ketaatan_skp').val(),
-                    kerjasama : $('#edit_kerjasama_skp').val(),
-                    nilai_ratarata: $('#edit_rata_skp').val(),
-                    jumlah: $('#edit_jumlah_skp').val(),
-                    nama_pejabat: $('#edit_nama_penilai_skp').val(),
-                    nip_pejabat: $('#edit_nip_penilai_skp').val(),
-                    jabatan_pejabat: $('#edit_jabatan_penilai_skp').val(),
-                    unor_pejabat: $('#edit_unor_penilai_skp').val(),
-                    golongan_pejabat: $('#edit_golongan_penilai_skp').val(),
-                    tmt_pejabat: $('#edit_tmt_golongan_penilai_skp').val(),
-                    nama_atasan_pejabat: $('#edit_nama_atasan_skp').val(),
-                    nip_atasan_pejabat: $('#edit_nip_atasan_skp').val(),
-                    jabatan_atasan_pejabat: $('#edit_jabatan_atasan_skp').val(),
-                    unor_atasan_pejabat: $('#edit_unor_atasan_skp').val(),
-                    golongan_atasan_pejabat: $('#edit_golongan_atasan_skp').val(),
-                    tmt_atasan_pejabat: $('#edit_tmt_atasan_penilai_skp').val(),
-                    keterangan: $('#edit_ket_rata_skp').val(),
+                    nilai_skp: $('#edit_nilai_skp').val(),
+                    hasil_nilai_skp: $('#edit_hasil_edit_nilai_skp').val(),
+                    orientasi : $('#edit_orientasi_skp').val(),
+                    komitmen: $('#edit_komitmen_skp').val(),
+                    kerjasama: $('#edit_kerjasama_skp').val(),
+                    integritas: $('#edit_integritas_skp').val(),
+                    disiplin: $('#edit_disiplin_skp').val(),
+                    kepemimpinan: $('#edit_kepemimpinan_skp').val(),
+                    nilai_perilaku_kerja: $('#edit_nilai_perilaku_skp').val(),
+                    hasil_nilai_perilaku_kerja: $('#edit_hasil_nilai_perilaku_skp').val(),
+                    nilai_prestasi_kerja: $('#edit_nilai_prestasi_skp').val(),
+                    ket_nilai_prestasi_kerja: $('#edit_ket_nilai_prestasi_skp').val(),
                     admin: $('#edit_admin').val()
                 }
             }).done(function(response) {
@@ -671,39 +666,22 @@
     function editData(model,id){
         switch (model) {
             case 'skp':
+            $('#edit_nip').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(1)").text()).trigger('change');
             $('#edit_jenis_jabatan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
             $('#edit_tahun_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(4)").text());
-            $('#edit_kesetiaan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(5)").text());
-            $('#edit_ket_kesetiaan_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(5)").text())));
+            $('#edit_nilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(5)").text());
+            $('#edit_orientasi_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(6)").text());
+                $('#edit_komitmen_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(7)").text());
+                $('#edit_kerjasama_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(8)").text());
+                $('#edit_integritas_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(9)").text());
+                $('#edit_disiplin_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(10)").text());
+                $('#edit_kepemimpinan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(11)").text());
+                $('#edit_nilai_perilaku_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(12)").text());
+                $('#edit_nilai_prestasi_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(13)").text());
+                $('#edit_ket_nilai_prestasi_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(14)").text());
+                $('#edit_hasil_edit_nilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(16)").text());
+                $('#edit_hasil_nilai_perilaku_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(17)").text());
 
-            $('#edit_tanggung_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(6)").text());
-            $('#edit_ket_tanggung_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(6)").text())));
-            $('#edit_kejujuran_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(7)").text());
-            $('#edit_ket_kejujuran_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(7)").text())));
-            $('#edit_prakarsa_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(8)").text());
-            $('#edit_ket_prakarsa_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(8)").text())));
-            $('#edit_prestasi_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(9)").text());
-            $('#edit_ket_prestasi_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(9)").text())));
-            $('#edit_ketaatan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(10)").text());
-            $('#edit_ket_ketaatan_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(10)").text())));
-            $('#edit_kerjasama_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(11)").text());
-            $('#edit_ket_kerjasama_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(11)").text())));
-            $('#edit_rata_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(12)").text());
-            $('#edit_ket_rata_skp').val(grading(parseFloat($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(12)").text())));
-            $('#edit_jumlah_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(14)").text());
-            $('#edit_nama_penilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(15)").text());
-            $('#edit_nip_penilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(16)").text());
-            $('#edit_jabatan_penilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(17)").text());
-            $('#edit_unor_penilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(18)").text());
-            $('#edit_golongan_penilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(19)").text());
-            $('#edit_tmt_golongan_penilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(20)").text());
-            $('#edit_nama_atasan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(21)").text());
-            $('#edit_nip_atasan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(22)").text());
-            $('#edit_jabatan_atasan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(23)").text());
-            $('#edit_unor_atasan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(24)").text());
-            $('#edit_golongan_atasan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(25)").text());
-            $('#edit_tmt_atasan_penilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(26)").text());
-            $('#edit_admin').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(27)").text());
             idGlob = id;
             break;
             default:
@@ -763,10 +741,15 @@
     }
     function isGradeEdit(element, value){
         var score = parseFloat(value);
-        console.log(value);
         var elementId =element.getAttribute('id');
         $('#edit_ket_'+elementId).val(grading(score));
+        console.log($('#edit_ket_'+elementId));
+        if(elementId === 'edit_nilai_skp') {
+            $('#edit_hasil_'+elementId).val(parseFloat(score * 0.6).toFixed(2));
+        }
         $('#edit_nilai_perilaku_skp').val(averageEdit);
+        $('#edit_nilai_prestasi_skp').val(parseFloat(parseFloat($('#edit_hasil_nilai_perilaku_skp').val()) + parseFloat($('#edit_hasil_edit_nilai_skp').val())).toFixed(2));
+        $('#edit_ket_nilai_prestasi_skp').val(grading(parseFloat($('#edit_nilai_prestasi_skp').val())))
     }
 
     function average(){
@@ -775,6 +758,25 @@
         $('#hasil_nilai_perilaku_skp').val(parseFloat(average * 0.4).toFixed(2));
         return average;
     }
+
+    function averageEdit(){
+        var average = parseFloat($('#edit_komitmen_skp').val()) + parseFloat($('#edit_kerjasama_skp').val()) + parseFloat($('#edit_integritas_skp').val()) + parseFloat($('#edit_disiplin_skp').val()) + parseFloat($('#edit_kepemimpinan_skp').val()) + parseFloat($('#edit_orientasi_skp').val());
+        average = parseFloat(average / 6).toFixed(2);
+        $('#edit_hasil_nilai_perilaku_skp').val(parseFloat(average * 0.4).toFixed(2));
+        return average;
+    }
+
+    $('#edit_skp').on('show.bs.modal', function () {
+
+        $('#edit_ket_edit_orientasi_skp').val(grading($('#edit_orientasi_skp').val()));
+        $('#edit_ket_edit_komitmen_skp').val(grading($('#edit_komitmen_skp').val()));
+        $('#edit_ket_edit_kerjasama_skp').val(grading($('#edit_kerjasama_skp').val()));
+        $('#edit_ket_edit_integritas_skp').val(grading($('#edit_integritas_skp').val()));
+        $('#edit_ket_edit_disiplin_skp').val(grading($('#edit_disiplin_skp').val()));
+        $('#edit_ket_edit_kepemimpinan_skp').val(grading($('#edit_kepemimpinan_skp').val()));
+
+    })
+
 
     // function averageEdit(){
     //     vavar average = parseFloat($('#edit_komitmen_skp').val()) + parseFloat($('#edit_kerjasama_skp').val()) + parseFloat($('#edit_integritas_skp').val()) + parseFloat($('#edit_disiplin_skp').val()) + parseFloat($('#edit_kepemimpinan_skp').val()) + parseFloat($('#edit_orientasi_skp').val());
@@ -901,6 +903,25 @@
         '<span>'+ data.text+'</span>';
         return markup;
     }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+
+    });
+
+    $('#add_pejabat_select2').on('change', function(){
+        $('#add_pejabat_select2').prop("disabled", true);
+
+    });
+
+    $('#add_atasan_pejabat_select2').on('change', function(){
+        $('#add_atasan_pejabat_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_skp').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
     $("#add_select2").select2({ 
         ajax: {

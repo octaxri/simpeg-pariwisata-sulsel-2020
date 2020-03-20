@@ -9,7 +9,7 @@
 
     <div class="panel panel-tab">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-plus"></i> Tambah Data Honorer</h3>
+        <h3 class="panel-title"><i class="fa fa-plus"></i> Tambah Data Pegawai Magang</h3>
         <ul class="nav nav-tabs pull-right">
          <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user-circle-o"></i> Data Pribadi</a></li>
          <li><a href="#tab2" data-toggle="tab"><i class="fa fa-briefcase"></i> Pendidikan</a></li>
@@ -121,12 +121,12 @@
 							<select class="form-control" name="pendidikan_trakhir" id="pendidikan_trakhir">
 							  <option value="" readonly>- Pilih -</option>
 							  <option value="SMA" <?php if ($value->pendidikan_trakhir == 'SMA'): echo 'selected' ?><?php endif ?>>SMA</option>
-							  <option value="D1" <?php if ($value->pendidikan_trakhir == 'D1'): echo 'selected' ?><?php endif ?>>D-1</option>
-							  <option value="D2" <?php if ($value->pendidikan_trakhir == 'D2'): echo 'selected' ?><?php endif ?>>D-2</option>
-							  <option value="D3" <?php if ($value->pendidikan_trakhir == 'D3'): echo 'selected' ?><?php endif ?>>D-3</option>
-							  <option value="s1" <?php if ($value->pendidikan_trakhir == 's1'): echo 'selected' ?><?php endif ?>>Strata 1</option>
-							  <option value="s2" <?php if ($value->pendidikan_trakhir == 's2'): echo 'selected' ?><?php endif ?>>Strata 2</option>
-							  <option value="s3" <?php if ($value->pendidikan_trakhir == 's3'): echo 'selected' ?><?php endif ?>>Strata 3</option>
+							  <option value="D1" <?php if ($value->pendidikan_trakhir == 'D1'): echo 'selected' ?><?php endif ?>>D1</option>
+							  <option value="D2" <?php if ($value->pendidikan_trakhir == 'D2'): echo 'selected' ?><?php endif ?>>D2</option>
+							  <option value="D3" <?php if ($value->pendidikan_trakhir == 'D3'): echo 'selected' ?><?php endif ?>>D3</option>
+							  <option value="s1" <?php if ($value->pendidikan_trakhir == 's1'): echo 'selected' ?><?php endif ?>>S1</option>
+							  <option value="s2" <?php if ($value->pendidikan_trakhir == 's2'): echo 'selected' ?><?php endif ?>>S2</option>
+							  <option value="s3" <?php if ($value->pendidikan_trakhir == 's3'): echo 'selected' ?><?php endif ?>>S3</option>
 							</select>
 		                    <p class="help-block" id="jenis_kelaminStatusText"></p>
 		                    <div id="jenis_kelaminStatusIcon">
@@ -196,11 +196,13 @@
 
            		<div class="tab-pane fade in" id="tab3">
 		        	<div class="col-md-6">
-		        		<p style="text-transform: uppercase">riwayat tenaga honorer</p>
+                        <div class="alert alert-info">
+                            <p style="text-transform: uppercase">riwayat Pegawai Magang</p>
+                        </div>
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Nomor <strong style="color: red;">(*)</strong></label>
 		                  <div id="no_sk_honorerStatus" class="col-md-8">
-		                    <input type="text" name="no_sk_honorer" id="no_sk_honorer" class="form-control" placeholder="Nomor Riwayat Tenaga Honorer" data-parsley-type="digits" value="<?=$value->no_sk_honorer?>">
+		                    <input type="text" name="no_sk_honorer" id="no_sk_honorer" class="form-control" placeholder="Nomor Riwayat Pegawai Magang" data-parsley-type="digits" value="<?=$value->no_sk_honorer?>">
 		                    <p class="help-block" id="no_sk_honorerStatusText"></p>
 		                    <div id="no_sk_honorerStatusIcon">
 		                    </div>
@@ -210,7 +212,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Tahun <strong style="color: red;">(*)</strong></label>
 		                  <div id="tmt_honorerStatus" class="col-md-8">
-		                    <input type="text" name="tmt_honorer" id="tmt_honorer" class="form-control" placeholder="TMT Honorer" data-parsley-type="digits" value="<?=$value->tmt_honorer?>">
+		                    <input type="text" name="tmt_honorer" id="tmt_honorer" class="form-control" placeholder="TMT Pegawai Magang" data-parsley-type="digits" value="<?=$value->tmt_honorer?>">
 		                    <p class="help-block" id="tmt_honorerStatusText"></p>
 		                    <div id="tmt_honorerStatusIcon">
 		                    </div>
@@ -233,7 +235,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Jabatan <strong style="color: red;">(*)</strong></label>
 		                  <div id="jabatan_honorerStatus" class="col-md-8">
-		                    <input type="text" name="jabatan_honorer" id="jabatan_honorer" class="form-control" placeholder="Jabatan Sebagai Honorer" data-parsley-type="digits" value="<?=$value->jabatan_honorer?>">
+		                    <input type="text" name="jabatan_honorer" id="jabatan_honorer" class="form-control" placeholder="Jabatan Sebagai Pegawai Magang" data-parsley-type="digits" value="<?=$value->jabatan_honorer?>">
 		                    <p class="help-block" id="jabatan_honorerStatusText"></p>
 		                    <div id="jabatan_honorerStatusIcon">
 		                    </div>
@@ -251,7 +253,7 @@
 		                  </div>
 		                </div>	
 		                <div class="form-group">
-		                  <label class="col-md-4 control-label">Status Honorer <strong style="color: red;">(*)</strong></label>
+		                  <label class="col-md-4 control-label">Status Pegawai Magang <strong style="color: red;">(*)</strong></label>
 		                  <div id="statusStatus" class="col-md-8">
 		                    <select class="form-control" name="status" id="jenis_kelamin">
 							  <option value="" readonly>- Pilih -</option>
@@ -304,7 +306,7 @@
 		if(valid.test(value) && value != "" && value.length == 16){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'harus memakai dikit angka dan 16 dikit angka')
+			FailedValid($(this).attr('id'), 'harus memakai 16 digit angka')
 		}
 	})
 
@@ -365,7 +367,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'No SK Honorer tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Nomor SK Pegawai Magang tidak boleh kosong')
 		}
 	})
 
@@ -375,7 +377,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Tahun SK Honorer tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Tahun SK Pegawai Magang tidak boleh kosong')
 		}
 	})
 
@@ -385,7 +387,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Tanggal SK Honorer tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Tanggal SK Pegawai Magang tidak boleh kosong')
 		}
 	})
 
@@ -395,7 +397,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Jabatan Honorer tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Jabatan Pegawai Magang tidak boleh kosong')
 		}
 	})
 
@@ -405,7 +407,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Jabatan Honorer tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Jabatan Pegawai Magang tidak boleh kosong')
 		}
 	})
 

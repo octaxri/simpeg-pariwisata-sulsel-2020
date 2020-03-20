@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
         <!-- PANEL DEFAULT -->
-        <div class="panel">
+        <!--<div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verikasi Data DP3</h3>
+                <h3 class="panel-title font-white">Verifikasi Data DP3</h3>
             </div>
             <div class="panel-body">
                 <table id="tbl_riwayat_dp3" style="min-width: 100%" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
@@ -80,25 +80,25 @@
                    </tbody>
                </table>     
             </div>
-        </div>
+        </div>-->
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Riwayat DP3</h3>
 
             </div>
             <div class="panel-body">
-                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_dp3"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_dp3"><i class="glyphicon glyphicon-plus"></i> Tambah Data DP3</a>
                 <hr>
                 <table id="tbl_riwayat_dp3" style="min-width: 100%" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                     <thead>
                         <tr >
                             <th> No.</th>
                             <th> NIP</th>
-                            <th> Nama Pegawai</th>
+                            <th> Nama </th>
                             <th> Tahun </th>
                             <th> Nilai Rata-rata</th>
-                            <th> Keterangan</th>
                             <th> Jumlah</th>
+                            <th> Keterangan</th>
                             <th> Pejabat Penilai</th>
                             <th> Atasan Pejabat Penilai</th>
                             <th> Admin</th>
@@ -140,8 +140,8 @@
                                 <td style="display: none"><?=$riwayat_dp3_verified->ketaatan?></td>
                                 <td style="display: none"><?=$riwayat_dp3_verified->kerjasama?></td>
                                 <td><?=$riwayat_dp3_verified->nilai_ratarata?></td>
-                                <td><?=$riwayat_dp3_verified->keterangan?></td>
                                 <td><?=$riwayat_dp3_verified->jumlah?></td>
+                                <td><?=$riwayat_dp3_verified->keterangan?></td>
                                 <td><?=$riwayat_dp3_verified->nama_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_dp3_verified->nip_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_dp3_verified->jabatan_pejabat?></td>
@@ -270,7 +270,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Rata-rata</label>
+                        <label  class="col-sm-3 control-label">Nilai Rata-rata</label>
                         <div class="col-sm-4">
                             <input id="rata_dp3" type="text" readonly step="0.01" value="0" onkeyup="isGrade(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
@@ -284,7 +284,7 @@
                             <input id="jumlah_dp3" readonly type="text" step="0.01" value="0" onkeyup="isGrade(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase">Pejabat Penilai</h5>
+                    <div class="alert alert-info" style="text-transform: uppercase">Pejabat Penilai</div>
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>
                         <div class="col-sm-9">
@@ -300,24 +300,24 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
+                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>
                         <div class="col-sm-9">
                             <input id="unor_penilai_dp3" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
+                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>
                         <div class="col-sm-9">
                             <input id="golongan_penilai_dp3" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
+                        <label  class="col-sm-3 control-label">TMT Jabatan</label>
                         <div class="col-sm-9">
                             <input id="tmt_golongan_penilai_dp3" type="text" class="form-control" readonly >
                         </div>
                     </div><hr>
-                    <h5 style="text-transform: uppercase">Atasan Pejabat Penilai</h5>
+                    <div class="alert alert-info" style="text-transform: uppercase">Atasan Pejabat Penilai</div>
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>
                         <div class="col-sm-9">
@@ -333,19 +333,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
+                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>
                         <div class="col-sm-9">
                             <input id="unor_atasan_dp3" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
+                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>
                         <div class="col-sm-9">
                             <input id="golongan_atasan_dp3" type="text" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
+                        <label  class="col-sm-3 control-label">TMT Jabatan</label>
                         <div class="col-sm-9">
                             <input id="tmt_atasan_penilai_dp3" type="text" class="form-control" readonly >
                         </div>
@@ -360,7 +360,7 @@
         </div>
     </div>
 </div>
-<!-- Tambah DP3 -->
+<!-- Edit DP3 -->
 <div id="edit_dp3" class="modal fade " role="dialog">
     <div class="modal-dialog modal-lg"><!-- Modal content-->
         <div class="modal-content">
@@ -458,7 +458,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">Rata-rata</label>
+                        <label  class="col-sm-3 control-label">Nilai Rata-rata</label>
                         <div class="col-sm-4">
                             <input id="edit_rata_dp3" type="text" readonly step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
@@ -471,94 +471,74 @@
                         <div class="col-sm-9">
                             <input id="edit_jumlah_dp3" readonly type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
-                    </div><hr>
-                    <h5 style="text-transform: uppercase">Pejabat Penilai</h5>
-                    <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>
+                    </div>
+<!--                    <div class="alert alert-info" style="text-transform: uppercase">Pejabat Penilai</div>-->
+                    <div class="">
+<!--                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>-->
                         <div class="col-sm-9">
-                            <select id="edit_pejabat_select2" class="form-control select2"  style="width: 100%"></select>
+<!--                            <select id="edit_pejabat_select2" class="form-control select2"  style="width: 100%"></select>-->
+                            <input id="edit_nip_penilai_dp3" type="hidden" class="form-control" >
+                            <input id="edit_nama_penilai_dp3" type="hidden" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Jabatan</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_jabatan_penilai_dp3" type="hidden" class="form-control" readonly >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_unor_penilai_dp3" type="hidden" class="form-control" readonly >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_golongan_penilai_dp3" type="hidden" class="form-control" readonly >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">TMT Jabatan</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_tmt_golongan_penilai_dp3" type="hidden" class="form-control" readonly >
+                        </div>
+                    </div>
+<!--                    <div class="alert alert-info" style="text-transform: uppercase">Atasan Pejabat Penilai</div>-->
+                    <div class="">
+<!--                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>-->
+                        <div class="col-sm-9">
+<!--                            <select id="edit_atasan_pejabat_select2" class="form-control select2"  style="width: 100%"></select>-->
+                            <input id="edit_nip_atasan_dp3" type="hidden" class="form-control" >
+                            <input id="edit_nama_atasan_dp3" type="hidden" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Jabatan</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_jabatan_atasan_dp3" type="hidden" class="form-control" readonly >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Bidang/Bagian</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_unor_atasan_dp3" type="hidden" class="form-control" readonly >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_golongan_atasan_dp3" type="hidden" class="form-control" readonly >
+                        </div>
+                    </div>
+                    <div class="">
+<!--                        <label  class="col-sm-3 control-label">TMT Jabatan</label>-->
+                        <div class="col-sm-9">
+                            <input id="edit_tmt_atasan_penilai_dp3" type="hidden" class="form-control" readonly >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label">NIP</label>
-                        <div class="col-sm-9">
-                            <input id="edit_nip_penilai_dp3" type="text" class="form-control" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Nama</label>
-                        <div class="col-sm-9">
-                            <input id="edit_nama_penilai_dp3" type="text" class="form-control" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Jabatan</label>
-                        <div class="col-sm-9">
-                            <input id="edit_jabatan_penilai_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
-                        <div class="col-sm-9">
-                            <input id="edit_unor_penilai_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
-                        <div class="col-sm-9">
-                            <input id="edit_golongan_penilai_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
-                        <div class="col-sm-9">
-                            <input id="edit_tmt_golongan_penilai_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div><hr>
-                    <h5 style="text-transform: uppercase">Atasan Pejabat Penilai</h5>
-                    <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>
-                        <div class="col-sm-9">
-                            <select id="edit_atasan_pejabat_select2" class="form-control select2"  style="width: 100%"></select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">NIP</label>
-                        <div class="col-sm-9">
-                            <input id="edit_nip_atasan_dp3" type="text" class="form-control" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Nama</label>
-                        <div class="col-sm-9">
-                            <input id="edit_nama_atasan_dp3" type="text" class="form-control" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Jabatan</label>
-                        <div class="col-sm-9">
-                            <input id="edit_jabatan_atasan_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Unor</label>
-                        <div class="col-sm-9">
-                            <input id="edit_unor_atasan_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">Golongan</label>
-                        <div class="col-sm-9">
-                            <input id="edit_golongan_atasan_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label  class="col-sm-3 control-label">TMT Golongan</label>
-                        <div class="col-sm-9">
-                            <input id="edit_tmt_atasan_penilai_dp3" type="text" class="form-control" readonly >
-                        </div>
-                    </div>
-                    <div class="form-group ">
                         <div class="col-md-3 col-md-offset-5">
                             <a  class="btn btn-primary btn-sm" onclick="editData_send('riwayat_dp3');"><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan</a>
                         </div>
@@ -672,35 +652,16 @@
             $('#edit_jenis_jabatan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
             $('#edit_tahun_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(4)").text());
             $('#edit_kesetiaan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(5)").text());
-            $('#edit_ket_kesetiaan_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(5)").text())));
-
             $('#edit_tanggung_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(6)").text());
-            $('#edit_ket_tanggung_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(6)").text())));
             $('#edit_kejujuran_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(7)").text());
-            $('#edit_ket_kejujuran_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(7)").text())));
             $('#edit_prakarsa_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(8)").text());
-            $('#edit_ket_prakarsa_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(8)").text())));
             $('#edit_prestasi_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(9)").text());
-            $('#edit_ket_prestasi_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(9)").text())));
             $('#edit_ketaatan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(10)").text());
-            $('#edit_ket_ketaatan_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(10)").text())));
             $('#edit_kerjasama_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(11)").text());
-            $('#edit_ket_kerjasama_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(11)").text())));
             $('#edit_rata_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(12)").text());
-            $('#edit_ket_rata_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(12)").text())));
-            $('#edit_jumlah_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(14)").text());
-            $('#edit_nama_penilai_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(15)").text());
-            $('#edit_nip_penilai_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(16)").text());
-            $('#edit_jabatan_penilai_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(17)").text());
-            $('#edit_unor_penilai_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(18)").text());
-            $('#edit_golongan_penilai_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(19)").text());
-            $('#edit_tmt_golongan_penilai_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(20)").text());
-            $('#edit_nama_atasan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(21)").text());
-            $('#edit_nip_atasan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(22)").text());
-            $('#edit_jabatan_atasan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(23)").text());
-            $('#edit_unor_atasan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(24)").text());
-            $('#edit_golongan_atasan_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(25)").text());
-            $('#edit_tmt_atasan_penilai_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(26)").text());
+            $('#edit_jumlah_dp3').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(13)").text());
+            $('#edit_ket_rata_dp3').val(grading(parseFloat($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(14)").text())));
+
             $('#edit_admin').val($(".data-itemriwayatdp3[data-id='" + id + "']>td:eq(27)").text());
             idGlob = id;
             break;
@@ -778,6 +739,18 @@
     {
         return parseFloat(total / 7).toFixed(2);
     }
+
+    $('#edit_dp3').on('show.bs.modal', function () {
+
+        $('#edit_ket_kesetiaan_dp3').val(grading($('#edit_kesetiaan_dp3').val()));
+        $('#edit_ket_tanggung_dp3').val(grading($('#edit_tanggung_dp3').val()));
+        $('#edit_ket_kejujuran_dp3').val(grading($('#edit_kejujuran_dp3').val()));
+        $('#edit_ket_prakarsa_dp3').val(grading($('#edit_prakarsa_dp3').val()));
+        $('#edit_ket_prestasi_dp3').val(grading($('#edit_prestasi_dp3').val()));
+        $('#edit_ket_ketaatan_dp3').val(grading($('#edit_ketaatan_dp3').val()));
+        $('#edit_ket_kerjasama_dp3').val(grading($('#edit_kerjasama_dp3').val()));
+
+    })
 
     function grading(score) {
         var gscore;
@@ -899,6 +872,24 @@
         '<span>'+ data.text+'</span>';
         return markup;
     }
+
+    $('#add_select2').on('change', function(){
+        $('#add_select2').prop("disabled", true);
+    });
+
+    $('#add_pejabat_select2').on('change', function(){
+        $('#add_pejabat_select2').prop("disabled", true);
+
+    });
+
+    $('#add_atasan_pejabat_select2').on('change', function(){
+        $('#add_atasan_pejabat_select2').prop("disabled", true);
+
+    });
+
+    $('#tambah_dp3').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
     $("#add_select2").select2({ 
         ajax: {

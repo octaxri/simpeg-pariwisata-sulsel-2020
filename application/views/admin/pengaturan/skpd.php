@@ -14,7 +14,7 @@
                         <thead>
                           <tr>
                             <th> No.</th>
-                            <th> Nama Bidang/Bagian</th>
+                            <th> Bidang/Bagian</th>
                             <th> E-mail</th>
                             <th>  </th>
                           </tr>
@@ -27,8 +27,8 @@
                             <td><?=$data_skpd->email?></td>
                             <td>
                               <a data-toggle="modal" data-target="#edit_user_skpd" class="btn btn-primary btn-xs" onclick="editSkpd('<?=$data_skpd->id_user?>')"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                              <a  class="btn btn-success btn-xs" onclick="resetPass('<?=$data_skpd->id_user?>')"><i class="fa fa-warning"></i>&nbsp;Reset Password</a>
                               <a onclick="hapusData('<?=$data_skpd->id_user?>','skpd')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                                <a  class="btn btn-success btn-xs" onclick="resetPass('<?=$data_skpd->id_user?>')"><i class="fa fa-warning"></i>&nbsp;Reset Password</a>
                             </td>
                           </tr>
                           <?php $i++; endforeach ?>
@@ -87,7 +87,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Email</label>
+                        <label for="bahan" class="col-sm-3 control-label">E-mail</label>
                          <div class="col-sm-8">
                           <input type="text" id="email" class="form-control" required disabled>
 
@@ -103,7 +103,7 @@
                       <div class="form-group ">
                         <div class="col-md-3 col-md-offset-8">
                             <div class="col-sm-8">
-                              <a  class="btn btn-primary btn-sm" id="add_akun" onclick="add_user('skpd')" disabled><i class="glyphicon glyphicon-plus"></i>  Buat Akun </a>
+                              <a  class="btn btn-primary btn-sm" id="add_akun" onclick="add_user('skpd')" disabled><i class="glyphicon glyphicon-floppy-save"></i>  Simpan </a>
                             </div>
 
                         </div>

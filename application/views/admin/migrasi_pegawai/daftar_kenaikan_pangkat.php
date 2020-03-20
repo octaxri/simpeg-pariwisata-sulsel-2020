@@ -3,7 +3,6 @@
         <!-- PANEL DEFAULT -->
         <div class="panel">
             <div class="panel-body">
-            <hr>
                 <div class="row">
                     <div class="col-md-12">
                         <table id="dkp-table" style="min-width: 100%;" class="table table-striped table-hover table-bordered">

@@ -104,7 +104,7 @@
                         <td><i><?=$data_pegawai->jenis_pangkat?></i></td>
                     </tr>
                     <tr class="data-item" data-id="">
-                        <td>Esselon</td>
+                        <td>Eselon</td>
                         <td width="10px" style="color: #848484;">:</td>
                         <td><i> <?=$data_pegawai->eselon?> </i></td>
                     </tr>
@@ -571,7 +571,7 @@
                                                 <thead>
                                                     <tr class="data-item" data-id="">
                                                         <th rowspan="2">No.</th>
-                                                        <th colspan="2">Jabatan </th>
+                                                        <th colspan="2" class="text-center">Jabatan </th>
                                                         <th colspan="2" class="text-center">TMT</th>
                                                         <th colspan="3" class="text-center">Surat Keputusan</th>
                                                         <th rowspan="2"></th>

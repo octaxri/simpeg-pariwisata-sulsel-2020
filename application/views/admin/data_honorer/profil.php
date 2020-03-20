@@ -72,7 +72,7 @@
                             <td><?=$data_pegawai->tanggal_sk_cpns?></td>
                         </tr>
                         <tr>
-                            <td>No. SK CPNS</td>
+                            <td>Nomor SK CPNS</td>
                             <td>:</td>
                             <td><?=$data_pegawai->no_sk_cpns?></td>
                         </tr>
@@ -91,7 +91,7 @@
                             <td>  <?=$data_pegawai->tanggal_sk_pns?> </td>
                         </tr>
                         <tr>
-                            <td>No. SK PNS</td>
+                            <td>Nomor SK PNS</td>
                             <td>:</td>
                             <td>  <?=$data_pegawai->no_sk_pns?> </td>
                         </tr>
@@ -101,7 +101,7 @@
                             <td><?=$data_pegawai->jenis_pangkat?></td>
                         </tr>
                         <tr>
-                            <td>Esselon</td>
+                            <td>Eselon</td>
                             <td>:</td>
                             <td> <?=$data_pegawai->eselon?> </td>
                         </tr>
@@ -218,7 +218,7 @@
                             <div class="col-md-6">
                                 <table class="standard-table" width="100%" cellspacing="0" cellpadding="0">
                                     <tr>
-                                        <td>No. KTP</td>
+                                        <td>NIK</td>
                                         <td>:</td>
                                         <td>  <?=$data_keteranganlainnya->no_ktp?></td>
                                     </tr><tr>
@@ -226,7 +226,7 @@
                                         <td>:</td>
                                         <td> <?=$data_keteranganlainnya->no_karpeg?></td>
                                     </tr><tr>
-                                        <td>No.ASKES</td>
+                                        <td>No. ASKES</td>
                                         <td>:</td>
                                         <td> <?=$data_keteranganlainnya->no_askes?></td>
                                     </tr><tr>

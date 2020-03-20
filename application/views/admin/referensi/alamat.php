@@ -49,7 +49,7 @@
                   <tr>
                     <th width="50px;">No.</th>
                     <th>Provinsi</th>
-                    <th>Total Kabupaten/Kota</th>
+                    <th>Jumlah Kabupaten/Kota</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -85,7 +85,7 @@
                     <tr>
                       <th width="50px;">No.</th>
                       <th>Kabupaten</th>
-                      <th>Total Kecamatan</th>
+                      <th>Jumlah Kecamatan</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -121,7 +121,7 @@
                       <tr>
                         <th width="50px;">No.</th>
                         <th>Kecamatan</th>
-                        <th>Total Kelurahan</th>
+                        <th>Jumlah Kelurahan</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -641,6 +641,9 @@
             swal('Gagal', 'Data Provinsi gagal diedit.', 'error');
           }
         });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
 
         case 'kab':

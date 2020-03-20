@@ -402,6 +402,9 @@ function editData_send(method){
           swal('Gagal', 'Data Jenis Pegawai gagal diedit.', 'error');
         }
       });
+          $(document).ajaxStop(function(){
+              window.location.reload();
+          });
       break;
 
       case 'statuspegawai':
@@ -424,6 +427,9 @@ function editData_send(method){
           swal('Gagal', 'Data jenis jenispegawai gagal diedit.', 'error');
         }
       });
+          $(document).ajaxStop(function(){
+              window.location.reload();
+          });
       break;
 
       case 'kedudukanpegawai':
@@ -446,6 +452,9 @@ function editData_send(method){
           swal('Gagal', 'Data Kedudukan Pegawai gagal diedit.', 'error');
         }
       });
+          $(document).ajaxStop(function(){
+              window.location.reload();
+          });
       break;
     }
 }

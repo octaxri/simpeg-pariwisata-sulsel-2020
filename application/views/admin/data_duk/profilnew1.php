@@ -74,7 +74,7 @@
                         <td><i><?=$data_pegawai->tanggal_sk_cpns?></i></td>
                     </tr>
                     <tr class="data-item" data-id="">
-                        <td>No. SK CPNS</td>
+                        <td>Nomor SK CPNS</td>
                         <td width="10px" style="color: #848484;">:</td>
                         <td><i><?=$data_pegawai->no_sk_cpns?></i></td>
                     </tr>
@@ -94,7 +94,7 @@
                         <td><i>  <?=$data_pegawai->tanggal_sk_pns?> </i></td>
                     </tr>
                     <tr class="data-item" data-id="">
-                        <td>No. SK PNS</td>
+                        <td>Nomor SK PNS</td>
                         <td width="10px" style="color: #848484;">:</td>
                         <td><i>  <?=$data_pegawai->no_sk_pns?> </i></td>
                     </tr>
@@ -104,7 +104,7 @@
                         <td><i><?=$data_pegawai->jenis_pangkat?></i></td>
                     </tr>
                     <tr class="data-item" data-id="">
-                        <td>Esselon</td>
+                        <td>Eselon</td>
                         <td width="10px" style="color: #848484;">:</td>
                         <td><i> <?=$data_pegawai->eselon?> </i></td>
                     </tr>
@@ -1016,7 +1016,7 @@
                                 <tr >
                                     <th> No.</th>
                                     <th> Instansi </th>
-                                    <th> Nama UNOR</th>
+                                    <th> Nama Unor</th>
                                     <th> No. SK</th>
                                     <th> Tanggal SK</th>
                                     <!-- <th> Prosedur Awal</th> -->
