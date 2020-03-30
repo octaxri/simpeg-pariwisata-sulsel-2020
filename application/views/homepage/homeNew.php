@@ -46,10 +46,10 @@
                 </div>
             </div>
             <ul id="menu-full" class="list-group list-group-horizontal">
-                <li class="list-group-item item-active">
+                <li class="list-group-item ">
                     <a class="link-item page-scroll" href="#info-page">INFO</a>
                 </li>
-                <li class="list-group-item link-active">
+                <li class="list-group-item ">
                     <a class="link-item page-scroll" href="#statistik-page">STATISTIK</a>
                 </li>
                 <li class="list-group-item">
