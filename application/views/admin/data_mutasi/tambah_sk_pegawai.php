@@ -3,9 +3,9 @@
 	    <div class="widget widget-metric_1 animate">
 	        <span class="icon-wrapper custom-bg-orange"><i class="fa fa-envelope-open"></i></span>
 	        <div class="right">
-	            <span class="value">Nomor SK</span>
-	            <span class="title"><?=$this->input->get('no_sk')?>
-	            </span>
+
+	            <span class="value"><?=$this->input->get('no_sk')?></span>
+                <span class="title">Nomor SK</span>
 	        </div>
 	    </div>
 	</div>
@@ -14,9 +14,9 @@
 	    <div class="widget widget-metric_1 animate">
 	        <span class="icon-wrapper custom-bg-orange"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
 	        <div class="right">
-	            <span class="value">Tanggal SK</span>
-	            <span class="title"><?=$this->input->get('tgl_sk')?>
-	            </span>
+
+	            <span class="value"><?=$this->input->get('tgl_sk')?></span>
+                <span class="title">Tanggal SK</span>
 	        </div>
 	    </div>
 	</div>
@@ -49,7 +49,7 @@
 
     <div class="panel panel-tab">
       <div class="panel-heading">
-        <h3 class="panel-title"><a href="<?=admin_url('DataMutasi/details?id=').$this->input->get('id').'&no_sk='.$this->input->get('no_sk').'&tgl_sk='.$this->input->get('tgl_sk').'&pejabat='.$this->input->get('pejabat').'&tentang='.$this->input->get('tentang')?>"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali ke Details SK Mutasi</a></h3>
+        <h3 class="panel-title"><a class="btn btn-sm btn-default" href="<?=admin_url('DataMutasi/details?id=').$this->input->get('id').'&no_sk='.$this->input->get('no_sk').'&tgl_sk='.$this->input->get('tgl_sk').'&pejabat='.$this->input->get('pejabat').'&tentang='.$this->input->get('tentang')?>"><i class="fa fa-arrow-left " aria-hidden="true"></i> Kembali ke Details SK Mutasi</a></h3>
         <ul class="nav nav-tabs pull-right">
          <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user-circle-o"></i> Data Pegawai</a></li>
          <li><a href="#tab2" data-toggle="tab"><i class="fa fa-drivers-license-o"></i> Tempat Tugas Baru</a></li>
@@ -73,16 +73,16 @@
 					<div class="col-md-6">
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">NIP</label>
-				        <input type="text" class="form-control" placeholder="NIP" name="nip" required>
+				        <input type="text" class="form-control" placeholder="" name="nip" required>
 				      </div>
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">Nama Lengkap</label>
-				        <input type="text" readonly class="form-control" placeholder="Nama lengkap" name="nama">
+				        <input type="text" readonly class="form-control" placeholder="" name="nama">
 				      </div>
 
 				      <div class="form-group">
-				        <label for="exampleInputEmail1">Pangkat Golongan</label>
-				        <input type="text" readonly class="form-control" placeholder="Pangkat Golongan" name="pangkat_gol">
+				        <label for="exampleInputEmail1">Pangkat/Golongan/Ruang</label>
+				        <input type="text" readonly class="form-control" placeholder="" name="pangkat_gol">
 				      </div>
 				    </div>
 
@@ -211,7 +211,7 @@
               cache:false,
               async:false,
               success:function(data){
-                if(data.stat == 'sukses'){
+                if(data.stat == 'Behasil'){
                   swal(data.stat, data.res, 'success') 
                   window.location.replace("<?=admin_url('DataMutasi/details?id=').$this->input->get('id').'&no_sk='.$this->input->get('no_sk').'&tgl_sk='.$this->input->get('tgl_sk').'&pejabat='.$this->input->get('pejabat').'&tentang='.$this->input->get('tentang')?>")
                     //mutasi_data.ajax.reload()

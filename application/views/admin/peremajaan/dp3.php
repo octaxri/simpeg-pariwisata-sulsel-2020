@@ -95,6 +95,7 @@
                             <th> No.</th>
                             <th> NIP</th>
                             <th> Nama </th>
+                            <th > Jenis Jabatan</th>
                             <th> Tahun </th>
                             <th> Nilai Rata-rata</th>
                             <th> Jumlah</th>
@@ -102,7 +103,6 @@
                             <th> Pejabat Penilai</th>
                             <th> Atasan Pejabat Penilai</th>
                             <th> Admin</th>
-                            <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
@@ -130,7 +130,7 @@
                                 <td><?=$i?></td>
                                 <td><?=$riwayat_dp3_verified->nip?></td>
                                 <td><?=$riwayat_dp3_verified->nama_lengkap?></td>
-                                 <td style="display: none"><?=$riwayat_dp3_verified->jenis_jabatan?></td>
+                                 <td><?=$riwayat_dp3_verified->jenis_jabatan?></td>
                                 <td><?=$riwayat_dp3_verified->tahun?></td>
                                 <td style="display: none"><?=$riwayat_dp3_verified->kesetiaan?></td>
                                 <td style="display: none"><?=$riwayat_dp3_verified->tanggung?></td>
@@ -155,7 +155,7 @@
                                 <td style="display: none"><?=$riwayat_dp3_verified->golongan_atasan_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_dp3_verified->tmt_atasan_pejabat?></td>
                                 <td><?=$riwayat_dp3_verified->admin?></td>
-                                <td align="center">
+                                <td style="width: 1px">
                                    <a data-toggle="modal" data-target="#edit_dp3" onclick="editData('dp3',<?=$riwayat_dp3_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                    <a href="#" onclick="hapusRiwayat('dp3',<?=$riwayat_dp3_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                </td>
@@ -203,7 +203,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun</label>
                         <div class="col-sm-9">
-                            <input id="tahun_dp3" type="text" class="form-control onlyYears" >
+<!--                            <input id="tahun_dp3" type="text" class="form-control onlyYears" >-->
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="tahun_dp3" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -391,7 +395,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun</label>
                         <div class="col-sm-9">
-                            <input id="edit_tahun_dp3" type="text" class="form-control onlyYears" >
+<!--                            <input id="edit_tahun_dp3" type="text" class="form-control onlyYears" >-->
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="edit_tahun_dp3" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -400,7 +408,7 @@
                             <input id="edit_kesetiaan_dp3" type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00"  class="form-control" >
                         </div>
                         <div class="col-sm-5">
-                            <input id="edit_ket_kesetiaan_dp3" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_kesetiaan_dp3" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -409,7 +417,7 @@
                             <input id="edit_tanggung_dp3" type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
                         <div class="col-sm-5">
-                            <input id="edit_ket_tanggung_dp3" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_tanggung_dp3" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -418,7 +426,7 @@
                             <input id="edit_kejujuran_dp3" type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
                         <div class="col-sm-5">
-                            <input id="edit_ket_kejujuran_dp3" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_kejujuran_dp3" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -427,7 +435,7 @@
                             <input id="edit_prakarsa_dp3" type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
                         <div class="col-sm-5">
-                            <input id="edit_ket_prakarsa_dp3" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_prakarsa_dp3" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -436,7 +444,7 @@
                             <input id="edit_prestasi_dp3" type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
                         <div class="col-sm-5">
-                            <input id="edit_ket_prestasi_dp3" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_prestasi_dp3" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -445,7 +453,7 @@
                             <input id="edit_ketaatan_dp3" type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
                         <div class="col-sm-5">
-                            <input id="edit_ket_ketaatan_dp3" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_ketaatan_dp3" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -454,7 +462,7 @@
                             <input id="edit_kerjasama_dp3" type="text" step="0.01" onkeyup="isGradeEdit(this, this.value);" placeholder="00.00" class="form-control" >
                         </div>
                         <div class="col-sm-5">
-                            <input id="edit_ket_kerjasama_dp3" type="text" readonly class="form-control" >
+                            <input id="edit_ket_edit_kerjasama_dp3" type="text" readonly class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -591,9 +599,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat dp3 berhasil ditambah.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat dp3 gagal ditambah.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -636,9 +644,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat dp3 berhasil diperbaharui.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat dp3 gagal diperbaharui.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -673,13 +681,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -691,13 +699,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                      'Batal',
-                     'Proses Hapus Data dibatalkan! :)',
+                     'Proses dibatalkan',
                      'error'
                      )
             }
@@ -741,15 +749,14 @@
     }
 
     $('#edit_dp3').on('show.bs.modal', function () {
-
-        $('#edit_ket_kesetiaan_dp3').val(grading($('#edit_kesetiaan_dp3').val()));
-        $('#edit_ket_tanggung_dp3').val(grading($('#edit_tanggung_dp3').val()));
-        $('#edit_ket_kejujuran_dp3').val(grading($('#edit_kejujuran_dp3').val()));
-        $('#edit_ket_prakarsa_dp3').val(grading($('#edit_prakarsa_dp3').val()));
-        $('#edit_ket_prestasi_dp3').val(grading($('#edit_prestasi_dp3').val()));
-        $('#edit_ket_ketaatan_dp3').val(grading($('#edit_ketaatan_dp3').val()));
-        $('#edit_ket_kerjasama_dp3').val(grading($('#edit_kerjasama_dp3').val()));
-
+        $('#edit_ket_edit_kesetiaan_dp3').val(grading($('#edit_kesetiaan_dp3').val()));
+        $('#edit_ket_edit_tanggung_dp3').val(grading($('#edit_tanggung_dp3').val()));
+        $('#edit_ket_edit_kejujuran_dp3').val(grading($('#edit_kejujuran_dp3').val()));
+        $('#edit_ket_edit_prakarsa_dp3').val(grading($('#edit_prakarsa_dp3').val()));
+        $('#edit_ket_edit_prestasi_dp3').val(grading($('#edit_prestasi_dp3').val()));
+        $('#edit_ket_edit_ketaatan_dp3').val(grading($('#edit_ketaatan_dp3').val()));
+        $('#edit_ket_edit_kerjasama_dp3').val(grading($('#edit_kerjasama_dp3').val()));
+        $('#edit_ket_rata_dp3').val(grading($('#edit_rata_dp3').val()));
     })
 
     function grading(score) {

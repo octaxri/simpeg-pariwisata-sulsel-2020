@@ -18,8 +18,8 @@ class Informasi extends Admin_controller {
     public function tambah_informasi(){
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('ditujukan', 'Field Ditujukan', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('isi', 'Field Isi', 'required|trim');
+        $valid->set_rules('ditujukan', 'Kolom Ditujukan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('isi', 'Pesan Informasi', 'required|trim');
 
         if ($valid->run() === TRUE)
         {
@@ -27,11 +27,11 @@ class Informasi extends Admin_controller {
             $input = $this->input->post(NULL, TRUE);
 
             //Mekanisme Upload file
-            if(! empty($_FILES)){
+            if (!empty($_FILES)) {
                 $file = upload_allTypeFile('files', 'tambah', 'informasi', '', TRUE);
-                if(! $file['success'])
+                if (!$file['success'])
                     return $this->response(['success' => FALSE, 'error' => 'Upload File Gagal']);
-            }else{
+            } else {
                 $file['dokumen'] = '';
             }
 
@@ -57,8 +57,8 @@ class Informasi extends Admin_controller {
     public function edit_informasi($id_informasi = NULL){
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('ditujukan', 'Field Ditujukan', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('isi', 'Field Isi', 'required|trim');
+        $valid->set_rules('ditujukan', 'Kolom Ditujukan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('isi', 'Pesan Informasi', 'required|trim');
 
         if ($valid->run() === TRUE)
         {

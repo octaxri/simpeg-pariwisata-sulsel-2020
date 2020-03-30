@@ -1,0 +1,141 @@
+                            /*table { table-layout: fixed; }*/
+                            /*td {*/
+                            /*overflow: hidden;*/
+                            /*text-overflow: ellipsis;*/
+                            /*}*/
+
+                            table{
+                                width:100%;
+                            }
+                            table td{
+                                white-space: nowrap;
+                            }
+                            table td:last-child{
+                                width:100%;
+                            }
+                            
+                            .standard-table td{
+                            padding: 4px;
+                            }
+                            
+                            #wrapper #sidebar-nav, #wrapper .main {
+                            padding-top: 90px;
+                            }
+                            .judul {
+                            float: right;
+                            font-size: 25px;
+                            color: #fff;
+                            padding: 0 10px;
+                            margin-top: 6px;
+                            }
+                            .sub-judul{
+                            font-size: 16px;
+                            color: #000;
+                            padding-left: 3px;
+                            margin-top: -2px;
+                            
+                            }
+                            .office{
+                            text-align: center;
+                            color: #fff;
+                            padding: 20px;
+                            }
+                            
+                            #wrapper .sidebar {
+                            width: 250px;
+                            }
+                            
+                            #wrapper .main {
+                            width: calc(100% - 250px);
+                            }
+                           
+                            .select2 {
+                            width: 100%!important;
+                            }
+                            
+                            .panel-small{
+                            font-size: 14px !important;
+                            }
+                            
+                            .table  > thead > tr {
+                            font-size: 13px;
+                            background-color: #8892a2;
+                            color: #ffffff;
+                            }
+                            
+                            .profile-left{
+                            position: relative;;
+                            }
+                            .wrapper {
+                            position:relative;
+                            margin:0 auto;
+                            overflow:hidden;
+                            padding:5px;
+                            height:50px;
+                            }
+                            
+                            .list {
+                            position:absolute;
+                            left:0px;
+                            top:0px;
+                            min-width:3000px;
+                            margin-left:12px;
+                            margin-top:0px;
+                            }
+                            
+                            .list li{
+                            display:table-cell;
+                            position:relative;
+                            text-align:center;
+                            cursor:grab;
+                            cursor:-webkit-grab;
+                            color:#efefef;
+                            vertical-align:middle;
+                            }
+                            
+                            .scroller {
+                            text-align:center;
+                            cursor:pointer;
+                            display:none;
+                            padding:7px;
+                            padding-top:11px;
+                            white-space:no-wrap;
+                            vertical-align:middle;
+                            background-color:#fff;
+                            }
+                            
+                            .scroller-right{
+                            float:right;
+                            }
+                            
+                            .scroller-left {
+                            float:left;
+                            }
+                            
+                            .panel-danger{
+                            background-color: #fd566a !important;
+                            }
+                            
+                            .font-white{
+                            color: #fff !important;
+                            }
+
+                            .table td {
+                                   font-size: 0.8em;
+                            }
+
+.dt-buttons{
+       float: left;
+}
+.form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}

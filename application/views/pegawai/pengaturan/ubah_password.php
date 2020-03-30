@@ -21,8 +21,8 @@
                       </div>
                       <div class="form-group ">
                         <div class="col-md-3 col-md-offset-8">
-                            <div class="col-sm-8">
-                              <a  class="btn btn-primary btn-sm" id="ubah_password"  onclick="ubah_password()"><i class="glyphicon glyphicon-floppy-save"></i>  Simpan </a>
+                            <div class="col-sm-8" align="center">
+                                    <a  class="btn btn-primary btn-sm" id="ubah_password"  onclick="ubah_password()"><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan</a>
                             </div>
 
                         </div>
@@ -38,13 +38,13 @@
             function ubah_password() {
                swal({
                 title: 'Apakah Anda Yakin?',
-                text: "Anda tidak dapat mengembalikan password yang telah diubah. Setelah ganti password berhasil, anda harus masuk kembali menggunakan password baru!",
+                text: "Anda tidak dapat mengembalikan password yang telah diubah. Setelah ganti password berhasil, anda harus masuk kembali menggunakan password baru",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Ubah!',
-                cancelButtonText: 'Batalkan!',
+                confirmButtonText: 'Ubah',
+                cancelButtonText: 'Batalkan',
                 closeOnConfirm: false,
                 closeOnCancel: false
               },
@@ -65,7 +65,7 @@
                 } else {
                   swal(
                     'Batal',
-                    'Proses Ubah Password dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                   )
                 }

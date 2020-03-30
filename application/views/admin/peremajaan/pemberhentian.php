@@ -80,7 +80,7 @@
                                 <td><?=$riwayat_pemberhentian_verified->no_sk?></td>
                                 <td><?=$riwayat_pemberhentian_verified->tanggal_sk?></td>
                                 <td><?=$riwayat_pemberhentian_verified->admin ?></td>
-                                <td>
+                                <td style="width: 1px">
                                     <a data-toggle="modal" data-target="#edit_pemberhentian" onclick="editData('pemberhentian',<?=$riwayat_pemberhentian_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                     <a href="#" onclick="hapusRiwayat('pemberhentian',<?=$riwayat_pemberhentian_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                 </td>
@@ -328,9 +328,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat pemberhentian berhasil ditambah.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat pemberhentian gagal ditambah.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -353,9 +353,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat Kepegawaian berhasil diperbaharui.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat Kepegawaian gagal diperbaharui.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -380,13 +380,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -398,13 +398,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                      'Batal',
-                     'Proses Hapus Data dibatalkan! :)',
+                     'Proses dibatalkan',
                      'error'
                      )
             }

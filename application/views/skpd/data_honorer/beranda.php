@@ -13,7 +13,7 @@
                         <thead>
                           <tr>
                             <th width="50px;"> ID</th>
-                            <th> Nama Pegawai Magang</th>
+                            <th> Nama Tenaga Magang</th>
                             <th> NIK</th>
                             <th>  </th>
                           </tr>
@@ -46,7 +46,7 @@
       dom: 'Bfrtip',
       buttons: [
           {
-              text: '<i class="glyphicon glyphicon-plus"></i> Tambah Data Pegawai Magang',
+              text: '<i class="glyphicon glyphicon-plus"></i> Tambah Data Tenaga Magang',
               className : 'btn btn-primary btn-sm',
               action: function ( e, dt, node, config ) {
                  window.location.href = "<?=skpd_url('honorer/tambah')?>"
@@ -71,7 +71,7 @@
             json = JSON.parse(data.responseText)
             if(json.stat == 'sukses'){
               swal(json.stat, json.res, 'success') 
-              setTimeout(function(){ location.reload() }, 2000)
+              setTimeout(function(){ location.reload() }, 1500)
             }else{
               swal(json.stat, json.res, 'error')  
             }           

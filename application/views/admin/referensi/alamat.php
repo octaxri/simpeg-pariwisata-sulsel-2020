@@ -10,20 +10,21 @@
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <table id="tbl_provinsi" style="min-width: 100%" class="table table-bordered datatable-Exnormal">
+<!--            <table id="tbl_provinsi" style="min-width: 100%" class="table table-bordered datatable-Exnormal">-->
+                <table style="min-width: 100%;" id="tbl_provinsi" class="table table-striped datatable-Exnormal table-hover table-bordered">
               <thead>
                 <tr>
-                  <th width="50px;">No.</th>
-                  <th>Provinsi</th>
+                  <th width="20px;" class="text-center">No.</th>
+                  <th class="text-center">Provinsi</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <?php $i = 1; foreach ($data_provinsi as $data_provinsi1) { ?>
                   <tr data-id="<?=$data_provinsi1->id_provinsi?>">
-                    <td class="text-center"><?=$i?></td>
-                    <td data-value="<?=$data_provinsi1->nama_provinsi?>"><?=$data_provinsi1->nama_provinsi?></td>
-                    <td>
+                    <td class="text-center" class="text-center"><?=$i?></td>
+                    <td class="text-center" data-value="<?=$data_provinsi1->nama_provinsi?>"><?=$data_provinsi1->nama_provinsi?></td>
+                    <td style="width: 1px">
                       <a data-toggle="modal" data-target="#edit_provinsi_modal" class="btn btn-primary btn-xs" onclick="editData('provinsi','<?=$data_provinsi1->id_provinsi?>','<?=$data_provinsi1->nama_provinsi?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                       <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('provinsi','<?=$data_provinsi1->id_provinsi?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                     </td>
@@ -44,12 +45,13 @@
           <hr>
           <div class="row">
             <div class="col-md-12">
-              <table id="tbl_kab" class="table table-bordered">
+<!--              <table id="tbl_kab" class="table table-bordered">-->
+                  <table style="min-width: 100%;" id="tbl_kab" class="table table-striped datatable-Exnormal table-hover table-bordered">
                 <thead>
                   <tr>
-                    <th width="50px;">No.</th>
-                    <th>Provinsi</th>
-                    <th>Jumlah Kabupaten/Kota</th>
+                    <th class="text-center" width="20px;">No.</th>
+                    <th class="text-center">Provinsi</th>
+                    <th class="text-center">Jumlah Kabupaten/Kota</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -57,9 +59,9 @@
                   <?php $i = 1; foreach ($data_kabupaten as $data_kabupaten1) { ?>
                     <tr>
                       <td class="text-center"><?=$i?></td>
-                      <td data-value1="<?=$data_kabupaten1->nama_provinsi?>"><?=$data_kabupaten1->nama_provinsi?></td>
-                      <td ><?=$data_kabupaten1->total?></td>
-                      <td>
+                      <td class="text-center" data-value1="<?=$data_kabupaten1->nama_provinsi?>"><?=$data_kabupaten1->nama_provinsi?></td>
+                      <td class="text-center" ><?=$data_kabupaten1->total?></td>
+                      <td style="width: 1px;">
                         <a class="btn btn-primary btn-xs" onclick="lihatData('nama_provinsi','<?=$data_kabupaten1->nama_provinsi?>');"><i class="fa fa-eye" ></i>&nbsp;Lihat</a>
 <!--                        <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('kabupaten','<?=$data_kabupaten1->id_kabupaten?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a> -->
                       </td>
@@ -80,12 +82,13 @@
             <hr>
             <div class="row">
               <div class="col-md-12">
-                <table id="tbl_kec" class="table table-bordered">
+<!--                <table id="tbl_kec" class="table table-bordered">-->
+                    <table style="min-width: 100%;" id="tbl_kec" class="table table-striped datatable-Exnormal table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th width="50px;">No.</th>
-                      <th>Kabupaten</th>
-                      <th>Jumlah Kecamatan</th>
+                      <th class="text-center" width="20px;">No.</th>
+                      <th class="text-center">Kabupaten</th>
+                      <th class="text-center">Jumlah Kecamatan</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -93,9 +96,9 @@
                     <?php $i = 1; foreach ($data_kecamatan as $data_kecamatan1) { ?>
                       <tr>
                         <td class="text-center"><?=$i?></td>
-                        <td data-value1="<?=$data_kecamatan1->nama_kabupaten?>"><?=$data_kecamatan1->nama_kabupaten?></td>
-                        <td ><?=$data_kecamatan1->total?></td>
-                        <td>
+                        <td class="text-center" data-value1="<?=$data_kecamatan1->nama_kabupaten?>"><?=$data_kecamatan1->nama_kabupaten?></td>
+                        <td class="text-center" ><?=$data_kecamatan1->total?></td>
+                        <td style="width: 1px">
                           <a class="btn btn-primary btn-xs" onclick="lihatData('nama_kabupaten','<?=$data_kecamatan1->nama_kabupaten?>');"><i class="fa fa-eye" ></i>&nbsp;Lihat</a>
 <!--                          <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('kecamatan','<?=$data_kecamatan1->id_kecamatan?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a> -->
                         </td>
@@ -116,12 +119,13 @@
               <hr>
               <div class="row">
                 <div class="col-md-12">
-                  <table id="tbl_kel" class="table table-bordered">
+<!--                  <table id="tbl_kel" class="table table-bordered">-->
+                      <table style="min-width: 100%;" id="tbl_kel" class="table table-striped datatable-Exnormal table-hover table-bordered">
                     <thead>
                       <tr>
-                        <th width="50px;">No.</th>
-                        <th>Kecamatan</th>
-                        <th>Jumlah Kelurahan</th>
+                        <th class="text-center" width="20px;">No.</th>
+                        <th class="text-center">Kecamatan</th>
+                        <th class="text-center">Jumlah Kelurahan</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -129,9 +133,9 @@
                       <?php $i = 1; foreach ($data_kelurahan as $data_kelurahan1) { ?>
                         <tr>
                           <td class="text-center"><?=$i?></td>
-                          <td data-value1="<?=$data_kelurahan1->nama_kecamatan?>"><?=$data_kelurahan1->nama_kecamatan?></td>
-                          <td ><?=$data_kelurahan1->total?></td>
-                          <td>
+                          <td class="text-center" data-value1="<?=$data_kelurahan1->nama_kecamatan?>"><?=$data_kelurahan1->nama_kecamatan?></td>
+                          <td class="text-center" ><?=$data_kelurahan1->total?></td>
+                          <td style="width: 1px;">
                             <a class="btn btn-primary btn-xs" onclick="lihatData('nama_kecamatan','<?=$data_kelurahan1->nama_kecamatan?>');"><i class="fa fa-eye" ></i>&nbsp;Lihat</a>
 <!--                            <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('kelurahan','<?=$data_kelurahan1->id_kelurahan?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a> -->
                           </td>
@@ -534,14 +538,14 @@
             $('#tambah_provinsi').val('');
             $('#tambah_provinsi_modal').modal('hide');
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Provinsi kerja berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Provinsi kerja gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           // $('#tambah_provinsi').modal('hide');
           $('.error_provinsi').html(response.error);
         }
       });
-        break;
+
 
         case 'kab':
         $.ajax({
@@ -558,14 +562,17 @@
             $('#tambah_kab').val('');
             $('#tambah_kab').val('');
             $('#tambah_kab_modal').modal('hide');
-            swal('Sukses', 'Data kabupaten/kota kerja berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
-            swal('Gagal', 'Data kabupaten/kote kerja gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
             $('.error_kab').html(response.error);
            // $('#tambah_kab_modal').modal('hide');
          }
        });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
 
         case 'kec':
@@ -583,14 +590,17 @@
             $('#tambah_kec').val('');
             $('#tambah_kec').val('');
             $('#tambah_kec_modal').modal('hide');
-            swal('Sukses', 'Data kecamatan kerja berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
-            swal('Gagal', 'Data kecamatan kerja gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
             $('.error_kec').html(response.error);
            // $('#tambah_kab_modal').modal('hide');
          }
        });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
 
         case 'kel':
@@ -608,14 +618,17 @@
             $('#tambah_kel').val('');
             $('#tambah_kel').val('');
             $('#tambah_kel_modal').modal('hide');
-            swal('Sukses', 'Data Kelurahan kerja berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
-            swal('Gagal', 'Data Kelurahan kerja gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
             $('.error_kel').html(response.error);
            // $('#tambah_kab_modal').modal('hide');
          }
        });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
       }
     }
@@ -635,10 +648,10 @@
             $("td[data-value='"+valGlob+"']").html(response.data.nama_provinsi);
             $('.error_provinsi').html('');
             $('#edit_provinsi_modal').modal('hide');
-            swal('Sukses', 'Data Provinsi berhasil diedit.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
             $('.error_provinsi').html(response.error);
-            swal('Gagal', 'Data Provinsi gagal diedit.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
             $(document).ajaxStop(function(){
@@ -661,13 +674,16 @@
             $("td[data-value2='"+valGlob+"']").html(response.data.nama_kabupaten);
             $('.error_kab').html(response.error);
             $('#edit_kab_modal').modal('hide');
-            swal('Sukses', 'Data Kabupaten berhasil diedit.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
             $('.error_kab').html(response.error);
-            swal('Gagal', 'Data Kabupaten gagal diedit.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
 
         case 'kec':
@@ -685,13 +701,16 @@
             $("td[data-value2='"+valGlob2+"']").html(response.data.nama_kecamatan);
             $('.error_kec').html(response.error);
             $('#edit_kec_modal').modal('hide');
-            swal('Sukses', 'Data Kecamatan berhasil diedit.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
             $('.error_kec').html(response.error);
-            swal('Gagal', 'Data Kecamatan gagal diedit.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
 
         case 'kel':
@@ -709,13 +728,16 @@
             $("td[data-value2='"+valGlob3+"']").html(response.data.nama_kelurahan);
             $('.error_kel').html(response.error);
             $('#edit_kel_modal').modal('hide');
-            swal('Sukses', 'Data Kelurahan berhasil diedit.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
             $('.error_kel').html(response.error);
-            swal('Gagal', 'Data Kelurahan gagal diedit.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
       }
     }
@@ -754,7 +776,7 @@
 
                  }
 
-               } else swal('Gagal', 'Terjadi Kesalahan!.', 'error');
+               } else swal('Gagal', 'Terjadi Kesalahan', 'error');
              });
             break;
 
@@ -790,7 +812,7 @@
 
                    }
 
-                 } else swal('Gagal', 'Terjadi Kesalahan!.', 'error');
+                 } else swal('Gagal', 'Terjadi Kesalahan', 'error');
                });
               break;
 
@@ -826,7 +848,7 @@
 
                    }
 
-                 } else swal('Gagal', 'Terjadi Kesalahan!.', 'error');
+                 } else swal('Gagal', 'Terjadi Kesalahan', 'error');
                });
               break;
 
@@ -836,13 +858,13 @@
     function hapusData(method,id) {
       swal({
         title: 'Apakah Anda Yakin?',
-        text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+        text: "Anda tidak dapat mengembalikan data yang telah dihapus",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus!',
-        cancelButtonText: 'Batalkan!',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batalkan',
         closeOnConfirm: false,
         closeOnCancel: false
       },
@@ -854,14 +876,14 @@
           }).done(function(response) {
             if (response.success) {
               $("tr[data-id='"+id+"']").remove();
-              swal('Sukses', 'Data berhasil dihapus.', 'success');
+              swal('Sukses', 'Data berhasil dihapus', 'success');
               setTimeout(function() { location.reload() },1500);
-            } else swal('Gagal', 'Data gagal dihapus.', 'error');
+            } else swal('Gagal', 'Data gagal dihapus', 'error');
           });
         } else {
           swal(
             'Batal',
-            'Proses Hapus Data dibatalkan! :)',
+            'Proses dibatalkan',
             'error'
             )
         }

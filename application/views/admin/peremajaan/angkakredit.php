@@ -98,7 +98,7 @@
                                     <td><?=$riwayat_angkakredit_verified->kredit_total?></td>
                                     <td><?=$riwayat_angkakredit_verified->jabatan?></td>
                                     <td><?=$riwayat_angkakredit_verified->admin?></td>
-                                    <td align="center">
+                                    <td style="width: 1px">
                                         <a data-toggle="modal" data-target="#edit_angkakredit" onclick="editData('angkakredit',<?=$riwayat_angkakredit_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                         <a  onclick="hapusRiwayat('angkakredit',<?=$riwayat_angkakredit_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                     </td>
@@ -176,7 +176,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun Mulai Penilaian</label>
                         <div class="col-sm-9">
-                            <input id="tahun_mulai_angkakredit" type="text" class="form-control onlyYears" >
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="tahun_mulai_angkakredit" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+<!--                            <input id="tahun_mulai_angkakredit" type="text" class="form-control onlyYears" >-->
                         </div>
                     </div>
                     <div class="form-group">
@@ -202,7 +206,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun Selesai Penilaian</label>
                         <div class="col-sm-9">
-                            <input id="tahun_selesai_angkakredit" type="text" class="form-control onlyYears" >
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="tahun_selesai_angkakredit" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+<!--                            <input id="tahun_selesai_angkakredit" type="text" class="form-control onlyYears" >-->
                         </div>
                     </div>
                     <div class="form-group">
@@ -305,7 +313,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun Mulai Penilaian</label>
                         <div class="col-sm-9">
-                            <input id="edit_tahun_mulai_angkakredit" type="text" class="form-control onlyYears" >
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="edit_tahun_mulai_angkakredit" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+<!--                            <input id="edit_tahun_mulai_angkakredit" type="text" class="form-control onlyYears" >-->
                         </div>
                     </div>
                     <div class="form-group">
@@ -330,7 +342,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun Selesai Penilaian</label>
                         <div class="col-sm-9">
-                            <input id="edit_tahun_selesai_angkakredit" type="text" class="form-control onlyYears" >
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="edit_tahun_selesai_angkakredit" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+<!--                            <input id="edit_tahun_selesai_angkakredit" type="text" class="form-control onlyYears" >-->
                         </div>
                     </div>
                     <div class="form-group">
@@ -438,9 +454,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat Angka Kredit berhasil ditambah.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat Angka Kredit gagal ditambah.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -454,8 +470,8 @@
                 type: 'POST',
                 url: '<?=admin_url('PeremajaanData/editData/')?>'+idGlob+'/'+model,
                 data: {
-                    nip: $('#edit_nip').val(),
-                    nama_lengkap: $('#edit_nama_lengkap').val(),
+                    // nip: $('#edit_nip').val(),
+                    // nama_lengkap: $('#edit_nama_lengkap').val(),
                     no_sk_angkakredit: $('#edit_no_sk_angkakredit').val(),
                     tanggal_sk_angkakredit: $('#edit_tanggal_sk_angkakredit').val(),
                     pertama_angkakredit: $("#edit_pertama_angkakredit").is(':checked'),
@@ -474,9 +490,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat Kepegawaian berhasil diperbaharui.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat Kepegawaian gagal diperbaharui.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -488,6 +504,7 @@
         switch (model) {
             case 'angkakredit':
             $('#edit_nip').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(1)").text()).trigger('change');
+            $('#edit_nama_lengkap').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(2)").text()).trigger('change');
             $('#edit_no_sk_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
             $('#edit_tanggal_sk_angkakredit').val($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(4)").text()).trigger('change');
                 if ($(".data-itemriwayatangkakredit[data-id='" + id + "']>td:eq(5)").text() == "1") {
@@ -512,13 +529,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -530,13 +547,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                      'Batal',
-                     'Proses Hapus Data dibatalkan! :)',
+                     'Proses dibatalkan',
                      'error'
                      )
             }

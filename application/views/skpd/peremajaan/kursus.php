@@ -309,9 +309,9 @@
       }).done(function(response) {
         if (response.success) {
           setTimeout(function() { location.reload() },1500);
-          swal('Sukses', 'Data Riwayat Kursus berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
-          swal('Gagal', 'Data Riwayat Kursus gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
       break;
@@ -338,9 +338,9 @@
       }).done(function(response) {
         if (response.success) {
           setTimeout(function() { location.reload() },1500);
-          swal('Sukses', 'Data Riwayat Kursus berhasil diperbaharui.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
-          swal('Gagal', 'Data Riwayat Kursus gagal diperbaharui.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
       break;
@@ -369,13 +369,13 @@
   function hapusRiwayat(method,id) {
     swal({
       title: 'Apakah Anda Yakin?',
-      text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+      text: "Anda tidak dapat mengembalikan data yang telah dihapus",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Hapus!',
-      cancelButtonText: 'Batalkan!',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batalkan',
       closeOnConfirm: false,
       closeOnCancel: false
     },
@@ -393,7 +393,7 @@
       } else {
         swal(
              'Batal',
-             'Proses Hapus Data dibatalkan! :)',
+             'Proses dibatalkan',
              'error'
              )
       }

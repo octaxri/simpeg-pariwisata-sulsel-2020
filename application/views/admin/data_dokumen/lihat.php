@@ -14,13 +14,13 @@
                       </select>
                     </div>                    
                     <div class="col-md-12">
-
-                        <table id="dokumen_pegawai" class="table" style="min-width: 100%;">
+<!--                        <table id="dokumen_pegawai" class="table" style="min-width: 100%;">-->
+                            <table style="min-width: 100%;" id="dokumen_pegawai" class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th width="50px;">No.</th>
+                                    <th width="20px;">No.</th>
                                     <th>Nama Dokumen</th>
-                                    <th width="15%"></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,7 +47,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <strong>PERHATIAN!</strong> Inputan dengan tanda <strong style="color: red;">(*)</strong>  , Wajib untuk diisi (<a role="button" data-dismiss="alert" aria-label="Close" >Tutup</a>)
                 </div>
-            <table class="table" id="tambah_data_dokumen">
+            <table class="table" id="tambah_data_dokumen" style="min-width: 100%">
                 <thead>
                     <tr>
                         <th>Jenis Dokumen</th>
@@ -59,24 +59,24 @@
                 <tbody>
                     <tr>
                         <td>
-                            <select name="dokumen_id[]" class="form-control select-2 jenis_dokumen" style="height: 20px;">
+                            <select name="dokumen_id[]" class="form-control select-2 jenis_dokumen" style="height: 20px;" >
                                 <?php foreach ($data_dokumen as $data_dokumen): ?>
                                   <option value="<?=$data_dokumen->id?>"><?=$data_dokumen->jenis_dokumen?></option>
                                 <?php endforeach ?>
                               </select>                        
                         </td>
                         <td>
-                           <input type="text" name="nama_dokumen[]" class="form-control" style="width: 100%;"> 
+                           <input type="text" name="nama_dokumen[]" class="form-control" style="width: 100%;" required>
                         </td>
                         <td>
-                            <input type="file" name="userfile0">
+                            <input type="file" name="userfile0" required>
                         </td>
-                        <td></td>
+                        <td style="width: 1px"></td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4"><a class="btn btn-primary add_kolom" style="width: 100%;">Tambah Kolom</a></td>
+                        <td colspan="4"><a class="btn btn-primary " id="add_kolom" style="width: 100%;">Tambah Kolom</a></td>
                     </tr>
                 </tfoot>
             </table>
@@ -139,7 +139,7 @@ $(document).ready(function(){
                     "table" : '<?=$table?>',
                     "dokumen_id" : dokumen_id,
                     "nip" : '<?=$this->input->get('nip')?>',
-                    "select" : 'id, nama_dokumen' // yang perlu di setup
+                    "select" : 'id, nama_dokumen, file' // yang perlu di setup
                 },
             },
            "columns": [ // yang perlu di setup
@@ -152,7 +152,7 @@ $(document).ready(function(){
             buttons: [
                 {
                     text: '<i class="fa fa-plus"></i>&nbsp;Tambah Dokumen',
-                    className: 'btn btn-primary btn-sm',
+                    className: 'btn btn-primary btn-sm tambah_dokumen',
                     action: function ( e, dt, node, config ) {
                         $("#tambah_dokumen_pegawai_modal").modal('show')
                     }
@@ -161,152 +161,173 @@ $(document).ready(function(){
             // "order": [[ 9, "asc" ]],
             scrollX:        true,
             scrollCollapse: true,
-          }); 
+        }); 
 
-            $("#satunya").on('submit', function(e){
-                    e.preventDefault()
-                    var table = $(this).data('table')
-                    var type = $(this).data('type')
-                    var nip = '<?=$this->input->get('nip')?>'
+        // yang perlu di setup
+        $('#<?=$table?> tbody').on( 'click', '.edit_<?=$table?>', function () {
+            var edit = data_dokumen.row( $(this).parents('tr') ).data();
+            var html = ""
+            for(x in edit){
+                if(x == 'file') continue;
+                if(x == 'id'){
+                    type = 'hidden'
+                }else{
+                    type = 'text'
+                }
+                html += 
+                '<div class="form-group col-sm-12 '+type+'">' +
+                    '<label class="col-sm-3 control-label">Nama Dokumen</label>' +
+                    '<div class="col-sm-9">' +
+                        '<input type="'+type+'" name="'+x+'" class="form-control" value="'+edit[x]+'" required>' +
+                    '</div>' +
+                    '</div>' }
 
-                    var formData = new FormData(this)
-                    formData.append('type', type)
-                    formData.append('nip', nip)
+                html = html + '<div class="form-group col-sm-12 '+type+'">' +
+                    '<label class="col-sm-3 control-label">Ganti File (PDF)</label>' +
+                    '<div class="col-sm-9">' +
+                        '<input type="file" name="userfile" />' +
+                    '</div>' +
+                    '</div>';
 
-                    $.ajax({
-                        url : '<?=admin_url('referensiAjax/data/')?>' + table,
-                        method : "POST",
-                        data : formData,
-                        processData:false,
-                        contentType:false,
-                        cache:false,
-                        async:false,
-                        complete:function(data){
-                            json = JSON.parse(data.responseText)
-                            if(json.stat == 'sukses'){
-                                $('#' + table).DataTable().ajax.reload()
-                                $(".modal").modal('hide')
-                                $('form').trigger("reset")
-                                swal(json.stat, json.res, 'success')    
-                            }else{
-                                swal(json.stat, json.res, 'error')  
-                            }
-                        }
-                    })
-                })
+            $(".data-edit").empty().html(html)      
+            $("#edit_<?=$table?>_modal").modal('show')
+        })
 
-            $(".update_data_dokumen").on('submit', function(e){
-                    e.preventDefault()
+        $('#<?=$table?> tbody').on( 'click', '.delete_<?=$table?>', function () {
+            var delet = data_dokumen.row( $(this).parents('tr') ).data();
+            var table = $(this).data('table')
+            var type = $(this).data('type') 
 
-                    var nip = '<?=$this->input->get('nip')?>'
-
-                    var formData = new FormData(this)
-                    formData.append('nip', nip)
-                    $.ajax({
-                        url : '<?=admin_url('referensiAjax/update_data_dokumen')?>',
-                        method : "POST",
-                        data : formData,
-                        processData:false,
-                        contentType:false,
-                        cache:false,
-                        async:false,
-                        complete:function(data){
-                            json = JSON.parse(data.responseText)
-                            if(json.stat == 'sukses'){
-                                $('#dokumen_pegawai').DataTable().ajax.reload()
-                                $(".modal").modal('hide')
-                                $('form').trigger("reset")
-                                swal(json.stat, json.res, 'success')    
-                            }else{
-                                swal(json.stat, json.res, 'error')  
-                            }
-                        }
-                    })
-                })
-
-            // yang perlu di setup
-            $('#<?=$table?> tbody').on( 'click', '.edit_<?=$table?>', function () {
-                var edit = data_dokumen.row( $(this).parents('tr') ).data();
-                var html = ""
-                for(x in edit){
-                    if(x == 'id'){
-                        type = 'hidden'
+            $.ajax({
+                url : '<?=admin_url("ReferensiAjax/data/")?><?=$table?>',
+                method : "POST",
+                data : {
+                    type : type,
+                    id : delet['id']
+                },
+                complete:function(data){
+                    json = JSON.parse(data.responseText)
+                    if(json.stat == 'Berhasil'){
+                        $('#' + table).DataTable().ajax.reload()
+                        $(".modal").modal('hide')
+                        $('form').trigger("reset")
+                        swal(json.stat, json.res, 'success')    
                     }else{
-                        type = 'text'
-                    }
-                    html += 
-                    '<div class="form-group col-sm-12 '+type+'">' +
-                        '<label class="col-sm-3 control-label">Nama Dokumen</label>' +
-                        '<div class="col-sm-9">' +
-                          '<input type="'+type+'" name="'+x+'" class="form-control" value="'+edit[x]+'">' +
-                        '</div>' +
-                      '</div>' }
+                        swal(json.stat, json.res, 'error')  
+                    }               
+                }
 
-                    html = html + '<div class="form-group col-sm-12 '+type+'">' +
-                        '<label class="col-sm-3 control-label">Ganti File (PDF)</label>' +
-                        '<div class="col-sm-9">' +
-                          '<input type="file" name="userfile" />' +
-                        '</div>' +
-                      '</div>';
-
-                $(".data-edit").empty().html(html)      
-                $("#edit_<?=$table?>_modal").modal('show')
             })
+        })
 
-            $('#<?=$table?> tbody').on( 'click', '.delete_<?=$table?>', function () {
-                var delet = data_dokumen.row( $(this).parents('tr') ).data();
-                var table = $(this).data('table')
-                var type = $(this).data('type') 
+        $('#<?=$table?> tbody').on( 'click', '.lihat_<?=$table?>', function () {
+            var edit = data_dokumen.row( $(this).parents('tr') ).data();
+            replace = edit.file.replace(" ", "_")
+            window.open("<?=site_url()?>" + 'public/uploads/dokumen/<?=$nip?>/' + replace)
+        })
 
-                $.ajax({
-                    url : '<?=admin_url("ReferensiAjax/data/")?><?=$table?>',
-                    method : "POST",
-                    data : {
-                        type : type,
-                        id : delet['id']
-                    },
-                    complete:function(data){
-                        json = JSON.parse(data.responseText)
-                        if(json.stat == 'sukses'){
-                            $('#' + table).DataTable().ajax.reload()
-                            $(".modal").modal('hide')
-                            $('form').trigger("reset")
-                            swal(json.stat, json.res, 'success')    
-                        }else{
-                            swal(json.stat, json.res, 'error')  
-                        }               
-                    }
-
-                })
-            })
-
-            $('#<?=$table?> tbody').on( 'click', '.lihat_<?=$table?>', function () {
-                var edit = data_dokumen.row( $(this).parents('tr') ).data();
-                replace = edit.nama_dokumen.replace(" ", "_")
-                window.open("<?=site_url()?>" + 'public/uploads/dokumen/<?=$nip?>/' + replace + '.pdf')
-            })
-
-            $(document).on('click', '.add_kolom', function(){
-                count = $("#tambah_data_dokumen tbody tr").length;
-                options = $(".jenis_dokumen").html()
-                html = '<tr><td>' +
-                    '<select name="dokumen_id[]" class="form-control select-2 jenis_dokumen">' +
-                        options +
-                      '</select>' +                         
-                '</td><td>' +
-                   '<input type="text" name="nama_dokumen[]" class="form-control" style="width: 100%;">' +
-                '</td><td>' +
-                    '<input type="file" id="exampleInputFile" name="userfile'+count+'">' +
-                '</td><td><a class="delete-kolom btn btn-xs btn-danger"><i class="fa fa-times" aria-hidden="true" style="margin:0px;"></i></a></td> </tr>';
-                $("#tambah_data_dokumen tbody").append(html)
-                $("select").select2()
-            })
-
-            $(document).on('click', '.delete-kolom', function(){
-                $(this).parent().parent().empty()
-            })
+        $(document).on('click', '.delete-kolom', function(){
+            $(this).parent().parent().empty()
+        })
 
     }
+
+    $("#satunya").on('submit', function(e){
+        e.preventDefault()
+        var table = $(this).data('table')
+        var type = $(this).data('type')
+        var nip = '<?=$this->input->get('nip')?>'
+
+        var formData = new FormData(this)
+        formData.append('type', type)
+        formData.append('nip', nip)
+
+        let isValid = true;
+        for (var item of formData.entries()) {
+            if(typeof item[1] === "undefined" ||  item[1] == null || item[1] == "" || (item[1] instanceof File && item[1].name == "")){
+                isValid = false
+            }
+                
+        }
+        console.log(isValid)
+        if(isValid == false)
+            swal("Gagal Simpan", "Tidak boleh ada yang kosong", 'error')
+        else
+            $.ajax({
+                url : '<?=admin_url('referensiAjax/data/')?>' + table,
+                method : "POST",
+                data : formData,
+                processData:false,
+                contentType:false,
+                cache:false,
+                async:false,
+                complete:function(data){
+                    json = JSON.parse(data.responseText)
+                    if(json.stat == 'Berhasil'){
+                        $('#' + table).DataTable().ajax.reload()
+                        $(".modal").modal('hide')
+                        $('form').trigger("reset")
+                        swal(json.stat, json.res, 'success')
+                    }else{
+                        swal(json.stat, json.res, 'error')  
+                    }
+                }
+            })
+
+        $(document).ajaxStop(function(){
+            window.location.reload();
+        });
+    })
+
+    $(document).on('click', '.tambah_dokumen', function(){
+        $('#tambah_data_dokumen tbody').find("tr:gt(0)").remove();
+    })
+
+    $(".update_data_dokumen").on('submit', function(e){
+        e.preventDefault()
+
+        var nip = '<?=$this->input->get('nip')?>'
+
+        var formData = new FormData(this)
+        formData.append('nip', nip)
+        $.ajax({
+            url : '<?=admin_url('referensiAjax/update_data_dokumen')?>',
+            method : "POST",
+            data : formData,
+            processData:false,
+            contentType:false,
+            cache:false,
+            async:false,
+            complete:function(data){
+                json = JSON.parse(data.responseText)
+                if(json.stat == 'Berhasil'){
+                    $('#dokumen_pegawai').DataTable().ajax.reload()
+                    $(".modal").modal('hide')
+                    $('form').trigger("reset")
+                    swal(json.stat, json.res, 'success')    
+                }else{
+                    swal(json.stat, json.res, 'error')  
+                }
+            }
+        })
+    })
+
+    $('#add_kolom').click( function(){
+        console.log($(this)); 
+        count = $("#tambah_data_dokumen tbody tr").length;
+        options = $(".jenis_dokumen").html()
+        html = '<tr><td>' +
+            '<select name="dokumen_id[]" class="form-control select-2 jenis_dokumen">' +
+                options +
+                '</select>' +                         
+        '</td><td>' +
+            '<input type="text" name="nama_dokumen[]" class="form-control" style="width: 100%;">' +
+        '</td><td>' +
+            '<input type="file" id="exampleInputFile" name="userfile'+count+'">' +
+        '</td><td style="width: 1px"><a class="delete-kolom btn btn-xs btn-danger"><i class="fa fa-times" aria-hidden="true" style="margin:0px;"></i></a></td> </tr>';
+        $("#tambah_data_dokumen tbody").append(html)
+        $("select").select2()
+    })
 
 })
 

@@ -33,7 +33,7 @@
                 <li class="panel"><a href="<?=admin_url('dokumen')?>" class="<?=($modul == 'dokumen' ? 'active' : '')?>"><i class="fa fa-folder-open" aria-hidden="true"></i> <span>Dokumen Pegawai</span>
 <!--                        <span class="label label-success">baru!</span></a>-->
                 </li> 
-                <li class="panel"><a href="<?=admin_url('honorer')?>" class="<?=($modul == 'honorer' ? 'active' : '')?>"><i class="lnr lnr-chart-bars"></i> <span>Pegawai Magang</span>
+                <li class="panel"><a href="<?=admin_url('honorer')?>" class="<?=($modul == 'honorer' ? 'active' : '')?>"><i class="lnr lnr-chart-bars"></i> <span>Tenaga Magang</span>
 <!--                        <span class="label label-success">baru!</span></a>-->
                 </li>               
  <!--                <li class="panel"><a href="<?=admin_url('DataHonorer')?>" class="<?=($modul == 'DataHonorer' ? 'active' : '')?>"><i class="lnr lnr-chart-bars"></i> <span>Data Pegawai Honorer</span></a>
@@ -87,8 +87,7 @@
                             </li>   
                             <li class="panel"><a href="<?=admin_url('peremajaan/cuti')?>"class="<?=($method == 'cuti' ? 'active' : '')?>">Cuti</a>
                             </li>
-                            <!-- <li class="panel"><a href="<?=admin_url('peremajaan/pwk')?>"class="<?=($method == 'pwk' ? 'active' : '')?>">PWK</a> -->
-                            </li>
+                            <!-- <li class="panel"><a href="<?=admin_url('peremajaan/pwk')?>"class="<?=($method == 'pwk' ? 'active' : '')?>">PWK</a> </li>-->
                         </ul>
                     </div>
                 </li>
@@ -97,10 +96,13 @@
                     <div id="migrasi" class="<?=($modul == 'MigrasiPegawai' ? 'collapse in' : 'collapse')?>" aria-expanded="<?=($modul == 'migrasPegawai' ? 'true' : 'false')?>" >
                         <ul class="nav">
                             <!-- <li class="panel"><a href="<?=admin_url('MigrasiPegawai/daftarPegawai')?>"class="<?=($method == 'daftarPegawai' ? 'active' : '')?>">Daftar Pegawai</a></li> -->
-                            <li class="panel"><a href="<?=admin_url('MigrasiPegawai/daftarKenaikanPangkat')?>"class="<?=($method == 'daftarKenaikanPangkat' ? 'active' : '')?>">Daftar Kenaikan Pangkat</a></li>
+                            <!--<li class="panel"><a href="<?=admin_url('MigrasiPegawai/daftarKenaikanPangkat')?>"class="<?=($method == 'daftarKenaikanPangkat' ? 'active' : '')?>">Daftar Kenaikan Pangkat</a></li>-->
                            <!--  <li class="panel"><a href="<?=admin_url('MigrasiPegawai/daftarMutasi')?>"class="<?=($method == 'daftarMutasi' ? 'active' : '')?>">Daftar Mutasi</a></li> -->
                             <!-- <li class="panel"><a href="<?=admin_url('MigrasiPegawai/daftarPensiun')?>"class="<?=($method == 'daftarPensiun' ? 'active' : '')?>">Daftar Pensiun</a></li> -->
-                            <li class="panel"><a href="<?=admin_url('MigrasiPegawai/daftarMeninggal')?>"class="<?=($method == 'daftarMeninggal' ? 'active' : '')?>">Meninggal</a></li>
+                            <!--<li class="panel"><a href="<?=admin_url('MigrasiPegawai/daftarMeninggal')?>"class="<?=($method == 'daftarMeninggal' ? 'active' : '')?>">Meninggal</a></li>-->
+
+                            <li class="panel"><a href="<?=admin_url('MigrasiPegawai/pangkat')?>"class="<?=($method == 'pangkat' ? 'active' : '')?>">Kenaikan Pangkat</a></li>
+                            <li class="panel"><a href="<?=admin_url('MigrasiPegawai/meninggal')?>"class="<?=($method == 'meninggal' ? 'active' : '')?>">Meninggal</a></li>
                         </ul>
                     </div>
                 </li>

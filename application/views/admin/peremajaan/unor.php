@@ -77,7 +77,7 @@
                                 <td><?=$riwayat_unor_verified->no_sk?></td>
                                 <td><?=$riwayat_unor_verified->tanggal_sk?></td>
                                 <td><?=$riwayat_unor_verified->admin?></td>
-                                <td align="center">
+                                <td style="width: 1px">
                                     <a data-toggle="modal" data-target="#edit_unor" onclick="editData('unor',<?=$riwayat_unor_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                     <a href="#" onclick="hapusRiwayat('unor',<?=$riwayat_unor_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                 </td>
@@ -181,7 +181,7 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Bidang/Bagian</label>
                         <div class="col-sm-9">
-                            <select id="edit_unor_unor" class="form-control select2-2">
+                            <select id="edit_unor_unor" class="form-control select-2">
                                 <option value=""></option>
                                 <?php foreach ($data_satker as $satker3): ?>
                                     <option value="<?=$satker3->nama_satker?>"><?=$satker3->nama_satker?></option>
@@ -237,9 +237,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat unor berhasil ditambah.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat unor gagal ditambah.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -262,9 +262,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat Kepegawaian berhasil diperbaharui.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat Kepegawaian gagal diperbaharui.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -289,13 +289,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -307,13 +307,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                      'Batal',
-                     'Proses Hapus Data dibatalkan! :)',
+                     'Proses dibatalkan',
                      'error'
                      )
             }
@@ -334,6 +334,7 @@
         if (data.gambar == null) 
             {data.gambar = 'no_image.jpg';
     }
+        $("#unor_unor").val(data.satuan_kerja).change();
     var markup = '<img style="margin-right : 10px;" width="15px" height="15px" src="<?=upload_url('fotopegawai')?>'+data.gambar+'">' +
     '<span>'+ data.text+'</span>';
     return markup;
@@ -364,7 +365,8 @@ $("#add_select2").select2({
                     return {
                         id: item.nip,
                         text: item.nama_lengkap,
-                        gambar: item.gambar
+                        gambar: item.gambar,
+                        satuan_kerja: item.satuan_kerja,
                     }
                 })
             };

@@ -22,7 +22,7 @@ class DataDokumen extends Admin_controller {
         $nip = $this->input->get('nip');
         $data_dokumen = $this->crud->ga('data_dokumen');
 
-        $data = array(  'title'     => '<a href="'.admin_url("dokumen").'">dokumen</a> / NIP '.$nip,
+        $data = array(  'title'     => '<a href="'.admin_url("dokumen").'">Dokumen</a> / NIP '.$nip,
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'data_dokumen'=> $data_dokumen,
         'table'     => 'dokumen_pegawai',

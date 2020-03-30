@@ -14,7 +14,7 @@ class DataHonorer extends Admin_controller {
         $data_jenisjabatan = $this->crud->ga('data_jenisjabatan');
         $data_pegawai_honorer = $this->crud->ga('data_honorer');
 
-        $data = array(  'title'     => 'Data Pegawai Magang',
+        $data = array(  'title'     => 'Data Tenaga Magang',
                         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
                         'data_agama'=> $data_agama,
                         'data_pendidikan'=> $data_pendidikan,
@@ -41,7 +41,7 @@ class DataHonorer extends Admin_controller {
       $data_kelurahan = $this->crud->gao('data_kelurahan', 'nama_kelurahan ASC');
 
 
-      $data = array(  'title'     => 'Data Pegawai Magang / Tambah Data Pegawai Magang',
+      $data = array(  'title'     => 'Data Tenaga Magang / Tambah Data Tenaga Magang',
                       'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
                       'data_agama'=> $data_agama,
                       'data_pendidikan'=> $data_pendidikan,
@@ -113,7 +113,7 @@ class DataHonorer extends Admin_controller {
     }
 
     public function tambahAjax(){
-      $data = array(  'title'     => 'Data Pegawai Magang/ Tambah Data Pegawai Magang',
+      $data = array(  'title'     => 'Data Tenaga Magang/ Tambah Data Tenaga Magang',
                    'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
                    'isi'       => 'admin/data_honorer/tambah');
 
@@ -289,7 +289,7 @@ class DataHonorer extends Admin_controller {
         $data_eselon = $this->crud->ga('data_eselon');
 
 
-        $data = array(  'title'     => 'Data Pegawai Magang / Profil Pegawai Magang',
+        $data = array(  'title'     => 'Data Tenaga Magang / Profil Tenaga Magang',
                         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
                         'data_agama'=> $data_agama,
                         'data_pendidikan'=> $data_pendidikan,

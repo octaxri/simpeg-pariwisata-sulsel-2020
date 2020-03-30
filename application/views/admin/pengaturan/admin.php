@@ -13,7 +13,7 @@
                       <table style="min-width: 100%;"  class="table table-striped datatable-Exnormal table-hover table-bordered">
                         <thead>
                           <tr>
-                            <th> No.</th>
+                            <th width="20px;"> No.</th>
                             <th> Nama </th>
                             <th> E-mail</th>
                             <th>  </th>
@@ -25,7 +25,7 @@
                             <td><?=$i?></td>
                             <td><?=$data_admin->fullname?></td>
                             <td><?=$data_admin->email?></td>
-                            <td>
+                            <td style="width: 1px">
                               <a data-toggle="modal" data-target="#edit_user_admin" class="btn btn-primary btn-xs" onclick="editAdmin('<?=$data_admin->id_user?>')"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                               <a onclick="hapusData('<?=$data_admin->id_user?>','admin')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                 <a  class="btn btn-success btn-xs" onclick="resetPass('<?=$data_admin->id_user?>')"><i class="fa fa-warning"></i>&nbsp;Reset Password</a>
@@ -173,11 +173,11 @@
                   if (response.success) {
                     // $("td[data-value='"+valGlob+"']").html(response.data.nama_eselon);
                     $('#tambah_akun').modal('hide');
-                    swal('Sukses', 'Tambah Akun berhasil.', 'success');
+                    swal('Sukses', 'Tambah Akun berhasil', 'success');
                     setTimeout(function() { location.reload() },1500);
                   } else {
                     // $('.error_eselon').html(response.error);
-                    swal('Gagal', 'Tambah Akun gagal.', 'error');
+                    swal('Gagal', 'Tambah Akun gagal', 'error');
                   }
                 });
             }
@@ -196,11 +196,11 @@
                   if (response.success) {
                     // $("td[data-value='"+valGlob+"']").html(response.data.nama_eselon);
                     $('#edit_user_admin').modal('hide');
-                    swal('Sukses', 'Edit Akun berhasil.', 'success');
+                    swal('Sukses', 'Edit Akun berhasil', 'success');
                     // setTimeout(function() { location.reload() },1500);
                   } else {
                     // $('.error_eselon').html(response.error);
-                    swal('Gagal', 'Edit Akun gagal.', 'error');
+                    swal('Gagal', 'Edit Akun gagal', 'error');
                   }
                 });
             }
@@ -208,13 +208,13 @@
             function hapusData(id,type) {
               swal({
                 title: 'Apakah Anda Yakin?',
-                text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+                text: "Anda tidak dapat mengembalikan data yang telah dihapus",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Hapus!',
-                cancelButtonText: 'Batalkan!',
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batalkan',
                 closeOnConfirm: false,
                 closeOnCancel: false
               },
@@ -226,14 +226,14 @@
                     }).done(function(response) {
                       if (response.success) {
                         $("tr[data-id='"+id+"']").remove();
-                        swal('Sukses', 'Data berhasil dihapus.', 'success');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
                         setTimeout(function() { location.reload() },1500);
-                      } else swal('Gagal', 'Data gagal dihapus.', 'error');
+                      } else swal('Gagal', 'Data gagal dihapus', 'error');
                    });
                 } else {
                   swal(
                     'Batal',
-                    'Proses Hapus Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                   )
                 }
@@ -243,13 +243,13 @@
             function resetPass(id) {
               swal({
                 title: 'Apakah Anda Yakin?',
-                text: "Anda tidak dapat mengembalikan password yang telah direset!",
+                text: "Anda tidak dapat mengembalikan password yang telah direset",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Reset!',
-                cancelButtonText: 'Batalkan!',
+                confirmButtonText: 'Reset',
+                cancelButtonText: 'Batalkan',
                 closeOnConfirm: false,
                 closeOnCancel: false
               },
@@ -260,14 +260,14 @@
                       url: '<?=admin_url('pengaturan/resetPass/')?>'+id
                     }).done(function(response) {
                       if (response.success) {
-                        swal('Sukses', 'Password berhasil direset.', 'success');
+                        swal('Sukses', 'Password berhasil direset', 'success');
                         setTimeout(function() { location.reload() },1500);
-                      } else swal('Gagal', 'password gagal direset.', 'error');
+                      } else swal('Gagal', 'password gagal direset', 'error');
                    });
                 } else {
                   swal(
                     'Batal',
-                    'Proses reset Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                   )
                 }

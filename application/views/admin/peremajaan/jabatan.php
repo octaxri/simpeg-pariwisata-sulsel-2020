@@ -81,10 +81,10 @@
                 <th rowspan="2" width="100">Nama </th>
                 <th rowspan="2">Jenis Jabatan</th>
                 <th rowspan="2">Nama Jabatan</th>
-<!--                <th colspan="2" class="text-center">Jabatan </th>-->
-                <th colspan="3" class="text-center">Lokasi Kerja</th>
-                <th colspan="2" class="text-center">Tanggal TMT</th>
                 <th rowspan="2">Eselon</th>
+                <th rowspan="2">TMT Jabatan</th>
+                <th colspan="3" class="text-center">Lokasi Kerja</th>
+                <th rowspan="2">TMT Pelantikan</th>
                 <th colspan="3" class="text-center">Surat Keputusan</th>
                 <th rowspan="2">Admin</th>
                 <th rowspan="2"></th>
@@ -93,8 +93,6 @@
                 <th width="200">Instansi Induk</th>
                 <th width="200">Bidang/Bagian</th>
                 <th width="200">Subbidang/Seksi</th>
-                <th>Jabatan</th>
-                <th>Pelantikan</th>
                 <th>Pejabat Yang Menetapkan</th>
                 <th>Nomor </th>
                 <th>Tanggal </th>
@@ -110,17 +108,17 @@
                         <td><?=$riwayat_jabatan_verified->nama_lengkap?></td>
                         <td><?=$riwayat_jabatan_verified->jenis?></td>
                         <td><?=$riwayat_jabatan_verified->nama_jabatan?></td>
+                        <td><?=$riwayat_jabatan_verified->eselon?></td>
+                        <td><?=$riwayat_jabatan_verified->tmt_jabatan?></td>
                         <td><?=$riwayat_jabatan_verified->instansi_induk?></td>
                         <td><?=$riwayat_jabatan_verified->unor_induk?></td>
                         <td><?=$riwayat_jabatan_verified->unor?></td>
-                        <td><?=$riwayat_jabatan_verified->tmt_jabatan?></td>
                         <td><?=$riwayat_jabatan_verified->tmt_pelantikan?></td>
-                        <td><?=$riwayat_jabatan_verified->eselon?></td>
                         <td><?=$riwayat_jabatan_verified->pejabat?></td>
                         <td><?=$riwayat_jabatan_verified->nomor?></td>
                         <td><?=$riwayat_jabatan_verified->tanggal?></td>
                         <td><?=$riwayat_jabatan_verified->admin?></td>
-                        <td>
+                        <td style="width: 1px">
                             <a data-toggle="modal" data-target="#edit_jabatan" onclick="editData('jabatan',<?=$riwayat_jabatan_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                             <a onclick="hapusRiwayat('jabatan',<?=$riwayat_jabatan_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                         </td>
@@ -169,7 +167,13 @@
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">Nama Jabatan</label>
                     <div class="col-sm-9">
-                        <input type="text" id="nama_jabatan" class="form-control" >
+<!--                        <input type="text" id="nama_jabatan" class="form-control" >-->
+                        <select type="text" id="nama_jabatan" class="form-control select-2" >
+                            <option value=""></option>
+                            <?php foreach ($data_jabatan as $data_jabatan1): ?>
+                                <option value="<?=$data_jabatan1->nama_jabatan?>"><?=$data_jabatan1->nama_jabatan?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
 
@@ -187,7 +191,7 @@
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">TMT Jabatan</label>
                     <div class="col-sm-9">
-                        <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
+                        <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" >
                             <input type="text" id="tmt_jabatan" class="form-control">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         </div>
@@ -261,8 +265,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="add_error_messages">
-                </div>
+<!--                <div id="add_error_messages"></div>-->
                 <div class="form-group ">
                     <div class="col-md-3 col-md-offset-5">
                         <a  class="btn btn-primary btn-sm" onclick="addData_send('riwayat_jabatan','')"><i class="glyphicon glyphicon-floppy-save"></i>  Simpan </a>
@@ -295,7 +298,7 @@
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">Jenis Jabatan</label>
                     <div class="col-sm-9">
-                        <select type="text" id="edit_jenis_jabatan" class="form-contro select-2" >
+                        <select type="text" id="edit_jenis_jabatan" class="form-control select-2" >
                             <option value=""></option>
                             <?php foreach ($data_jenisjabatan as $data_jenisjabatan1): ?>
                                 <option value="<?=$data_jenisjabatan1->nama_jenisjabatan?>"><?=$data_jenisjabatan1->nama_jenisjabatan?></option>
@@ -306,7 +309,13 @@
                 <div class="form-group">
                     <label for="bahan" class="col-sm-3 control-label">Nama Jabatan</label>
                     <div class="col-sm-9">
-                        <input type="text" id="edit_nama_jabatan" class="form-control" >
+<!--                        <input type="text" id="edit_nama_jabatan" class="form-control" >-->
+                        <select type="text" id="edit_nama_jabatan" class="form-control select-2" >
+                            <option value=""></option>
+                            <?php foreach ($data_jabatan as $data_jabatan2): ?>
+                                <option value="<?=$data_jabatan2->nama_jabatan?>"><?=$data_jabatan2->nama_jabatan?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -398,8 +407,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="edit_error_messages">
-                </div>
+<!--                <div id="edit_error_messages"></div>-->
                 <div class="form-group ">
                     <div class="col-md-3 col-md-offset-5">
                         <a  class="btn btn-primary btn-sm" onclick="editData_send('jabatan')"><i class="glyphicon glyphicon-edit"></i>  Simpan Perubahan </a>
@@ -441,9 +449,9 @@
     }).done(function(response) {
       if (response.success) {
         setTimeout(function() { location.reload() },1500);
-        swal('Sukses', 'Data Riwayat Jabatan berhasil ditambah.', 'success');
+        swal('Sukses', 'Data berhasil disimpan', 'success');
     } else {
-        swal('Gagal', 'Data Riwayat Jabatan gagal ditambah.', 'error');
+        swal('Gagal', 'Data gagal disimpan', 'error');
         $("#add_error_messages").html(response.error);
     }
 });
@@ -475,9 +483,9 @@ function editData_send(model){
 }).done(function(response) {
   if (response.success) {
     setTimeout(function() { location.reload() },1500);
-    swal('Sukses', 'Data Riwayat Jabatan berhasil diperbaharui.', 'success');
+    swal('Sukses', 'Data berhasil disimpan', 'success');
 } else {
-    swal('Gagal', 'Data Riwayat Jabatan gagal diperbaharui.', 'error');
+    swal('Gagal', 'Data gagal disimpan', 'error');
     $("#edit_error_messages").html(response.error);
 }
 });
@@ -490,13 +498,13 @@ function editData(model,id){
       switch (model) {
         case 'jabatan':
         $('#edit_jenis_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
-        $('#edit_nama_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(4)").text());
-        $('#edit_instansi_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(5)").text());
-        $('#edit_unor_induk_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(6)").text()).trigger('change');
-        $('#edit_unor_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(7)").text()).trigger('change');
-        $('#edit_tmt_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(8)").text());
-        $('#edit_tmt_pelantikan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(9)").text());
-        $('#edit_eselon_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(10)").text()).trigger('change');
+        $('#edit_nama_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(4)").text()).trigger('change');
+            $('#edit_eselon_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(5)").text()).trigger('change');
+            $('#edit_tmt_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(6)").text());
+        $('#edit_instansi_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(7)").text());
+        $('#edit_unor_induk_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(8)").text()).trigger('change');
+        $('#edit_unor_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(9)").text()).trigger('change');
+        $('#edit_tmt_pelantikan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(10)").text());
         $('#edit_pejabat_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(11)").text());
         $('#edit_nomor_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(12)").text());
         $('#edit_tanggal_jabatan').val($(".data-itemriwayatjabatan[data-id='" + id + "']>td:eq(13)").text());
@@ -510,13 +518,13 @@ function editData(model,id){
 function hapusRiwayat(method,id) {
     swal({
         title: 'Apakah Anda Yakin?',
-        text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+        text: "Anda tidak dapat mengembalikan data yang telah dihapus",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus!',
-        cancelButtonText: 'Batalkan!',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batalkan',
         closeOnConfirm: false,
         closeOnCancel: false
     },
@@ -528,13 +536,13 @@ function hapusRiwayat(method,id) {
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                    swal('Sukses', 'Data berhasil dihapus', 'success');
+                } else swal('Gagal', 'Data gagal dihapus', 'error');
             });
         } else {
             swal(
                  'Batal',
-                 'Proses Hapus Data dibatalkan! :)',
+                 'Proses dibatalkan',
                  'error'
                  )
         }
@@ -562,6 +570,7 @@ function formatResultSelectionAdd (data) {
     $("#eselon_jabatan").val(data.eselon).change();
     $("#unor_induk_jabatan").val(data.satuan_kerja).change();
     $("#unor_jabatan").val(data.unit_kerja).change();
+    $("#nama_jabatan").val(data.nama_jabatan).change();
 
     var markup = '<img style="margin-right : 10px;" width="15px" height="15px" src="<?=upload_url('fotopegawai')?>'+data.gambar+'">' +
     '<span>'+ data.text+'</span>';
@@ -577,6 +586,7 @@ function formatResultSelectionEdit (data) {
     $("#edit_eselon_jabatan").val(data.eselon).change();
     $("#edit_unor_induk_jabatan").val(data.satuan_kerja).change();
     $("#edit_unor_jabatan").val(data.unit_kerja).change();
+    $("#edit_nama_jabatan").val(data.nama_jabatan).change();
     var markup = '<img style="margin-right : 10px;" width="15px" height="15px" src="<?=upload_url('fotopegawai')?>'+data.gambar+'">' +
     '<span>'+ data.text+'</span>';
     return markup;
@@ -590,6 +600,7 @@ function formatResultSelectionEdit (data) {
     $('#tambah_jabatan').on('hidden.bs.modal', function () {
         location.reload();
     });
+
 
 $("#add_select2").select2({
     ajax: {
@@ -611,7 +622,8 @@ $("#add_select2").select2({
                         eselon: item.eselon,
                         satuan_kerja : item.satuan_kerja,
                         unit_kerja : item.unit_kerja,
-                        jenis_jabatan : item.jenis_jabatan
+                        jenis_jabatan : item.jenis_jabatan,
+                        nama_jabatan : item.nama_jabatan,
                     }
                 })
             };
@@ -650,7 +662,8 @@ $("#edit_select2").select2({
           eselon: item.eselon,
           satuan_kerja : item.satuan_kerja,
           unit_kerja : item.unit_kerja,
-          jenis_jabatan : item.jenis_jabatan
+          jenis_jabatan : item.jenis_jabatan,
+            nama_jabatan : item.nama_jabatan,
       }
   })
   };

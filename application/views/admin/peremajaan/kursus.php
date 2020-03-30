@@ -92,7 +92,7 @@
                             <td><?=$riwayat_kursus_verified->instansi_kursus?></td>
                             <td><?=$riwayat_kursus_verified->institusi_kursus?></td>
                             <td><?=$riwayat_kursus_verified->admin?></td>
-                            <td>
+                            <td style="width: 1px">
                                 <a data-toggle="modal" data-target="#edit_kursus" onclick="editData('kursus',<?=$riwayat_kursus_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                 <a href="#" onclick="hapusRiwayat('kursus',<?=$riwayat_kursus_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                             </td>
@@ -151,7 +151,7 @@
                         <label  class="col-sm-3 control-label">Lama Kursus</label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input id="lama_kursus" type="text" class="form-control" aria-describedby="basic-addon2" >
+                                <input id="lama_kursus" type="number" class="form-control" aria-describedby="basic-addon2" >
                                 <span class="input-group-addon" id="basic-addon2">Hari</span>
                             </div>
                         </div>
@@ -242,7 +242,7 @@
                         <label  class="col-sm-3 control-label">Lama Kursus</label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input id="edit_lama_kursus" type="text" class="form-control" aria-describedby="basic-addon2" >
+                                <input id="edit_lama_kursus" type="number" class="form-control" aria-describedby="basic-addon2" >
                                 <span class="input-group-addon" id="basic-addon2">Hari</span>
                             </div>
                         </div>
@@ -316,9 +316,9 @@
         }).done(function(response) {
           if (response.success) {
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Riwayat Kursus berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Riwayat Kursus gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
         break;
@@ -345,9 +345,9 @@
         }).done(function(response) {
           if (response.success) {
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Riwayat Kursus berhasil diperbaharui.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Riwayat Kursus gagal diperbaharui.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
         break;
@@ -376,13 +376,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -394,13 +394,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                     'Batal',
-                    'Proses Hapus Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                 )
             }

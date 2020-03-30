@@ -103,7 +103,7 @@
                 <td><?=$riwayat_fungsional_verified->no_sttp?></td>
                 <td><?=$riwayat_fungsional_verified->tanggal_sttp?></td>
                 <td><?=$riwayat_fungsional_verified->admin?></td>
-                <td>
+                <td style="width: 1px">
                   <a onclick="editData('diklat',<?=$riwayat_fungsional_verified->id_riwayat?>);" data-toggle="modal" data-target="#edit_diklat_fungsional" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                   <a onclick="hapusRiwayat('diklat',<?=$riwayat_fungsional_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                 </td>
@@ -146,7 +146,8 @@
                         <div class="col-sm-9">
                             <input type="text" id="nama_fungsional" class="form-control" >
                         </div>
-                    </div>          <div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Jumlah Jam</label>
                         <div class="col-sm-9">
                             <input type="number" id="jumlah_jam_fungsional" class="form-control" >
@@ -173,13 +174,16 @@
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Tahun</label>
                         <div class="col-sm-9">
-                            <input type="number" id="tahun_fungsional" class="form-control" >
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="number" id="tahun_fungsional" class="form-control" >
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="bahan" type="date" class="col-sm-3 control-label">Nomor STTP</label>
                         <div class="col-sm-9">
-                            <input type="number" id="no_sttp_fungsional" class="form-control" >
+                            <input type="text" id="no_sttp_fungsional" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -261,7 +265,7 @@
                     <div class="form-group">
                         <label for="bahan" type="date" class="col-sm-3 control-label">Nomor STTP</label>
                         <div class="col-sm-9">
-                            <input type="number" id="edit_no_sttp_fungsional" class="form-control" >
+                            <input type="text" id="edit_no_sttp_fungsional" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -312,9 +316,9 @@
       }).done(function(response) {
         if (response.success) {
           setTimeout(function() { location.reload() },1500);
-          swal('Sukses', 'Data Riwayat Diklat berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
-          swal('Gagal', 'Data Riwayat Diklat gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
       break;
@@ -341,9 +345,9 @@
       }).done(function(response) {
         if (response.success) {
           setTimeout(function() { location.reload() },1500);
-          swal('Sukses', 'Data Riwayat Diklat berhasil diperbaharui.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
-          swal('Gagal', 'Data Riwayat Diklat gagal diperbaharui.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
       break;
@@ -374,13 +378,13 @@
   function hapusRiwayat(method,id) {
     swal({
       title: 'Apakah Anda Yakin?',
-      text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+      text: "Anda tidak dapat mengembalikan data yang telah dihapus",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Hapus!',
-      cancelButtonText: 'Batalkan!',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batalkan',
       closeOnConfirm: false,
       closeOnCancel: false
     },
@@ -392,13 +396,13 @@
         }).done(function(response) {
           if (response.success) {
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-          } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+            swal('Sukses', 'Data berhasil dihapus', 'success');
+          } else swal('Gagal', 'Data gagal dihapus', 'error');
         });
       } else {
         swal(
              'Batal',
-             'Proses Hapus Data dibatalkan! :)',
+             'Proses dibatalkan',
              'error'
              )
       }

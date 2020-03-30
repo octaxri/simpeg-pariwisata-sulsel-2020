@@ -154,7 +154,7 @@
             ]};
 
             var data_pendidikan = {
-                labels: ['SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'S1/D4', 'S2', 'S3'],
+                labels: ['SD', 'SMP', 'SMA', 'D-I', 'D-II', 'D-III', 'S1/D-IV', 'S2', 'S3'],
                 series: [
                 <?=$this->crud->qa("SELECT * FROM `riwayat_pendidikan` INNER JOIN `data_pegawai` on data_pegawai.nip = riwayat_pendidikan.nip WHERE data_pegawai.satuan_kerja = '".$this->session->fullname."' AND riwayat_pendidikan.tingkat ='SD' AND riwayat_pendidikan.saat_ini ='1'")?>,
                 <?=$this->crud->qa("SELECT * FROM `riwayat_pendidikan` INNER JOIN `data_pegawai` on data_pegawai.nip = riwayat_pendidikan.nip WHERE data_pegawai.satuan_kerja = '".$this->session->fullname."' AND riwayat_pendidikan.tingkat ='SMP' AND riwayat_pendidikan.saat_ini ='1'")?>, 

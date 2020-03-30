@@ -8,11 +8,12 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="data_dokumen" class="table" style="min-width: 100%;">
+<!--                        <table id="data_dokumen" class="table" style="min-width: 100%;">-->
+                            <table style="min-width: 100%" id="data_dokumen" class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th width="50px;">No.</th>
-                                    <th>Jenis Dokumen</th>
+                                    <th class="text-center">No.</th>
+                                    <th class="text-center">Jenis Dokumen</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -38,7 +39,7 @@
           <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Jenis Dokumen</label>
             <div class="col-sm-9">
-              <input autofocus type="text" name="jenis_dokumen" class="form-control" >
+              <input autofocus type="text" name="jenis_dokumen" class="form-control" required>
               <p class="error_eselon"></p>
             </div>
           </div>
@@ -94,10 +95,10 @@ $(document).ready(function(){
             	"select" : 'id, jenis_dokumen' // yang perlu di setup
             },
         },
-       "columns": [ // yang perlu di setup
-            {"data": "id", render: function (data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;}},
-            {"data": "jenis_dokumen"},
+        "columns": [{
+            "data": "id", render: function (data, type, row, meta) {
+                return meta.row + meta.settings._iDisplayStart + 1;}},
+            { "data": "jenis_dokumen"},
             { "data": null, "defaultContent": "<button class='edit_<?=$table?> btn btn-primary btn-xs'><i class='fa fa-pencil'></i>Edit</button> <button class='delete_<?=$table?> btn btn-danger btn-xs' data-type='delete' data-table='<?=$table?>'><i class='fa fa-trash'></i>Hapus</button>"}
         ],
 		dom: 'Bfrtip',
@@ -113,6 +114,10 @@ $(document).ready(function(){
         // "order": [[ 9, "asc" ]],
         scrollX:        true,
         scrollCollapse: true,
+        "sScrollX": "100%",
+        "sScrollXInner": "100%",
+        "bScrollCollapse": true,
+        "colReorder": true
       });
 
 	$("form").on('submit', function(e){
@@ -137,9 +142,9 @@ $(document).ready(function(){
 						$('#' + table).DataTable().ajax.reload()
 						$(".modal").modal('hide')
 						$('form').trigger("reset")
-						swal(json.stat, json.res, 'success')	
+						swal(json.stat, 'Data berhasil disimpan', 'success')
 					}else{
-						swal(json.stat, json.res, 'error')	
+						swal(json.stat, 'Data gagal disimpan', 'error')
 					}
 		        }
 			})
@@ -159,7 +164,7 @@ $(document).ready(function(){
         	'<div class="form-group col-sm-12 '+type+'">' +
 	            '<label class="col-sm-3 control-label">Jenis Dokumen</label>' +
 	            '<div class="col-sm-9">' +
-	              '<input type="'+type+'" name="'+x+'" class="form-control" value="'+edit[x]+'">' +
+	              '<input type="'+type+'" name="'+x+'" class="form-control" value="'+edit[x]+'" required>' +
 	            '</div>' +
 	          '</div>' }
 
@@ -169,8 +174,8 @@ $(document).ready(function(){
 
 	$('#<?=$table?> tbody').on( 'click', '.delete_<?=$table?>', function () {
         var delet = data_dokumen.row( $(this).parents('tr') ).data();
-   		var table = $(this).data('table')
-		var type = $(this).data('type') 
+   		var table = $(this).data('table');
+		var type = $(this).data('type') ;
 
         $.ajax({
         	url : '<?=admin_url("ReferensiAjax/data/")?><?=$table?>',
@@ -180,15 +185,15 @@ $(document).ready(function(){
         		id : delet['id']
         	},
         	complete:function(data){
-				json = JSON.parse(data.responseText)
-				if(json.stat == 'sukses'){
-					$('#' + table).DataTable().ajax.reload()
-					$(".modal").modal('hide')
-					$('form').trigger("reset")
-					swal(json.stat, json.res, 'success')	
+				json = JSON.parse(data.responseText);
+				if(json.stat == 'Berhasil'){
+					$('#' + table).DataTable().ajax.reload();
+					$(".modal").modal('hide');
+					$('form').trigger("reset");
+					swal(json.stat, json.res, 'success')
 				}else{
-					swal(json.stat, json.res, 'error')	
-				}        		
+					swal(json.stat, json.res, 'error')
+				}
         	}
 
         })

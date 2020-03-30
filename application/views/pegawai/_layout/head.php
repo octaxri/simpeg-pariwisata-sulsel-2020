@@ -55,6 +55,19 @@
     <?= ($modul == 'referensi') ? '<script src="'.assets_url().'vendor/x-editable/inputs-ext/address/address.js"></script>' : '' ?>
     <script src="<?=assets_url()?>vendor/moment/min/moment.min.js"></script>
     <script src="<?=assets_url()?>scripts/klorofilpro-common.min.js"></script>
+
+    <style>
+        th,tr,td {
+            white-space: nowrap !important;
+        }
+        .white-spaces {
+            white-space: nowrap;
+        }
+
+        .benar td{
+            white-space : normal !important;
+        }
+    </style>
 </head>
 
 <body>

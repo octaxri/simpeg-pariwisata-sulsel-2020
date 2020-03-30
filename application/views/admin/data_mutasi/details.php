@@ -4,9 +4,9 @@
     <div class="widget widget-metric_1 animate">
         <span class="icon-wrapper custom-bg-orange"><i class="fa fa-envelope-open"></i></span>
         <div class="right">
-            <span class="value">Nomor SK</span>
-            <span class="title"><?=$this->input->get('no_sk')?>
-            </span>
+
+            <span class="value"><?=$this->input->get('no_sk')?></span>
+            <span class="title">Nomor SK</span>
         </div>
     </div>
 </div>
@@ -15,9 +15,9 @@
     <div class="widget widget-metric_1 animate">
         <span class="icon-wrapper custom-bg-orange"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
         <div class="right">
-            <span class="value">Tanggal SK</span>
-            <span class="title"><?=$this->input->get('tgl_sk')?>
-            </span>
+
+            <span class="value"><?=$this->input->get('tgl_sk')?></span>
+            <span class="title">Tanggal SK</span>
         </div>
     </div>
 </div>
@@ -52,14 +52,15 @@
       <div class="row">
         <div class="col-md-12">
 
-          <table id="<?=$table?>" style="min-width: 100%;"  class="text-center table table-bordered">
+          <table id="<?=$table?>" style="min-width: 100%;"  class="table table-bordered">
             <thead>
               <tr>
-                <th  style="vertical-align : middle;text-align:center;" rowspan="2"> ID</th>
+                <th  style="vertical-align : middle;text-align:center;" rowspan="2"> No.</th>
                 <th style="vertical-align : middle;text-align:center;" rowspan="2"> NIP</th>
-                <th  style="vertical-align : middle;text-align:center;" rowspan="2"> PANGKAT/GOLONGAN/RUANG</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="2"> STATUS</th>
-                <th  style="vertical-align : middle;text-align:center;" colspan="2"> Tempat Tugas</th>
+                  <th style="vertical-align : middle;text-align:center;" rowspan="2"> Nama</th>
+                <th  style="vertical-align : middle;text-align:center;" rowspan="2"> Pangkat/Golongan/Ruang</th>
+<!--                <th style="vertical-align : middle;text-align:center;" rowspan="2"> STATUS</th>-->
+                <th  style="vertical-align : middle;text-align:center;" colspan="2"> Jabatan</th>
                 <th width="10%" style="vertical-align : middle;text-align:center;" rowspan="2"></th>
               </tr>
               <tr>
@@ -83,7 +84,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Tambah Pegawai</h4>
+        <h4 class="modal-title" id="myModalLabel">Tambah Data Pegawai</h4>
       </div>
       <form>
       <div class="modal-body">
@@ -92,17 +93,17 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">NIP</label>
-        <input type="text" class="form-control" placeholder="NIP" name="nip">
+        <input type="text" class="form-control" placeholder="" name="nip">
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Nama Lengkap</label>
-        <input type="text" readonly class="form-control" placeholder="Nama lengkap" name="nama">
+        <input type="text" readonly class="form-control" placeholder="" name="nama">
       </div>
 
       <div class="form-group">
-        <label for="exampleInputEmail1">Pangkat Golongan</label>
-        <input type="text" readonly class="form-control" placeholder="Pangkat Golongan" name="pangkat_gol">
+        <label for="exampleInputEmail1">Pangkat/Golongan/Ruang</label>
+        <input type="text" readonly class="form-control" placeholder="" name="pangkat_gol">
       </div>
 
         <label>Tempat Tugas Lama</label>
@@ -185,29 +186,36 @@
               }
           },
           "columns": [
-              { "data": "id" },
+              { "data": null },
               { "data": "nip" },
+              { "data": "nama" },
               { "data": "pangkat_gol" },
-              { "data": "status" },
+              // { "data": "status" },
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                         return "Jabatan " + full.jabatan_lama + " pada bidang " + full.satker_lama + " di Subbidang/Seksi " + full.unker_lama;
+                         return full.jabatan_lama + " pada " + full.satker_lama + " di " + full.unker_lama;
                  }
               },
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                         return "Jabatan " + full.jabatan_baru + " pada bidang " + full.satker_baru + " di Subbidang/Seksi " + full.unker_baru;
+                         return full.jabatan_baru + " pada " + full.satker_baru + " di " + full.unker_baru;
                  }
               },
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                     return "<button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button> <button class='btn btn-primary btn-xs valid'><i class='fa fa-check-circle'></i>Valid</button> <button class='print btn btn-success btn-xs'><i class='fa fa-print'></i>Petikan</button>";
+                     return "<button class='print btn btn-success btn-xs'><i class='fa fa-print'></i>Cetak</button> <button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button>";
                  }
              },
           ],
+          columnDefs: [{
+              "searchable": false,
+              "orderable": false,
+              "targets": 0
+          }],
+          "order": [[ 2, "asc" ]],
           dom: 'Bfrtip',
           buttons: [
               {
@@ -225,14 +233,20 @@
                      window.location.replace("<?=admin_url('DataMutasi/tambah_sk_pegawai?id=').$this->input->get('id').'&no_sk='.$this->input->get('no_sk').'&tgl_sk='.$this->input->get('tgl_sk').'&pejabat='.$this->input->get('pejabat').'&tentang='.$this->input->get('tentang')?>")
                   }
               }            
-          ],          
-      } ); 
+          ],
+      } );
+
+      mutasi_data.on( 'order.dt search.dt', function () {
+          mutasi_data.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+              cell.innerHTML = i+1;
+          } );
+      } ).draw();
 
       $("#<?=$table?> tbody").on('click', 'button.hapus', function(){
 
         data = mutasi_data.row( $(this).parents('tr') ).data();
 
-        var r = confirm("apakah anda yakin ingin menghapus data ini ?");
+        var r = confirm("Apakah Anda Yakin Ingin Menghapus Data Ini ?");
         if (r == true) {
           $.ajax({
             url : '<?=admin_url('referensiAjax/delete_mutasi_data')?>',
@@ -241,7 +255,7 @@
               id : data.id
             },
                 success:function(data){
-                  if(data.stat == 'sukses'){
+                  if(data.stat == 'Berhasil'){
                     swal(data.stat, data.res, 'success') 
                       mutasi_data.ajax.reload()
                   }

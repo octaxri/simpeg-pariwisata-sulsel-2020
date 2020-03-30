@@ -51,16 +51,17 @@ class MigrasiPegawai extends Admin_controller {
         {
             $data_id = acak_id('daftar_kenaikanpangkat', 'id_data');
             $input = $this->input->post(NULL, TRUE);
-            $data = array(  'id_data'           => $data_id['id'],
+            $data = array(  'id_data'               => $data_id['id'],
                             'nama_lengkap'          => $input['nama_lengkap'],
-                            'nip'          => $input['nip'],
-                            'jenis_kelamin'          => $input['jenis_kelamin'],
-                            'spangkat'             => $input['spangkat'],
-                            'kpangkat'            => $input['kpangkat'],
-                            'spangkat'            => $input['spangkat'],
-                            'stmt'            => $input['stmt'],
-                            'ktmt'            => $input['ktmt'],
-                            'iat'               => date('Y-m-d H:i:s'));
+                            'nip'                   => $input['nip'],
+                            'jenis_kelamin'         => $input['jenis_kelamin'],
+                            'spangkat'              => $input['spangkat'],
+                            'kpangkat'              => $input['kpangkat'],
+                            'spangkat'              => $input['spangkat'],
+                            'stmt'                  => $input['stmt'],
+                            'ktmt'                  => $input['ktmt'],
+                            'iat'                   => date('Y-m-d H:i:s'));
+//            var_dump($data);die();
             $this->crud->i('daftar_kenaikanpangkat', $data);
             $detail = $this->crud->gd('daftar_kenaikanpangkat', array('id_data' => $data['id_data']));
             if ($detail) {
@@ -72,39 +73,29 @@ class MigrasiPegawai extends Admin_controller {
         } else return  $this->response(['success' => FALSE, 'error' => validation_errors()]);
     }
 
-    public function edit_kenaikanpangkat($id_data = NULL){
+    public function edit_kenaikanpangkat($id)
+    {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_lengkap', 'Field Nama_Lengkap', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nip', 'Field nip', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('jenis_kelamin', 'Field jenis kelamin', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('spangkat', 'Field Pangkat Saat ini','required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('kpangkat', 'Field kenaikan Pangkat','required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('stmt', 'Field TMT Saat Ini','required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('ktmt', 'Field TMT Kenaikan','required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('kpangkat', 'Field kenaikan Pangkat', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('ktmt', 'Field TMT Kenaikan', 'required|trim|strip_tags|htmlspecialchars');
 
-        if ($valid->run() === TRUE)
-        {
+        if ($valid->run() === TRUE) {
             $input = $this->input->post(NULL, TRUE);
             $data = array(
-                            'nama_lengkap'          => $input['nama_lengkap'],
-                            'nip'          => $input['nip'],
-                            'jenis_kelamin'          => $input['jenis_kelamin'],
-                            'spangkat'             => $input['spangkat'],
-                            'kpangkat'            => $input['kpangkat'],
-                            'spangkat'            => $input['spangkat'],
-                            'stmt'            => $input['stmt'],
-                            'ktmt'            => $input['ktmt'],
-                            'iat'               => date('Y-m-d H:i:s'));
-            $this->crud->u('daftar_kenaikanpangkat', $data, array('id_data' => $id_data));
-            $detail = $this->crud->gd('daftar_kenaikanpangkat', array('id_data' => $id_data));
+                'kpangkat' => $input['kpangkat'],
+                'ktmt' => $input['ktmt'],
+                'uat' => date('Y-m-d H:i:s'));
+//            var_dump($data);die();
+            $this->crud->u('daftar_kenaikanpangkat', $data, array('id_data' => $id));
+            $detail = $this->crud->gd('daftar_kenaikanpangkat', array('id_data' => $id));
             if ($detail) {
                 return $this->response([
-                    'success'   => TRUE,
-                    'data'      => $detail
+                    'success' => TRUE,
+                    'data' => $detail
                 ]);
             } else return $this->response(['success' => FALSE]);
-        } else return  $this->response(['success' => FALSE, 'error' => validation_errors()]);
+        } else return $this->response(['success' => FALSE, 'error' => validation_errors()]);
     }
 
     public function getDataAjax($id_data = null, $type = null){
@@ -253,5 +244,170 @@ class MigrasiPegawai extends Admin_controller {
         exit();
     }
 
+// ======================================================================================================================
+// worked by himawan
+
+    public function pangkat()
+    {
+        if ($this->session->akses_level == 'Blocked') view_error('Error 404');
+
+        $data_kenaikanpangkat = $this->crud->gao('daftar_kenaikanpangkat', 'iat DESC');
+
+        $data_golongan = $this->crud->gao('data_golongan', '');
+
+        $data = array(  'title'     => 'Migrasi Pegawai / Kenaikan Pangkat',
+            'data_kenaikanpangkat'     => $data_kenaikanpangkat,
+            'data_golongan'     => $data_golongan,
+            'isi'       => 'admin/migrasi_pegawai/pangkat');
+        $this->load->view('admin/_layout/wrapper', $data);
+    }
+
+    public function hapusDaftarKenaikanPangkat($table, $id){
+        $cek = $this->crud->gd('daftar_'.$table, array('id_data' => $id));
+        if ($cek)
+        {
+            $this->crud->d('daftar_'.$table, array('id_data' => $id));
+            return $this->response(['success' => TRUE]);
+        }
+        else return $this->response(['success' => FALSE]);
+    }
+
+    public function meninggal()
+    {
+        if ($this->session->akses_level == 'Blocked') view_error('Error 404');
+
+        $data_golongan = $this->crud->gao('data_golongan', '');
+        $data_jabatan = $this->crud->ga('data_jabatan');
+        $daftar_meninggal = $this->crud->gao('daftar_meninggal', 'iat DESC');
+
+        $data = array(  'title'     => 'Migrasi Pegawai / Meninggal',
+            'daftar_meninggal' => $daftar_meninggal,
+            'data_golongan'     => $data_golongan,
+            'data_jabatan'     => $data_jabatan,
+            'isi'       => 'admin/migrasi_pegawai/meninggal');
+
+        $this->load->view('admin/_layout/wrapper', $data);
+    }
+
+    public function addData()
+    {
+        $valid = $this->form_validation;
+        $valid->set_error_delimiters('<i style="color: red;">', '</i>');
+        $valid->set_rules('nama_lengkap', 'Field Nama Lengkap', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('jenis_kelamin', 'Field Jenis Kelamin', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('pangkat', 'Field Pangkat', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('jabatan', ' Field Jabatan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('tgl_wafat', ' Field Tanggal Wafat', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('tgl_akta', ' Field Tanggal Akta', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('no_akta', ' Field No. Akta', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('penandatangan', ' Field Penandatangan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('keterangan', ' Field Keterangan', 'trim|strip_tags|htmlspecialchars');
+
+        if ($valid->run() === TRUE) {
+            $data_id = acak_id('daftar_meninggal', 'id_data');
+            $input = $this->input->post(NULL, TRUE);
+
+            //Mekanisme Upload file
+            if (!empty($_FILES)) {
+                $file = upload_allTypeFile('files', 'tambah', 'informasi', '', TRUE);
+                if (!$file['success'])
+                    return $this->response(['success' => FALSE, 'error' => 'Upload File Gagal']);
+            } else {
+                $file['dokumen'] = '';
+            }
+
+            $data = array(
+                'id_data' => $data_id['id'],
+                'nip' => $input['nip'],
+                'nama_lengkap' => $input['nama_lengkap'],
+                'jenis_kelamin' => $input['jenis_kelamin'],
+                'pangkat' => $input['pangkat'],
+                'jabatan' => $input['jabatan'],
+                'tgl_wafat' => $input['tgl_wafat'],
+                'tgl_akta' => $input['tgl_akta'],
+                'no_akta' => $input['no_akta'],
+                'penandatangan' => $input['penandatangan'],
+                'keterangan' => $input['keterangan'],
+                'files' => $file['dokumen'],
+                'iat' => date('Y-m-d H:i:s')
+            );
+//            var_dump($data);die();
+            $this->crud->i('daftar_meninggal', $data);
+            $detail = $this->crud->gd('daftar_meninggal', array('id_data' => $data['id_data']));
+            if ($detail) {
+                return $this->response([
+                    'success' => TRUE,
+                    'data' => $detail
+                ]);
+            } else
+                return $this->response(['success' => FALSE]);
+        } else return $this->response(['success' => FALSE, 'error' => validation_errors()]);
+    }
+
+    public function editData($id = NULL)
+    {
+        $valid = $this->form_validation;
+        $valid->set_error_delimiters('<i style="color: red;">', '</i>');
+        $valid->set_rules('tgl_wafat', ' Field Tanggal Wafat', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('tgl_akta', ' Field Tanggal Akta', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('no_akta', ' Field No. Akta', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('penandatangan', ' Field Penandatangan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('keterangan', ' Field Keterangan', 'trim|strip_tags|htmlspecialchars');
+
+        if ($valid->run() === TRUE) {
+            $input = $this->input->post(NULL, TRUE);
+            $fileLama = $this->crud->gd("daftar_meninggal", array('id_data' => $id))->files;
+
+            //Mekanisme Upload file
+            $file = upload_allTypeFile('files', 'edit', 'informasi', $fileLama, TRUE);
+
+            if(is_array($file) && ! $file['success'])
+                return $this->response(['success' => FALSE, 'error' => 'Upload File Gagal']);
+
+            $data = array(
+                'tgl_wafat' => $input['tgl_wafat'],
+                'tgl_akta' => $input['tgl_akta'],
+                'no_akta' => $input['no_akta'],
+                'penandatangan' => $input['penandatangan'],
+                'keterangan' => $input['keterangan'],
+                'files' => $file['dokumen'],
+                'uat' => date('Y-m-d H:i:s')
+            );
+//            var_dump($data);die();
+            $this->crud->u('daftar_meninggal', $data, array('id_data' => $id));
+            $detail = $this->crud->gd('daftar_meninggal', array('id_data' => $id));
+            if ($detail) {
+                return $this->response([
+                    'success' => TRUE,
+                    'data' => $detail
+                ]);
+            } else
+                return $this->response(['success' => FALSE, 'error' => 'data Tidak ditemukan di Database']);
+        }else return  $this->response(['success' => FALSE, 'error' => validation_errors()]);
+    }
+
+    public function getData($id_data = null){
+
+        if ($id_data != NULL)
+        {
+            $data = $this->crud->gd('daftar_meninggal', array('id_data' => $id_data));
+            if ($data) {
+                return $this->response([
+                    'success'   => TRUE,
+                    'data'      => $data
+                ]);
+            } else return $this->response(['success' => FALSE]);
+        } else return  $this->response(['success' => FALSE, 'error' => validation_errors()]);
+    }
+
+    public function hapusMeninggal($id){
+        $cek = $this->crud->gd('daftar_meninggal', array('id_data' => $id));
+        if ($cek)
+        {
+            $this->crud->d('daftar_meninggal', array('id_data' => $id));
+            return $this->response(['success' => TRUE]);
+        }
+        else return $this->response(['success' => FALSE]);
+    }
 
 }

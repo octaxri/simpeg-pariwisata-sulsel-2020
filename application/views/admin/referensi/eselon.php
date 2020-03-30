@@ -10,10 +10,11 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="tbl_eselon" class="table table-bordered">
+<!--                        <table id="tbl_eselon" class="table table-bordered">-->
+                            <table style="min-width: 100%;" id="tbl_eselon" class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th width="50px;">No.</th>
+                                    <th width="50px;" class="text-center">No.</th>
                                     <th class="text-center">Tingkat Eselon</th>
                                     <th></th>
                                 </tr>
@@ -24,7 +25,7 @@
                                   <tr data-id="<?=$data_eselon->id_eselon?>">
                                       <td class="text-center"><?=$i?></td>
                                       <td class="text-center" data-value="<?=$data_eselon->nama_eselon?>"><?=$data_eselon->nama_eselon?></td>
-                                      <td>
+                                      <td style="width: 1px;">
                                         <a data-toggle="modal" data-target="#edit_eselon_modal" class="btn btn-primary btn-xs" onclick="editData('eselon','<?=$data_eselon->id_eselon?>','<?=$data_eselon->nama_eselon?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                         <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('eselon','<?=$data_eselon->id_eselon?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                       </td>
@@ -110,9 +111,9 @@ function refrensidata_send(method) {
           $('.error_eselon').html('');
           $('#tambah_eselon').val('');
           $('#tambah_eselon_modal').modal('hide');
-          swal('Sukses', 'Data Eselon berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
-          swal('Gagal', 'Data Eselon gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
           // $('#tambah_eselon').modal('hide');
            $('.error_eselon').html(response.error);
         }
@@ -150,10 +151,10 @@ function editData_send(method){
           $("td[data-value='"+valGlob+"']").html(response.data.nama_eselon);
           $('.error_eselon').html('');
           $('#edit_eselon_modal').modal('hide');
-          swal('Sukses', 'Data Eselon berhasil diedit.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
           $('.error_eselon').html(response.error);
-          swal('Gagal', 'Data Eselon gagal diedit.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
           $(document).ajaxStop(function(){
@@ -165,13 +166,13 @@ function editData_send(method){
 function hapusData(method,id) {
     swal({
       title: 'Apakah Anda Yakin?',
-      text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+      text: "Anda tidak dapat mengembalikan data yang telah dihapus",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Hapus!',
-      cancelButtonText: 'Batalkan!',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batalkan',
       closeOnConfirm: false,
       closeOnCancel: false
     },
@@ -183,13 +184,13 @@ function hapusData(method,id) {
           }).done(function(response) {
             if (response.success) {
               $("tr[data-id='"+id+"']").remove();
-              swal('Sukses', 'Data berhasil dihapus.', 'success');
-            } else swal('Gagal', 'Data gagal dihapus.', 'error');
+              swal('Sukses', 'Data berhasil dihapus', 'success');
+            } else swal('Gagal', 'Data gagal dihapus', 'error');
          });
       } else {
         swal(
           'Batal',
-          'Proses Hapus Data dibatalkan! :)',
+          'Proses dibatalkan',
           'error'
         )
       }

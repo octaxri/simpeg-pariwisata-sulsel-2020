@@ -92,7 +92,11 @@ $route['admin/masterdata/kepegawaian']       = 'admin/referensi/kepegawaian';
 $route['admin/masterdata/alamat']            = 'admin/referensi/alamat';
 
 $route['admin/migrasi/daftarkenaikan ']       =  'admin/MigrasiData/daftarKenaikanPangkat'; 
-$route['admin/migrasi/daftarmeninggal ']       =  'admin/MigrasiData/daftarMeninggal'; 
+$route['admin/migrasi/daftarmeninggal ']       =  'admin/MigrasiData/daftarMeninggal';
+
+$route['admin/migrasi/pangkat ']       =  'admin/MigrasiData/pangkat';
+$route['admin/migrasi/meninggal ']       =  'admin/MigrasiData/meninggal';
+
 $route['admin/informasi ']       =  'admin/Informasi'; 
 $route['admin/informasi/tambah']       =  'admin/Informasi/tambah'; 
 
@@ -144,7 +148,8 @@ $route['skpd/migrasi/daftarmeninggal ']       =  'skpd/MigrasiData/daftarMeningg
 
 $route['skpd/dokumen']       				=  'skpd/DataDokumen';
 
-$route['pegawai/ubah-password ']       =    'pegawai/Pengaturan/ubah_password'; 
+$route['pegawai/ubah-password ']       =    'pegawai/Pengaturan/ubah_password';
+$route['pegawai/cuti ']                =    'pegawai/Cuti/cuti';
 
 
 

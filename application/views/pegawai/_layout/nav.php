@@ -10,6 +10,7 @@
                     <ul class="nav">
                         <!-- <li><a href="<?=pegawai_url('beranda')?>" class="<?=($modul == 'beranda' ? 'active' : '')?>" ><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li> -->
                         <li class="panel"><a href="<?=pegawai_url('dataPegawai/')?>" class="<?=($modul == 'dataPegawai' ? 'active' : '')?>" ><i  class="lnr lnr-chart-bars"></i> <span>Data Pegawai</span></a></li>
+                        <li class="panel"><a href="<?=pegawai_url('cuti')?>" class="<?=($modul == 'cuti' ? 'active' : '')?>" ><i class="ti-agenda"></i>  <span>Permohonan Cuti</span></a></li>
                         <li class="panel">
                             <a  aria-expanded="<?=($modul == 'pengaturan' ? 'true' : 'false')?>" class="<?=($modul == 'pengaturan' ? 'active' : 'collapsed')?>" href="#pengaturan" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cog"></i> <span>Pengaturan</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="pengaturan" class="<?=($modul == 'pengaturan' ? 'collapse in' : 'collapse')?>" aria-expanded="<?=($modul == 'pengaturan' ? 'true' : 'false')?>" >

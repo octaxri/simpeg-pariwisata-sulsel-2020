@@ -1,5 +1,5 @@
 <!-- OVERVIEW -->
-<?php setlocale(LC_TIME, 'id_ID'); ?>
+<?php setlocale(LC_ALL, 'IND'); ?>
 <div class="container-fluid">
     <div class="panel panel-profile">
         <div class="clearfix">
@@ -70,9 +70,9 @@
                 <!-- <div class="text-center"></div> -->
                 <!-- AWARDS -->
                 <div class="awards">
-                    <div class="row" >
-                        <div class="col-md-6">
-                            <table class="standard-table" style="text-align: left;" width="100%" cellspacing="0" cellpadding="0">
+                    <div class="row col-md-12 benar" >
+                        <div class="col-md-6" >
+                            <table class="standard-table" style="text-align: left;" width="100%" cellspacing="0" cellpadding="0" >
                                  <tr class="data-item" data-id="">
                                      <td><b>Instansi Induk</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
@@ -98,14 +98,21 @@
                                     <td><?=$data_pegawai->status_kepegawaian?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td width="150"><b>Pangkat/Golongan/Ruang</b></td>
+                                    <td width="150"><b>Pangkat/Golongan<br>/Ruang</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
                                     <td><?=$data_pegawai->jenis_pangkat?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
-                                    <td><b>TMT Pangkat/Golongan/Ruang</b></td>
+                                    <td><b>TMT Pangkat/Golongan<br>/Ruang</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><?=strftime('%e %B %Y',strtotime($data_pegawai->tmt_jenis_pangkat))?></td>
+                                    <td><?php
+
+                                        $date = $data_pegawai->tmt_jenis_pangkat;
+                                        $date = str_replace('/', '-', $date);
+
+                                        echo strftime('%e %B %Y',strtotime($date));
+
+                                        ?></td>
                                 </tr>
                                 <tr class="data-item" data-id="">
                                     <td><b>Eselon</b></td>
@@ -125,7 +132,15 @@
                                 <tr class="data-item" data-id="">
                                     <td><b>TMT Jabatan</b></td>
                                     <td width="10px" style="color: #848484;">:</td>
-                                    <td><?=strftime('%e %B %Y',strtotime($data_pegawai->tmt_jabatan))?></td>
+                                    <td><?php
+
+                                        $date = $data_pegawai->tmt_jabatan;
+                                        $date = str_replace('/', '-', $date);
+
+                                        echo strftime('%e %B %Y',strtotime($date));
+
+                                        ?></td>
+
                                 </tr>
                             </table>
                         </div>
@@ -140,7 +155,7 @@
                     </ul>
                 </div>
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="tab-bottom-left1">
+                    <div class="tab-pane fade in active col-md-12 benar" id="tab-bottom-left1">
                         <div class="col-md-6">
                             <table class="standard-table" width="100%" cellspacing="0" cellpadding="0">
                                 <tr class="data-item" data-id="">
@@ -481,9 +496,9 @@
                                     <th rowspan="2">No.</th>
                                     <th colspan="3" class="text-center">Surat Keputusan</th>
                                     <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-                                    <th rowspan="2" >Tanggal TMT</th>
+                                    <th rowspan="2" > TMT</th>
                                     <th colspan="3" class="text-center">Lokasi Kerja</th>
-                                    <th colspan="2" class="text-center">Persetujuan BKN (CPNS)</th>
+                                    <th colspan="2" class="text-center">Surat Keputusan (Persetujuan BKN)</th>
 <!--                                    <th rowspan="2"></th>-->
                                 </tr>
                                 <tr class="data-item" data-id="">
@@ -531,9 +546,9 @@
                                     <th rowspan="2">No.</th>
                                     <th colspan="3" class="text-center">Surat Keputusan</th>
                                     <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-                                    <th rowspan="2" >Tanggal TMT</th>
+                                    <th rowspan="2" > TMT</th>
                                     <th colspan="3" class="text-center">Lokasi Kerja</th>
-                                    <th rowspan="2" width="98px;">Sumpah/Janji</th>
+                                    <th rowspan="2" width="98px;">Sumpah/Janji PNS</th>
                                     <th rowspan="2">Pengambil Sumpah</th>
                                     <th colspan="2" class="text-center">Berita Acara</th>
 <!--                                    <th rowspan="2"></th>-->
@@ -623,17 +638,20 @@
                                         <th rowspan="2">No.</th>
                                         <th rowspan="2">Jenis Jabatan </th>
                                         <th rowspan="2">Nama Jabatan </th>
-                                        <th colspan="2" class="text-center">Tanggal TMT</th>
                                         <th rowspan="2">Eselon </th>
+                                        <th rowspan="2">TMT Jabatan</th>
+                                        <th colspan="3" class="text-center">Lokasi Kerja</th>
+                                        <th rowspan="2">TMT Pelantikan</th>
                                         <th colspan="3" class="text-center">Surat Keputusan</th>
 <!--                                        <th rowspan="2"></th>-->
                                     </tr>
                                     <tr>
-                                        <th>Jabatan</th>
-                                        <th>Pelantikan</th>
+                                        <th >Instansi Induk</th>
+                                        <th >Bidang/Bagian</th>
+                                        <th >Subbidang/Seksi</th>
                                         <th>Pejabat Yang Menetapkan</th>
-                                        <th>Nomor</th>
-                                        <th>Tanggal</th>
+                                        <th>Nomor </th>
+                                        <th>Tanggal </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -644,10 +662,12 @@
                                                 <td><?=$i?></td>
                                                 <td><?=$riwayat_jabatan->jenis?></td>
                                                 <td><?=$riwayat_jabatan->nama_jabatan?></td>
-                                                <!--<td><?=$riwayat_jabatan->kedudukan?></td>-->
-                                                <td><?=$riwayat_jabatan->tmt_jabatan?></td>
-                                                <td><?=$riwayat_jabatan->tmt_pelantikan?></td>
                                                 <td><?=$riwayat_jabatan->eselon?></td>
+                                                <td><?=$riwayat_jabatan->tmt_jabatan?></td>
+                                                <td><?=$riwayat_jabatan->instansi_induk?></td>
+                                                <td><?=$riwayat_jabatan->unor_induk?></td>
+                                                <td><?=$riwayat_jabatan->unor?></td>
+                                                <td><?=$riwayat_jabatan->tmt_pelantikan?></td>
                                                 <td><?=$riwayat_jabatan->pejabat?></td>
                                                 <td><?=$riwayat_jabatan->nomor?></td>
                                                 <td><?=$riwayat_jabatan->tanggal?></td>
@@ -670,7 +690,7 @@
                                         <th rowspan="2">No.</th>
                                         <th rowspan="2">Jabatan </th>
                                         <th rowspan="2">Pangkat/Golongan/Ruang </th>
-                                        <th rowspan="2">Tanggal TMT</th>
+                                        <th rowspan="2">TMT</th>
                                         <th colspan="3" class="text-center">Surat Keputusan</th>
 <!--                                        <th rowspan="2"></th>-->
                                     </tr>
@@ -777,11 +797,11 @@
                                 </thead>
                                 <tbody>
                                     <?php if ($riwayat_diklat1 != NULL): ?>
-                                        <?php $i = 1; ?>
+                                        <?php $j = 1; ?>
                                         <?php foreach ($riwayat_diklat1 as $riwayat_diklat1): ?>
                                             <?php if ($riwayat_diklat1->jenis_diklat == 'fungsional'): ?>
                                                 <tr class="data-itemriwayatdiklat" data-id="<?=$riwayat_diklat1->id_riwayat?>">
-                                                    <td><?=$i?></td>
+                                                    <td><?=$j?></td>
                                                     <td><?=$riwayat_diklat1->nama_diklat?></td>
                                                     <td><?=$riwayat_diklat1->jumlah_jam?></td>
                                                     <td><?=$riwayat_diklat1->penyelenggara?></td>
@@ -797,7 +817,7 @@
                                                     <td style="display: none;"><?=$riwayat_diklat1->jenis_diklat?></td>
                                                 </tr>
                                             <?php endif ?>
-                                        <?php $i++; endforeach ?>
+                                        <?php $j++; endforeach ?>
                                     <?php endif ?>
                                 </tbody>
                             </table>
@@ -845,7 +865,6 @@
                                                     </td>-->
                                                     <td style="display: none;"><?=$riwayat_diklat2->jenis_diklat?></td>
                                                 </tr>
-                                                <?php $i++; ?>
                                             <?php endif ?>
                                         <?php $i++; endforeach ?>
                                     <?php endif ?>
@@ -939,7 +958,7 @@
                                 <thead>
                                     <tr >
                                         <th> No.</th>
-                                        <th> Profesi </th>
+                                        <th> Jenis Profesi </th>
                                         <th> Penyelenggara</th>
                                         <th> Tahun Lulus</th>
 <!--                                        <th> </th>-->
@@ -1113,13 +1132,13 @@
                     <thead>
                         <tr >
                             <th> No.</th>
+                            <th > Jenis Jabatan</th>
                             <th> Tahun </th>
                             <th> Nilai Rata-rata</th>
-                            <th> Keterangan</th>
                             <th> Jumlah</th>
+                            <th> Keterangan</th>
                             <th> Pejabat Penilai</th>
                             <th> Atasan Pejabat Penilai</th>
-                            <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
@@ -1144,7 +1163,7 @@
                             <?php $i=1; foreach ($riwayat_dp3 as $riwayat_dp3): ?>
                             <tr class="data-itemriwayatdp3" data-id="<?=$riwayat_dp3->id_riwayat?>">
                                 <td><?=$i?></td>
-                                 <td style="display: none"><?=$riwayat_dp3->jenis_jabatan?></td>
+                                 <td><?=$riwayat_dp3->jenis_jabatan?></td>
                                 <td><?=$riwayat_dp3->tahun?></td>
                                 <td style="display: none"><?=$riwayat_dp3->kesetiaan?></td>
                                 <td style="display: none"><?=$riwayat_dp3->tanggung?></td>
@@ -1154,8 +1173,8 @@
                                 <td style="display: none"><?=$riwayat_dp3->ketaatan?></td>
                                 <td style="display: none"><?=$riwayat_dp3->kerjasama?></td>
                                 <td><?=$riwayat_dp3->nilai_ratarata?></td>
-                                <td><?=$riwayat_dp3->keterangan?></td>
                                 <td><?=$riwayat_dp3->jumlah?></td>
+                                <td><?=$riwayat_dp3->keterangan?></td>
                                 <td><?=$riwayat_dp3->nama_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_dp3->nip_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_dp3->jabatan_pejabat?></td>
@@ -1186,13 +1205,13 @@
                     <thead>
                         <tr >
                             <th> No.</th>
+                            <th >Jenis Jabatan</th>
                             <th> Tahun </th>
                             <th> Nilai Prestasi Kerja</th>
                             <th> Keterangan</th>
 <!--                            <th> Jumlah</th>-->
                             <th> Pejabat Penilai</th>
                             <th> Atasan Pejabat Penilai</th>
-                            <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
                             <th style="display: none"></th>
@@ -1217,7 +1236,7 @@
                             <?php $i=1; foreach ($riwayat_skp as $riwayat_skp): ?>
                             <tr class="data-itemriwayatskp" data-id="<?=$riwayat_skp->id_riwayat?>">
                                 <td><?=$i?></td>
-                                <td style="display: none"><?=$riwayat_skp->jenis_jabatan?></td>
+                                <td ><?=$riwayat_skp->jenis_jabatan?></td>
                                 <td><?=$riwayat_skp->tahun?></td>
                                 <td style="display: none"><?=$riwayat_skp->komitmen?></td>
                                 <td style="display: none"><?=$riwayat_skp->kerjasama?></td>

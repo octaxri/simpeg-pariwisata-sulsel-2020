@@ -21,9 +21,12 @@ class DataPegawai extends MY_Controller {
         $riwayat_jabatan = $this->crud->gw('riwayat_jabatan', array('nip' => $this->session->username));
         $riwayat_mutasi = $this->crud->gw('riwayat_mutasi', array('nip' => $this->session->username));
         $riwayat_golongan = $this->crud->gw('riwayat_golongan', array('nip' => $this->session->username));
-        $riwayat_diklat = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username));
-        $riwayat_diklat1 = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username));
-        $riwayat_diklat2 = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username));
+//        $riwayat_diklat = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username));
+//        $riwayat_diklat1 = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username));
+//        $riwayat_diklat2 = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username));
+        $riwayat_diklat = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username, 'jenis_diklat' => 'struktural'));
+        $riwayat_diklat1 = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username, 'jenis_diklat' => 'fungsional'));
+        $riwayat_diklat2 = $this->crud->gw('riwayat_diklat', array('nip' => $this->session->username, 'jenis_diklat' => 'teknis'));
         $riwayat_cpns = $this->crud->gw('riwayat_pegawai_cpns', array('nip' => $this->session->username));
         $riwayat_pns = $this->crud->gw('riwayat_pegawai_pns', array('nip' => $this->session->username));
         $riwayat_kursus = $this->crud->gw('riwayat_kursus', array('nip' => $this->session->username));
@@ -51,7 +54,7 @@ class DataPegawai extends MY_Controller {
 
 
         $data = array(
-            'title'     => 'Data Pegawai / Profil Pegawai',
+            'title'     => 'Data Pegawai',
             'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
             'data_agama'=> $data_agama,
             'data_pendidikan'=> $data_pendidikan,

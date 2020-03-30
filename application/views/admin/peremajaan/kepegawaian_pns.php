@@ -15,7 +15,7 @@
               <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
               <th colspan="2" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-              <th rowspan="2" >Tanggal TMT</th>
+              <th rowspan="2" > TMT</th>
               <th colspan="3" class="text-center">Lokasi Kerja</th>
               <th rowspan="2" width="98px;">Sumpah/Janji</th>
               <th rowspan="2">Pengambil Sumpah</th>
@@ -77,9 +77,9 @@
               <th  rowspan="2" >Nama </th>
               <th colspan="3" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-              <th rowspan="2" >Tanggal TMT</th>
+              <th rowspan="2" > TMT</th>
               <th colspan="3" class="text-center">Lokasi Kerja</th>
-              <th rowspan="2" width="98px;">Sumpah/Janji</th>
+              <th rowspan="2" width="98px;">Sumpah/Janji PNS</th>
               <th rowspan="2">Pengambil Sumpah</th>
               <th colspan="2" class="text-center">Berita Acara</th>
               <th rowspan ="2" >Admin</th>
@@ -116,7 +116,7 @@
                 <td data-noberita='<?=$riwayat_pns_verified->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns_verified->no_berita?></td>
                 <td data-tanggalberita='<?=$riwayat_pns_verified->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns_verified->tanggal_berita?></td>
                  <td data-admin='<?=$riwayat_pns_verified->id_riwayat?>' style="font-size: 0.8em;"><?=$riwayat_pns_verified->admin?></td>
-                <td align="center" >
+                <td style="width: 1px">
                   <a style="" onclick="editData('pns', '<?=$riwayat_pns_verified->id_riwayat?>')" data-toggle="modal" data-target="#edit_kepegawaian" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>
                   <a style="" onclick="hapusRiwayat('pegawai_pns','<?=$riwayat_pns_verified->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Hapus</a>
                 </td>
@@ -165,7 +165,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">No. SK</label>
+            <label for="bahan"  class="col-sm-3 control-label">Nomor SK</label>
             <div class="col-sm-9">
               <input type="text" id="no_sk_kepegawaian" class="form-control" >
             </div>
@@ -191,7 +191,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">Tanggal TMT</label>
+            <label for="bahan"  class="col-sm-3 control-label">TMT</label>
             <div class="col-sm-9">
               <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                 <input type="text" id="tmt_kepegawaian" class="form-control" required>
@@ -322,7 +322,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">No. SK</label>
+            <label for="bahan"  class="col-sm-3 control-label">Nomor SK</label>
             <div class="col-sm-9">
               <input type="text" id="edit_no_sk_kepegawaian" class="form-control" >
             </div>
@@ -348,7 +348,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="bahan"  class="col-sm-3 control-label">Tanggal TMT</label>
+            <label for="bahan"  class="col-sm-3 control-label">TMT</label>
             <div class="col-sm-9">
               <div class="input-group date" data-date-autoclose="true" data-provide="datepicker" required>
                 <input type="text" id="edit_tmt_kepegawaian" class="form-control" required>
@@ -477,9 +477,9 @@
         }).done(function(response) {
           if (response.success) {
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Riwayat Kepegawaian berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Riwayat Kepegawaian gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
         break;
@@ -514,9 +514,9 @@
         }).done(function(response) {
           if (response.success) {
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Riwayat Kepegawaian berhasil diperbaharui.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Riwayat Kepegawaian gagal diperbaharui.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
         break;
@@ -560,13 +560,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -578,13 +578,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                     'Batal',
-                    'Proses Hapus Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                 )
             }

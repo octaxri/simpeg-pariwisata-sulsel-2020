@@ -10,11 +10,12 @@
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <table class="table table-bordered table-sorting table-hover tablenormal  no-footer">
+<!--            <table class="table table-bordered table-sorting table-hover tablenormal no-footer">-->
+                <table style="min-width: 100%;"  class="table table-striped datatable-Exnormal table-hover table-bordered">
               <thead>
                 <tr>
-                  <th width="50px;">No.</th>
-                  <th>Agama</th>
+                  <th width="20px;">No.</th>
+                  <th class="text-center">Agama</th>
                   <th></th>
                 </tr>
               </thead>
@@ -22,8 +23,8 @@
                  <?php $i = 1; foreach ($data_agama as $data_agama) { ?>
                     <tr data-id="<?=$data_agama->id_agama?>">
                         <td class="text-center"><?=$i?></td>
-                        <td data-value="<?=$data_agama->nama_agama?>"><?=$data_agama->nama_agama?></td>
-                        <td>
+                        <td class="text-center" data-value="<?=$data_agama->nama_agama?>"><?=$data_agama->nama_agama?></td>
+                        <td style="width: 1px;">
                           <a data-toggle="modal" data-target="#edit_agama" class="btn btn-primary btn-xs" role="button" onclick="editData('agama','<?=$data_agama->id_agama?>','<?=$data_agama->nama_agama?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                             <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('agama','<?=$data_agama->id_agama?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                         </td>
@@ -44,11 +45,12 @@
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <table class="table table-bordered table-sorting table-hover tablenormal  no-footer">
+<!--            <table class="table table-bordered table-sorting table-hover tablenormal  no-footer">-->
+                <table style="min-width: 100%;"  class="table table-striped datatable-Exnormal table-hover table-bordered">
               <thead>
                 <tr>
-                  <th width="50px;">No.</th>
-                  <th>Pendidikan</th>
+                  <th width="20px;">No.</th>
+                  <th class="text-center">Pendidikan</th>
                   <th></th>
                 </tr>
               </thead>
@@ -56,8 +58,8 @@
                 <?php $i = 1; foreach ($data_pendidikan as $data_pendidikan) { ?>
                     <tr data-id="<?=$data_pendidikan->id_pendidikan?>">
                         <td class="text-center"><?=$i?></td>
-                        <td data-value="<?=$data_pendidikan->nama_pendidikan?>"><?=$data_pendidikan->nama_pendidikan?></td>
-                        <td>
+                        <td class="text-center" data-value="<?=$data_pendidikan->nama_pendidikan?>"><?=$data_pendidikan->nama_pendidikan?></td>
+                        <td style="width: 1px;">
                           <a data-toggle="modal" data-target="#edit_pendidikan" class="btn btn-primary btn-xs" onclick="editData('pendidikan','<?=$data_pendidikan->id_pendidikan?>','<?=$data_pendidikan->nama_pendidikan?>');"><i class="fa fa-pencil" ></i>&nbsp;Edit</a>
                             <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('pendidikan','<?=$data_pendidikan->id_pendidikan?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                         </td>
@@ -196,9 +198,9 @@ function refrensidata_send(method) {
           $('.error_agama').html('');
           $('#agama').val('');
           $('#tambah_agama').modal('hide');
-          swal('Sukses', 'Data agama berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
-          swal('Gagal', 'Data agama gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
           // $('#tambah_agama').modal('hide');
            $('.error_agama').html(response.error);
         }
@@ -221,10 +223,10 @@ function refrensidata_send(method) {
           $('.error_pendidikan').html('');
           $('#pendidikan').val('');
           $('#tambah_pendidikan').modal('hide');
-          swal('Sukses', 'Data pendidikan berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else 
         {
-          swal('Gagal', 'Data pendidikan gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
            $('.error_pendidikan').html(response.error);
            // $('#tambah_pendidikan').modal('hide');
         }
@@ -273,10 +275,10 @@ function editData_send(method){
           $('#agama').val('');
           $('.error_agama').html('');
           $('#edit_agama').modal('hide');
-          swal('Sukses', 'Data agama berhasil diedit.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
           $('.error_agama').html(response.error);
-          swal('Gagal', 'Data agama gagal diedit.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });$(document).ajaxStop(function(){
           window.location.reload();
@@ -297,13 +299,16 @@ function editData_send(method){
           $('.error_pendidikan').html(response.error);
           $('#pendidikan').val('');
           $('#edit_pendidikan').modal('hide');
-          swal('Sukses', 'Data pendidikan berhasil diedit.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else 
         {
           $('.error_pendidikan').html(response.error);
-          swal('Gagal', 'Data pendidikan gagal diedit.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
+          $(document).ajaxStop(function(){
+              window.location.reload();
+          });
       break;
     }
 }
@@ -312,13 +317,13 @@ function editData_send(method){
 function hapusData(method,id) {
     swal({
       title: 'Apakah Anda Yakin?',
-      text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+      text: "Anda tidak dapat mengembalikan data yang telah dihapus",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Hapus!',
-      cancelButtonText: 'Batalkan!',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batalkan',
       closeOnConfirm: false,
       closeOnCancel: false
     },
@@ -330,13 +335,13 @@ function hapusData(method,id) {
           }).done(function(response) {
             if (response.success) {
               $("tr[data-id='"+id+"']").remove();
-              swal('Sukses', 'Data berhasil dihapus.', 'success');
-            } else swal('Gagal', 'Data gagal dihapus.', 'error');
+              swal('Sukses', 'Data berhasil dihapus', 'success');
+            } else swal('Gagal', 'Data gagal dihapus', 'error');
          });
       } else {
         swal(
           'Batal',
-          'Proses Hapus Data dibatalkan! :)',
+          'Proses dibatalkan',
           'error'
         )
       }

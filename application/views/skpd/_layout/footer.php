@@ -1,6 +1,6 @@
 <footer>
   <div class="container-fluid">
-    <p class="copyright">&copy; 2020 <a href="https://projects.upanastudio.com/simpeg" target="_blank" style="text-transform: uppercase;">DINAS PARIWISATA SULSEL</a>. All Rights Reserved.</p>
+    <p class="copyright">&copy; 2020 <a href="#" style="text-transform: uppercase;">DINAS PARIWISATA SULSEL</a>. All Rights Reserved.</p>
   </div>
 </footer>
 </div>

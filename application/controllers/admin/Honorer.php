@@ -6,11 +6,11 @@ class Honorer extends Admin_controller {
     public function index(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data_honorer = $this->crud->gao('data_honorer', 'nama ASC');
+        $data_honorer = $this->crud->gao('data_honorer', 'id DESC');
         $data_satker = $this->crud->ga('data_satker');
 
         $data = array(  
-            'title'     => 'Data Pegawai Magang',
+            'title'     => 'Data Tenaga Magang',
             'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
             'data_satker' => $data_satker,
             'data_honorer' => $data_honorer,
@@ -24,7 +24,7 @@ class Honorer extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data = array(  'title'     => 'Tambah Data Pegawai Magang',
+        $data = array(  'title'     => 'Tambah Data Tenaga Magang',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'isi'       => 'admin/data_honorer/tambah');
         $this->load->view('admin/_layout/wrapper', $data);
@@ -64,7 +64,7 @@ class Honorer extends Admin_controller {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
         $id = $this->input->get('id');
         $a = $this->db->where('id', $id)->get('data_honorer')->result();
-        $data = array(  'title'     => 'Edit Pegawai Magang',
+        $data = array(  'title'     => 'Edit Tenaga Magang',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'data' => $a,
         'isi'       => 'admin/data_honorer/edit');

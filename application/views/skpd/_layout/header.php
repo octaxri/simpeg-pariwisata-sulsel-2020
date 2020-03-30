@@ -5,7 +5,7 @@
             <a href="index.html" class="logo" style="float: left">
                 <img src="<?=assets_url()?>img/sulsel.png" alt="" class="img-responsive logo" width="120" height="40">
             </a>
-            <div class="judul">Sistem Informasi Manajemen Kepegawaian PARIWISATA SULSEL
+            <div class="judul" style="font-size: 20px; text-transform: uppercase">Sistem Informasi Manajemen Kepegawaian PARIWISATA SULSEL
 <!--                <div class="sub-judul">Dinas Kebudayaan dan Kepariwisataan Provinsi Sulawesi Selatan</div>-->
             </div>
         </div>

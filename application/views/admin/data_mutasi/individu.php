@@ -6,12 +6,13 @@
           <table id="<?=$table?>" style="min-width: 100%;"  class="table table-bordered table-sorting table-hover no-footer">
             <thead>
               <tr>
-                <th colspan="2" class="text-center" width="10%"> Surat Keputusan</th>
-                <th rowspan="2" class="text-center" > NIP</th>
-                <th rowspan="2" class="text-center"> Nama </th>
-                <th rowspan="2" class="text-center"> Pangkat/Golongan/Ruang</th>
-                <th rowspan="2" class="text-center"> Status
-                  <th colspan="2" class="text-center">Tempat Tugas</th>
+                  <th rowspan="2" class="text-center" > No.</th>
+                  <th rowspan="2" class="text-center" > NIP</th>
+                  <th rowspan="2" class="text-center"> Nama </th>
+                  <th rowspan="2" class="text-center"> Pangkat/Golongan/Ruang</th>
+                <th colspan="2" class="text-center"> Surat Keputusan</th>
+<!--                <th rowspan="2" class="text-center"> Status-->
+                  <th colspan="2" class="text-center">Jabatan</th>
                 <th rowspan="2"></th>
               </tr>
               <tr>
@@ -21,7 +22,7 @@
                 <th class="text-center">Baru</th>
               </tr>
             </thead>
-            <tbody class="text-center">
+            <tbody>
             </tbody>
           </table>
     </div>
@@ -53,7 +54,7 @@
         	<div class="tab-pane fade in active" id="tab1">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Nomor SK</label>
-			    <input type="text" class="form-control" placeholder="Nomor SK" name="no_sk">
+			    <input type="text" class="form-control" placeholder="" name="no_sk">
 			  </div>
 			  <div class="row">
 			  	<div class="col-md-6 form-group date">
@@ -83,16 +84,16 @@
 					<div class="col-md-6">
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">NIP</label>
-				        <input type="text" class="form-control" placeholder="NIP" name="nip" required>
+				        <input type="text" class="form-control" placeholder="" name="nip" required>
 				      </div>
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">Nama Lengkap</label>
-				        <input type="text" readonly class="form-control" placeholder="Nama lengkap" name="nama">
+				        <input type="text" readonly class="form-control" placeholder="" name="nama">
 				      </div>
 
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">Pangkat/Golongan/Ruang</label>
-				        <input type="text" readonly class="form-control" placeholder="Pangkat Golongan" name="pangkat_gol">
+				        <input type="text" readonly class="form-control" placeholder="" name="pangkat_gol">
 				      </div>
 				    </div>
 
@@ -203,7 +204,7 @@
         	<div class="tab-pane fade in active" id="e1">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Nomor SK</label>
-			    <input type="text" class="form-control" placeholder="Nomor SK" name="no_sk">
+			    <input type="text" class="form-control" placeholder="" name="no_sk">
 			  </div>
 			  <div class="row">
 			  	<div class="col-md-6 form-group date">
@@ -233,16 +234,16 @@
 					<div class="col-md-6">
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">NIP</label>
-				        <input type="text" class="form-control" placeholder="NIP" name="nip" required>
+				        <input type="text" class="form-control" placeholder="" name="nip" required>
 				      </div>
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">Nama Lengkap</label>
-				        <input type="text" readonly class="form-control" placeholder="Nama lengkap" name="nama">
+				        <input type="text" readonly class="form-control" placeholder="" name="nama">
 				      </div>
 
 				      <div class="form-group">
 				        <label for="exampleInputEmail1">Pangkat/Golongan/Ruang</label>
-				        <input type="text" readonly class="form-control" placeholder="Pangkat Golongan" name="pangkat_gol">
+				        <input type="text" readonly class="form-control" placeholder="" name="pangkat_gol">
 				      </div>
 				    </div>
 
@@ -420,33 +421,42 @@
 	            "url":  "<?=admin_url('referensiAjax/get_mutasi_individu')?>",
 	            "type": "POST"
 	        },
-					scrollX: true,
+			scrollX: true,
 	        "columns": [
-	            { "data": "no_sk" },
+                // {"data": "id", render: function (data, type, row, meta) {
+                //         return meta.row + meta.settings._iDisplayStart + 1;}},
+                { "data": null },
+                { "data": "nip" },
+                { "data": "nama" },
+                { "data": "pangkat_gol" },
+                { "data": "no_sk" },
 	            { "data": "tgl_sk" },
-	            { "data": "nip" },
-	            { "data": "nama" },
-	            { "data": "pangkat_gol" },
-	            { "data": "status" },
+	            // { "data": "status" },
 	             {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                     return "Jabatan " + full.jabatan_lama + " pada bidang/bagian " + full.satker_lama + " di Subbidang/Seksi " + full.unker_lama;
+                     return full.jabatan_lama + " pada " + full.satker_lama + " di " + full.unker_lama;
                  }
               },
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                     return "Jabatan " + full.jabatan_baru + " pada bidang/bagian " + full.satker_baru + " di Subbidang/Seksi " + full.unker_baru;
+                     return full.jabatan_baru + " pada " + full.satker_baru + " di " + full.unker_baru;
                  }
               },
 	            {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-									 return "<button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button> <button class='btn btn-primary btn-xs valid'><i class='fa fa-check-circle'></i>Valid</button> <button class='print btn btn-success btn-xs'><i class='fa fa-print'></i>Cetak</button>";
+					return " <button class='print btn btn-success btn-xs'><i class='fa fa-print'></i>Cetak</button> <button class='btn btn-primary btn-xs edit'><i class='fa fa-pencil'></i>Edit</button> <button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button>";
                  }
              },
 	        ],
+            columnDefs: [{
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            }],
+            "order": [[ 2, "asc" ]],
 	        dom: 'Bfrtip',
 	        buttons: [
 	            {
@@ -460,6 +470,12 @@
 	        ],	        
 	    } );
 
+        mutasi_individu.on( 'order.dt search.dt', function () {
+            mutasi_individu.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                cell.innerHTML = i+1;
+            } );
+        } ).draw();
+
 	    $('#tambah').on('submit', function(e){
 	    	e.preventDefault()
 	    	$.ajax({
@@ -471,7 +487,7 @@
 	            cache:false,
 	            async:false,
 	            success:function(data){
-	            	if(data.stat == 'sukses'){
+	            	if(data.stat == 'Berhasil'){
 	            		swal(data.stat, data.res, 'success') 
 	            		$('#tambahSK').modal('hide')
 	            		$("#tambah")[0].reset()
@@ -518,7 +534,7 @@
 	            cache:false,
 	            async:false,
 	            success:function(data){
-	            	if(data.stat == 'sukses'){
+	            	if(data.stat == 'Berhasil'){
 	            		swal(data.stat, data.res, 'success') 
 	            		$('#editSK').modal('hide')
               			mutasi_individu.ajax.reload()
@@ -526,7 +542,7 @@
 	            }	    		
 	    	})
 	    })        
-      })	    
+      })
 
       $('input[name=nip]').on('change', function(){
         $.ajax({
@@ -560,13 +576,13 @@
 
         $data = mutasi_individu.row( $(this).parents('tr') ).data()
 
-        var r = confirm("apakah anda yakin ingin menghapus data ini ?");
+        var r = confirm("Apakah Anda Yakin Ingin Menghapus Data Ini ?");
 		if (r == true) {
 	        $.ajax({
 	        	url : "<?=admin_url('referensiAjax/delete_data_mutasi_individu/')?>" + $data.id,
 	        	method : "POST",
 	        	success:function(data){
-	    			if(data.stat == 'sukses'){
+	    			if(data.stat == 'Berhasil'){
 	            		swal(data.stat, data.res, 'success') 
 	          			mutasi_individu.ajax.reload()
 	            	}	

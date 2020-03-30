@@ -91,7 +91,7 @@
                             <th> No.</th>
                             <th> NIP</th>
                             <th> Nama </th>
-                            <th style="display: none"> Jenis Jabatan</th>
+                            <th > Jenis Jabatan</th>
                             <th> Tahun </th>
                             <th style="display: none"> Nilai Perilaku Kerja</th>
                             <th style="display: none"> Nilai SKP</th>
@@ -128,7 +128,7 @@
                                 <td><?=$i?></td>
                                 <td><?=$riwayat_skp_verified->nip?></td>
                                 <td><?=$riwayat_skp_verified->nama_lengkap?></td>
-                                <td style="display: none"><?=$riwayat_skp_verified->jenis_jabatan?></td>
+                                <td><?=$riwayat_skp_verified->jenis_jabatan?></td>
                                 <td><?=$riwayat_skp_verified->tahun?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->nilai_skp?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->orientasi?></td>
@@ -155,7 +155,7 @@
                                 <td style="display: none"><?=$riwayat_skp_verified->golongan_atasan_pejabat?></td>
                                 <td style="display: none"><?=$riwayat_skp_verified->tmt_atasan_pejabat?></td>
                                 <td><?=$riwayat_skp_verified->admin?></td>
-                                <td align="center">
+                                <td style="width: 1px">
                                    <a data-toggle="modal" data-target="#edit_skp" onclick="editData('skp',<?=$riwayat_skp_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                    <a href="#" onclick="hapusRiwayat('skp',<?=$riwayat_skp_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                </td>
@@ -203,7 +203,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun</label>
                         <div class="col-sm-9">
-                            <input id="tahun_skp" type="text" class="form-control onlyYears" >
+<!--                            <input id="tahun_skp" type="text" class="form-control onlyYears" >-->
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="tahun_skp" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
                         </div>
                     </div><hr>
                     <div class="alert alert-info" style="text-transform: uppercase"> Sasaran Kinerja Pegawai</div>
@@ -404,7 +408,11 @@
                     <div class="form-group">
                         <label  class="col-sm-3 control-label">Tahun</label>
                         <div class="col-sm-9">
-                            <input id="edit_tahun_skp" type="text" class="form-control onlyYears" >
+<!--                            <input id="edit_tahun_skp" type="text" class="form-control onlyYears" >-->
+                            <div class="input-group date onlyYears" data-date-autoclose="true" data-provide="datepicker">
+                                <input type="text" id="edit_tahun_skp" class="form-control">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
                         </div>
                     </div><hr>
                     <div class="alert alert-info" style="text-transform: uppercase"> Sasaran Kinerja Pegawai</div>
@@ -617,9 +625,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat skp berhasil ditambah.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat skp gagal ditambah.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -633,7 +641,6 @@
                 type: 'POST',
                 url: '<?=admin_url('PeremajaanData/editData/')?>'+idGlob+'/'+model,
                 data: {
-                    nip: $('#edit_nip').val(),
                     jenis_jabatan: $('#edit_jenis_jabatan_skp').val(),
                     tahun: $('#edit_tahun_skp').val(),
                     nilai_skp: $('#edit_nilai_skp').val(),
@@ -653,9 +660,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat skp berhasil diperbaharui.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat skp gagal diperbaharui.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -667,6 +674,7 @@
         switch (model) {
             case 'skp':
             $('#edit_nip').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(1)").text()).trigger('change');
+                $('#edit_nama_lengkap').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(2)").text()).trigger('change');
             $('#edit_jenis_jabatan_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
             $('#edit_tahun_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(4)").text());
             $('#edit_nilai_skp').val($(".data-itemriwayatskp[data-id='" + id + "']>td:eq(5)").text());
@@ -692,13 +700,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -710,13 +718,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                      'Batal',
-                     'Proses Hapus Data dibatalkan! :)',
+                     'Proses dibatalkan',
                      'error'
                      )
             }

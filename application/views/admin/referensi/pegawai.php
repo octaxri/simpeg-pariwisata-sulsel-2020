@@ -11,20 +11,21 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="tbl_statuspegawai" class="table table-bordered">
+<!--                        <table id="tbl_statuspegawai" class="table table-bordered">-->
+                        <table style="min-width: 100%;" id="tbl_statuspegawai" class="table table-striped datatable-Exnormal table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th width="50px;">No.</th>
-                                    <th>Status Pegawai</th>
+                                    <th width="20px;" class="text-center">No.</th>
+                                    <th class="text-center">Status Pegawai</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                               <?php $i = 1; foreach ($data_statuspegawai as $data_statuspegawai) { ?>
                                 <tr data-id="<?=$data_statuspegawai->id_statuspegawai?>">
-                                    <td class="text-center"><?=$i?></td>
-                                    <td data-value="<?=$data_statuspegawai->nama_statuspegawai?>"><?=$data_statuspegawai->nama_statuspegawai?></td>
-                                    <td>
+                                    <td class="text-center" class="text-center"><?=$i?></td>
+                                    <td class="text-center" data-value="<?=$data_statuspegawai->nama_statuspegawai?>"><?=$data_statuspegawai->nama_statuspegawai?></td>
+                                    <td style="width: 1px">
                                       <a data-toggle="modal" data-target="#edit_statuspegawai_modal" class="btn btn-primary btn-xs" onclick="editData('statuspegawai','<?=$data_statuspegawai->id_statuspegawai?>','<?=$data_statuspegawai->nama_statuspegawai?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                       <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('statuspegawai','<?=$data_statuspegawai->id_statuspegawai?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                     </td>
@@ -45,20 +46,21 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="tbl_jenispegawai" class="table table-bordered">
+<!--                        <table id="tbl_jenispegawai" class="table table-bordered">-->
+                        <table style="min-width: 100%;" id="tbl_jenispegawai" class="table table-striped datatable-Exnormal table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th width="50px;">No.</th>
-                                    <th>Jenis Pegawai</th>
+                                    <th width="20px;" class="text-center">No.</th>
+                                    <th class="text-center">Jenis Pegawai</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                               <?php $i = 1; foreach ($data_jenispegawai as $data_jenispegawai) { ?>
                                 <tr data-id="<?=$data_jenispegawai->id_jenispegawai?>">
-                                    <td class="text-center"><?=$i?></td>
-                                    <td data-value="<?=$data_jenispegawai->nama_jenispegawai?>"><?=$data_jenispegawai->nama_jenispegawai?></td>
-                                    <td>
+                                    <td class="text-center" class="text-center"><?=$i?></td>
+                                    <td class="text-center" data-value="<?=$data_jenispegawai->nama_jenispegawai?>"><?=$data_jenispegawai->nama_jenispegawai?></td>
+                                    <td style="width: 1px">
                                       <a data-toggle="modal" data-target="#edit_jenispegawai_modal" class="btn btn-primary btn-xs" onclick="editData('jenispegawai','<?=$data_jenispegawai->id_jenispegawai?>','<?=$data_jenispegawai->nama_jenispegawai?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                       <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('jenispegawai','<?=$data_jenispegawai->id_jenispegawai?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                     </td>
@@ -79,20 +81,21 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="tbl_kedudukanpegawai" class="table table-bordered">
+<!--                        <table id="tbl_kedudukanpegawai" class="table table-bordered">-->
+                            <table style="min-width: 100%;" id="tbl_kedudukanpegawai" class="table table-striped datatable-Exnormal table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th width="50px;">No.</th>
-                                    <th>Kedudukan Pegawai</th>
+                                    <th width="20px;" class="text-center">No.</th>
+                                    <th class="text-center">Kedudukan Pegawai</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                               <?php $i = 1; foreach ($data_kedudukanpegawai as $data_kedudukanpegawai) { ?>
                                 <tr data-id="<?=$data_kedudukanpegawai->id_kedudukanpegawai?>">
-                                    <td class="text-center"><?=$i?></td>
-                                    <td data-value="<?=$data_kedudukanpegawai->nama_kedudukanpegawai?>"><?=$data_kedudukanpegawai->nama_kedudukanpegawai?></td>
-                                    <td>
+                                    <td class="text-center" class="text-center"><?=$i?></td>
+                                    <td class="text-center" data-value="<?=$data_kedudukanpegawai->nama_kedudukanpegawai?>"><?=$data_kedudukanpegawai->nama_kedudukanpegawai?></td>
+                                    <td style="width: 1px">
                                       <a data-toggle="modal" data-target="#edit_kedudukanpegawai_modal" class="btn btn-primary btn-xs" onclick="editData('kedudukanpegawai','<?=$data_kedudukanpegawai->id_kedudukanpegawai?>','<?=$data_kedudukanpegawai->nama_kedudukanpegawai?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                       <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('kedudukanpegawai','<?=$data_kedudukanpegawai->id_kedudukanpegawai?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                     </td>
@@ -313,10 +316,10 @@ function refrensidata_send(method) {
           $('.error_jenispegawai').html('');
           $('#tambah_jenispegawai').val('');
           $('#tambah_jenispegawai_modal').modal('hide');
-          swal('Sukses', 'Data Jenis Pegawai berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else
         {
-          swal('Gagal', 'Data Jenis Pegawai gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
            $('.error_jenispegawai').html(response.error);
            // $('#tambah_statuspegawai_modal').modal('hide');
         }
@@ -339,10 +342,10 @@ function refrensidata_send(method) {
           $('.error_statuspegawai').html('');
           $('#tambah_statuspegawai').val('');
           $('#tambah_statuspegawai_modal').modal('hide');
-          swal('Sukses', 'Data Status Pegawai berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else
         {
-          swal('Gagal', 'Data Status Pegawai gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
            $('.error_statuspegawai').html(response.error);
            // $('#tambah_statuspegawai_modal').modal('hide');
         }
@@ -365,10 +368,10 @@ function refrensidata_send(method) {
           $('.error_kedudukanpegawai').html('');
           $('#tambah_kedudukanpegawai').val('');
           $('#tambah_kedudukanpegawai_modal').modal('hide');
-          swal('Sukses', 'Data kedudukan Pegawai berhasil ditambah.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else
         {
-          swal('Gagal', 'Data kedudukan Pegawai gagal ditambah.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
            $('.error_kedudukanpegawai').html(response.error);
            // $('#tambah_statuspegawai_modal').modal('hide');
         }
@@ -396,10 +399,10 @@ function editData_send(method){
           $("td[data-value='"+valGlob+"']").html(response.data.nama_jenispegawai);
           $('.error_jenispegawai').html('');
           $('#edit_jenispegawai_modal').modal('hide');
-          swal('Sukses', 'Data Jenis Pegawai berhasil diedit.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else {
           $('.error_jenispegawai').html(response.error);
-          swal('Gagal', 'Data Jenis Pegawai gagal diedit.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
           $(document).ajaxStop(function(){
@@ -420,11 +423,11 @@ function editData_send(method){
           $("td[data-value='"+valGlob+"']").html(response.data.nama_statuspegawai);
           $('.error_statuspegawai').html(response.error);
           $('#edit_statuspegawai_modal').modal('hide');
-          swal('Sukses', 'Data jenis jenispegawai berhasil diedit.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else
         {
           $('.error_statuspegawai').html(response.error);
-          swal('Gagal', 'Data jenis jenispegawai gagal diedit.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
           $(document).ajaxStop(function(){
@@ -445,11 +448,11 @@ function editData_send(method){
           $("td[data-value='"+valGlob+"']").html(response.data.nama_kedudukanpegawai);
           $('.error_kedudukanpegawai').html(response.error);
           $('#edit_kedudukanpegawai_modal').modal('hide');
-          swal('Sukses', 'Data Kedudukan Pegawai berhasil diedit.', 'success');
+          swal('Sukses', 'Data berhasil disimpan', 'success');
         } else
         {
           $('.error_kedudukanpegawai').html(response.error);
-          swal('Gagal', 'Data Kedudukan Pegawai gagal diedit.', 'error');
+          swal('Gagal', 'Data gagal disimpan', 'error');
         }
       });
           $(document).ajaxStop(function(){
@@ -461,13 +464,13 @@ function editData_send(method){
 function hapusData(method,id) {
     swal({
       title: 'Apakah Anda Yakin?',
-      text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+      text: "Anda tidak dapat mengembalikan data yang telah dihapus",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Hapus!',
-      cancelButtonText: 'Batalkan!',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batalkan',
       closeOnConfirm: false,
       closeOnCancel: false
     },
@@ -479,13 +482,13 @@ function hapusData(method,id) {
           }).done(function(response) {
             if (response.success) {
               $("tr[data-id='"+id+"']").remove();
-              swal('Sukses', 'Data berhasil dihapus.', 'success');
-            } else swal('Gagal', 'Data gagal dihapus.', 'error');
+              swal('Sukses', 'Data berhasil dihapus', 'success');
+            } else swal('Gagal', 'Data gagal dihapus', 'error');
          });
       } else {
         swal(
           'Batal',
-          'Proses Hapus Data dibatalkan! :)',
+          'Proses dibatalkan',
           'error'
         )
       }

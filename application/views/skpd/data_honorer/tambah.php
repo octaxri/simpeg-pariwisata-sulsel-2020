@@ -9,7 +9,7 @@
 
     <div class="panel panel-tab">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-plus"></i> Tambah Data Pegawai Magang</h3>
+        <h3 class="panel-title"><i class="fa fa-plus"></i> Tambah Data Tenaga Magang</h3>
         <ul class="nav nav-tabs pull-right">
          <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user-circle-o"></i> Data Pribadi</a></li>
          <li><a href="#tab2" data-toggle="tab"><i class="fa fa-briefcase"></i> Pendidikan</a></li>
@@ -194,12 +194,12 @@
            		<div class="tab-pane fade in" id="tab3">
 		        	<div class="col-md-6">
                         <div class="alert alert-info">
-                            <p style="text-transform: uppercase">riwayat Pegawai Magang</p>
+                            <p style="text-transform: uppercase">riwayat Tenaga Magang</p>
                         </div>
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Nomor <strong style="color: red;">(*)</strong></label>
 		                  <div id="no_sk_honorerStatus" class="col-md-8">
-		                    <input type="text" name="no_sk_honorer" id="no_sk_honorer" class="form-control" placeholder="Nomor Riwayat Pegawai Magang" data-parsley-type="digits" >
+		                    <input type="text" name="no_sk_honorer" id="no_sk_honorer" class="form-control" placeholder="Nomor Riwayat Tenaga Magang" data-parsley-type="digits" >
 		                    <p class="help-block" id="no_sk_honorerStatusText"></p>
 		                    <div id="no_sk_honorerStatusIcon">
 		                    </div>
@@ -209,7 +209,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Tahun <strong style="color: red;">(*)</strong></label>
 		                  <div id="tmt_honorerStatus" class="col-md-8">
-		                    <input type="text" name="tmt_honorer" id="tmt_honorer" class="form-control" placeholder="TMT Pegawai Magang" data-parsley-type="digits" >
+		                    <input type="text" name="tmt_honorer" id="tmt_honorer" class="form-control" placeholder="TMT Tenaga Magang" data-parsley-type="digits" >
 		                    <p class="help-block" id="tmt_honorerStatusText"></p>
 		                    <div id="tmt_honorerStatusIcon">
 		                    </div>
@@ -239,7 +239,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Jabatan <strong style="color: red;">(*)</strong></label>
 		                  <div id="jabatan_honorerStatus" class="col-md-8">
-		                    <input type="text" name="jabatan_honorer" id="jabatan_honorer" class="form-control" placeholder="Jabatan Sebagai Pegawai Magang" data-parsley-type="digits" >
+		                    <input type="text" name="jabatan_honorer" id="jabatan_honorer" class="form-control" placeholder="Jabatan Sebagai Tenaga Magang" data-parsley-type="digits" >
 		                    <p class="help-block" id="jabatan_honorerStatusText"></p>
 		                    <div id="jabatan_honorerStatusIcon">
 		                    </div>
@@ -257,7 +257,7 @@
 		                  </div>
 		                </div>	
 		                <div class="form-group">
-		                  <label class="col-md-4 control-label">Status Pegawai Magang <strong style="color: red;">(*)</strong></label>
+		                  <label class="col-md-4 control-label">Status Tenaga Magang <strong style="color: red;">(*)</strong></label>
 		                  <div id="statusStatus" class="col-md-8">
 		                    <select class="form-control" name="status" id="jenis_kelamin">
 							  <option value="" readonly>- Pilih -</option>
@@ -370,7 +370,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Nomor SK Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Nomor SK Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -380,7 +380,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Tahun SK Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Tahun SK Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -390,7 +390,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Tanggal SK Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Tanggal SK Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -400,7 +400,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Jabatan Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Jabatan Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -410,7 +410,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Jabatan Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Jabatan Tenaga Magang tidak boleh kosong')
 		}
 	})
 

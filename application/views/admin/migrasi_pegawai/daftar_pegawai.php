@@ -64,13 +64,13 @@
     function hapusData(nip) {
         swal({
           title: 'Apakah Anda Yakin?',
-          text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+          text: "Anda tidak dapat mengembalikan data yang telah dihapus",
           type: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Hapus!',
-          cancelButtonText: 'Batalkan!',
+          confirmButtonText: 'Hapus',
+          cancelButtonText: 'Batalkan',
           closeOnConfirm: false,
           closeOnCancel: false
         },
@@ -82,13 +82,13 @@
               }).done(function(response) {
                 if (response.success) {
                   $("tr[data-nip='"+nip+"']").remove();
-                  swal('Sukses', 'Data berhasil dihapus.', 'success');
-                } else swal('Gagal', 'Data gagal dihapus.', 'error');
+                  swal('Sukses', 'Data berhasil dihapus', 'success');
+                } else swal('Gagal', 'Data gagal dihapus', 'error');
              });
           } else {
             swal(
               'Batal',
-              'Proses Hapus Data dibatalkan! :)',
+              'Proses dibatalkan',
               'error'
             )
           }

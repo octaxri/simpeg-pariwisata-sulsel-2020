@@ -44,9 +44,9 @@
           </div>
           <div class="col-md-12">
             <div class="form-group col-sm-4">
-              <label class=" control-label">Pangkat/Golongan/Ruang</label>
+              <label class=" control-label">Eselon</label>
               <select id="eselon" class="form-control select-2">
-                <option value="all">-Semua Pangkat/Golongan/Ruang-</option>
+                <option value="all">-Semua Eselon-</option>
                 <?php foreach ($data_eselon as $data_eselon): ?>
                   <option value="<?=$data_eselon->nama_eselon?>"><?=$data_eselon->nama_eselon?></option>
                 <?php endforeach ?>
@@ -81,13 +81,13 @@ function hapusData(id) {
     // console.log(d);
     swal({
       title: 'Apakah Anda Yakin?',
-      text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+      text: "Anda tidak dapat mengembalikan data yang telah dihapus",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Hapus!',
-      cancelButtonText: 'Batalkan!',
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batalkan',
       closeOnConfirm: false,
       closeOnCancel: false
     },
@@ -99,13 +99,13 @@ function hapusData(id) {
           }).done(function(response) {
             if (response.success) {
               $("tr[data-id='"+id+"']").remove();
-              swal('Sukses', 'Data berhasil dihapus.', 'success');
-            } else swal('Gagal', 'Data gagal dihapus.', 'error');
+              swal('Sukses', 'Data berhasil dihapus', 'success');
+            } else swal('Gagal', 'Data gagal dihapus', 'error');
          });
       } else {
         swal(
           'Batal',
-          'Proses Hapus Data dibatalkan! :)',
+          'Proses dibatalkan',
           'error'
         )
       }
@@ -126,11 +126,12 @@ function hapusData(id) {
                       <th>NIP</th>
                       <th>Nama</th>
                       <th>Jenis Kelamin</th>
-                      <th>Agama</th>
-                      <th>Eselon</th>
-                      <th>Pangkat</th>
-                      <th>Jabatan</th>
                       <th>Tgl. Lahir</th>
+                      <th>Agama</th>
+                      <th>Jabatan</th>
+                      <th>Eselon</th>
+                      <th>Pangkat/Golongan/Ruang</th>
+                      <th>Bidang</th>
                       <th>Subbidang/Seksi</th>
                       <th></th>
                   </tr>
@@ -170,12 +171,13 @@ function hapusData(id) {
             {"data": "nip"},
             {"data": "nama_lengkap"},
             {"data": "jenis_kelamin"},
+            {"data": "tanggal_lahir"},
             {"data": "agama"},
+            {"data": "nama_jabatan"},
             {"data": "eselon"},
             {"data": "jenis_pangkat"},
-            {"data": "nama_jabatan"},
-            {"data": "tanggal_lahir"},
-            {"data": "unit_kerja"}
+            {"data": "satuan_kerja"},
+            {"data": "unit_kerja"},
         ],
         columnDefs : [
           { targets : [0],
@@ -184,7 +186,7 @@ function hapusData(id) {
             }
           },
           {
-            targets : [10],
+            targets : [11],
             render : function(data, type, row) {
                 return '<a href="<?=admin_url('DataPegawai/profil/')?>'+row[1]+'" class="btn btn-success btn-xs  btn-block" > <i class="fa fa-eye"></i> Profil</a><a href="<?=admin_url('DataPegawai/edit/')?>'+row[1]+'" class="btn btn-primary btn-xs btn-block" > <i class="fa fa-pencil"></i> Edit </a><button  title="Delete" class="btn btn-danger btn-xs btn-block" onclick="hapusData('+row[1]+');"> <i class="fa fa-trash"></i> Hapus </button>'
             }   
@@ -202,6 +204,10 @@ function hapusData(id) {
         ],
         scrollX:        true,
         scrollCollapse: true,
+          "sScrollX": "100%",
+          "sScrollXInner": "100%",
+          "bScrollCollapse": true,
+          "colReorder": true
       });
 });
 </script>

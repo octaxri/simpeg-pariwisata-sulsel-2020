@@ -673,9 +673,9 @@ class DataPegawai extends Admin_controller
         $riwayat_jabatan = $this->crud->gw('riwayat_jabatan', array('nip' => $nip));
         $riwayat_mutasi = $this->crud->gw('riwayat_mutasi', array('nip' => $nip));
         $riwayat_golongan = $this->crud->gw('riwayat_golongan', array('nip' => $nip));
-        $riwayat_diklat = $this->crud->gw('riwayat_diklat', array('nip' => $nip));
-        $riwayat_diklat1 = $this->crud->gw('riwayat_diklat', array('nip' => $nip));
-        $riwayat_diklat2 = $this->crud->gw('riwayat_diklat', array('nip' => $nip));
+        $riwayat_diklat = $this->crud->gw('riwayat_diklat', array('nip' => $nip, 'jenis_diklat' => 'struktural'));
+        $riwayat_diklat1 = $this->crud->gw('riwayat_diklat', array('nip' => $nip, 'jenis_diklat' => 'fungsional'));
+        $riwayat_diklat2 = $this->crud->gw('riwayat_diklat', array('nip' => $nip, 'jenis_diklat' => 'teknis'));
         $riwayat_cpns = $this->crud->gw('riwayat_pegawai_cpns', array('nip' => $nip));
         $riwayat_pns = $this->crud->gw('riwayat_pegawai_pns', array('nip' => $nip));
         $riwayat_kursus = $this->crud->gw('riwayat_kursus', array('nip' => $nip));
@@ -1921,7 +1921,7 @@ class DataPegawai extends Admin_controller
                 $input['agama'] != 'all' ? $query[] = ' AND  agama LIKE "%' . $input['agama'] . '%"' : $query[] = '';
             }
 
-            $this->datatables->select("gambar, nip, nama_lengkap, jenis_kelamin, agama, eselon, jenis_pangkat, nama_jabatan, tanggal_lahir, unit_kerja");
+            $this->datatables->select("gambar, nip, nama_lengkap, jenis_kelamin, tanggal_lahir, agama, nama_jabatan, eselon, jenis_pangkat, satuan_kerja, unit_kerja");
             $this->datatables->where("" . implode(' ', $query) . "");
             $this->datatables->order_by("CASE WHEN eselon = 'Non-Eselon' THEN 1 ELSE 0 END ASC");
             $this->datatables->order_by("eselon ASC");
@@ -1962,7 +1962,7 @@ class DataPegawai extends Admin_controller
     {
         $satker = $this->input->get('satker');
         $a['satker'] = $this->db->distinct()
-            ->select('a.nip, d.no_ktp, a.nama_lengkap, a.gelar_depan, a.gelar_belakang, a.tempat_lahir, a.tanggal_lahir, b.tanggal_tmt, a.jenis_pangkat, a.tmt_jabatan, a.nama_jabatan, a.tmt_jenis_pangkat, a.eselon, a.unit_kerja, c.kab, c.kel, c.kec, c.alamat')
+            ->select('a.satuan_kerja, a.nip, d.no_ktp, a.nama_lengkap, a.gelar_depan, a.gelar_belakang, a.tempat_lahir, a.tanggal_lahir, b.tanggal_tmt, a.jenis_pangkat, a.tmt_jabatan, a.nama_jabatan, a.tmt_jenis_pangkat, a.eselon, a.unit_kerja, c.kab, c.kel, c.kec, c.alamat')
             ->from('data_pegawai a')
             ->join('riwayat_pegawai_cpns b', 'b.nip=a.nip', 'left')
             ->join('data_alamat c', 'c.nip=a.nip', 'left')

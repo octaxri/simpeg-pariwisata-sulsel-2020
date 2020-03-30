@@ -12,7 +12,7 @@ class PeremajaanData extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_cpns_verified = $this->crud->gwo('riwayat_pegawai_cpns', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_cpns_verified = $this->crud->gwo('riwayat_pegawai_cpns', array('status' => '1'), 'iat DESC');
         $riwayat_cpns_notverified = $this->crud->gwo('riwayat_pegawai_cpns', array('status' => '0'), 'nama_lengkap ASC');
         $data_golongan = $this->crud->gao('data_golongan', '');
         $data_eselon = $this->crud->gao('data_eselon', 'nama_eselon ASC');
@@ -41,7 +41,7 @@ class PeremajaanData extends Admin_controller {
         $data_jabatan = $this->crud->ga('data_jabatan');
         $data_satker = $this->crud->ga('data_satker');
 
-        $riwayat_pns_verified = $this->crud->gwo('riwayat_pegawai_pns', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_pns_verified = $this->crud->gwo('riwayat_pegawai_pns', array('status' => '1'), 'iat DESC');
         $riwayat_pns_notverified = $this->crud->gwo('riwayat_pegawai_pns', array('status' => '0'), 'nama_lengkap ASC');
 
         $data = array(  'title'     => 'Peremejaan Data / Kepegawaian PNS',
@@ -60,11 +60,11 @@ class PeremajaanData extends Admin_controller {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
         $data_pendidikan = $this->crud->ga('data_pendidikan');
-        $riwayat_pendidikan_verified = $this->crud->gwo('riwayat_pendidikan', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_pendidikan_verified = $this->crud->gwo('riwayat_pendidikan', array('status' => '1'), 'iat DESC');
         $riwayat_pendidikan_notverified = $this->crud->gwo('riwayat_pendidikan', array('status' => '0'), 'nama_lengkap ASC');
 
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian pendidikan',
+        $data = array(  'title'     => 'Peremejaan Data / Pendidikan',
                       'data_pendidikan' => $data_pendidikan,
                       'riwayat_pendidikan_verified'     => $riwayat_pendidikan_verified,
                       'riwayat_pendidikan_notverified'     => $riwayat_pendidikan_notverified,
@@ -79,19 +79,18 @@ class PeremajaanData extends Admin_controller {
 
         $data_jenisjabatan = $this->crud->ga('data_jenisjabatan');
         $data_eselon = $this->crud->ga('data_eselon');
-        $riwayat_jabatan_verified = $this->crud->gwo('riwayat_jabatan', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_jabatan_verified = $this->crud->gwo('riwayat_jabatan', array('status' => '1'), 'iat DESC');
         $riwayat_jabatan_notverified = $this->crud->gwo('riwayat_jabatan', array('status' => '0'), 'nama_lengkap ASC');
         $data_unit = $this->crud->ga('data_unit');
         $data_jabatan = $this->crud->ga('data_jabatan');
         $data_satker = $this->crud->ga('data_satker');
 //        var_dump($data_satker);die();
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian Jabatan',
+        $data = array(  'title'     => 'Peremejaan Data / Jabatan',
                       'data_eselon' => $data_eselon,
                       'data_jenisjabatan' => $data_jenisjabatan,
                       'riwayat_jabatan_verified'     => $riwayat_jabatan_verified,
                       'riwayat_jabatan_notverified'     => $riwayat_jabatan_notverified,
-
                       'data_unit'     => $data_unit,
                       'data_jabatan'     => $data_jabatan,
                       'data_satker'     => $data_satker,
@@ -103,7 +102,7 @@ class PeremajaanData extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_struktural_verified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'struktural'),'nama_lengkap ASC');
+        $riwayat_struktural_verified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'struktural'),'iat DESC');
         $riwayat_struktural_notverified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'struktural','status' => 0), 'nama_lengkap ASC');
 
         $data = array(  'title'     => 'Peremejaan Data / Diklat struktural',
@@ -117,7 +116,7 @@ class PeremajaanData extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_fungsional_verified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'fungsional'),'nama_lengkap ASC');
+        $riwayat_fungsional_verified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'fungsional'),'iat DESC');
         $riwayat_fungsional_notverified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'fungsional','status' => 0), 'nama_lengkap ASC');
 
         $data = array(  'title'     => 'Peremejaan Data / Diklat fungsional',
@@ -131,7 +130,7 @@ class PeremajaanData extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_teknis_verified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'teknis'),'nama_lengkap ASC');
+        $riwayat_teknis_verified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'teknis'),'iat DESC');
         $riwayat_teknis_notverified = $this->crud->gwo('riwayat_diklat', array('jenis_diklat' => 'teknis','status' => 0), 'nama_lengkap ASC');
 
         $data = array(  'title'     => 'Peremejaan Data / Diklat teknis',
@@ -143,12 +142,16 @@ class PeremajaanData extends Admin_controller {
 
     public function mutasi(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
-        $riwayat_mutasi_verified = $this->crud->gwo('riwayat_mutasi', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_mutasi_verified = $this->crud->gwo('riwayat_mutasi', array('status' => '1'), 'iat DESC');
         $riwayat_mutasi_notverified = $this->crud->gwo('riwayat_mutasi', array('status' => '0'), 'nama_lengkap ASC');
+        $data_golongan = $this->crud->gao('data_golongan', '');
+        $data_jabatan = $this->crud->ga('data_jabatan');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian mutasi',
+        $data = array(  'title'     => 'Peremejaan Data / Mutasi',
                       'riwayat_mutasi_verified'     => $riwayat_mutasi_verified,
                       'riwayat_mutasi_notverified'     => $riwayat_mutasi_notverified,
+                      'data_golongan' =>  $data_golongan,
+                      'data_jabatan' => $data_jabatan,
                       'isi'       => 'admin/peremajaan/mutasi');
         $this->load->view('admin/_layout/wrapper', $data);
     }
@@ -156,10 +159,10 @@ class PeremajaanData extends Admin_controller {
     public function kursus(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
         $data_satker = $this->crud->gao('data_satker', 'nama_satker ASC');
-        $riwayat_kursus_verified = $this->crud->gwo('riwayat_kursus', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_kursus_verified = $this->crud->gwo('riwayat_kursus', array('status' => '1'), 'iat DESC');
         $riwayat_kursus_notverified = $this->crud->gwo('riwayat_kursus', array('status' => '0'), 'nama_lengkap ASC');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian kursus',
+        $data = array(  'title'     => 'Peremejaan Data / Kursus',
                       'data_satker'     => $data_satker,
                       'riwayat_kursus_verified'     => $riwayat_kursus_verified,
                       'riwayat_kursus_notverified'     => $riwayat_kursus_notverified,
@@ -170,10 +173,10 @@ class PeremajaanData extends Admin_controller {
     public function penghargaan(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_penghargaan_verified = $this->crud->gwo('riwayat_penghargaan', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_penghargaan_verified = $this->crud->gwo('riwayat_penghargaan', array('status' => '1'), 'iat DESC');
         $riwayat_penghargaan_notverified = $this->crud->gwo('riwayat_penghargaan', array('status' => '0'), 'nama_lengkap ASC');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian penghargaan',
+        $data = array(  'title'     => 'Peremejaan Data / Penghargaan',
                       'riwayat_penghargaan_verified'     => $riwayat_penghargaan_verified,
                       'riwayat_penghargaan_notverified'     => $riwayat_penghargaan_notverified,
                       'isi'       => 'admin/peremajaan/penghargaan');
@@ -183,10 +186,10 @@ class PeremajaanData extends Admin_controller {
     public function profesi(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_profesi_verified = $this->crud->gwo('riwayat_profesi', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_profesi_verified = $this->crud->gwo('riwayat_profesi', array('status' => '1'), 'iat DESC');
         $riwayat_profesi_notverified = $this->crud->gwo('riwayat_profesi', array('status' => '0'), 'nama_lengkap ASC');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian profesi',
+        $data = array(  'title'     => 'Peremejaan Data / Profesi',
                       'riwayat_profesi_verified'     => $riwayat_profesi_verified,
                       'riwayat_profesi_notverified'     => $riwayat_profesi_notverified,
                       'isi'       => 'admin/peremajaan/profesi');
@@ -197,10 +200,10 @@ class PeremajaanData extends Admin_controller {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
         $data_satker = $this->crud->gao('data_satker', 'nama_satker ASC');
-        $riwayat_unor_verified = $this->crud->gwo('riwayat_unor', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_unor_verified = $this->crud->gwo('riwayat_unor', array('status' => '1'), 'iat DESC');
         $riwayat_unor_notverified = $this->crud->gwo('riwayat_unor', array('status' => '0'), 'nama_lengkap ASC');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian PNS Subbidang/Seksi',
+        $data = array(  'title'     => 'Peremejaan Data / PNS Unor',
                       'data_satker'     => $data_satker,
                       'riwayat_unor_verified'     => $riwayat_unor_verified,
                       'riwayat_unor_notverified'     => $riwayat_unor_notverified,
@@ -211,7 +214,7 @@ class PeremajaanData extends Admin_controller {
     public function dp3(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_dp3_verified = $this->crud->gwo('riwayat_dp3', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_dp3_verified = $this->crud->gwo('riwayat_dp3', array('status' => '1'), 'iat DESC');
         $riwayat_dp3_notverified = $this->crud->gwo('riwayat_dp3', array('status' => '0'), 'nama_lengkap ASC');
 
         $data = array(  'title'     => 'Peremejaan Data / DP3',
@@ -224,7 +227,7 @@ class PeremajaanData extends Admin_controller {
     public function skp(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $riwayat_skp_verified = $this->crud->gwo('riwayat_skp', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_skp_verified = $this->crud->gwo('riwayat_skp', array('status' => '1'), 'iat DESC');
         $riwayat_skp_notverified = $this->crud->gwo('riwayat_skp', array('status' => '0'), 'nama_lengkap ASC');
 
         $data = array(  'title'     => 'Peremejaan Data / SKP',
@@ -236,10 +239,10 @@ class PeremajaanData extends Admin_controller {
 
     public function pemberhentian(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
-        $riwayat_pemberhentian_verified = $this->crud->gwo('riwayat_pemberhentian', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_pemberhentian_verified = $this->crud->gwo('riwayat_pemberhentian', array('status' => '1'), 'iat DESC');
         $riwayat_pemberhentian_notverified = $this->crud->gwo('riwayat_pemberhentian', array('status' => '0'), 'nama_lengkap ASC');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian Pemberhentian',
+        $data = array(  'title'     => 'Peremejaan Data / Pemberhentian',
                       'riwayat_pemberhentian_verified'     => $riwayat_pemberhentian_verified,
                       'riwayat_pemberhentian_notverified'     => $riwayat_pemberhentian_notverified,
                       'isi'       => 'admin/peremajaan/pemberhentian');
@@ -249,10 +252,10 @@ class PeremajaanData extends Admin_controller {
 
     public function angkakredit(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
-        $riwayat_angkakredit_verified = $this->crud->gwo('riwayat_angkakredit', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_angkakredit_verified = $this->crud->gwo('riwayat_angkakredit', array('status' => '1'), 'iat DESC');
         $riwayat_angkakredit_notverified = $this->crud->gwo('riwayat_angkakredit', array('status' => '0'), 'nama_lengkap ASC');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian Angka Kredit',
+        $data = array(  'title'     => 'Peremejaan Data / Angka Kredit',
                       'riwayat_angkakredit_verified'     => $riwayat_angkakredit_verified,
                       'riwayat_angkakredit_notverified'     => $riwayat_angkakredit_notverified,
                       'isi'       => 'admin/peremajaan/angkakredit');
@@ -261,10 +264,13 @@ class PeremajaanData extends Admin_controller {
 
     public function cuti(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
-        $riwayat_cuti_verified = $this->crud->gwo('riwayat_cuti', array('status' => '1'), 'nama_lengkap ASC');
+        $riwayat_cuti_verified = $this->crud->gwo('riwayat_cuti', array('status' => '1'), 'iat DESC');
         $riwayat_cuti_notverified = $this->crud->gwo('riwayat_cuti', array('status' => '0'), 'nama_lengkap ASC');
 
-        $data = array(  'title'     => 'Peremejaan Data / Kepegawaian cuti',
+        $permohonan_cuti = $this->crud->gwo('permohonan_cuti', array('keterangan' => 'Diproses'),'iat DESC');
+
+        $data = array(  'title'     => 'Peremejaan Data / Cuti',
+                      'permohonan_cuti'     => $permohonan_cuti,
                       'riwayat_cuti_verified'     => $riwayat_cuti_verified,
                       'riwayat_cuti_notverified'     => $riwayat_cuti_notverified,
                       'isi'       => 'admin/peremajaan/cuti');
@@ -1001,6 +1007,7 @@ class PeremajaanData extends Admin_controller {
         }
 
     }
+
     public function editData($id = NULL, $tipe = NULL){
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
@@ -1483,7 +1490,7 @@ class PeremajaanData extends Admin_controller {
                     } else {
                         $pertama_angkakredit = "0";
                     }
-                    $data = array( 'nip'    => $input['nip'],
+                    $data = array(
                         'no_sk'       => $input['no_sk_angkakredit'],
                         'tanggal_sk'       => $input['tanggal_sk_angkakredit'],
                         'pertama_angkakredit'       => $pertama_angkakredit,
@@ -1499,9 +1506,8 @@ class PeremajaanData extends Admin_controller {
                         'uat'               => date('Y-m-d H:i:s'));
 
 //                    var_dump($data);die();
-                    $this->crud->u('riwayat_angkakredit', $data, array('nip' => $input['nip']));
-                    $detail = $this->crud->gd('riwayat_angkakredit', array('nip' => $input['nip'])
-                    );
+                    $this->crud->u('riwayat_angkakredit', $data, array('id_riwayat' => $id));
+                    $detail = $this->crud->gd('riwayat_angkakredit', array('id_riwayat' => $id));
                     if ($detail) {
                         return $this->response([
                             'success'   => TRUE,
@@ -1568,7 +1574,7 @@ class PeremajaanData extends Admin_controller {
                 if ($valid->run() === TRUE)
                 {
                     $input = $this->input->post(NULL, TRUE);
-                    $data = array(  'nip'    => $input['nip'],
+                    $data = array(
                         'admin'    => $input['admin'],
                         'jenis_jabatan'       => $input['jenis_jabatan'],
                         'tahun'       => $input['tahun'],
@@ -1585,9 +1591,8 @@ class PeremajaanData extends Admin_controller {
                         'nilai_prestasi_kerja'       => $input['nilai_prestasi_kerja'],
                         'ket_nilai_prestasi_kerja'       => $input['ket_nilai_prestasi_kerja'],
                         'uat'               => date('Y-m-d H:i:s'));
-                    $this->crud->u('riwayat_skp', $data, array('nip' => $input['nip']));
-                    $detail = $this->crud->gd('riwayat_skp', array('nip' => $input['nip'])
-                    );
+                    $this->crud->u('riwayat_skp', $data, array('id_riwayat' => $id));
+                    $detail = $this->crud->gd('riwayat_skp', array('id_riwayat' => $id));
                     if ($detail) {
                         return $this->response([
                             'success'   => TRUE,
@@ -1645,6 +1650,23 @@ class PeremajaanData extends Admin_controller {
         else return $this->response(['success' => FALSE]);
     }
 
+    public function hapusRiwayatPemohon($table, $id){
+        $cek = $this->crud->gd($table, array('id' => $id));
+        if ($cek)
+        {
+            $input = $this->input->post(NULL, TRUE);
+            $data = array(
+                'keterangan' => $input['keterangan'],
+                'uat' => date('Y-m-d H:i:s'),
+            );
+//            var_dump($data);die();
+            $this->crud->u($table, $data, array('id' => $id));
+
+            return $this->response(['success' => TRUE]);
+        }
+        else return $this->response(['success' => FALSE]);
+    }
+
 
     public function getDataPegawaiAjax(){
         $data = $this->crud->qr("SELECT * FROM data_pegawai WHERE CONCAT(nip,nama_lengkap) LIKE '%".$_GET['q']."%'");
@@ -1678,6 +1700,52 @@ class PeremajaanData extends Admin_controller {
         ->set_output(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
         ->_display();
         exit();
+    }
+
+    public function editDataPemohon($id = NULL, $tipe = NULL)
+    {
+//        var_dump($id);die();
+        $valid = $this->form_validation;
+        $valid->set_error_delimiters('<i style="color: red;">', '</i>');
+        switch ($tipe) {
+            case 'riwayat_cuti':
+                $valid->set_rules('jenis_cuti', 'Field Jenis cuti', 'required|trim|strip_tags|htmlspecialchars');
+                $valid->set_rules('no_sk', 'Field Nomor SK', 'required|trim|strip_tags|htmlspecialchars');
+                $valid->set_rules('no_bkn', 'Field Nomor BKN', 'required|trim|strip_tags|htmlspecialchars');
+                $valid->set_rules('tanggal_bkn', 'Field Tanggal BKN', 'required|trim|strip_tags|htmlspecialchars');
+                $valid->set_rules('tanggal_skep', 'Field Tanggal SKEP cuti', 'required|trim|strip_tags|htmlspecialchars');
+                $valid->set_rules('tanggal_akhir', 'Field Tanggal Akhir cuti', 'required|trim|strip_tags|htmlspecialchars');
+                $valid->set_rules('tanggal_aktif', 'Field Tanggal Aktif cuti', 'required|trim|strip_tags|htmlspecialchars');
+                $valid->set_rules('tanggal_awal', 'Field Tanggal Awal cuti', 'required|trim|strip_tags|htmlspecialchars');
+                if ($valid->run() === TRUE) {
+                    $input = $this->input->post(NULL, TRUE);
+                    $data = array(
+                        'nip' => $input['nip'],
+                        'nama_lengkap' => $input['nama_lengkap'],
+                        'admin' => $input['admin'],
+                        'jenis_cuti' => $input['jenis_cuti'],
+                        'tanggal_awal' => $input['tanggal_awal'],
+                        'tanggal_aktif' => $input['tanggal_aktif'],
+                        'tanggal_akhir' => $input['tanggal_akhir'],
+                        'tanggal_skep' => $input['tanggal_skep'],
+                        'tanggal_bkn' => $input['tanggal_bkn'],
+                        'no_bkn' => $input['no_bkn'],
+                        'no_sk' => $input['no_sk'],
+                        'iat' => date('Y-m-d H:i:s'));
+                    $this->crud->i('riwayat_cuti', $data);
+                    $detail = $this->crud->gd('riwayat_cuti', array('nip' => $input['nip']));
+                    $this->crud->d('permohonan_cuti', array('id' => $id));
+                    if ($detail) {
+                        return $this->response([
+                            'success' => TRUE,
+                            'data' => $detail
+                        ]);
+                    } else return $this->response(['success' => FALSE]);
+                } else return $this->response(['success' => FALSE, 'error' => validation_errors()]);
+                break;
+
+        }
+
     }
 
 

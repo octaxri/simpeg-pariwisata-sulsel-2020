@@ -66,7 +66,7 @@
                     <th rowspan="2">Nama </th>
                     <th rowspan="2">Jabatan </th>
                     <th rowspan="2">Pangkat/Golongan/Ruang </th>
-                    <th rowspan="2">Tanggal TMT</th>
+                    <th rowspan="2">TMT</th>
                     <th colspan="3" class="text-center">Surat Keputusan</th>
                     <th rowspan="2" >Admin</th>
                     <th rowspan="2"></th>
@@ -92,7 +92,7 @@
                             <td><?=$riwayat_mutasi_verified->nomor?></td>
                             <td><?=$riwayat_mutasi_verified->tanggal?></td>
                             <td><?=$riwayat_mutasi_verified->admin?></td>
-                            <td align="center">
+                            <td style="width: 1px">
                                 <a data-toggle="modal" onclick="editData('mutasi',<?=$riwayat_mutasi_verified->id_riwayat?>);" data-target="#edit_mutasi" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                 <a onclick="hapusRiwayat('mutasi',<?=$riwayat_mutasi_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                             </td>
@@ -108,7 +108,7 @@
   </div>
 </div>
 <div id="tambah_mutasi" class="modal fade " role="dialog">
-    <div class="modal-dialog "><!-- Modal content-->
+    <div class="modal-dialog modal-lg"><!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -128,17 +128,28 @@
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Jabatan</label>
                         <div class="col-sm-9">
-                            <input type="text" id="jabatan_mutasi" class="form-control" >
+<!--                            <input type="text" id="jabatan_mutasi" class="form-control" >-->
+                            <select type="text" id="jabatan_mutasi" class="form-control select-2" >
+                                <option value=""></option>
+                                <?php foreach ($data_jabatan as $data_jabatan1): ?>
+                                    <option value="<?=$data_jabatan1->nama_jabatan?>"><?=$data_jabatan1->nama_jabatan?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/<br>Ruang</label>
+                        <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>
                         <div class="col-sm-9">
-                            <input type="text" id="pangkat_mutasi" class="form-control" >
+                            <select id="pangkat_mutasi" class="form-control select-2" style="width: 100%" required>
+                                <option value="">-Pangkat/Golongan/Ruang-</option>
+                                <?php foreach ($data_golongan as $data_golongan1): ?>
+                                    <option data-id="<?=$data_golongan1->id_golongan?>" value="<?=$data_golongan1->nama_pangkat. ' - ' .$data_golongan1->nama_golongan. ' ' .$data_golongan1->nama_ruang?>"><?=$data_golongan1->nama_pangkat. ' - ' .$data_golongan1->nama_golongan. ' ' .$data_golongan1->nama_ruang?></option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Tanggal TMT</label>
+                        <label for="bahan" class="col-sm-3 control-label">TMT</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="tmt_mutasi" class="form-control">
@@ -147,7 +158,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Pejabat</label>
+                        <label for="bahan" class="col-sm-3 control-label">Pejabat Yang Menetapkan</label>
                         <div class="col-sm-9">
                             <input type="text" id="pejabat_mutasi" class="form-control" >
                         </div>
@@ -179,7 +190,7 @@
 </div>
 <!-- Edit jabatan  -->
 <div id="edit_mutasi" class="modal fade " role="dialog">
-    <div class="modal-dialog "><!-- Modal content-->
+    <div class="modal-dialog modal-lg"><!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -199,17 +210,28 @@
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Jabatan</label>
                         <div class="col-sm-9">
-                            <input type="text" id="edit_jabatan_mutasi" class="form-control" >
+<!--                            <input type="text" id="edit_jabatan_mutasi" class="form-control" >-->
+                            <select type="text" id="edit_jabatan_mutasi" class="form-control select-2" >
+                                <option value=""></option>
+                                <?php foreach ($data_jabatan as $data_jabatan2): ?>
+                                    <option value="<?=$data_jabatan2->nama_jabatan?>"><?=$data_jabatan2->nama_jabatan?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/<br>Ruang</label>
+                        <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>
                         <div class="col-sm-9">
-                            <input type="text" id="edit_pangkat_mutasi" class="form-control" >
+                            <select id="edit_pangkat_mutasi" class="form-control select-2" style="width: 100%" required>
+                                <option value="">-Pangkat/Golongan/Ruang-</option>
+                                <?php foreach ($data_golongan as $data_golongan2): ?>
+                                    <option data-id="<?=$data_golongan2->id_golongan?>" value="<?=$data_golongan2->nama_pangkat. ' - ' .$data_golongan2->nama_golongan. ' ' .$data_golongan2->nama_ruang?>"><?=$data_golongan2->nama_pangkat. ' - ' .$data_golongan2->nama_golongan. ' ' .$data_golongan2->nama_ruang?></option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Tanggal TMT</label>
+                        <label for="bahan" class="col-sm-3 control-label">TMT</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                                 <input type="text" id="edit_tmt_mutasi" class="form-control">
@@ -218,7 +240,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label">Pejabat</label>
+                        <label for="bahan" class="col-sm-3 control-label">Pejabat Yang Menetapkan</label>
                         <div class="col-sm-9">
                             <input type="text" id="edit_pejabat_mutasi" class="form-control" >
                         </div>
@@ -273,9 +295,9 @@
         }).done(function(response) {
           if (response.success) {
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Riwayat Mutasi berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Riwayat Mutasi gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
         break;
@@ -300,9 +322,9 @@
         }).done(function(response) {
           if (response.success) {
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Riwayat Mutasi berhasil diperbaharui.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Riwayat Mutasi gagal diperbaharui.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
         break;
@@ -313,8 +335,8 @@
     function editData(model,id){
       switch (model) {
         case 'mutasi':
-        $('#edit_jabatan_mutasi').val($(".data-itemriwayatmutasi[data-id='" + id + "']>td:eq(3)").text());
-        $('#edit_pangkat_mutasi').val($(".data-itemriwayatmutasi[data-id='" + id + "']>td:eq(4)").text());
+        $('#edit_jabatan_mutasi').val($(".data-itemriwayatmutasi[data-id='" + id + "']>td:eq(3)").text()).change();
+        $('#edit_pangkat_mutasi').val($(".data-itemriwayatmutasi[data-id='" + id + "']>td:eq(4)").text()).change();
         $('#edit_tmt_mutasi').val($(".data-itemriwayatmutasi[data-id='" + id + "']>td:eq(5)").text());
         $('#edit_pejabat_mutasi').val($(".data-itemriwayatmutasi[data-id='" + id + "']>td:eq(6)").text());
         $('#edit_nomor_mutasi').val($(".data-itemriwayatmutasi[data-id='" + id + "']>td:eq(7)").text());
@@ -329,13 +351,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -347,13 +369,13 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                     'Batal',
-                    'Proses Hapus Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                 )
             }
@@ -370,14 +392,32 @@
       '<span> (NIP: '+ data.id+') </span>'
       return markup;
     };
-    function formatResultSelection (data) {
-      if (data.gambar == null) 
-        {data.gambar = 'no_image.jpg';
+
+    function formatResultSelection(data) {
+        if (data.gambar == null) {
+            data.gambar = 'no_image.jpg';
+        }
+
+        $("#jabatan_mutasi").val(data.nama_jabatan).change();
+        $("#pangkat_mutasi").val(data.jenis_pangkat).change();
+
+        var markup = '<img style="margin-right : 10px;" width="15px" height="15px" src="<?=upload_url('fotopegawai')?>' + data.gambar + '">' +
+            '<span>' + data.text + '</span>';
+        return markup;
     }
-    var markup = '<img style="margin-right : 10px;" width="15px" height="15px" src="<?=upload_url('fotopegawai')?>'+data.gambar+'">' +
-    '<span>'+ data.text+'</span>';
-    return markup;
-  }
+
+    function formatResultSelectionEdit(data) {
+        if (data.gambar == null) {
+            data.gambar = 'no_image.jpg';
+        }
+
+        $("#edit_jabatan_mutasi").val(data.nama_jabatan).change();
+        $("#edit_pangkat_mutasi").val(data.jenis_pangkat).change();
+
+        var markup = '<img style="margin-right : 10px;" width="15px" height="15px" src="<?=upload_url('fotopegawai')?>' + data.gambar + '">' +
+            '<span>' + data.text + '</span>';
+        return markup;
+    }
 
     $('#add_select2').on('change', function(){
         $('#add_select2').prop("disabled", true);
@@ -404,7 +444,9 @@
             return {
               id: item.nip,
               text: item.nama_lengkap,
-              gambar: item.gambar
+              gambar: item.gambar,
+                nama_jabatan : item.nama_jabatan,
+                jenis_pangkat : item.jenis_pangkat,
             }
           })
         };
@@ -441,7 +483,9 @@
             return {
               id: item.nip,
               text: item.nama_lengkap,
-              gambar: item.gambar
+              gambar: item.gambar,
+                nama_jabatan : item.nama_jabatan,
+                jenis_pangkat : item.jenis_pangkat,
             }
           })
         };
@@ -451,7 +495,7 @@
 escapeMarkup: function (markup) { return markup; }, // let our custom formatter work,
 placeholder: 'Pilih Pegawai',
 templateResult: formatResult,
-templateSelection: formatResultSelection,
+templateSelection: formatResultSelectionEdit,
 minimumInputLength: 1
 });
   $("#edit_select2").on("select2:select", function (e) {

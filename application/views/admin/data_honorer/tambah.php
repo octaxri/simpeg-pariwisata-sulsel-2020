@@ -9,7 +9,7 @@
 
     <div class="panel panel-tab">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-plus"></i> Tambah Data Pegawai Magang</h3>
+        <h3 class="panel-title"><i class="fa fa-plus"></i> Tambah Data Tenaga Magang</h3>
         <ul class="nav nav-tabs pull-right">
          <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user-circle-o"></i> Data Pribadi</a></li>
          <li><a href="#tab2" data-toggle="tab"><i class="fa fa-briefcase"></i> Pendidikan</a></li>
@@ -28,7 +28,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Nama Lengkap <strong style="color: red;">(*)</strong></label>
 		                  <div id="namaStatus" class="col-md-8">
-		                    <input type="text" name="nama" id="nama" class="form-control" placeholder="" data-parsley-type="digits" >
+		                    <input type="text" name="nama" id="nama" class="form-control" placeholder="" data-parsley-type="digits" required>
 		                    <p class="help-block" id="namaStatusText"></p>
 		                    <div id="namaStatusIcon">
 
@@ -39,7 +39,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">NIK <strong style="color: red;">(*)</strong></label>
 		                  <div id="nipStatus" class="col-md-8">
-		                    <input type="text" name="nip" id="nip" class="form-control" placeholder="NIK (16 Digit Angka)" data-parsley-type="digits"  maxlength="16" minlength="16">
+		                    <input type="text" name="nip" id="nip" class="form-control" placeholder="NIK (16 Digit Angka)" data-parsley-type="digits"  maxlength="16" minlength="16" required>
 		                    <p class="help-block" id="nipStatusText"></p>
 		                    <div id="nipStatusIcon">
 		                    </div>
@@ -49,7 +49,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Tempat Lahir <strong style="color: red;">(*)</strong></label>
 		                  <div id="tempat_lahirStatus" class="col-md-8">
-		                    <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" placeholder="" data-parsley-type="digits" >
+		                    <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" placeholder="" data-parsley-type="digits" required>
 		                    <p class="help-block" id="tempat_lahirStatusText"></p>
 		                    <div id="tempat_lahirStatusIcon">
 		                    </div>
@@ -63,7 +63,7 @@
 		                  <label class="col-md-4 control-label">Tanggal Lahir <strong style="color: red;">(*)</strong></label>
 		                  <div id="tanggal_lahirStatus" class="col-md-8">
 		                    <div class="input-group date">
-							    <input type="text" id="tanggal_lahir" name="tanggal_lahir" class="form-control" value="<?=date('d/m/Y')?>">
+							    <input type="text" id="tanggal_lahir" name="tanggal_lahir" class="form-control" value="<?=date('d/m/Y')?>" required>
 							    <div class="input-group-addon">
 							        <span class="glyphicon glyphicon-th"></span>
 							    </div>
@@ -77,7 +77,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Alamat <strong style="color: red;">(*)</strong></label>
 		                  <div id="alamatStatus" class="col-md-8">
-		                    <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Sesuai KTP" data-parsley-type="digits" >
+		                    <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat Sesuai KTP" data-parsley-type="digits" required>
 		                    <p class="help-block" id="alamatStatusText"></p>
 		                    <div id="alamatStatusIcon">
 		                    </div>
@@ -87,10 +87,10 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Jenis Kelamin <strong style="color: red;">(*)</strong></label>
 		                  <div id="jenis_kelaminStatus" class="col-md-8">
-							<select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+							<select class="form-control select2" name="jenis_kelamin" id="jenis_kelamin" required>
 							  <option value="" readonly>- Pilih -</option>
+                                <option value="perempuan">Perempuan</option>
 							  <option value="laki-laki">Laki-laki</option>
-							  <option value="perempuan">Perempuan</option>
 							</select>
 
 		                    <p class="help-block" id="jenis_kelaminStatusText"></p>
@@ -115,15 +115,17 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Pendidikan <strong style="color: red;">(*)</strong></label>
 		                  <div id="pendidikan_trakhirStatus" class="col-md-8">
-							<select class="form-control" name="pendidikan_trakhir" id="pendidikan_trakhir">
+							<select class="form-control select2" name="pendidikan_trakhir" id="pendidikan_trakhir" required>
 							  <option value="" readonly>- Pilih -</option>
+                                <option value="SD">SD</option>
+                                <option value="SMP">SMP</option>
 							  <option value="SMA">SMA</option>
-							  <option value="D1">D1</option>
-							  <option value="D2">D2</option>
-							  <option value="D3">D3</option>
-							  <option value="s1">S1</option>
-							  <option value="s2">S2</option>
-							  <option value="s3">S3</option>
+							  <option value="D-I">D-I</option>
+							  <option value="D-II">D-II</option>
+							  <option value="D-III">D-III</option>
+							  <option value="S1/D-IV">S1/D-IV</option>
+							  <option value="S2">S2</option>
+							  <option value="S3">S3</option>
 							</select>
 		                    <p class="help-block" id="jenis_kelaminStatusText"></p>
 		                    <div id="jenis_kelaminStatusIcon">
@@ -134,7 +136,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">No. Ijazah <strong style="color: red;">(*)</strong></label>
 		                  <div id="nomor_ijazahStatus" class="col-md-8">
-		                    <input type="text" name="nomor_ijazah" id="nomor_ijazah" class="form-control" placeholder="" data-parsley-required>
+		                    <input type="text" name="nomor_ijazah" id="nomor_ijazah" class="form-control" placeholder="" data-parsley-required required>
 		                    <p class="help-block" id="nipStatusText"></p>
 		                    <div id="nomor_ijazahStatusIcon">
 		                    </div>
@@ -145,7 +147,7 @@
 		                  <label class="col-md-4 control-label">Tanggal Ijazah <strong style="color: red;">(*)</strong></label>
 		                  <div id="tanggal_ijazahStatus" class="col-md-8">
 		                    <div class="input-group date">
-							    <input type="text" id="tanggal_ijazah" name="tanggal_ijazah" class="form-control" value="<?=date('d/m/Y')?>">
+							    <input type="text" id="tanggal_ijazah" name="tanggal_ijazah" class="form-control" value="<?=date('d/m/Y')?>" required>
 							    <div class="input-group-addon">
 							        <span class="glyphicon glyphicon-th"></span>
 							    </div>
@@ -162,7 +164,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Jurusan <strong style="color: red;">(*)</strong></label>
 		                  <div id="jurusanStatus" class="col-md-8">
-		                    <input type="text" name="jurusan" id="jurusan" class="form-control" placeholder="Jurusan Sesuai Ijazah" data-parsley-required>
+		                    <input type="text" name="jurusan" id="jurusan" class="form-control" placeholder="Jurusan Sesuai Ijazah" data-parsley-required required>
 		                    <p class="help-block" id="jurusanStatusText"></p>
 		                    <div id="jurusanStatusIcon">
 		                    </div>
@@ -194,12 +196,12 @@
            		<div class="tab-pane fade in" id="tab3">
 		        	<div class="col-md-6">
                         <div class="alert alert-info">
-                            <p style="text-transform: uppercase">riwayat pegawai magang</p>
+                            <p style="text-transform: uppercase">riwayat tenaga magang</p>
                         </div>
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Nomor <strong style="color: red;">(*)</strong></label>
 		                  <div id="no_sk_honorerStatus" class="col-md-8">
-		                    <input type="text" name="no_sk_honorer" id="no_sk_honorer" class="form-control" placeholder="Nomor Riwayat Pegawai Magang" data-parsley-type="digits" >
+		                    <input type="text" name="no_sk_honorer" id="no_sk_honorer" class="form-control" placeholder="Nomor Riwayat Tenaga Magang" data-parsley-type="digits" required>
 		                    <p class="help-block" id="no_sk_honorerStatusText"></p>
 		                    <div id="no_sk_honorerStatusIcon">
 		                    </div>
@@ -209,7 +211,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Tahun <strong style="color: red;">(*)</strong></label>
 		                  <div id="tmt_honorerStatus" class="col-md-8">
-		                    <input type="text" name="tmt_honorer" id="tmt_honorer" class="form-control" placeholder="TMT Pegawai Magang" data-parsley-type="digits" >
+		                    <input type="text" name="tmt_honorer" id="tmt_honorer" class="form-control" placeholder="TMT Tenaga Magang" data-parsley-type="digits" required>
 		                    <p class="help-block" id="tmt_honorerStatusText"></p>
 		                    <div id="tmt_honorerStatusIcon">
 		                    </div>
@@ -221,7 +223,7 @@
 		                  <div id="tanggal_sk_honorerStatus" class="col-md-8">
 
 							<div class="input-group date">
-							    <input type="text" name="tanggal_sk_honorer" id="tanggal_sk_honorer" class="form-control" value="<?=date('d/m/Y')?>">
+							    <input type="text" name="tanggal_sk_honorer" id="tanggal_sk_honorer" class="form-control" value="<?=date('d/m/Y')?>" required>
 							    <div class="input-group-addon">
 							        <span class="glyphicon glyphicon-th"></span>
 							    </div>
@@ -239,7 +241,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Jabatan <strong style="color: red;">(*)</strong></label>
 		                  <div id="jabatan_honorerStatus" class="col-md-8">
-		                    <input type="text" name="jabatan_honorer" id="jabatan_honorer" class="form-control" placeholder="Jabatan Sebagai Pegawai Magang" data-parsley-type="digits" >
+		                    <input type="text" name="jabatan_honorer" id="jabatan_honorer" class="form-control" placeholder="Jabatan Sebagai Tenaga Magang" data-parsley-type="digits" required>
 		                    <p class="help-block" id="jabatan_honorerStatusText"></p>
 		                    <div id="jabatan_honorerStatusIcon">
 		                    </div>
@@ -249,7 +251,7 @@
 		                <div class="form-group">
 		                  <label class="col-md-4 control-label">Kursus Pelatihan <strong style="color: red;">(*)</strong></label>
 		                  <div id="kursus_pelatihanStatus" class="col-md-8">
-		                    <input type="text" name="kursus_pelatihan" id="kursus_pelatihan" class="form-control" placeholder="" data-parsley-type="digits" >
+		                    <input type="text" name="kursus_pelatihan" id="kursus_pelatihan" class="form-control" placeholder="" data-parsley-type="digits" required>
 		                    <p class="help-block" id="kursus_pelatihanStatusText"></p>
 		                    <div id="kursus_pelatihanStatusIcon">
 		                    </div>
@@ -257,11 +259,11 @@
 		                  </div>
 		                </div>	
 		                <div class="form-group">
-		                  <label class="col-md-4 control-label">Status Pegawai Magang <strong style="color: red;">(*)</strong></label>
+		                  <label class="col-md-4 control-label">Status Tenaga Magang <strong style="color: red;">(*)</strong></label>
 		                  <div id="statusStatus" class="col-md-8">
-		                    <select class="form-control" name="status" id="jenis_kelamin">
+		                    <select class="form-control select2" name="status" id="status" required>
 							  <option value="" readonly>- Pilih -</option>
-							  <option value="aktif" selected>Aktif</option>
+							  <option value="aktif">Aktif</option>
 							  <option value="nonaktif">Nonaktif</option>
 							</select>
 		                    <p class="help-block" id="statusStatusText"></p>
@@ -370,7 +372,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Nomor SK Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Nomor SK Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -380,7 +382,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Tahun SK Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Tahun SK Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -390,7 +392,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Tanggal SK Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Tanggal SK Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -400,7 +402,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Jabatan Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Jabatan Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -410,7 +412,7 @@
 		if(value != ""){
 			SuccessValid($(this).attr('id'))
 		}else{
-			FailedValid($(this).attr('id'), 'Jabatan Pegawai Magang tidak boleh kosong')
+			FailedValid($(this).attr('id'), 'Jabatan Tenaga Magang tidak boleh kosong')
 		}
 	})
 
@@ -466,6 +468,14 @@
 
     $(document).ajaxStop(function(){
         window.location.reload();
+    });
+
+    $(document).ready(function() {
+        var select2Options = { width: 'resolve',
+            placeholder: "- Pilih -",
+            triggerChange: true,
+            allowClear: true};
+        $('.select2').select2(select2Options);
     });
 
 </script>

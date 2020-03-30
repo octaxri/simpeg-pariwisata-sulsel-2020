@@ -63,6 +63,10 @@
 		.white-spaces {
 			white-space: nowrap;
 		}
+
+        .benar td{
+            white-space : normal !important;
+        }
 	</style>
 </head>
 

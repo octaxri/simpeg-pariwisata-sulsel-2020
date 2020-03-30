@@ -3,6 +3,8 @@
         <!-- PANEL DEFAULT -->
         <div class="panel">
             <div class="panel-body">
+                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah_pangkat"><i class="glyphicon glyphicon-plus"></i> Tambah Data Kenaikan Pangkat</a>
+                <hr>
                 <div class="row">
                     <div class="col-md-12">
                         <table id="dkp-table" style="min-width: 100%;" class="table table-striped table-hover table-bordered">
@@ -16,11 +18,11 @@
     </div>
 </div>
 <div id="tambah_pangkat" class="modal fade " role="dialog">
-<div class="modal-dialog "><!-- Modal content-->
+<div class="modal-dialog modal-lg"><!-- Modal content-->
     <div class="modal-content">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" align="center" >Tambah Data kenaikan Pangkat</h4>
+        <h4 class="modal-title" align="center" >Tambah Data Kenaikan Pangkat</h4>
     </div>
     <div class="modal-body">
         <form class="form-horizontal">
@@ -41,7 +43,7 @@
         <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Jenis Kelamin</label>
             <div class="col-sm-9">
-            <select id="add_jeniskelamin" class="form-control" >
+            <select id="add_jeniskelamin" class="form-control select2" >
                 <option value="">-Daftar Pangkat-</option>
                 <option value="wanita">Perempuan</option>
                 <option value="pria">Laki-Laki</option>
@@ -50,10 +52,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">Pangkat (Saat Ini)</label>
+            <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/Ruang (Saat Ini)</label>
             <div class="col-sm-9">
-                <select id="add_spangkat" class="form-control">
-                    <option value="">-Daftar Pangkat-</option>
+                <select id="add_spangkat" class="form-control select2">
+                    <option value="">-Daftar Pangkat/Golongan/Ruang-</option>
                     <?php foreach ($data_golongan as $data_golongan1): ?>
                         <option value="<?=$data_golongan1->id_golongan?>"><?=$data_golongan1->nama_pangkat?> - <?=$data_golongan1->nama_golongan?> <?=$data_golongan1->nama_ruang?></option>
                     <?php endforeach ?>
@@ -61,7 +63,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">TMT (Saat Ini)</label>
+            <label for="bahan" class="col-sm-3 control-label">TMT Pangkat/Golongan/Ruang (Saat Ini)</label>
             <div class="col-sm-9">
                 <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                     <input type="text" id="add_stmt" class="form-control">
@@ -70,18 +72,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">Pangkat (Kenaikan Pangkat)</label>
+            <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/Ruang (Kenaikan Pangkat)</label>
             <div class="col-sm-9">
-                <select id="add_kpangkat" class="form-control">
-                    <option value="">-Daftar Pangkat-</option>
+                <select id="add_kpangkat" class="form-control select2">
+                    <option value="">-Daftar Pangkat/Golongan/Ruang-</option>
                     <?php foreach ($data_golongan as $data_golongan2): ?>
-                        <option value="<?=$data_golongan2->id_golongan?>"><?=$data_golongan2->nama_pangkat?> - <?=$data_golongan2->nama_golongan?>  <?=$data_golongan1->nama_ruang?></option>
+                        <option value="<?=$data_golongan2->id_golongan?>"><?=$data_golongan2->nama_pangkat?> - <?=$data_golongan2->nama_golongan?> <?=$data_golongan2->nama_ruang?></option>
                     <?php endforeach ?>
                 </select>
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">TMT (Kenaikan Pangkat)</label>
+            <label for="bahan" class="col-sm-3 control-label">TMT Pangkat/Golongan/Ruang (Kenaikan Pangkat)</label>
             <div class="col-sm-9">
                 <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                     <input type="text" id="add_ktmt" class="form-control">
@@ -101,7 +103,7 @@
 </div>
 
 <div id="edit_pangkat" class="modal fade " role="dialog">
-<div class="modal-dialog "><!-- Modal content-->
+<div class="modal-dialog modal-lg"><!-- Modal content-->
     <div class="modal-content">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -122,7 +124,7 @@
         <div class="form-group">
             <label for="bahan" class="col-sm-3 control-label">Jenis Kelamin</label>
             <div class="col-sm-9">
-            <select id="edit_jeniskelamin" class="form-control" >
+            <select id="edit_jeniskelamin" class="form-control select2" >
                 <option value=""></option>
                 <option value="wanita">Perempuan</option>
                 <option value="pria">Laki-Laki</option>
@@ -131,18 +133,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">Pangkat (Saat Ini)</label>
+            <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/Ruang (Saat Ini)</label>
             <div class="col-sm-9">
-                <select id="edit_spangkat" class="form-control">
-                    <option value="">-Daftar Pangkat-</option>
+                <select id="edit_spangkat" class="form-control select2">
+                    <option value="">-Daftar Pangkat/Golongan/Ruang-</option>
                     <?php foreach ($data_golongan as $data_golongan3): ?>
-                    <option value="<?=$data_golongan3->id_golongan?>"><?=$data_golongan3->nama_pangkat?> - <?=$data_golongan3->nama_golongan?> <?=$data_golongan1->nama_ruang?></option>
+                    <option value="<?=$data_golongan3->id_golongan?>"><?=$data_golongan3->nama_pangkat?> - <?=$data_golongan3->nama_golongan?> <?=$data_golongan3->nama_ruang?></option>
                     <?php endforeach ?>
                 </select>
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">TMT (Saat Ini)</label>
+            <label for="bahan" class="col-sm-3 control-label">TMT Pangkat/Golongan/Ruang (Saat Ini)</label>
             <div class="col-sm-9">
                 <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                     <input type="text" id="edit_stmt" class="form-control">
@@ -151,18 +153,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">Pangkat (Kenaikan Pangkat)</label>
+            <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/Ruang (Kenaikan Pangkat)</label>
             <div class="col-sm-9">
-                <select id="edit_kpangkat" class="form-control">
-                    <option value="">-Daftar Pangkat-</option>
+                <select id="edit_kpangkat" class="form-control select2">
+                    <option value="">-Daftar Pangkat/Golongan/Ruang-</option>
                     <?php foreach ($data_golongan as $data_golongan4): ?>
-                        <option value="<?=$data_golongan4->id_golongan?>"><?=$data_golongan4->nama_pangkat?> - <?=$data_golongan4->nama_golongan?>   <?=$data_golongan1->nama_ruang?></option>
+                        <option value="<?=$data_golongan4->id_golongan?>"><?=$data_golongan4->nama_pangkat?> - <?=$data_golongan4->nama_golongan?>   <?=$data_golongan4->nama_ruang?></option>
                     <?php endforeach ?>
                 </select>
             </div>
         </div>
         <div class="form-group">
-            <label for="bahan" class="col-sm-3 control-label">TMT (Kenaikan Pangkat)</label>
+            <label for="bahan" class="col-sm-3 control-label">TMT Pangkat/Golongan/Ruang (Kenaikan Pangkat)</label>
             <div class="col-sm-9">
                 <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
                     <input type="text" id="edit_ktmt" class="form-control">
@@ -179,6 +181,7 @@
     </div>
 </div>
 </div>
+
 <script type="text/javascript">
 
     var select2Options = { 
@@ -245,13 +248,13 @@
     function hapusData(id,type) {
         swal({
         title: 'Apakah Anda Yakin?',
-        text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+        text: "Anda tidak dapat mengembalikan data yang telah dihapus",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus!',
-        cancelButtonText: 'Batalkan!',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batalkan',
         closeOnConfirm: false,
         closeOnCancel: false
         },
@@ -262,14 +265,14 @@
                 url: '<?=admin_url('MigrasiPegawai/hapusData/')?>'+id+'/'+type
             }).done(function(response) {
                 if (response.success) {
-                swal('Sukses', 'Data berhasil dihapus.', 'success');
+                swal('Sukses', 'Data berhasil dihapus', 'success');
                 setTimeout(function() { location.reload() },1500);
-                } else swal('Gagal', 'Data gagal dihapus.', 'error');
+                } else swal('Gagal', 'Data gagal dihapus', 'error');
             });
         } else {
             swal(
             'Batal',
-            'Proses Hapus Data dibatalkan! :)',
+            'Proses dibatalkan',
             'error'
             )
         }

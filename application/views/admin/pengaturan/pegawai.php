@@ -9,7 +9,7 @@
                       <table style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable-Exnormal dataTable no-footer">
                         <thead>
                           <tr>
-                            <th width="50px;"> No.</th>
+                            <th width="20px;"> No.</th>
                             <th> Nama </th>
                             <th> NIP</th>
                             <th> E-mail</th>
@@ -23,7 +23,7 @@
                             <td><?=$data_pegawai->fullname?></td>
                             <td><?=$data_pegawai->nip?></td>
                             <td><?=$data_pegawai->email?></td>
-                            <td align="center">
+                            <td style="width: 1px">
                               <a  class="btn btn-success btn-xs" onclick="resetPass('<?=$data_pegawai->id_user?>')"><i class="fa fa-warning"></i>&nbsp;Reset Password</a>
                             </td>
 
@@ -43,13 +43,13 @@
             function hapusData(type,id) {
               swal({
                 title: 'Apakah Anda Yakin?',
-                text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+                text: "Anda tidak dapat mengembalikan data yang telah dihapus",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Hapus!',
-                cancelButtonText: 'Batalkan!',
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batalkan',
                 closeOnConfirm: false,
                 closeOnCancel: false
               },
@@ -61,14 +61,14 @@
                     }).done(function(response) {
                       if (response.success) {
                         $("tr[data-id='"+id+"']").remove();
-                        swal('Sukses', 'Data berhasil dihapus.', 'success');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
                         setTimeout(function() { location.reload() },1500);
-                      } else swal('Gagal', 'Data gagal dihapus.', 'error');
+                      } else swal('Gagal', 'Data gagal dihapus', 'error');
                    });
                 } else {
                   swal(
                     'Batal',
-                    'Proses Hapus Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                   )
                 }
@@ -78,13 +78,13 @@
             function resetPass(id) {
               swal({
                 title: 'Apakah Anda Yakin?',
-                text: "Anda tidak dapat mengembalikan password yang telah direset!",
+                text: "Anda tidak dapat mengembalikan password yang telah direset",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Reset!',
-                cancelButtonText: 'Batalkan!',
+                confirmButtonText: 'Reset',
+                cancelButtonText: 'Batalkan',
                 closeOnConfirm: false,
                 closeOnCancel: false
               },
@@ -95,9 +95,9 @@
                       url: '<?=admin_url('pengaturan/resetPass/')?>'+id
                     }).done(function(response) {
                       if (response.success) {
-                        swal('Sukses', 'Password berhasil direset.', 'success');
+                        swal('Sukses', 'Password berhasil direset', 'success');
                         setTimeout(function() { location.reload() },1500);
-                      } else swal('Gagal', 'password gagal direset.', 'error');
+                      } else swal('Gagal', 'password gagal direset', 'error');
                    });
                 } else {
                   swal(

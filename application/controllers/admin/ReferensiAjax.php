@@ -96,7 +96,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_agama', 'Field Agama', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_agama', 'Agama', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -141,7 +141,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_satker', 'Field Satuan Kerja', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_satker', 'Bidang/Bagian', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -165,8 +165,8 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_unit', 'Field Unit Kerja', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_satker', 'Field Unit satker', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_unit', 'Subbidang/Seksi', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_satker', 'Bidang/Bagian', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -191,7 +191,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_provinsi', 'Field Provinsia', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_provinsi', ' Provinsi', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -216,8 +216,8 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_kabupaten', 'Field Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_provinsi', 'Field provinsi', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_kabupaten', ' Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_provinsi', ' Provinsi', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -243,8 +243,8 @@ class ReferensiAjax extends Admin_controller {
    {
        $valid = $this->form_validation;
        $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-       $valid->set_rules('nama_kecamatan', 'Field Kecamatan', 'required|trim|strip_tags|htmlspecialchars');
-       $valid->set_rules('nama_kabupaten', 'Field Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
+       $valid->set_rules('nama_kecamatan', ' Kecamatan', 'required|trim|strip_tags|htmlspecialchars');
+       $valid->set_rules('nama_kabupaten', ' Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
 
        if ($valid->run() === TRUE)
        {
@@ -270,8 +270,8 @@ class ReferensiAjax extends Admin_controller {
   {
       $valid = $this->form_validation;
       $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-      $valid->set_rules('nama_kelurahan', 'Field Kelurahan', 'required|trim|strip_tags|htmlspecialchars');
-      $valid->set_rules('nama_kecamatan', 'Field kecamatan', 'required|trim|strip_tags|htmlspecialchars');
+      $valid->set_rules('nama_kelurahan', ' Kelurahan', 'required|trim|strip_tags|htmlspecialchars');
+      $valid->set_rules('nama_kecamatan', ' kecamatan', 'required|trim|strip_tags|htmlspecialchars');
 
       if ($valid->run() === TRUE)
       {
@@ -297,7 +297,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_satker', 'Field Satuan Kerja', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_satker', 'Bidang/Bagian', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -320,8 +320,8 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_unit', 'Field Unit Kerja', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_satker', 'Field Satuan Kerja', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_unit', 'Subbidang/Seksi', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_satker', 'Bidang/Bagian', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -344,7 +344,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_eselon', 'Field Eselon', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_eselon', 'Tingkat Eselon', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -369,7 +369,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_eselon', 'Field Eselon', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_eselon', 'Tingkat Eselon', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -392,9 +392,9 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_jabatan', 'Field Jabatan', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_jenisjabatan', 'Field Jenis Jabatan', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_eselon', 'Field Nama Eselon', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_jabatan', 'Nama Jabatan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_jenisjabatan', 'Jenis Jabatan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_eselon', 'Nama Eselon', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -421,7 +421,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_jabatan', 'Field Jabatan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_jabatan', 'Nama Jabatan', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -443,7 +443,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_jenisjabatan', 'Field Jenis Jabatan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_jenisjabatan', 'Jenis Jabatan', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -468,7 +468,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_jenisjabatan', 'Field Jenis Jabatan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_jenisjabatan', 'Jenis Jabatan', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -491,9 +491,9 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_golongan', 'Field Golongan', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_ruang', 'Field Ruang', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_pangkat', 'Field Pangkat', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_golongan', 'Golongan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_ruang', 'Ruang', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_pangkat', 'Pangkat', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -521,9 +521,9 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_golongan', 'Field Golongan', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_ruang', 'Field Ruang', 'required|trim|strip_tags|htmlspecialchars');
-        $valid->set_rules('nama_pangkat', 'Field Pangkat', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_golongan', 'Golongan', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_ruang', 'Ruang', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_pangkat', 'Pangkat', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -548,7 +548,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_statuspegawai', 'Field Status Pegawai', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_statuspegawai', 'Status Pegawai', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -573,7 +573,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_statuspegawai', 'Field Status Pegawai', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_statuspegawai', 'Status Pegawai', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -596,7 +596,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_jenispegawai', 'Field Jenis Pegawai', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_jenispegawai', ' Jenis Pegawai', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -621,7 +621,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_jenispegawai', 'Field Jenis Pegawai', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_jenispegawai', ' Jenis Pegawai', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -644,7 +644,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_kedudukanpegawai', 'Field Kedudukan Pegawai', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_kedudukanpegawai', ' Kedudukan Pegawai', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {
@@ -669,7 +669,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $valid = $this->form_validation;
         $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-        $valid->set_rules('nama_kedudukanpegawai', 'Field Kedudukan Pegawai', 'required|trim|strip_tags|htmlspecialchars');
+        $valid->set_rules('nama_kedudukanpegawai', 'Kedudukan Pegawai', 'required|trim|strip_tags|htmlspecialchars');
 
         if ($valid->run() === TRUE)
         {;
@@ -821,7 +821,7 @@ class ReferensiAjax extends Admin_controller {
    {
        $valid = $this->form_validation;
        $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-       $valid->set_rules('nama_provinsi', 'Field Provinsi', 'required|trim|strip_tags|htmlspecialchars');
+       $valid->set_rules('nama_provinsi', 'Provinsi', 'required|trim|strip_tags|htmlspecialchars');
 
        if ($valid->run() === TRUE)
        {
@@ -844,8 +844,8 @@ class ReferensiAjax extends Admin_controller {
    {
        $valid = $this->form_validation;
        $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-       $valid->set_rules('nama_kabupaten', 'Field Nama Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
-       $valid->set_rules('nama_provinsi', 'Field Provinsi', 'required|trim|strip_tags|htmlspecialchars');
+       $valid->set_rules('nama_kabupaten', ' Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
+       $valid->set_rules('nama_provinsi', ' Provinsi', 'required|trim|strip_tags|htmlspecialchars');
 
        if ($valid->run() === TRUE)
        {;
@@ -869,8 +869,8 @@ class ReferensiAjax extends Admin_controller {
   {
       $valid = $this->form_validation;
       $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-      $valid->set_rules('nama_kecamatan', 'Field Nama Kecamatan', 'required|trim|strip_tags|htmlspecialchars');
-      $valid->set_rules('nama_kabupaten', 'Field Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
+      $valid->set_rules('nama_kecamatan', 'Kecamatan', 'required|trim|strip_tags|htmlspecialchars');
+      $valid->set_rules('nama_kabupaten', 'Kabupaten', 'required|trim|strip_tags|htmlspecialchars');
 
       if ($valid->run() === TRUE)
       {;
@@ -894,8 +894,8 @@ class ReferensiAjax extends Admin_controller {
  {
      $valid = $this->form_validation;
      $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-     $valid->set_rules('nama_kelurahan', 'Field Nama Kelurahan', 'required|trim|strip_tags|htmlspecialchars');
-     $valid->set_rules('nama_kecamatan', 'Field Kecamatan', 'required|trim|strip_tags|htmlspecialchars');
+     $valid->set_rules('nama_kelurahan', 'Kelurahan', 'required|trim|strip_tags|htmlspecialchars');
+     $valid->set_rules('nama_kecamatan', 'Kecamatan', 'required|trim|strip_tags|htmlspecialchars');
 
      if ($valid->run() === TRUE)
      {;
@@ -943,7 +943,7 @@ class ReferensiAjax extends Admin_controller {
         if($input['table'] == 'data_pegawai'){
             $valid = $this->form_validation;
             $valid->set_error_delimiters('<i style="color: red;">', '</i>');
-            $valid->set_rules('satker', 'Field satker', 'trim|strip_tags|htmlspecialchars');
+            $valid->set_rules('satker', 'Bidang/Bagian', 'trim|strip_tags|htmlspecialchars');
 
                 if ($valid->run() === TRUE)
                 {
@@ -1035,7 +1035,12 @@ class ReferensiAjax extends Admin_controller {
                 if ( ! $this->upload->do_upload('userfile'.$i))
                 {
                     $error = array('error' => $this->upload->display_errors());
-                    echo var_dump($error);
+                    // echo var_dump($error);
+                    return $this->response([
+                        'stat' => 'Gagal',
+                        'res' => 'Gagal Menyimpan Dokumen ',
+                        "error" => $error
+                    ]);
                 }
                 else
                 {
@@ -1052,13 +1057,13 @@ class ReferensiAjax extends Admin_controller {
 
             if($this->db->affected_rows() == 1){
                 return $this->response([
-                    'stat' => 'sukses',
-                    'res' => 'sukses memasukkan data pada ' . $table
+                    'stat' => 'Berhasil',
+                    'res' => 'Dokumen Telah Tersimpan '
                 ]);
             }else{
                 return $this->response([
-                    'stat' => 'gagal',
-                    'res' => 'gagal memasukkan data pada ' . $table
+                    'stat' => 'Gagal',
+                    'res' => 'Gagal Menyimpan Dokumen '
                 ]);
             }
 
@@ -1123,13 +1128,13 @@ class ReferensiAjax extends Admin_controller {
         $this->crud->d($table, array('id' => $id));
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses delete data pada ' . $table
+                'stat' => 'Berhasil',
+                'res' => 'Data Telah Dihapus '
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'terjadi kesalahan pada ' . $table
+                'stat' => 'Gagal',
+                'res' => 'Gagal Menghapus Data'
             ]);
         }        
     }
@@ -1156,20 +1161,20 @@ class ReferensiAjax extends Admin_controller {
             {
                 $image = array('upload_data' => $this->upload->data());
 
-                $data['nama_dokumen'] = $data['nama_dokumen'];
-                $data['file'] = $image["upload_data"]["file_name"];
+                $data1['nama_dokumen'] = $data['nama_dokumen'];
+                $data1['file'] = $image["upload_data"]["file_name"];
                 $this->crud->u('dokumen_pegawai', $data1, array('id' => $data['id']));                   
             }
 
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses delete data pada dokumen_pegawai'
+                'stat' => 'Berhasil',
+                'res' => 'Dokumen Telah Diperbaharui'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'terjadi kesalahan pada dokumen_pegawai' 
+                'stat' => 'Gagal',
+                'res' => 'Gagal Mengubah Dokumen'
             ]);
         }             
     }
@@ -1189,13 +1194,13 @@ class ReferensiAjax extends Admin_controller {
 
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses memasukkan data surat kerja'
+                'stat' => 'Berhasil',
+                'res' => 'Berhasil Menambahkan Data'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal memasukkan data surat kerja'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Menambahkan Data'
             ]);
         }
     }
@@ -1229,13 +1234,13 @@ class ReferensiAjax extends Admin_controller {
 
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses memasukkan data'
+                'stat' => 'Behasil',
+                'res' => 'Berhasil Menambahkan Data'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal memasukkan data'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Menambahkan Data'
             ]);
         }
     }
@@ -1246,13 +1251,13 @@ class ReferensiAjax extends Admin_controller {
         $this->db->where('id', $id)->delete('mutasi_data');
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses menghapus'
+                'stat' => 'Berhasil',
+                'res' => 'Berhasil Menghapus Data'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal menghapus'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Menghapus Data'
             ]);
         }        
     }
@@ -1264,13 +1269,13 @@ class ReferensiAjax extends Admin_controller {
         $this->db->where('id', $id)->update('mutasi_sk', $data);
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses update data'
+                'stat' => 'Berhasil',
+                'res' => 'Data Telah Diperbaharui'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal update data'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Mengubah Data'
             ]);
         }
     }
@@ -1280,13 +1285,13 @@ class ReferensiAjax extends Admin_controller {
         $this->db->where('id', $id)->delete('mutasi_sk');
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses delete data'
+                'stat' => 'Berhasil',
+                'res' => 'Berhasil Menghapus Data'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal delete data'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Menghapus Data'
             ]);
         }        
     }
@@ -1295,7 +1300,7 @@ class ReferensiAjax extends Admin_controller {
     {
         $this->datatables->select('*');
         $this->datatables->from('mutasi_individu');
-        print_r($this->datatables->generate());         
+        print_r($this->datatables->generate());
     }
 
     public function add_mutasi_individu()
@@ -1304,13 +1309,13 @@ class ReferensiAjax extends Admin_controller {
         $this->db->insert('mutasi_individu', $a);
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses tambah data'
+                'stat' => 'Berhasil',
+                'res' => 'Berhasil Menambahkan Data'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal tambah data'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Menambahkan Data'
             ]);
         }        
     }
@@ -1322,13 +1327,13 @@ class ReferensiAjax extends Admin_controller {
         $this->db->where('id', $id)->update('mutasi_individu', $data);
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses update data'
+                'stat' => 'Berhasil',
+                'res' => 'Data Telah Diperbaharui'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal update data'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Mengubah Data'
             ]);
         }
     }
@@ -1344,13 +1349,13 @@ class ReferensiAjax extends Admin_controller {
         $this->db->where('id', $id)->delete('mutasi_individu');
         if($this->db->affected_rows() == 1){
             return $this->response([
-                'stat' => 'sukses',
-                'res' => 'sukses delete data'
+                'stat' => 'Berhasil',
+                'res' => 'Data Telah Dihapus'
             ]);
         }else{
             return $this->response([
-                'stat' => 'gagal',
-                'res' => 'gagal delete data'
+                'stat' => 'Gagal',
+                'res' => 'Gagal Menghapus Data'
             ]);
         }        
     }

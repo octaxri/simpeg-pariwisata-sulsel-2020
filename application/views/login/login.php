@@ -31,7 +31,7 @@
 						<div class="content" style="width: 98%;">
 							<div class="header">
 								<div class="logo text-center"><img src="<?=assets_url()?>img/sulsel.png" alt="sulsel" height="120px"></div>
-								<p class="lead">Dinas Kebudayaan dan Kepariwisataan Provinsi Sulawesi Selatan</p>
+                                <p class="lead" style="font-size: 16px"><strong><i>"Sulawesi Selatan yang Inovatif, Produktif, Kompetitif, Inklusif dan Berkarakter"</i></strong></p>
 							</div>
                             <!-- <?=form_open(login_url(), array('class' => 'form-auth-small'))?> -->
 							<?=form_open(login_url(), array('class' => 'form-auth-small'))?>
@@ -48,14 +48,14 @@
 								<div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">
 										<input type="checkbox">
-										<span>Remember me</span>
+										<span>Ingat Saya</span>
 									</label>
 									<label class="fancy-checkbox element-right">
-										<a href="<?=login_url('forget')?>">Forget Password?</a>
+										<!--<a href="<?=login_url('forget')?>">Lupa Password?</a>-->
 									</label>
 								</div>
 
-								<button type="submit" class="btn btn-blue-ocean btn-lg btn-block">LOGIN</button>
+								<button type="submit" class="btn btn-blue-ocean btn-lg btn-block">MASUK</button>
 							<?=form_close()?>
 							<div style="padding: 5px;">
 								<a href="<?=site_url()?>">Kembali ke Halaman Utama</a>
@@ -68,8 +68,8 @@
 					<div class="right">
 						<div class="overlay"></div>
 						<div class="content text">
-							<h1 class="heading">Sistem Informasi Manajemen Kepegawaian PARIWISATA SULSEL</h1 class="heading">
-							<p><h4><i>Dinas Pariwisata Sulsel</i></h4></p>
+							<h1 class="heading" style="text-transform: uppercase">Sistem Informasi Manajemen Kepegawaian PARIWISATA SULSEL</h1 class="heading">
+							<p><h4><i>DINAS PARIWISATA SULSEL</i></h4></p>
 						</div>
 					</div>
 					<div class="clearfix"></div>

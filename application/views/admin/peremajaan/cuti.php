@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
         <!-- PANEL DEFAULT -->
-        <!--<div class="panel">
+        <div class="panel">
             <div class="panel-heading panel-danger">
-                <h3 class="panel-title font-white">Verifikasi Data Cuti</h3>
+                <h3 class="panel-title font-white">Perizinan Cuti</h3>
             </div>
             <div class="panel-body">
             <table id="tbl_riwayat_cuti_notverivied" style="min-width: 100%;" class="table table-bordered table-sorting table-hover datatable">
@@ -13,34 +13,28 @@
                         <th> NIP</th>
                         <th> Nama Pegawai</th>
                         <th> Jenis Cuti </th>
-                        <th> No. SK Cuti</th>
-                        <th> Tgl. SKEP</th>
                         <th> Tanggal Awal</th>
                         <th> Tanggal Akhir</th>
                         <th> Tanggal Aktif</th>
-                        <th> No. BKN</th>
-                        <th> Tanggal BKN</th>
-                        <th> Verifikasi</th>
+                        <th style="display: none"> Admin</th>
+                        <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if ($riwayat_cuti_notverified != NULL): ?>
-                        <?php $i=1; foreach ($riwayat_cuti_notverified as $riwayat_cuti_notverified): ?>
-                            <tr class="data-itemriwayatcuti" data-id="<?=$riwayat_cuti_notverified->id_riwayat?>">
+                    <?php if ($permohonan_cuti != NULL): ?>
+                        <?php $i=1; foreach ($permohonan_cuti as $permohonan_cuti1): ?>
+                            <tr class="data-itemriwayatcutipemohon" data-id="<?=$permohonan_cuti1->id?>">
                                 <td><?=$i?></td>
-                                <td><?=$riwayat_cuti_notverified->nip?></td>
-                                <td><?=$riwayat_cuti_notverified->nama_lengkap?></td>
-                                <td><?=$riwayat_cuti_notverified->jenis_cuti?></td>
-                                <td><?=$riwayat_cuti_notverified->no_sk?></td>
-                                <td><?=$riwayat_cuti_notverified->tanggal_skep?></td>
-                                <td><?=$riwayat_cuti_notverified->tanggal_awal?></td>
-                                <td><?=$riwayat_cuti_notverified->tanggal_akhir?></td>
-                                <td><?=$riwayat_cuti_notverified->tanggal_aktif?></td>
-                                <td><?=$riwayat_cuti_notverified->no_bkn?></td>
-                                <td><?=$riwayat_cuti_notverified->tanggal_bkn?></td>
-                                <td>
-                                    <a style="" onclick="isVerified('yes', '<?=$riwayat_cuti_notverified->id_riwayat?>')" class="btn btn-primary btn-xs"><i class="fa fa-check-circle"></i>Ya</a>
-                                    <a style="" onclick="isVerified('no','<?=$riwayat_cuti_notverified->id_riwayat?>');" class="btn btn-danger btn-xs"><i class="fa fa-times-circle"></i>Tidak</a>
+                                <td><?=$permohonan_cuti1->nip?></td>
+                                <td><?=$permohonan_cuti1->nama_lengkap?></td>
+                                <td><?=$permohonan_cuti1->jenis_cuti?></td>
+                                <td><?=$permohonan_cuti1->tanggal_awal?></td>
+                                <td><?=$permohonan_cuti1->tanggal_akhir?></td>
+                                <td><?=$permohonan_cuti1->tanggal_aktif?></td>
+                                <td style="display: none"><?=$permohonan_cuti1->admin?></td>
+                                <td style="width: 1px">
+                                    <a data-toggle="modal" data-target="#edit_cutiPemohon" onclick="editDataPemohon('cuti',<?=$permohonan_cuti1->id?>);" class="btn btn-primary btn-xs" data-value="Diterima"><i class="fa fa-check"></i>&nbsp;Terima</a>
+                                    <a href="#" onclick="hapusRiwayatPemohon('permohonan_cuti',<?=$permohonan_cuti1->id?>)" class="btn btn-danger btn-xs" data-value="Ditolak" id="tolak"><i class="fa fa-remove"></i>&nbsp;Tolak</a>
                                 </td>
                             </tr>
                             <?php $i++; endforeach;?>
@@ -48,7 +42,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>-->
+        </div>
         <div class="panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Riwayat Cuti</h3>
@@ -91,7 +85,7 @@
                                     <td><?=$riwayat_cuti_verified->no_bkn?></td>
                                     <td><?=$riwayat_cuti_verified->tanggal_bkn?></td>
                                     <td><?=$riwayat_cuti_verified->admin?></td>
-                                    <td>
+                                    <td style="width: 1px">
                                         <a data-toggle="modal" data-target="#edit_cuti" onclick="editData('cuti',<?=$riwayat_cuti_verified->id_riwayat?>);" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                                         <a href="#" onclick="hapusRiwayat('cuti',<?=$riwayat_cuti_verified->id_riwayat?>)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                                     </td>
@@ -308,6 +302,70 @@
     </div>
 </div>
 
+<!-- Edit CUTI PEMOHON -->
+<div id="edit_cutiPemohon" class="modal fade " role="dialog">
+    <div class="modal-dialog "><!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" align="center">Nomor dan Tanggal SK Cuti</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <!-- <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label> -->
+                        <div class="col-sm-9">
+                            <!-- <select id="add_select2" class="form-control select2"  style="width: 100%"></select> -->
+                            <input type="hidden" id="edit_nama_lengkap_pemohon" class="form-control" >
+                            <input type="hidden" id="edit_nip_pemohon" class="form-control" >
+                            <input type="hidden" id="edit_admin_pemohon" class="form-control" >
+                            <input type="hidden" id="edit_jenis_cuti_pemohon" class="form-control " >
+                            <input type="hidden" id="edit_tanggal_awal_cuti_pemohon" type="text" class="form-control" >
+                            <input type="hidden" id="edit_tanggal_akhir_cuti_pemohon" type="text" class="form-control" >
+                            <input type="hidden" id="edit_tanggal_aktif_cuti_pemohon" type="text" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">Nomor SK Cuti</label>
+                        <div class="col-sm-9">
+                            <input id="edit_no_sk_cuti_pemohon" type="text" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">Tanggal SKEP</label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
+                                <input id="edit_tanggal_skep_cuti_pemohon" type="text" class="form-control" >
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">Nomor BKN</label>
+                        <div class="col-sm-9">
+                            <input id="edit_no_bkn_cuti_pemohon" type="number" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">Tanggal BKN</label>
+                        <div class="col-sm-9">
+                            <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
+                                <input id="edit_tanggal_bkn_cuti_pemohon" type="text" class="form-control" >
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-md-3 col-md-offset-5">
+                            <a  class="btn btn-primary btn-sm" onclick="editDataPemohon_send('riwayat_cuti');"><i class="glyphicon glyphicon-floppy-save"></i>  Simpan</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     var idGlob;
     var valGlob;
@@ -334,9 +392,9 @@
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat cuti berhasil ditambah.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat cuti gagal ditambah.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
@@ -358,17 +416,48 @@
                     tanggal_aktif: $('#edit_tanggal_aktif_cuti').val(),
                     no_bkn: $('#edit_no_bkn_cuti').val(),
                     tanggal_bkn: $('#edit_tanggal_bkn_cuti').val(),
-                    admin: $('#edit_admin').val()
                 }
             }).done(function(response) {
                 if (response.success) {
                     setTimeout(function() { location.reload() },1500);
-                    swal('Sukses', 'Data Riwayat cuti berhasil diperbaharui.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                 } else {
-                    swal('Gagal', 'Data Riwayat cuti gagal diperbaharui.', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                 }
             });
             break;
+            default:
+        }
+    }
+
+    function editDataPemohon_send(model){
+        switch (model) {
+            case 'riwayat_cuti':
+                $.ajax({
+                    type: 'POST',
+                    url: '<?=admin_url('PeremajaanData/editDataPemohon/')?>'+idGlob+'/'+model,
+                    data: {
+                        nip: $('#edit_nama_lengkap_pemohon').val(),
+                        nama_lengkap: $('#edit_nip_pemohon').val(),
+                        jenis_cuti: $('#edit_jenis_cuti_pemohon').val(),
+                        no_sk: $('#edit_no_sk_cuti_pemohon').val(),
+                        tanggal_skep: $('#edit_tanggal_skep_cuti_pemohon').val(),
+                        tanggal_awal: $('#edit_tanggal_awal_cuti_pemohon').val(),
+                        tanggal_akhir: $('#edit_tanggal_akhir_cuti_pemohon').val(),
+                        tanggal_aktif: $('#edit_tanggal_aktif_cuti_pemohon').val(),
+                        no_bkn: $('#edit_no_sk_cuti_pemohon').val(),
+                        tanggal_bkn: $('#edit_tanggal_bkn_cuti_pemohon').val(),
+                        admin: $('#edit_admin_pemohon').val(),
+                    },
+                }).done(function(response) {
+                    if (response.success) {
+                        setTimeout(function() { location.reload() },1500);
+                        swal('Sukses', 'Data berhasil disimpan', 'success');
+                    } else {
+                        swal('Gagal', 'Data gagal disimpan', 'error');
+                    }
+                });
+                break;
             default:
         }
     }
@@ -391,16 +480,33 @@
         }
     }
 
+    function editDataPemohon(model,id){
+        switch (model) {
+            case 'cuti':
+                $('#edit_nama_lengkap_pemohon').val($(".data-itemriwayatcutipemohon[data-id='" + id + "']>td:eq(1)").text()).trigger('change');
+                $('#edit_nip_pemohon').val($(".data-itemriwayatcutipemohon[data-id='" + id + "']>td:eq(2)").text()).trigger('change');
+                $('#edit_jenis_cuti_pemohon').val($(".data-itemriwayatcutipemohon[data-id='" + id + "']>td:eq(3)").text()).trigger('change');
+                $('#edit_tanggal_awal_cuti_pemohon').val($(".data-itemriwayatcutipemohon[data-id='" + id + "']>td:eq(4)").text());
+                $('#edit_tanggal_akhir_cuti_pemohon').val($(".data-itemriwayatcutipemohon[data-id='" + id + "']>td:eq(5)").text());
+                $('#edit_tanggal_aktif_cuti_pemohon').val($(".data-itemriwayatcutipemohon[data-id='" + id + "']>td:eq(6)").text());
+                $('#edit_admin_pemohon').val($(".data-itemriwayatcutipemohon[data-id='" + id + "']>td:eq(7)").text()).trigger('change');
+                idGlob = id;
+                break;
+            default:
+
+        }
+    }
+
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -412,17 +518,54 @@
                 }).done(function(response) {
                     if (response.success) {
                         setTimeout(function() { location.reload() },1500);
-                        swal('Sukses', 'Data Riwayat berhasil dihapus.', 'success');
-                    } else swal('Gagal', 'Data Riwayat Gagal dihapus.', 'error');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
+                    } else swal('Gagal', 'Data gagal dihapus', 'error');
                 });
             } else {
                 swal(
                      'Batal',
-                     'Proses Hapus Data dibatalkan! :)',
+                     'Proses dibatalkan',
                      'error'
                      )
             }
         });
+    }
+
+    function hapusRiwayatPemohon(method,id) {
+        swal({
+                title: 'Apakah Anda Yakin?',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Tolak',
+                cancelButtonText: 'Batalkan',
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?=admin_url('PeremajaanData/hapusRiwayatPemohon/')?>'+method+'/'+id,
+                        data: {
+                            keterangan: $('#tolak').data("value"),
+                        },
+                    }).done(function(response) {
+                        if (response.success) {
+                            setTimeout(function() { location.reload() },1500);
+                            swal('Sukses', 'Data berhasil dihapus', 'success');
+                        } else swal('Gagal', 'Data gagal dihapus', 'error');
+                    });
+                } else {
+                    swal(
+                        'Batal',
+                        'Proses dibatalkan',
+                        'error'
+                    )
+                }
+            });
     }
 
     function formatResult (data) {

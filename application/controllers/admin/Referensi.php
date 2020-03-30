@@ -68,7 +68,7 @@ class Referensi extends Admin_controller {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
         $data_agama  = $this->crud->gao('data_agama', 'nama_agama ASC');
-        $data_pendidikan = $this->crud->gao('data_pendidikan','id_pendidikan ASC');
+        $data_pendidikan = $this->crud->gao('data_pendidikan','nama_pendidikan ASC');
 
         $data = array(  'title'     => 'Referensi / Data Umum',
                         'data_agama'     => $data_agama,
@@ -81,7 +81,7 @@ class Referensi extends Admin_controller {
     {
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
 
-        $data_satker = $this->crud->gao('data_satker', 'nama_satker ASC');
+        $data_satker = $this->crud->gao('data_satker', 'nama_satker');
         $data_unit = $this->crud->qr('SELECT nama_satker, count(*) as total FROM data_unit GROUP BY nama_satker');
 
         $data = array(  'title'     => 'Referensi / Data Instansi ',
@@ -123,7 +123,7 @@ class Referensi extends Admin_controller {
         $data_jabatan = $this->crud->qr('SELECT jenis_jabatan, count(*) as total FROM data_jabatan GROUP BY jenis_jabatan');
         $data_jenisjabatan = $this->crud->gao('data_jenisjabatan', 'nama_jenisjabatan ASC');
         $data_eselon = $this->crud->gao('data_eselon', 'id_eselon ASC');
-        $data_golongan = $this->crud->ga('data_golongan');
+        $data_golongan = $this->crud->gao('data_golongan', 'nama_pangkat ASC');
 
         $data = array(  'title'     => 'Referensi / Data Jabatan ',
                         'data_jabatan'     => $data_jabatan,

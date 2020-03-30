@@ -1,6 +1,6 @@
 <footer>
     <div class="container-fluid">
-        <p class="copyright">&copy; 2020 <a href="https://aplikasi.wakatobikab.go.id/simpeg" target="_blank">DINAS PARIWISATA SULSEL</a>. All Rights Reserved.</p>
+        <p class="copyright">&copy; 2020 <a href="#" target="_blank">DINAS PARIWISATA SULSEL</a>. All Rights Reserved.</p>
     </div>
 </footer>
 </div>

@@ -8,22 +8,25 @@
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-md-12">
-                      <table id="<?=$table?>" style="min-width: 100%;"  class="table">
+                      <!--<table id="<?=$table?>" style="min-width: 100%;"  class="table">-->
+                          <table style="min-width: 100%;" id="<?=$table?>" class="table table-striped  table-hover table-bordered">
                         <thead>
-                          <tr>
-                              <th width="50px;">No.</th>
-                            <th> Nama Pegawai Magang</th>
-                            <th> NIK</th>
-                            <th>  </th>
-                          </tr>
+                        <tr>
+                            <th width="20px;" class="text-center">No.</th>
+                            <th class="text-center"> Nama Tenaga Magang</th>
+                            <th class="text-center"> Jabatan</th>
+                            <th class="text-center"> Status</th>
+                            <th></th>
+                        </tr>
                         </thead>
                         <tbody>
                           <?php $i=1; foreach ($data_honorer as $data_honorer): ?>
                           <tr data-id="<?=$data_honorer->id?>">
-                              <td><?=$i;?></td>
-                            <td><?=$data_honorer->nama?></td>
-                            <td><?=$data_honorer->nip?></td>
-                            <td>
+                              <td class="text-center"><?=$i;?></td>
+                            <td class="text-center"><?=$data_honorer->nama?></td>
+                            <td class="text-center"><?=$data_honorer->jabatan_honorer?></td>
+                              <td class="text-center"><?=$data_honorer->status?></td>
+                            <td style="width: 1px">
                               <a class='btn btn-xs btn-primary edit_<?=$table?>' href="<?=admin_url('honorer/edit?id=')?><?=$data_honorer->id?>"><i class="fa fa-pencil"></i>Edit</a>
 
                               <button class='btn btn-xs btn-danger delete_<?=$table?>' data-type='delete' data-table='<?=$table?>'><i class="fa fa-trash"></i>Hapus</button>
@@ -45,7 +48,7 @@
       dom: 'Bfrtip',
       buttons: [
           {
-              text: '<i class="glyphicon glyphicon-plus"></i> Tambah Data Pegawai Magang',
+              text: '<i class="glyphicon glyphicon-plus"></i> Tambah Data Tenaga Magang',
               className : 'btn btn-primary btn-sm',
               action: function ( e, dt, node, config ) {
                  window.location.href = "<?=admin_url('honorer/tambah')?>"
@@ -68,9 +71,9 @@
           },
           complete:function(data){
             json = JSON.parse(data.responseText)
-            if(json.stat == 'sukses'){
+            if(json.stat == 'Berhasil'){
               swal(json.stat, json.res, 'success')
-              setTimeout(function(){ location.reload() }, 2000)
+              setTimeout(function(){ location.reload() }, 1500)
             }else{
               swal(json.stat, json.res, 'error')
             }
@@ -80,4 +83,5 @@
     })
 
   })
+
 </script>

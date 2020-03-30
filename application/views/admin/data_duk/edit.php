@@ -82,7 +82,7 @@
                 <div class="col-md-9">
                   <select name="jenis_kelamin" class="form-control" required>
                     <option value="">-Jenis Kelamin-</option>
-                    <option <?=set_value('jenis_kelamin', $data_pegawai->jenis_kelamin) == 'wanita' ? 'selected' : ''?> value="wanita">Laki-laki>Perempuan</option>
+                    <option <?=set_value('jenis_kelamin', $data_pegawai->jenis_kelamin) == 'wanita' ? 'selected' : ''?> value="wanita">Perempuan</option>
                     <option <?=set_value('jenis_kelamin', $data_pegawai->jenis_kelamin) == 'pria' ? 'selected' : ''?>  value="pria">Laki-laki</option>
                   </select>
                   <?=form_error('jenis_kelamin')?>

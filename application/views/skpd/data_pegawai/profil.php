@@ -477,7 +477,7 @@
                                 <tr class="data-item" data-id="">
                                     <th colspan="2" class="text-center">Surat Keputusan</th>
                                     <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-                                    <th rowspan="2" >Tanggal TMT</th>
+                                    <th rowspan="2" > TMT</th>
                                     <th rowspan="2" >Pengambil Sumpah</th>
                                     <th colspan="3" class="text-center">Lokasi Kerja</th>
                                     <th colspan="2" class="text-center">Persetujuan BKN (CPNS)</th>
@@ -526,7 +526,7 @@
                                     <th rowspan="2">Pejabat </th>
                                     <th colspan="2" class="text-center">Surat Keputusan</th>
                                     <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-                                    <th rowspan="2" >Tanggal TMT</th>
+                                    <th rowspan="2" > TMT</th>
                                     <th colspan="3" class="text-center">Lokasi Kerja</th>
                                     <th rowspan="2" width="98px;">Sumpah/Janji</th>
                                     <th rowspan="2">Pengambil Sumpah</th>

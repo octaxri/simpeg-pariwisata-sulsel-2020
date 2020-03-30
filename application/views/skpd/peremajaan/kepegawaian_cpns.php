@@ -15,7 +15,7 @@
               <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
               <th colspan="2" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-              <th rowspan="2" >Tanggal TMT</th>
+              <th rowspan="2" > TMT</th>
               <th colspan="3" class="text-center">Lokasi Kerja</th>
               <th colspan="2" class="text-center">Persetujuan BKN (CPNS)</th>
             </tr>
@@ -70,7 +70,7 @@
               <th  rowspan="2" >Pejabat Pengambil Sumpah</th>
               <th colspan="2" class="text-center">Surat Keputusan</th>
               <th rowspan="2" >Pangkat/Golongan/Ruang</th>
-              <th rowspan="2" >Tanggal TMT</th>
+              <th rowspan="2" > TMT</th>
               <th colspan="3" class="text-center">Lokasi Kerja</th>
               <th colspan="2" class="text-center">Persetujuan BKN (CPNS)</th>
               <th rowspan ="2" >Admin</th>
@@ -495,13 +495,13 @@
     function hapusRiwayat(method,id) {
         swal({
             title: 'Apakah Anda Yakin?',
-            text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+            text: "Anda tidak dapat mengembalikan data yang telah dihapus",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus!',
-            cancelButtonText: 'Batalkan!',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batalkan',
             closeOnConfirm: false,
             closeOnCancel: false
         },
@@ -519,7 +519,7 @@
             } else {
                 swal(
                     'Batal',
-                    'Proses Hapus Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                 )
             }

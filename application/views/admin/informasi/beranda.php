@@ -59,7 +59,7 @@
                       <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Ditujukan Untuk</label>
                         <div class="col-sm-8">
-                          <input type="text" name="ditujukan" id="ditujukan" class="form-control"  required >
+                          <input type="text" name="ditujukan" id="ditujukan" class="form-control"  required>
 
                         </div>
                       </div>
@@ -67,7 +67,7 @@
                         <label for="bahan" class="col-sm-3 control-label">Pesan Informasi</label>
                         <div class="col-sm-8">
                           <!-- <input type="text" id="Isi" class="form-control"  required > -->
-                          <textarea id="isi" name="isi" class="form-control"></textarea>
+                          <textarea id="isi" name="isi" class="form-control" required></textarea>
 
                         </div>
                       </div>
@@ -146,13 +146,17 @@
                   if (response.success) {
                     // $("td[data-value='"+valGlob+"']").html(response.data.nama_eselon);
                     $('#tambah_informasi').modal('hide');
-                    swal('Sukses', 'Tambah Informasi berhasil.', 'success');
+                    swal('Sukses', 'Data berhasil disimpan', 'success');
                     setTimeout(function() { location.reload() },1500);
                   } else {
-                    // $('.error_eselon').html(response.error);
-                    swal('Gagal', response.error != null ? response.error : 'Tambah Informasi gagal', 'error');
+                    $('.error_eselon').html(response.error);
+                    swal('Gagal', 'Data gagal disimpan', 'error');
+                      $('.error_eselon').html(response.error);
                   }
                 });
+                // $(document).ajaxStop(function(){
+                //     window.location.reload();
+                // });
             }
 
             function edit(id) {
@@ -171,29 +175,32 @@
                     swal({
                       type: 'success',
                       title: 'Sukses',
-                      text: 'Edit Informasi Berhasil!',
+                      text: 'Data berhasil disimpan',
                     },
-                    function(){
-                       $('#edit_informasi').modal('hide');
-                       location.reload();
-                    });
+                        function(){
+                            $('#edit_informasi').modal('hide');
+                            location.reload();
+                        });
                   } else {
                     $('#error_edit').html(response.error);
-                    swal('Gagal', 'Tambah Informasi gagal', 'error');
+                    swal('Gagal', 'Data gagal disimpan', 'error');
                   }
                 });
+                // $(document).ajaxStop(function(){
+                //     window.location.reload();
+                // });
             }
 
             function hapus(id) {
               swal({
                 title: 'Apakah Anda Yakin?',
-                text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+                text: "Anda tidak dapat mengembalikan data yang telah dihapus",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Hapus!',
-                cancelButtonText: 'Batalkan!',
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batalkan',
                 closeOnConfirm: false,
                 closeOnCancel: false
               },
@@ -205,14 +212,14 @@
                     }).done(function(response) {
                       if (response.success) {
                         $("tr[data-id='"+id+"']").remove();
-                        swal('Sukses', 'Data berhasil dihapus.', 'success');
+                        swal('Sukses', 'Data berhasil dihapus', 'success');
                         setTimeout(function() { location.reload() },1500);
-                      } else swal('Gagal', 'Data gagal dihapus.', 'error');
+                      } else swal('Gagal', 'Data gagal dihapus', 'error');
                    });
                 } else {
                   swal(
                     'Batal',
-                    'Proses Hapus Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                   )
                 }

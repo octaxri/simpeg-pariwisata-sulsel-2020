@@ -15,9 +15,11 @@
 				<td>Tanggal Lahir</td>
 				<td>TMT CPNS</td>
 				<td>Pangkat/Golongan/Ruang</td>
-				<td>TMT GOL</td>
+                <td>TMT Pangkat/Golongan/Ruang</td>
 				<td>Jabatan</td>
+                <td>TMT Jabatan</td>
 				<td>Eselon</td>
+                <td>Bidang</td>
 				<td>Subbidang/Seksi</td>
 				<td>Alamat</td>
 				<td>Kelurahan</td>
@@ -38,9 +40,11 @@
 					<td><?= $key->tanggal_lahir ?></td>
 					<td><?= $key->tanggal_tmt ? $key->tanggal_tmt : '-' ?></td>
 					<td><?= $key->jenis_pangkat ?></td>
-					<td><?= $key->tmt_jabatan ?></td>
+                    <td><?= $key->tmt_jenis_pangkat ?></td>
 					<td><?= $key->nama_jabatan ?></td>
+                    <td><?= $key->tmt_jabatan ?></td>
 					<td><?= $key->eselon ?></td>
+                    <td><?= $key->satuan_kerja ?></td>
 					<td><?= $key->unit_kerja ?></td>
 					<td><?= $key->alamat ? $key->alamat : '-' ?></td>
 					<td><?= $key->kel ? $key->kel : '-' ?></td>

@@ -419,7 +419,7 @@
                                                         <tr class="data-item" data-id="">
                                                             <th colspan="3" class="text-center">Surat Keputusan</th>
                                                             <th rowspan="2" >Pangkat/ Gol.Ruang</th>
-                                                            <th rowspan="2" >Tanggal TMT</th>
+                                                            <th rowspan="2" > TMT</th>
                                                             <th colspan="3" class="text-center">Lokasi Kerja</th>
                                                             <th colspan="2" class="text-center">Persetujuan BKN (CPNS)</th>
                                                             <th rowspan="2"></th>
@@ -468,7 +468,7 @@
                                                             <th rowspan="2">Pejabat </th>
                                                             <th colspan="2" class="text-center">Surat Keputusan</th>
                                                             <th rowspan="2" >Pangkat/ Gol.Ruang</th>
-                                                            <th rowspan="2" >Tanggal TMT</th>
+                                                            <th rowspan="2" > TMT</th>
                                                             <th colspan="3" class="text-center">Lokasi Kerja</th>
                                                             <th rowspan="2" width="98px;">Sumpah/Janji</th>
                                                             <th rowspan="2">Pengambil Sumpah</th>
@@ -4856,13 +4856,13 @@ $('#nama_statuskepegawaian').change(function(){
 function hapusRiwayat(method,id) {
     swal({
         title: 'Apakah Anda Yakin?',
-        text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+        text: "Anda tidak dapat mengembalikan data yang telah dihapus",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus!',
-        cancelButtonText: 'Batalkan!',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batalkan',
         closeOnConfirm: false,
         closeOnCancel: false
     },
@@ -4880,7 +4880,7 @@ function hapusRiwayat(method,id) {
         } else {
             swal(
                 'Batal',
-                'Proses Hapus Data dibatalkan! :)',
+                'Proses dibatalkan',
                 'error'
             )
         }
@@ -6158,13 +6158,13 @@ function profilAjaxEdit_send(model){
 function hapusData(method,id) {
     swal({
         title: 'Apakah Anda Yakin?',
-        text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+        text: "Anda tidak dapat mengembalikan data yang telah dihapus",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus!',
-        cancelButtonText: 'Batalkan!',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batalkan',
         closeOnConfirm: false,
         closeOnCancel: false
     },
@@ -6182,7 +6182,7 @@ function hapusData(method,id) {
         } else {
             swal(
                 'Batal',
-                'Proses Hapus Data dibatalkan! :)',
+                'Proses dibatalkan',
                 'error'
             )
         }
@@ -6192,13 +6192,13 @@ function hapusData(method,id) {
 function hapusRiwayat(method,id) {
     swal({
         title: 'Apakah Anda Yakin?',
-        text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+        text: "Anda tidak dapat mengembalikan data yang telah dihapus",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus!',
-        cancelButtonText: 'Batalkan!',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batalkan',
         closeOnConfirm: false,
         closeOnCancel: false
     },
@@ -6216,7 +6216,7 @@ function hapusRiwayat(method,id) {
         } else {
             swal(
                 'Batal',
-                'Proses Hapus Data dibatalkan! :)',
+                'Proses dibatalkan',
                 'error'
             )
         }

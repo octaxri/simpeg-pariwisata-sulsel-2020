@@ -38,12 +38,13 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <table id="data_pegawai" class="table table-bordered table-sorting table-hover datatable-data_dokumen dataTable no-footer" style="min-width: 100%;">
+<!--                            <table id="data_pegawai" class="table table-bordered table-sorting table-hover datatable-data_dokumen dataTable no-footer" style="min-width: 100%;">-->
+                                <table style="min-width: 100%;" id="data_pegawai"  class="table table-striped datatable-Exnormal datatable-data_dokumen table-hover table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>NIP</th>
-                                        <th>Nama</th>
-                                        <th width="5%"></th>
+                                        <th class="text-center">NIP</th>
+                                        <th class="text-center">Nama</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,7 +73,7 @@ $(document).ready(function(){
         },
         "processing": true,
         "serverSide": true,
-        "order": [],
+        "order": [1, "asc"],
         "ajax": {
             "url": '<?=admin_url("ReferensiAjax/get_data")?>',
             "type": "POST",

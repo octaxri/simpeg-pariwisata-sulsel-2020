@@ -90,7 +90,7 @@
                     <div class="content">
                         <h3>SIMPEG</h3>
                         <p>Sistem Kepegawaian Dinas Pariwisata Provinsi Sulawesi Selatan</p>
-                        <a href="#" id="tombolLogin">Login</a>
+                        <a href="/simpeg/login" id="tombolLogin">Login</a>
                     </div>
                 </div>
             </div>

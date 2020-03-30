@@ -10,20 +10,21 @@
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <table id="tbl_satker" class="table table-bordered table-sorting table-hover tablenormal dataTable no-footer">
+<!--            <table id="tbl_satker" class="table table-bordered table-sorting table-hover tablenormal dataTable no-footer">-->
+                <table style="min-width: 100%;" id="tbl_satker" class="table table-striped datatable-Exnormal table-hover table-bordered">
               <thead>
                 <tr>
-                  <th width="50px;">No.</th>
-                  <th>Bidang/Bagian</th>
+                  <th width="20px;" class="text-center">No.</th>
+                  <th class="text-center">Bidang/Bagian</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <?php $i = 1; foreach ($data_satker as $data_satker1) { ?>
                   <tr data-id="<?=$data_satker1->id_satker?>">
-                    <td><?=$i?></td>
-                    <td data-value="<?=$data_satker1->nama_satker?>"><?=$data_satker1->nama_satker?></td>
-                    <td>
+                    <td class="text-center"><?=$i?></td>
+                    <td class="text-center" data-value="<?=$data_satker1->nama_satker?>"><?=$data_satker1->nama_satker?></td>
+                    <td style="width: 1px;">
                       <a data-toggle="modal" data-target="#edit_satker_modal" class="btn btn-primary btn-xs" onclick="editData('satker','<?=$data_satker1->id_satker?>','<?=$data_satker1->nama_satker?>');"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
                       <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('satker','<?=$data_satker1->id_satker?>');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>
                     </td>
@@ -44,22 +45,23 @@
           <hr>
           <div class="row">
             <div class="col-md-12">
-              <table id="tbl_unit" class="table table-bordered table-sorting table-hover tablenormal dataTable no-footer">
+<!--              <table id="tbl_unit" class="table table-bordered table-sorting table-hover tablenormal dataTable no-footer">-->
+                  <table style="min-width: 100%;" id="tbl_unit" class="table table-striped datatable-Exnormal table-hover table-bordered">
                 <thead>
                   <tr>
-                    <th width="50px;">No.</th>
-                    <th>Bidang/Bagian</th>
-                    <th>Jumlah Subbidang/Seksi</th>
+                    <th width="20px;" class="text-center">No.</th>
+                    <th class="text-center">Bidang/Bagian</th>
+                    <th class="text-center">Jumlah Subbidang/Seksi</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $i = 1; foreach ($data_unit as $data_unit) { ?>
                     <tr>
-                      <td><?=$i?></td>
-                      <td data-value1="<?=$data_unit->nama_satker?>"><?=$data_unit->nama_satker?></td>
-                      <td ><?=$data_unit->total?></td>
-                      <td>
+                      <td class="text-center"><?=$i?></td>
+                      <td class="text-center" data-value1="<?=$data_unit->nama_satker?>"><?=$data_unit->nama_satker?></td>
+                      <td class="text-center"><?=$data_unit->total?></td>
+                      <td style="width: 1px;">
                         <a class="btn btn-primary btn-xs" onclick="lihatData('<?=$data_unit->nama_satker?>');"><i class="fa fa-eye" ></i>&nbsp;Lihat</a>
 <!--                        <a href="#" class="btn btn-danger btn-xs" onclick="hapusData('unit', 'unit');"><i class="fa fa-trash"></i>&nbsp;Hapus</a>-->
                       </td>
@@ -274,13 +276,16 @@
             $('#tambah_satker').val('');
             $('#tambah_satker_modal').modal('hide');
             setTimeout(function() { location.reload() },1500);
-            swal('Sukses', 'Data Bidang/Bagian berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
-            swal('Gagal', 'Data Bidang/Bagian gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           // $('#tambah_satker').modal('hide');
           $('.error_satker').html(response.error);
         }
       });
+            $(document).ajaxStop(function(){
+                window.location.reload();
+            });
         break;
 
         case 'unit':
@@ -298,10 +303,10 @@
             $('#tambah_unit').val('');
             $('#tambah_unit').val('');
             $('#tambah_unit_modal').modal('hide');
-            swal('Sukses', 'Data Subbidang/Seksi berhasil ditambah.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
-            swal('Gagal', 'Data Subbidang/Seksi gagal ditambah.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
             $('.error_unit').html(response.error);
            // $('#tambah_unit_modal').modal('hide');
          }
@@ -328,10 +333,10 @@
             $("td[data-value='"+valGlob+"']").html(response.data.nama_satker);
             $('.error_satker').html('');
             $('#edit_satker_modal').modal('hide');
-            swal('Sukses', 'Data Bidang/Bagian berhasil diedit.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else {
             $('.error_satker').html(response.error);
-            swal('Gagal', 'Data Bidang/Bagian gagal diedit.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
             $(document).ajaxStop(function(){
@@ -354,11 +359,11 @@
             $("td[data-value2='"+valGlob+"']").html(response.data.nama_unit);
             $('.error_unit').html(response.error);
             $('#edit_unit_modal').modal('hide');
-            swal('Sukses', 'Data unit berhasil diedit.', 'success');
+            swal('Sukses', 'Data berhasil disimpan', 'success');
           } else
           {
             $('.error_unit').html(response.error);
-            swal('Gagal', 'Data unit gagal diedit.', 'error');
+            swal('Gagal', 'Data gagal disimpan', 'error');
           }
         });
         break;
@@ -367,13 +372,13 @@
     function hapusData(method,id) {
       swal({
         title: 'Apakah Anda Yakin?',
-        text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+        text: "Anda tidak dapat mengembalikan data yang telah dihapus",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus!',
-        cancelButtonText: 'Batalkan!',
+        confirmButtonText: 'Hapus',
+        cancelButtonText: 'Batalkan',
         closeOnConfirm: false,
         closeOnCancel: false
       },
@@ -385,14 +390,14 @@
           }).done(function(response) {
             if (response.success) {
               $("tr[data-id='"+id+"']").remove();
-              swal('Sukses', 'Data berhasil dihapus.', 'success');
+              swal('Sukses', 'Data berhasil dihapus', 'success');
               setTimeout(function() { location.reload() },1500);
-            } else swal('Gagal', 'Data gagal dihapus.', 'error');
+            } else swal('Gagal', 'Data gagal dihapus', 'error');
           });
         } else {
           swal(
             'Batal',
-            'Proses Hapus Data dibatalkan! :)',
+            'Proses dibatalkan',
             'error'
             )
         }
@@ -431,7 +436,7 @@
 
          }
 
-       } else swal('Gagal', 'Terjadi Kesalahan!.', 'error');
+       } else swal('Gagal', 'Terjadi kesalahan', 'error');
      });
     }
 
