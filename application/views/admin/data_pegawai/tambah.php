@@ -613,11 +613,13 @@
       if (pass === repass) {
         $("#pass_info").text('Password Sama');
         $("#pass_info").css("color", "green");
+          $("#nip").css("color", "green");
         $("#submit").prop("disabled", false);
 
       }else{
         $("#pass_info").text('Password Tidak Sama');
         $("#pass_info").css("color", "red");
+          $("#nip").css("color", "red");
         $("#submit").prop("disabled", true);
       }
     });

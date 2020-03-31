@@ -194,7 +194,7 @@
                   <select name="jenis_pangkat" id="jenis_pangkat" class="form-control" required>
                     <option value="">-Pangkat/Golongan/Ruang-</option>
                     <?php foreach ($data_golongan as $data_golongan) : ?>
-                      <option data-id="<?= $data_golongan->id_golongan ?>" <?= ($data_pegawai->id_pangkat) == ($data_golongan->id_golongan) ? 'selected' : '' ?>><?= $data_golongan->nama_pangkat . ' - ' . $data_golongan->nama_golongan . ' ' . $data_golongan->nama_ruang ?></option>
+                      <option data-id="<?= $data_golongan->id_golongan ?>" <?= ($data_pegawai->jenis_pangkat) == ($data_golongan->nama_pangkat . ' - ' . $data_golongan->nama_golongan . ' ' . $data_golongan->nama_ruang) ? 'selected' : '' ?>><?= $data_golongan->nama_pangkat . ' - ' . $data_golongan->nama_golongan . ' ' . $data_golongan->nama_ruang ?></option>
                     <?php endforeach ?>
                     <input type="hidden" name="id_pangkat" id="id_pangkat" value="<?= $data_pegawai->id_pangkat ?>">
                   </select>

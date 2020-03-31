@@ -20,7 +20,7 @@
                           <?php $i = 1; foreach ($data_pegawai as $data_pegawai): ?>
                           <tr data-id="<?=$data_pegawai->id_user?>">
                             <td><?=$i?></td>
-                            <td><?=$data_pegawai->fullname?></td>
+                            <td><?=$data_pegawai->nama_lengkap?></td>
                             <td><?=$data_pegawai->nip?></td>
                             <td><?=$data_pegawai->email?></td>
                             <td style="width: 1px">
@@ -96,16 +96,18 @@
                     }).done(function(response) {
                       if (response.success) {
                         swal('Sukses', 'Password berhasil direset', 'success');
-                        setTimeout(function() { location.reload() },1500);
+                        setTimeout(function() { location.reload() },500);
+                          $('html, body').animate({ scrollTop: 0 }, 0);
                       } else swal('Gagal', 'password gagal direset', 'error');
                    });
                 } else {
                   swal(
                     'Batal',
-                    'Proses reset Data dibatalkan! :)',
+                    'Proses dibatalkan',
                     'error'
                   )
                 }
               });
+
             }
           </script>

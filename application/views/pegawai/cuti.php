@@ -64,11 +64,11 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>
+<!--                        <label for="bahan" class="col-sm-3 control-label" >Nama Pegawai</label>-->
                         <div class="col-sm-9">
-                            <select id="add_select2" class="form-control select2"  style="width: 100%"></select>
-                            <input type="hidden" id="nama_lengkap" class="form-control" >
-                            <input type="hidden" id="nip" class="form-control" >
+<!--                            <select id="add_select2" class="form-control select2"  style="width: 100%"></select>-->
+                            <input type="hidden" id="nama_lengkap" value="<?=$data_pegawai->nama_lengkap?>" class="form-control" >
+                            <input type="hidden" id="nip" value="<?=$data_pegawai->nip?>" class="form-control" >
                             <input type="hidden" id="admin" value="<?=$this->session->fullname?>" class="form-control" >
                         </div>
                     </div>

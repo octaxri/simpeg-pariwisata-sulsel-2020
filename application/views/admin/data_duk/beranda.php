@@ -48,18 +48,22 @@
       <table class="table table-bordered hahaha" style="min-width: 100%;">
           <thead>
             <tr>
-              <th style="text-align: center;" width="5%">DUK</th>
+              <th style="text-align: center;" width="5%">No.</th>
               <th style="text-align: center;">NIP</th>
               <th style="text-align: center;">Nama</th>
               <th style="text-align: center;">Pangkat/Golongan/Ruang</th>
+                <th style="text-align: center;">TMT <br>Pangkat/Golongan/Ruang</th>
               <th style="text-align: center;">Eselon</th>
               <th style="text-align: center;">Jenis Jabatan</th>
               <th style="text-align: center;">Nama Jabatan</th>
-              <th style="text-align: center;">TMT CPNS</th>
-              <th style="text-align: center;">Pendidikan</th>
+                <th style="text-align: center;">TMT Jabatan</th>
+              <th style="text-align: center;">Masa Kerja (Tahun)</th>
+                <th style="text-align: center;">Nama<br>Sekolah/Universitas</th>
+                <th style="text-align: center;">Tahun Lulus</th>
+              <th style="text-align: center;">TKT Ijazah</th>
               <th style="text-align: center;">Tanggal Lahir</th>
-              <th style="text-align: center;">Tempat Lahir</th>
-              <th style="text-align: center;">Alamat</th>
+<!--              <th style="text-align: center;">Tempat Lahir</th>-->
+<!--              <th style="text-align: center;">Alamat</th>-->
             </tr>
           </thead>
           <tbody>
@@ -79,14 +83,18 @@
                 <td><?=$value->nip?></td>
                 <td><?=(($value->gelar_depan == '') ? '' : $value->gelar_depan.'.').' '.$value->nama_lengkap.(($value->gelar_belakang == '') ? '' : ', '.$value->gelar_belakang)?></td>
                 <td><?=$value->tbl_pangkat?></td>
+                  <td><?=$value->tbl_tmtpangkat?></td>
                 <td><?=$value->tbl_jabatan?></td>
                 <td><?=$value->jenis_jabatan?></td>
                 <td><?=$value->nama_jabatan?></td>
-                <td><?=$value->tbl_masa_kerja == NULL ? '-' : $value->tbl_masa_kerja?></td>
-                <td><?=$value->tbl_pendidikan?></td>
+                  <td><?=$value->tbl_tmtjabatan?></td>
+                <td><?=$value->masa_kerja == NULL ? '-' : $value->masa_kerja?></td>
+                <td><?=$value->tbl_namasekolah?></td>
+                  <td><?=$value->tbl_tahunlulus?></td>
+                  <td><?=$value->tbl_pendidikan?></td>
                 <td><?=$value->tbl_umur?></td>
-                <td><?=$value->tempat_lahir?></td>
-                <td><?=$value->alamat?></td>
+                <!--<td><?=$value->tempat_lahir?></td>
+                <td><?=$value->alamat?></td>-->
               </tr>
             <?php endforeach ?>
           </tbody>

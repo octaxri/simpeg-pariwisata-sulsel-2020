@@ -10,10 +10,12 @@ class Cuti extends MY_Controller {
 
     public function index(){
         if ($this->session->akses_level == 'Blocked') view_error('Error 404');
+        $data_pegawai = $this->crud->gd('data_pegawai', array('nip' => $this->session->username));
         $permohonan_cuti = $this->crud->gao('permohonan_cuti', 'iat DESC');
 
         $data = array(  'title'     => 'Permohonan cuti',
             'permohonan_cuti'     => $permohonan_cuti,
+            'data_pegawai' => $data_pegawai,
             'isi'       => 'pegawai/cuti');
         $this->load->view('pegawai/_layout/wrapper', $data);
     }
@@ -45,6 +47,7 @@ class Cuti extends MY_Controller {
                         'tanggal_akhir' => $input['tanggal_akhir'],
                         'keterangan'    => $input['keterangan'],
                         'iat'           => date('Y-m-d H:i:s'));
+
                     $this->crud->i('permohonan_cuti', $data);
                     $detail = $this->crud->gd('permohonan_cuti', array('nip' => $input['nip'])
                     );

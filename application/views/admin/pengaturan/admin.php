@@ -261,7 +261,8 @@
                     }).done(function(response) {
                       if (response.success) {
                         swal('Sukses', 'Password berhasil direset', 'success');
-                        setTimeout(function() { location.reload() },1500);
+                        setTimeout(function() { location.reload() },500);
+                          $('html, body').animate({ scrollTop: 0 }, 0);
                       } else swal('Gagal', 'password gagal direset', 'error');
                    });
                 } else {

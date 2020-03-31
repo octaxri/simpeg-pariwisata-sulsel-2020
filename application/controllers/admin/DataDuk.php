@@ -1956,7 +1956,17 @@ class DataDuk extends Admin_controller {
             a.tempat_lahir,
             a.jenis_jabatan,
             d.alamat,
-            a.nip,a.id_pangkat AS id_pangkat, a.jenis_pangkat AS tbl_pangkat, a.eselon AS tbl_jabatan, b.tingkat AS tbl_pendidikan, c.tanggal_tmt AS tbl_masa_kerja, a.tanggal_lahir AS tbl_umur,
+            a.nip,
+            a.id_pangkat AS id_pangkat, 
+            a.jenis_pangkat AS tbl_pangkat, 
+            a.eselon AS tbl_jabatan, 
+            b.tingkat AS tbl_pendidikan, 
+            c.tanggal_tmt AS tbl_masa_kerja, 
+            a.tanggal_lahir AS tbl_umur,
+            a.tmt_jenis_pangkat AS tbl_tmtpangkat,
+            a.tmt_jabatan AS tbl_tmtjabatan,
+            b.nama_sekolah AS tbl_namasekolah,
+            b.tahun_lulus AS tbl_tahunlulus,
 
             @pangkat := CASE a.id_pangkat
                     WHEN 1 THEN 1
@@ -1998,7 +2008,7 @@ class DataDuk extends Admin_controller {
                     WHEN NOT NULL THEN '01/04/2011'
                 END AS tanggal_tt,
 
-            @masa_kerja := IF(TIMESTAMPDIFF(DAY, STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE()) IS NULL, 0, TIMESTAMPDIFF(DAY, STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE())) AS masa_kerja, 
+            @masa_kerja := IF(TIMESTAMPDIFF(YEAR , STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE()) IS NULL, 0, TIMESTAMPDIFF(YEAR , STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE())) AS masa_kerja, 
 
             @pendidikan :=  CASE b.tingkat
                     WHEN 'SD' THEN 1

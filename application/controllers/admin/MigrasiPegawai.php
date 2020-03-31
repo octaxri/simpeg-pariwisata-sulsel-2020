@@ -61,8 +61,14 @@ class MigrasiPegawai extends Admin_controller {
                             'stmt'                  => $input['stmt'],
                             'ktmt'                  => $input['ktmt'],
                             'iat'                   => date('Y-m-d H:i:s'));
+            $data_pangkat_pegawai = array(
+                'jenis_pangkat' => $input['kpangkat'],
+                'tmt_jenis_pangkat' => $input['ktmt'],
+                'uat' => date('Y-m-d H:i:s')
+            );
 //            var_dump($data);die();
             $this->crud->i('daftar_kenaikanpangkat', $data);
+            $this->crud->u('data_pegawai', $data_pangkat_pegawai, array('nip' => $input['nip']));
             $detail = $this->crud->gd('daftar_kenaikanpangkat', array('id_data' => $data['id_data']));
             if ($detail) {
                 return $this->response([
@@ -87,7 +93,14 @@ class MigrasiPegawai extends Admin_controller {
                 'ktmt' => $input['ktmt'],
                 'uat' => date('Y-m-d H:i:s'));
 //            var_dump($data);die();
+            $data_pangkat_pegawai = array(
+              'jenis_pangkat' => $input['kpangkat'],
+              'tmt_jenis_pangkat' => $input['ktmt'],
+                'uat' => date('Y-m-d H:i:s')
+            );
+
             $this->crud->u('daftar_kenaikanpangkat', $data, array('id_data' => $id));
+            $this->crud->u('data_pegawai', $data_pangkat_pegawai, array('nip' => $input['nip']));
             $detail = $this->crud->gd('daftar_kenaikanpangkat', array('id_data' => $id));
             if ($detail) {
                 return $this->response([

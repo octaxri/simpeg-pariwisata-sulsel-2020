@@ -78,7 +78,7 @@
           <div class="form-group">
             <label for="bahan"  class="col-sm-3 control-label">Jenis Kelamin</label>
             <div class="col-sm-8">
-              <select id="jenis_kelamin" name="jenis_kelamin" class="select2 form-control"  >
+              <select id="jenis_kelamin" name="jenis_kelamin" class="select2 form-control"  disabled>
                 <option value=""></option>
                   <option value="wanita">Perempuan</option>
                   <option value="pria">Laki-Laki</option>
@@ -88,7 +88,7 @@
             <div class="form-group">
                 <label for="bahan"  class="col-sm-3 control-label">Pangkat/Golongan/Ruang</label>
                 <div class="col-sm-8">
-                    <select id="pangkat" name="pangkat" class="form-control select-2" >
+                    <select id="pangkat" name="pangkat" class="form-control select-2" disabled>
                         <option value="">-Pangkat/Golongan/Ruang-</option>
                         <?php foreach ($data_golongan as $data_golongan1): ?>
                             <option data-id="<?=$data_golongan1->id_golongan?>" value="<?=$data_golongan1->nama_pangkat. ' - ' .$data_golongan1->nama_golongan. ' ' .$data_golongan1->nama_ruang?>"><?=$data_golongan1->nama_pangkat. ' - ' .$data_golongan1->nama_golongan. ' ' .$data_golongan1->nama_ruang?></option>
@@ -100,7 +100,7 @@
             <label for="bahan"  class="col-sm-3 control-label">Jabatan</label>
             <div class="col-sm-8">
 <!--              <input type="text" id="jabatan" name="jabatan" class="form-control"  >-->
-                <select type="text" id="jabatan" name="jabatan" class="form-control select-2" >
+                <select type="text" id="jabatan" name="jabatan" class="form-control select-2" disabled>
                     <option value=""></option>
                     <?php foreach ($data_jabatan as $data_jabatan2): ?>
                         <option value="<?=$data_jabatan2->nama_jabatan?>"><?=$data_jabatan2->nama_jabatan?></option>

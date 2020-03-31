@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <label for="bahan" class="col-sm-3 control-label">Jenis Kelamin</label>
                         <div class="col-sm-9">
-                            <select id="add_jeniskelamin" class="form-control select2" >
+                            <select id="add_jeniskelamin" class="form-control select2" disabled>
                                 <option value="">-Daftar Pangkat-</option>
                                 <option value="wanita">Perempuan</option>
                                 <option value="pria">Laki-Laki</option>
@@ -90,7 +90,7 @@
                         <label for="bahan" class="col-sm-3 control-label">Pangkat/Golongan/Ruang (Saat Ini)</label>
                         <div class="col-sm-9">
 <!--                            <input id="add_spangkat" class="form-control " >-->
-                            <select id="add_spangkat" class="form-control select2">
+                            <select id="add_spangkat" class="form-control select2" disabled>
                                 <option value="">-Pangkat/Golongan/Ruang-</option>
                                 <?php foreach ($data_golongan as $data_golongan2): ?>
                                     <option value="<?=$data_golongan2->nama_pangkat?> - <?=$data_golongan2->nama_golongan?> <?=$data_golongan2->nama_ruang?>"><?=$data_golongan2->nama_pangkat?> - <?=$data_golongan2->nama_golongan?> <?=$data_golongan2->nama_ruang?></option>
@@ -102,7 +102,7 @@
                         <label for="bahan" class="col-sm-3 control-label">TMT Pangkat/Golongan/Ruang (Saat Ini)</label>
                         <div class="col-sm-9">
                             <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
-                                <input type="text" id="add_stmt" class="form-control" >
+                                <input type="text" id="add_stmt" class="form-control" disabled>
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div>
                         </div>
@@ -265,6 +265,7 @@
               type: 'POST',
               url: '<?=admin_url('MigrasiPegawai/edit_kenaikanpangkat/')?>' + idGlob,
               data: {
+                  nip:$("#edit_nip").val(),
                   jenis_kelamin: $("#edit_jeniskelamin").val(),
                   spangkat: $("#edit_spangkat").val(),
                   kpangkat: $("#edit_kpangkat").val(),
