@@ -2008,7 +2008,7 @@ class DataDuk extends Admin_controller {
                     WHEN NOT NULL THEN '01/04/2011'
                 END AS tanggal_tt,
 
-            @masa_kerja := IF(TIMESTAMPDIFF(YEAR , STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE()) IS NULL, 0, TIMESTAMPDIFF(YEAR , STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE())) AS masa_kerja, 
+            @masa_kerja := IF(TIMESTAMPDIFF(MONTH , STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE()) IS NULL, 0, TIMESTAMPDIFF(MONTH , STR_TO_DATE(c.tanggal_tmt, '%d/%m/%Y'), CURDATE())) AS masa_kerja, 
 
             @pendidikan :=  CASE b.tingkat
                     WHEN 'SD' THEN 1

@@ -48,23 +48,29 @@
       <table class="table table-bordered hahaha" style="min-width: 100%;">
           <thead>
             <tr>
-              <th style="text-align: center;" width="5%">No.</th>
-              <th style="text-align: center;">NIP</th>
-              <th style="text-align: center;">Nama</th>
-              <th style="text-align: center;">Pangkat/Golongan/Ruang</th>
-                <th style="text-align: center;">TMT <br>Pangkat/Golongan/Ruang</th>
-              <th style="text-align: center;">Eselon</th>
-              <th style="text-align: center;">Jenis Jabatan</th>
-              <th style="text-align: center;">Nama Jabatan</th>
-                <th style="text-align: center;">TMT Jabatan</th>
-              <th style="text-align: center;">Masa Kerja (Tahun)</th>
-                <th style="text-align: center;">Nama<br>Sekolah/Universitas</th>
-                <th style="text-align: center;">Tahun Lulus</th>
-              <th style="text-align: center;">TKT Ijazah</th>
-              <th style="text-align: center;">Tanggal Lahir</th>
+              <th rowspan="2" style="text-align: center;" width="5%">No.</th>
+              <th rowspan="2" style="text-align: center;">NIP</th>
+              <th rowspan="2" style="text-align: center;">Nama</th>
+              <th rowspan="2" style="text-align: center;">Pangkat/Golongan/Ruang</th>
+                <th rowspan="2" style="text-align: center;">TMT</th>
+<!--              <th style="text-align: center;">Eselon</th>-->
+<!--              <th style="text-align: center;">Jenis Jabatan</th>-->
+                <th colspan="2" style="text-align: center;"> Jabatan</th>
+              <th colspan="2" style="text-align: center;"> Masa Kerja</th>
+                <th colspan="3" style="text-align: center;"> Pendidikan</th>
+              <th rowspan="2" style="text-align: center;">Tanggal Lahir</th>
 <!--              <th style="text-align: center;">Tempat Lahir</th>-->
 <!--              <th style="text-align: center;">Alamat</th>-->
             </tr>
+          <tr>
+              <th style="text-align: center;">Nama</th>
+              <th style="text-align: center;">TMT</th>
+              <th style="text-align: center;">Tahun </th>
+              <th style="text-align: center;">Bulan </th>
+              <th style="text-align: center;">Nama</th>
+              <th style="text-align: center;">Tahun Lulus</th>
+              <th style="text-align: center;">TKT Ijazah</th>
+          </tr>
           </thead>
           <tbody>
             <?php $i=0; $nilai=0; foreach ($duk as $key => $value): ?>
@@ -84,11 +90,23 @@
                 <td><?=(($value->gelar_depan == '') ? '' : $value->gelar_depan.'.').' '.$value->nama_lengkap.(($value->gelar_belakang == '') ? '' : ', '.$value->gelar_belakang)?></td>
                 <td><?=$value->tbl_pangkat?></td>
                   <td><?=$value->tbl_tmtpangkat?></td>
-                <td><?=$value->tbl_jabatan?></td>
-                <td><?=$value->jenis_jabatan?></td>
+                <!--<td><?=$value->tbl_jabatan?></td>
+                <td><?=$value->jenis_jabatan?></td>-->
                 <td><?=$value->nama_jabatan?></td>
                   <td><?=$value->tbl_tmtjabatan?></td>
-                <td><?=$value->masa_kerja == NULL ? '-' : $value->masa_kerja?></td>
+                  <?php
+                    $masakerja=0;
+                    if ($value->masa_kerja != NULL){
+                        $masakerja = ($value->masa_kerja) / 12;
+                        $masakerja_tahun = floor($masakerja);
+                        $masakerja_bulan = ($value->masa_kerja) % 12;
+                    } else {
+                        $masakerja_tahun ='-';
+                        $masakerja_bulan = '-';
+                    }
+                  ?>
+                <td><?=$masakerja_tahun?></td>
+                  <td><?=$masakerja_bulan?></td>
                 <td><?=$value->tbl_namasekolah?></td>
                   <td><?=$value->tbl_tahunlulus?></td>
                   <td><?=$value->tbl_pendidikan?></td>
@@ -118,7 +136,7 @@
       dom: 'Bfrtip',
         buttons: [
            { 
-            extend: 'csv', 
+            extend: 'csv',
             text : '<i class="fa fa-download"></i>Ekspor Data ke File Excel' ,
             className: 'btn btn-primary btn-sm'
           }
