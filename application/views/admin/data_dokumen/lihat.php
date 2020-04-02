@@ -144,9 +144,9 @@ $(document).ready(function(){
             },
            "columns": [ // yang perlu di setup
                 {"data": "id", render: function (data, type, row, meta) {
-                        return meta.row + meta.settings._iDisplayStart + 1;}},
-                {"data": "nama_dokumen"},
-                { "data": null, "defaultContent": "<button class='btn btn-xs btn-success lihat_<?=$table?>'><i class='fa fa-eye'></i>Lihat</button> <button class='btn btn-xs btn-primary edit_<?=$table?>'><i class='fa fa-pencil'></i>Edit</button> <button class='btn btn-xs btn-danger delete_<?=$table?>' data-type='delete' data-table='<?=$table?>'><i class='fa fa-trash'></i>Hapus</button>"}
+                        return meta.row + meta.settings._iDisplayStart + 1;}, "searchable": false, "orderable": false,},
+                {"data": "nama_dokumen", "searchable": false, "orderable": false,},
+                { "data": null, "searchable": false, "orderable": false, "defaultContent": "<button class='btn btn-xs btn-success lihat_<?=$table?>'><i class='fa fa-eye'></i>Lihat</button> <button class='btn btn-xs btn-primary edit_<?=$table?>'><i class='fa fa-pencil'></i>Edit</button> <button class='btn btn-xs btn-danger delete_<?=$table?>' data-type='delete' data-table='<?=$table?>'><i class='fa fa-trash'></i>Hapus</button>"}
             ],
             dom: 'Bfrtip',
             buttons: [
