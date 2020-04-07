@@ -10,6 +10,7 @@
               <tr>
                 <th width="" style="vertical-align : middle;text-align:center;" rowspan="2"> No.</th>
                 <th width="" style="vertical-align : middle;text-align:center;" colspan="2"> Surat Keputusan</th>
+                  <th width="" style="vertical-align : middle;text-align:center;" rowspan="2">TMT Jabatan Baru</th>
                 <th width="" style="vertical-align : middle;text-align:center;" rowspan="2"></th>
               </tr>
             <tr>
@@ -33,7 +34,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Tambah SK Kelompok</h4>
+        <h4 class="modal-title" id="myModalLabel">Tambah SK</h4>
       </div>
       <form id="tambah">
       <div class="modal-body">
@@ -43,16 +44,27 @@
 		    <input type="text" class="form-control" placeholder="" name="no_sk">
 		  </div>
 		  <div class="row">
-					<div class="col-md-6 form-group date">
-							<label for="exampleInputEmail1">Tanggal SK</label>
-								<div class="input-group date">
-							<input type="text" name="tgl_sk" class="form-control">
-							<div class="input-group-addon">
-									<span class="glyphicon glyphicon-th"></span>
-							</div>
-					</div>
-	        </div>
-		</div>
+              <div class="col-md-6 form-group date">
+                  <label for="exampleInputEmail1">Tanggal SK</label>
+                  <div class="input-group date">
+                      <input type="text" name="tgl_sk" class="form-control">
+                      <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6 form-group date">
+                  <label for="exampleInputEmail1">TMT Jabatan Baru</label>
+                  <div class="input-group date">
+                      <input type="text" name="tmt_sk" class="form-control">
+                      <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
 		
       </div>
       <div class="modal-footer">
@@ -83,18 +95,29 @@
 		  </div>
 
 		<div class="row">
-
-		  <div class="col-md-6 form-group date">
-          <label for="exampleInputEmail1">Tanggal SK</label>
-            <div class="input-group date">
-			    <input type="text" name="tgl_sk" class="form-control">
-			    <div class="input-group-addon">
-			        <span class="glyphicon glyphicon-th"></span>
-			    </div>
-			</div>
-        </div>
-
+            <div class="col-md-6 form-group date">
+                <label for="exampleInputEmail1">Tanggal SK</label>
+                <div class="input-group date">
+                    <input type="text" name="tgl_sk" class="form-control">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
 		</div>
+
+          <div class="row">
+              <div class="col-md-6 form-group date">
+                  <label for="exampleInputEmail1">TMT Jabatan Baru</label>
+                  <div class="input-group date">
+                      <input type="text" name="tmt_sk" class="form-control">
+                      <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
 		
       </div>
       <div class="modal-footer">
@@ -123,6 +146,7 @@
                         return meta.row + meta.settings._iDisplayStart + 1;} },
 	            { "data": "no_sk" },
 	            { "data": "tgl_sk" },
+                { "data": "tmt_sk" },
 	            {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
@@ -135,7 +159,7 @@
 	        dom: 'Bfrtip',
 	        buttons: [
 	            {
-	                text: '<i class="fa fa-plus" aria-hidden="true"></i> Tambah SK Kelompok',
+	                text: '<i class="fa fa-plus" aria-hidden="true"></i> Tambah SK',
 	                className : 'btn btn-sm btn-primary',
 	                action : function() {
 	                    $('#tambahSK').modal('show')
@@ -226,7 +250,7 @@
       $("#<?=$table?> tbody").on('click', 'button.print', function(){
 
         $data = mutasi_sk.row( $(this).parents('tr') ).data()
-        window.open('<?=site_url("admin/DataMutasi/print_sk_kelompok/")?>' + $data.id, '_blank')
+        window.open('<?=site_url("admin/DataMutasi/print_sk_kelompokNew/")?>' + $data.id, '_blank')
       })
 
 	})

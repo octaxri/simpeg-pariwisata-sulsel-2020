@@ -139,8 +139,8 @@
                     <a  aria-expanded="<?=($modul == 'DataMutasi' ? 'true' : 'false')?>" class="<?=($modul == 'DataMutasi' ? 'active' : 'collapsed')?>" href="#DataMutasi" data-toggle="collapse" class="collapsed"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Data Mutasi</span>  <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="DataMutasi" class="<?=($modul == 'DataMutasi' ? 'collapse in' : 'collapse')?>" aria-expanded="<?=($modul == 'DataMutasi' ? 'true' : 'false')?>" >
                         <ul class="nav">
-                            <li class="panel"><a href="<?=admin_url('DataMutasi/individu')?>"class="<?=($method == 'individu' ? 'active' : '')?>">SK Individu</a></li>
-                            <li class="panel"><a href="<?=admin_url('DataMutasi/kelompok')?>"class="<?=($method == 'kelompok' || $method == 'tambah_sk_pegawai' || $method == 'details' ? 'active' : '')?>">SK Kolektif</a></li>
+                            <!--<li class="panel"><a href="<?=admin_url('DataMutasi/individu')?>"class="<?=($method == 'individu' ? 'active' : '')?>">SK Individu</a></li>-->
+                            <li class="panel"><a href="<?=admin_url('DataMutasi/kelompok')?>"class="<?=($method == 'kelompok' || $method == 'tambah_sk_pegawai' || $method == 'details' ? 'active' : '')?>">Mutasi Pelaksana</a></li>
                         </ul>
                     </div>
                 </li>

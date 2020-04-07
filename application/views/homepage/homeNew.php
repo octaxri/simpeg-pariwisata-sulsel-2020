@@ -41,7 +41,7 @@
                         <a href="#info-page" class="dropdown-item page-scroll" type="button">INFO</a>
                         <a href="#statistik-page" class="dropdown-item page-scroll" type="button">STATISTIK</a>
                         <a href="#fitur-page" class="dropdown-item page-scroll" type="button">FITUR</a>
-                        <a href="/simpeg/login" class="dropdown-item page-scroll" type="button">LOGIN</a>
+<!--                        <a href="/simpeg/login" class="dropdown-item page-scroll" type="button">LOGIN</a>-->
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     <a class="link-item page-scroll" href="#fitur-page">FITUR</a>
                 </li>
                 <li class="list-group-item">
-                    <a class="link-item page-scroll" href="/simpeg/login">LOGIN</a>
+<!--                    <a class="link-item page-scroll" href="/simpeg/login">LOGIN</a>-->
                 </li>
             </ul>
 

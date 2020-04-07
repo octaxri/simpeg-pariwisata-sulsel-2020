@@ -7,7 +7,7 @@ Class DataMutasi extends Admin_controller {
 
         $satker = $this->input->get('satker');
 
-        $data = array(  'title'     => 'SK Mutasi Kelompok',
+        $data = array(  'title'     => 'Mutasi Pelaksana',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'table' 	=> 'mutasi_sk',
         'isi'       => 'admin/data_mutasi/beranda');
@@ -19,14 +19,21 @@ Class DataMutasi extends Admin_controller {
         $jabatan = $this->db->select('nama_jabatan')->get('data_jabatan')->result();
         $satker = $this->db->select('nama_satker')->get('data_unit')->result();
         $unker = $this->db->select('nama_unit')->get('data_unit')->result();
+        $mutasi1 = $this->db->select('no_sk')->get('mutasi_sk')->result();
+        $mutasi2 = $this->db->select('tgl_sk')->get('mutasi_sk')->result();
+        $mutasi3 = $this->db->select('tmt_sk')->get('mutasi_sk')->result();
 
-        $data = array(  'title'     => 'Details SK Mutasi',
-        'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
-        'table' 	=> 'mutasi_data',
-        'jabatan'   => $jabatan,
-        'satker'    => $satker,
-        'unker'    => $unker,
-        'isi'       => 'admin/data_mutasi/details');
+        $data = array(
+            'title' => 'Lampian SK Mutasi Pelaksana',
+            'subtitle' => 'Selamat datang, ' . $this->session->fullname . '.',
+            'table' => 'mutasi_data',
+            'jabatan' => $jabatan,
+            'satker' => $satker,
+            'unker' => $unker,
+            'mutasi1' => $mutasi1,
+            'mutasi2' => $mutasi2,
+            'mutasi3' => $mutasi3,
+            'isi' => 'admin/data_mutasi/details');
         $this->load->view('admin/_layout/wrapper', $data);     	
     }
 
@@ -35,13 +42,19 @@ Class DataMutasi extends Admin_controller {
         $jabatan = $this->db->select('nama_jabatan')->get('data_jabatan')->result();
         $satker = $this->db->select('nama_satker')->get('data_unit')->result();
         $unker = $this->db->select('nama_unit')->get('data_unit')->result();
+        $mutasi1 = $this->db->select('no_sk')->get('mutasi_sk')->result();
+        $mutasi2 = $this->db->select('tgl_sk')->get('mutasi_sk')->result();
+        $mutasi3 = $this->db->select('tmt_sk')->get('mutasi_sk')->result();
 
-        $data = array(  'title'     => 'Tambah Pegawai SK',
+        $data = array(  'title'     => 'Tambah Pegawai',
         'subtitle'  => 'Selamat datang, '.$this->session->fullname.'.',
         'table'     => 'mutasi_data',
         'jabatan'   => $jabatan,
         'satker'    => $satker,
         'unker'    => $unker,
+            'mutasi1' => $mutasi1,
+            'mutasi2' => $mutasi2,
+            'mutasi3' => $mutasi3,
         'isi'       => 'admin/data_mutasi/tambah_sk_pegawai');
         $this->load->view('admin/_layout/wrapper', $data);          
     }
@@ -88,9 +101,25 @@ Class DataMutasi extends Admin_controller {
 
     $this->load->library('pdf');
 
-    $this->pdf->setPaper('A4', 'potrait');
+    $this->pdf->setPaper('legal', 'potrait');
     $this->pdf->filename = "laporan-mutasi-kelompok.pdf";
     $this->pdf->load_view('admin/data_mutasi/print_kelompok', $data);
+    }
+
+    public function print_sk_kelompokNew($id='')
+    {
+
+        $sk = $this->db->where('id', $id)->get('mutasi_sk')->row();
+        $individu = $this->db->where('id_mutasi_sk', $id)->get('mutasi_data')->result();
+
+        $this->crud->u('mutasi_data', array('status' => 'Belum Valid'), array('id_mutasi_sk' => $id));
+
+        $data = array(
+            'title'     => 'Lampiran SK Mutasi Pelaksana',
+            'sk' => $sk,
+            'individu' => $individu,
+        );
+        $this->load->view('admin/data_mutasi/print_kelompokNew', $data);
     }
 
     public function print_petikan($id='', $id_mutasi_sk = '')

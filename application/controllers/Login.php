@@ -19,7 +19,7 @@ class Login extends CI_Controller {
         if ($valid->run() === FALSE)
         {
             $data = array('title'   => 'Login ke Sistem');
-            $this->load->view('login/login', $data);
+            $this->load->view('login/loginNew', $data);
         }
         else
         {

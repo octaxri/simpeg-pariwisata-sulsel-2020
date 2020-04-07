@@ -5,7 +5,7 @@
         <span class="icon-wrapper custom-bg-orange"><i class="fa fa-envelope-open"></i></span>
         <div class="right">
 
-            <span class="value"><?=$this->input->get('no_sk')?></span>
+            <span class="value"><?=$mutasi1[0]->no_sk?></span>
             <span class="title">Nomor SK</span>
         </div>
     </div>
@@ -16,11 +16,22 @@
         <span class="icon-wrapper custom-bg-orange"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
         <div class="right">
 
-            <span class="value"><?=$this->input->get('tgl_sk')?></span>
+            <span class="value"><?=$mutasi2[0]->tgl_sk?></span>
             <span class="title">Tanggal SK</span>
         </div>
     </div>
 </div>
+
+    <div class="col-md-4 col-sm-4">
+        <div class="widget widget-metric_1 animate">
+            <span class="icon-wrapper custom-bg-orange"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+            <div class="right">
+
+                <span class="value"><?=$mutasi3[0]->tmt_sk?></span>
+                <span class="title">TMT Jabatan Baru</span>
+            </div>
+        </div>
+    </div>
 
 <!-- <div class="col-md-4 col-sm-4">
     <div class="widget widget-metric_1 animate">
@@ -194,19 +205,21 @@
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                         return full.jabatan_lama + " pada " + full.satker_lama + " di " + full.unker_lama;
+                         return full.jabatan_lama + ", BAGIAN " + full.satker_lama + ", " + full.unker_lama;
                  }
               },
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                         return full.jabatan_baru + " pada " + full.satker_baru + " di " + full.unker_baru;
+                         return full.jabatan_baru + ", BAGIAN " + full.satker_baru + ", " + full.unker_baru;
                  }
               },
               {
                  sortable: false,
                  "render": function ( data, type, full, meta ) {
-                     return "<button class='print btn btn-success btn-xs'><i class='fa fa-print'></i>Cetak</button> <button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button>";
+                     // return "<button class='print btn btn-success btn-xs'><i class='fa fa-print'></i>Cetak</button> <button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button>";
+                     // return "<button class='edit btn btn-primary btn-xs'><i class='fa fa-pencil'></i>Edit</button> <button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button>";
+                     return " <button class='btn btn-danger btn-xs hapus'><i class='fa fa-trash'></i>Hapus</button>";
                  }
              },
           ],

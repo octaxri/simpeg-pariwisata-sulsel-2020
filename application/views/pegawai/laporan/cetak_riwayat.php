@@ -54,6 +54,7 @@ $usia = $akhir->diff($awal)->format("%y Tahun");
             width: 210mm;
             height: 297mm;
         }
+    }
 
 </style>
 </head>

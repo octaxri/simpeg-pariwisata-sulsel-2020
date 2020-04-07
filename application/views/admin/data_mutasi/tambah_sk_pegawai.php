@@ -4,7 +4,7 @@
 	        <span class="icon-wrapper custom-bg-orange"><i class="fa fa-envelope-open"></i></span>
 	        <div class="right">
 
-	            <span class="value"><?=$this->input->get('no_sk')?></span>
+	            <span class="value"><?=$mutasi1[0]->no_sk?></span>
                 <span class="title">Nomor SK</span>
 	        </div>
 	    </div>
@@ -15,11 +15,22 @@
 	        <span class="icon-wrapper custom-bg-orange"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
 	        <div class="right">
 
-	            <span class="value"><?=$this->input->get('tgl_sk')?></span>
+	            <span class="value"><?=$mutasi2[0]->tgl_sk?></span>
                 <span class="title">Tanggal SK</span>
 	        </div>
 	    </div>
 	</div>
+
+    <div class="col-md-4 col-sm-4">
+        <div class="widget widget-metric_1 animate">
+            <span class="icon-wrapper custom-bg-orange"><i class="fa fa-calendar-o" aria-hidden="true"></i></span>
+            <div class="right">
+
+                <span class="value"><?=$mutasi3[0]->tmt_sk?></span>
+                <span class="title">TMT Jabatan Baru</span>
+            </div>
+        </div>
+    </div>
 
 	<!-- <div class="col-md-4 col-sm-4">
 	    <div class="widget widget-metric_1 animate">
@@ -49,7 +60,7 @@
 
     <div class="panel panel-tab">
       <div class="panel-heading">
-        <h3 class="panel-title"><a class="btn btn-sm btn-default" href="<?=admin_url('DataMutasi/details?id=').$this->input->get('id').'&no_sk='.$this->input->get('no_sk').'&tgl_sk='.$this->input->get('tgl_sk').'&pejabat='.$this->input->get('pejabat').'&tentang='.$this->input->get('tentang')?>"><i class="fa fa-arrow-left " aria-hidden="true"></i> Kembali ke Details SK Mutasi</a></h3>
+        <h3 class="panel-title"><a class="btn btn-sm btn-default" href="<?=admin_url('DataMutasi/details?id=').$this->input->get('id').'&no_sk='.$this->input->get('no_sk').'&tgl_sk='.$this->input->get('tgl_sk').'&pejabat='.$this->input->get('pejabat').'&tentang='.$this->input->get('tentang')?>"><i class="fa fa-arrow-left " aria-hidden="true"></i> Kembali ke Lampiran</a></h3>
         <ul class="nav nav-tabs pull-right">
          <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user-circle-o"></i> Data Pegawai</a></li>
          <li><a href="#tab2" data-toggle="tab"><i class="fa fa-drivers-license-o"></i> Tempat Tugas Baru</a></li>
