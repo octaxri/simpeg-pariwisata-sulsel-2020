@@ -1,0 +1,46 @@
+/ scroll-x and scroll-y support
+// content-box rule is critical
+
+table.dataTable,
+table.dataTable th,
+table.dataTable td {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.dataTables_wrapper .dataTables_scroll {
+  clear: both;
+  @include dt-display-flex;
+  @include dt-flex-vertical;
+  @include dt-flex-11a;
+  // codepen rules to better identify scroll wrapper
+  border: 1px solid #ccc;
+  margin: 1.5rem 0
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
+  @include dt-flex-100;
+  margin-top: -1px;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Fixes issue with Safari width calc. under rare conditions
+.dataTables_scrollHeadInner {
+  flex: 1 1 auto;
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th > div.dataTables_sizing,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td > div.dataTables_sizing {
+  height: 0;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dataTables_wrapper:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
