@@ -245,6 +245,12 @@
                 $("#div").css('margin-bottom', '0px');
             } else if ((height > 2648) && (height <= 2677)) {
                 $("#div").css('margin-bottom', '260px');
+            } else if ((height > 2677) && (height <= 3086)) {
+                $("#div").css('margin-bottom', '0px');
+            } else if ((height > 3086) && (height <= 3225)) {
+                $("#div").css('margin-bottom', '260px');
+            } else if ((height > 3225) && (height <= 3689)) {
+                $("#div").css('margin-bottom', '0px');
             }
         }else if (height < 952) {
             if (height <= 797) {
